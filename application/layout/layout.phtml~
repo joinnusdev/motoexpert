@@ -1,0 +1,54 @@
+<?=$this->doctype()?>
+<html lang="es">
+<head>
+<?=$this->headTitle()?>
+<?=$this->headMeta()?>
+<!-- bootstrap -->
+<link href="<?php echo MEDIA_URL ?>css/bootstrap/bootstrap.css" rel="stylesheet"/>
+<link href="<?php echo MEDIA_URL ?>css/bootstrap/bootstrap-responsive.css"	rel="stylesheet">
+<link href="<?php echo MEDIA_URL ?>css/bootstrap/bootstrap-overrides.css" type="text/css" rel="stylesheet">
+
+<!-- libraries --> 
+<link href="<?php echo MEDIA_URL ?>css/lib/jquery-ui-1.10.2.custom.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="<?php echo MEDIA_URL ?>css/lib/font-awesome.css">
+
+<!-- global styles -->
+<link rel="stylesheet" type="text/css" href="<?php echo MEDIA_URL ?>css/layout.css"> 
+<link rel="stylesheet" type="text/css" href="<?php echo MEDIA_URL ?>css/elements.css">
+<link rel="stylesheet" type="text/css" href="<?php echo MEDIA_URL ?>css/icons.css">
+<link rel="stylesheet" type="text/css" href="<?php echo MEDIA_URL ?>css/lib/bootstrap.datepicker.css">
+
+
+
+<!-- this page specific styles -->
+<?=$this->headLink()?>
+ <!-- open sans font -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+	<script src="<?php echo MEDIA_URL ?>js/bootstrap.min.js"></script>
+	<script src="<?php echo MEDIA_URL ?>js/jquery-ui-1.10.2.custom.min.js"></script>	
+	<script src="<?php echo MEDIA_URL ?>js/bootstrap.datepicker.js"></script>
+	
+</head>
+
+<body>
+
+	<?= $this->render('_topbar-admin.phtml');?>
+	<?= $this->render('_sidebar-admin.phtml');?>
+	<div class="content">
+		<div class="container-fluid">
+		<?=$this->render('_messages.phtml');?>	
+		    <?=$this->layout()->content?>
+		</div>
+		
+	</div>
+	
+	<!-- scripts -->	
+	
+	<?=$this->headScript()?>
+	<script src="<?php echo MEDIA_URL ?>js/theme.js"></script>
+	<?php //if (isset($this->controlller) and ($this->controlller == 'panel' || $this->controlller == 'reportes')){?>
+	
+    <?php //}?>	
+</body>
+</html>

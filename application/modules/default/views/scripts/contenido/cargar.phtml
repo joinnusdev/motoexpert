@@ -1,0 +1,166 @@
+
+<div class="form-page" id="pad-wrapper">
+                <div class="row-fluid form-wrapper">
+                    <!-- left column -->
+                    <form method="post" action="/admin/contenido/cargar" enctype="multipart/form-data" >                    
+                    <fieldset>
+              <legend>Cargar RBT</legend>
+              
+            </fieldset>
+                    <div class="span6 column">
+                    		<div class="field-box">
+                                <label>Empresa :</label>
+                                <div class="ui-select span6">
+                                    <?php echo $this->form->idempresa?>
+                                </div>
+                            </div>
+                        
+                            <div class="field-box">
+                                <label>Canción :</label>
+                                <?php echo $this->form->cancion?>
+                            </div>
+                            <div class="field-box">
+                                <label>Categorias :</label>
+                                <div class="span6" style="margin-left: 0px">
+                                    <?php echo $this->form->categoria?>
+                                </div>
+                            </div>
+                            
+                            <div class="field-box">
+                                <label>Genero Musical :</label>
+                                <div class="ui-select span6">
+                                    <?php echo $this->form->idgenero?>
+                                </div>
+                            </div>                           
+                            
+                            <div class="field-box">
+                                <label>Precio (Bs.) :</label>
+                                <?php echo $this->form->precio?>
+                            </div>
+                            <div class="field-box">
+                                <label>Periodo :</label>
+                                <div class="ui-select span6">
+                                <?php echo $this->form->periodo?>
+                                </div>
+                            </div>                            
+                            <div class="field-box">
+                                <label>Válido hasta:</label>
+                                <?php echo $this->form->fecha_valido?>
+                            </div>
+                            <div class="field-box">
+                                <label>Canción Mp3 :</label>
+                                <?php echo $this->form->cancion_formato_mp?>
+                            </div>
+                            <div class="field-box">
+                                <label>Canción Wav :</label>
+                                <?php echo $this->form->cancion_formato_wav?>
+                                
+                            </div>
+                        
+                    </div>
+
+                    <!-- right column -->
+                    <div class="span5 column">
+                        
+                            <div class="field-box">
+                                <label>Artista :</label>
+                                <?php echo $this->form->artista?>
+                            </div>
+                            <div class="field-box">
+                                <label>País :</label>
+                                
+                                    <?php echo $this->form->pais?>
+                                
+                            </div>                             
+                            <div class="field-box">
+                                <label>Tag :</label>
+                                <?php echo $this->form->tag?>
+                            </div>
+                            <div class="field-box">
+                                <label>Editora :</label>
+                                <?php echo $this->form->editora?>
+                            </div>
+                            <div class="field-box">
+                                <label>Imagen Normal (320x320):</label>
+                                <?php echo $this->form->imagen_small?>
+                            </div>
+                            <div class="field-box">
+                                <label>Imagen Destacada (770x350):</label>
+                                <?php echo $this->form->imagen_destacada?>
+                                <?php echo $this->form->csrf?>
+                            </div>
+                        
+                    </div>
+                    <div class="span12" style="text-align: center;">
+              <!-- <button class="btn btn-primary" type="submit">GUARDAR</button>-->
+              <?php echo $this->form->guardar?>              
+            </div>
+                    </form>
+                </div>
+            </div>
+           
+<script>
+  $(function() {
+    
+    $('#fecha_valido').datepicker({
+        format: 'yyyy-mm-dd',
+        autoclose: true,
+        keyboardNavigation : true ,        
+        daysOfWeekDisabled : [0]
+    });
+    
+  });
+
+  $("#cancion_formato_mp").change(function() {
+	    var val = $(this).val();	    
+
+	    switch(val.substring(val.lastIndexOf('.') + 1).toLowerCase()){
+	        case 'mp3': case 'MP3': case 'Mp3':	            
+	            break;
+	        default:
+	            $(this).val('');
+	            alert("No es un archivo MP3");
+	            break;
+	    }
+	});
+  $("#cancion_formato_wav").change(function() {
+	    var val = $(this).val();	    
+
+	    switch(val.substring(val.lastIndexOf('.') + 1).toLowerCase()){
+	        case 'wav': case 'Wav': case 'WAV':	            
+	            break;
+	        default:
+	            $(this).val('');
+	            alert("No es un archivo wav");
+	            break;
+	    }
+	});
+
+  $("#imagen_small").change(function() {
+	    var val = $(this).val();	    
+
+	    switch(val.substring(val.lastIndexOf('.') + 1).toLowerCase()){
+	        case 'Jpg': case 'JPG': case 'jpg':	            
+	            break;
+	        default:
+	            $(this).val('');
+	            alert("No es un archivo JPG");
+	            break;
+	    }
+	});
+
+  $("#imagen_destacada").change(function() {
+	    var val = $(this).val();	    
+
+	    switch(val.substring(val.lastIndexOf('.') + 1).toLowerCase()){
+	        case 'Jpg': case 'JPG': case 'jpg':	            
+	            break;
+	        default:
+	            $(this).val('');
+	            alert("No es un archivo JPG");
+	            break;
+	    }
+	});
+	
+  
+  </script>

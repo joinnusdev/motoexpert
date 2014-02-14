@@ -1,0 +1,40 @@
+<?=$this->doctype()?>
+
+<html lang="en">
+    <head>        
+        <?=$this->headTitle()?>
+        <?=$this->headMeta()?>
+        <link id="bs-css" href="<?php echo SITE_URL ?>static/css2/bootstrap-cerulean.css" rel="stylesheet">
+        <style type="text/css">
+	  body {
+		padding-bottom: 40px;
+	  }
+	  .sidebar-nav {
+		padding: 9px 0;
+	  }
+       </style>
+       	<link href="<?php echo SITE_URL ?>static/css/bootstrap-responsive.css" rel="stylesheet">
+	<link href="<?php echo SITE_URL ?>static/css2/charisma-app.css" rel="stylesheet">		
+	<link href='<?php echo SITE_URL ?>static/css2/noty_theme_default.css' rel='stylesheet'>	
+        <?=$this->headLink()?>
+        <?=$this->headScript()?>
+        <?=$this->headStyle()?>
+        
+    </head>
+    <body>
+        
+        <div class="container-fluid">
+            <div class="row-fluid">                
+                        <?=$this->layout()->content?>
+            </div>
+            <div class="row-fluid">
+                <div class="content" class="span10">
+                    <?=$this->render('_messages.phtml');?>                    
+                </div>
+                
+            </div>
+                
+            
+        </div>
+    </body>
+</html>

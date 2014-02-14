@@ -1,0 +1,107 @@
+<div id="pad-wrapper">                
+                <div class="table-wrapper products-table section">
+                    <div class="row-fluid head">
+                        <div class="span10">
+                            <h4>Contenido Pendiente : </h4>
+                        </div>
+                        <!-- <div class="span2">
+                        <a class="btn-flat success new-product" href="/admin/usuario/crear">+ Cargar</a>
+                        </div>-->
+                        
+                    </div>
+                    
+
+                    <div class="row-fluid filter-block">
+                        <div class="pull-right">
+                        <!-- <form method="get" action="/admin/contenido/pendientes">
+                            <div class="ui-select">
+                                <?=$this->form->idempresa ?>
+                            </div>
+                            <div class="ui-select">
+                                <?=$this->form->categoria ?>
+                            </div>
+                            
+                            <?=$this->form->buscar ?>
+                        </form>-->
+                        </div>
+                    </div>
+
+                    <div class="row-fluid">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th class="span2">
+                                        ID
+                                    </th>
+                                    <th class="span2">
+                                        Artista
+                                    </th>
+                                    <th class="span3">
+                                        Canción
+                                    </th>
+                                    <th class="span3">
+                                        <span class="line"></span>
+                                        Genero
+                                    </th>
+                                    <th class="span3">
+                                        <span class="line"></span>
+                                        Empresa
+                                    </th>
+                                    <th class="span3">
+                                        <span class="line"></span>
+                                        Estado
+                                    </th>                                    
+                                    <th class="span2">
+                                        <span class="line"></span>
+                                        Pre Escucha
+                                    </th>
+                                    <th class="span3">
+                                        <span class="line"></span>
+                                        Acción
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- row -->
+                                <?php foreach ($this->rbt as $item): ?>
+                                
+                                 <tr>
+                                    <td>                                        
+                                        <a href="/admin/contenido/editar/cod/<?=$item['idrbt'] ?>"><?=$item['idrbt'] ?></a>
+                                    </td>
+                                    <td>
+                                        <?=$item['artista'] ?>
+                                    </td>
+                                    <td>
+                                        <?=$item['cancion'] ?>
+                                    </td>
+                                    <td>
+                                        <?=$item['genero'] ?>
+                                    </td>
+                                    <td>
+                                        <?=$item['empresa'] ?>
+                                    </td>
+                                    <td>
+                                        <span class="label label-success">Pendiente</span>
+                                    </td>                                    
+                                    <td style="text-align: center;">
+                                    <a href="<?=$this->ruta ?>audio/mp3/<?=$item['cancion_formato_mp'] ?>" target="_blank">
+                                        <i class="icon-play" title="" data-placement="top" data-toggle="tooltip" data-original-title="Escuchar" ></i>
+                                    </a>
+                                    </td>                                    
+                                    <td>
+                                    <a href="/admin/contenido/aprobar/cod/<?=$item['idrbt'] ?>">
+                                        <span class="label label-danger">APROBAR</span>
+                                        </a>
+                                    </td>
+                                </tr>                            
+                                <?php endforeach; ?> 
+                              
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- end products table -->
+
+                
+            </div>

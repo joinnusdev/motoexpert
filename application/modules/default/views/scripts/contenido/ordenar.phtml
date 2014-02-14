@@ -1,0 +1,109 @@
+<div id="pad-wrapper">                
+                <div class="table-wrapper products-table section">
+                    <div class="row-fluid head">
+                        <div class="span10">
+                            <h4>Ordenar Categorias : </h4>
+                        </div>
+                    </div>
+                    
+
+                    <div class="row-fluid filter-block">
+                        <div class="pull-right">
+                         <form method="post" action="/admin/contenido/ordenar">
+                         <div class="ui-select">
+                         <?php echo $this->form->idempresa?>
+                         </div>
+                            <div class="ui-select">
+                                <?php echo $this->form->categoria?>
+                            </div>
+                            <?php echo $this->form->buscar?>
+                            <?php echo $this->form->csrf?>
+                            
+                        </form>  
+                        </div>
+                    </div>
+
+                    <div class="row-fluid">
+                    <form action="/admin/contenido/guardar-orden" method="post" id="sub-guardar">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th class="span2">
+                                        ID
+                                    </th>
+                                    <th class="span2">
+                                        Artista
+                                    </th>
+                                    <th class="span3">
+                                        Canción
+                                    </th>                                    
+                                    <th class="span3">
+                                        <span class="line"></span>
+                                        Fecha Validez
+                                    </th>                                    
+                                    <th class="span3">
+                                        <span class="line"></span>
+                                        Orden
+                                    </th>
+                                    <th class="span2">
+                                        <span class="line"></span>
+                                        Nuevo Orden
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- row -->
+                                <?php if ($this->rbt) {foreach ($this->rbt as $item): ?>
+                                <tr>
+                                    <td>                                        
+                                        <a href="/admin/contenido/editar/cod/<?=$item['idrbt'] ?>"><?=$item['idrbt'] ?></a>
+                                    </td>
+                                    <td>
+                                        <?=$item['artista'] ?>
+                                    </td>
+                                    <td>
+                                        <?=$item['cancion'] ?>
+                                    </td>                                    
+                                    <td>
+                                        <?=$item['fecha_valido'] ?>
+                                    </td>
+                                    
+                                    <td>
+                                        <?=$item['orden'] ?>
+                                    </td>
+                                    <td>
+                                        <input type="text" id="neworden" name="neworden[]" class="span4" onkeypress="return isNumberKey(event)" value="<?=$item['orden'] ?>"/>                                        
+                                    </td>                                    
+                                </tr>
+                                <?php endforeach; ?>
+                                <tr>
+                                <td colspan="6">
+                                <?php echo $this->form->guardar?>
+                                </td>
+                                </tr>
+                                <?php } ?>                                
+                            </tbody>
+                        </table>                        
+                        </form>
+                    </div>
+                </div>
+                <!-- end products table -->
+
+                
+            </div>
+            
+            <script>
+            $("#sub-guardar").submit(function( event ) {
+            	var ord = $("input[name='neworden[]']")
+            	console.log(ord);
+            	event.preventDefault();
+            	});
+
+            
+            function isNumberKey(evt){
+                var charCode = (evt.which) ? evt.which : event.keyCode
+                if (charCode > 31 && (charCode < 48 || charCode > 57))
+                    return false;
+                return true;
+            }
+            </script>

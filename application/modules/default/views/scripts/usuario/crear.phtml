@@ -1,0 +1,75 @@
+<div class="form-page" id="pad-wrapper">
+                <div class="row-fluid form-wrapper">
+                    <!-- left column -->
+                    <form method="post" action="/admin/usuario/crear" enctype="multipart/form-data" class="well-small">
+                    
+                    <fieldset>
+              <legend>Registro de Usuario</legend>
+              
+            </fieldset>
+                    <div class="span6 column">
+                        
+                            <div class="field-box">
+                                <label>Nombre :</label>
+                                <?=$this->form->nombre?>
+                            </div>
+                            <div class="field-box">
+                                <label>Dirección :</label>
+                                <?=$this->form->direccion?>
+                            </div>           
+                            <div class="field-box">
+                                <label>Teléfono :</label>
+                                <?=$this->form->telefono?>
+                            </div>
+                            <div class="field-box">
+                                <label>Celular :</label>
+                                <?=$this->form->celular?>
+                            </div>
+                            <div class="field-box">
+                                <label>Tipo Usuario :</label>
+                                <!-- <input type="file" class="span6">-->
+                                <div class="ui-select">
+                                    <?=$this->form->tipousuario?>
+                                </div>
+                            </div>
+                            <div class="field-box">
+                                <label>Usuario :</label>
+                                <?=$this->form->usuario?>
+                            </div>
+                            <div class="field-box">
+                                <label>Clave :</label>
+                                <?=$this->form->clave?>
+                            </div>                            
+                            
+                        
+                    </div>
+
+                    <!-- right column -->
+                    <div class="span5 column">
+                        
+                            <div class="field-box">
+                                <label>RUC :</label>
+                                <?=$this->form->ruc?>
+                            </div>
+                            <div class="field-box">
+                                <label>Representante legal :</label>
+                                <?=$this->form->representante_legal?>
+                            </div>
+                            <div class="field-box">
+                                <label>Web :</label>
+                                <?=$this->form->web?>
+                            </div>
+                            <div class="field-box">
+                                <label>Correo Electrónico :</label>
+                                <?=$this->form->correo_electronico?>
+                            </div>
+                            <?=$this->form->csrf?>
+                            
+                        
+                    </div>
+                    <div class="span12" style="text-align: center;">
+              <?=$this->form->guardar?>              
+            </div>
+                    </form>
+                </div>
+            </div>

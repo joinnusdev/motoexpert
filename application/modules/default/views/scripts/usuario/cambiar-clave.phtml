@@ -1,0 +1,34 @@
+<div class="form-page" id="pad-wrapper">
+                <div class="row-fluid form-wrapper">
+                    <!-- left column -->
+                    <form method="post" action="/admin/usuario/cambiar-clave">
+                    <fieldset>
+              <legend>Cambio de clave</legend>
+              
+            </fieldset>
+                    <div class="span6 column">
+                        
+                            <div class="field-box">
+                                <label>Empresa :</label>                                
+                                <?=$this->form->nombre?>
+                                <?=$this->form->iduser_empresa?>
+                            </div>                
+                            <div class="field-box">
+                                <label>Nueva clave :</label>
+                                <?=$this->form->clave?>
+                            </div>                            
+                    </div>
+                    <div class="span4 column">
+                            <div class="field-box">
+                                <label>RUC :</label>
+                                <?=$this->form->ruc?>
+                                <?=$this->form->csrf?>
+                            </div>
+                    </div>
+
+                    <div class="span12" style="text-align: center;">
+              <button class="btn btn-primary" type="submit">Cambiar</button>              
+            </div>
+                    </form>
+                </div>
+            </div>

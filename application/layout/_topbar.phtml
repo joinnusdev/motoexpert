@@ -1,0 +1,66 @@
+
+<div class="navbar navbar-inverse">
+		<div class="navbar-inner">
+		<? if($this->isAuth): ?>
+		<button id="menu-toggler" class="btn btn-navbar visible-phone" type="button">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+        </button>
+        <a href="/admin" class="brand"><img src="<?php echo MEDIA_URL?>img/logo.png"></a>
+        <ul class="nav pull-right">                
+                <li class="hidden-phone">
+                    <input type="text" class="search">
+                </li>
+                
+                <!--  <li class="notification-dropdown hidden-phone">
+                    <a class="trigger" href="#">
+                        <i class="icon-envelope-alt"></i>
+                    </a>
+                    <div class="pop-dialog">
+                        <div class="pointer right">
+                            <div class="arrow"></div>
+                            <div class="arrow_border"></div>
+                        </div>
+                        <div class="body">
+                            <a class="close-icon" href="#"><i class="icon-remove-sign"></i></a>
+                            <div class="messages">
+                                <a class="item" href="#">
+                                    <img class="display" src="<?php echo MEDIA_URL?>img/contact-img.png">
+                                    <div class="name">Alejandra Galván</div>
+                                    <div class="msg">
+                                        Ejemplo mensaje
+                                    </div>
+                                    <span class="time"><i class="icon-time"></i> 13 min.</span>
+                                </a>
+                                <a class="item last" href="#">
+                                    <img class="display" src="<?php echo MEDIA_URL?>img/contact-img.png">
+                                    <div class="name">Alejandra Galván</div>
+                                    <div class="msg">
+                                        Ejemplo mensaje
+                                    </div>
+                                    <span class="time"><i class="icon-time"></i> 48 min.</span>
+                                </a>
+                                <div class="footer">
+                                    <a class="logout" href="#">Ver más</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li> -->
+                <li class="dropdown">
+                    <!-- <a data-toggle="dropdown" class="dropdown-toggle hidden-phone" href="#">
+                        Tú Cuenta
+                        <b class="caret"></b>
+                    </a>-->
+                    <a href="/admin/auth/logout">Salir</a>
+                    <!-- <ul class="dropdown-menu">
+                        <li><a href="personal-info.html">Información Personal</a></li>
+                        <li><a href="/admin/auth/logout">Cerrar Sesión</a></li>
+                    </ul>-->
+                </li>               
+                
+            </ul>
+		<? endif; ?>
+		</div>
+	</div>
