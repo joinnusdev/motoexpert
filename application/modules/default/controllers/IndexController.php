@@ -29,6 +29,9 @@ class Default_IndexController extends App_Controller_Action_Default
     	$result = $model->listarModelo($id);
     	
     	echo Zend_Json::encode($result);
+
+        //$this->view->listarMarca = $result;
+
     } 
 
 }
