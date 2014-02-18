@@ -12,6 +12,10 @@ class Default_FicheMotoController extends App_Controller_Action_Default
     {
     	$form = new App_Form_SearchMotoDeta();
     	$this->view->form = $form;
+        $id = $this->_getParam('id');
+        $model = new App_Model_Announce();
+        $result = $model->detailAnnounce($id);
+        $this->view->detailAnnonces = $result;
     }
     
     public function getModeleAction()

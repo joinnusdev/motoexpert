@@ -52,49 +52,67 @@
                
    
           	<div class="col2 align-right">
-            	<div class="partager"><a href="http://www.facebook.com" target="_blank"><img src="<?=MEDIA_URL ?>images/p-facebook.jpg" width="26" height="26" /></a><a href="http://www.twitter.com" target="_blank"><img src="<?=MEDIA_URL ?>images/p-twitter.jpg" width="26" height="26" /></a>Partager</div>
-                <h2>DUCATI SS900</h2>
-                <div class="price">4200 €</div>
+            	<div class="partager"><a href="http://www.facebook.com" target="_blank">
+                    <img src="<?=MEDIA_URL ?>images/p-facebook.jpg" width="26" height="26" /></a>
+                    <a href="http://www.twitter.com" target="_blank">
+                        <img src="<?=MEDIA_URL ?>images/p-twitter.jpg" width="26" height="26" />
+                    </a>Partager
+                </div>
+                    
+                <h2><?=$this->detailAnnonces['titre'];?></h2>
+                <div class="price"><?=$this->detailAnnonces['prix'];?> €</div>
                 <div class="col2  align-left">
-                <a href="#" class="visuel visu-gara">CONTRÛLE VISUEL</a> <a href="#" class="garantie visu-gara">GARANTIE </a>
+                <?php
+                if($this->detailAnnonces['controle']==1):
+                ?>
+                <a href="#" class="visuel visu-gara">CONTRÛLE VISUEL</a> 
+                <?php endif;
+                if($this->detailAnnonces['garantie']==1):
+                ?>
+                <a href="#" class="garantie visu-gara">GARANTIE </a>
+                <?php endif;?>
                 </div>
                  <div class="col2  align-left">
                  	<p>Annonce 4902113260000</p>
-                    <p>Publiée le 01/02/14</p>
+                    <p>Publiée le <?php echo date('d/m/Y', $this->detailAnnonces['date']);?></p>
                     <p><br/></p>
-                    <p><strong>Marque</strong> : Ducati</p>
-                    <p><strong>Modèle </strong>: SS</p>
-                    <p><strong>Catégorie</strong> : Sportives</p>
-                    <p><strong>Couleur</strong> : rouge</p>
-                    <p><strong>Cylindrée</strong> : 900 cm3</p>
-                    <p><strong>Km</strong> : 37796</p>
-                    <p><strong>Année</strong> : 1998</p>
-                    <p><strong>Magasin </strong>: MOTO EXPERT LA ROCHE/YON</p>
-                    <p><strong>Département</strong> : 85</p>
+                    <p><strong>Marque</strong> : <?=$this->detailAnnonces['marque'];?></p>
+                    <p><strong>Modèle </strong>: <?=$this->detailAnnonces['modele'];?></p>
+                    <p><strong>Catégorie</strong> : <?=$this->detailAnnonces['nom_cat'];?></p>
+                    <p><strong>Couleur</strong> : <?=$this->detailAnnonces['couleur'];?></p>
+                    <p><strong>Cylindrée</strong> : <?=$this->detailAnnonces['cylindree'];?> cm3</p>
+                    <p><strong>Km</strong> : <?=$this->detailAnnonces['km'];?></p>
+                    <p><strong>Année</strong> : <?=$this->detailAnnonces['annee'];?></p>
+                    <?php if($this->detailAnnonces['nom']!=""): ?>
+                    <p><strong>Magasin </strong>: <?=$this->detailAnnonces['nom'];?></p>
+                    <?php endif;?>
+                    <p><strong>Département</strong> : <?=$this->detailAnnonces['departement'];?></p>
                     <hr />
                     <p><strong>Descriptif</strong> :</p>
-                   <p>Entretien à jour sur facture. nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in</p>
+                   <p>
+                      <?=$this->detailAnnonces['descr_site'];?> 
+                   </p>
                     <p></p>
  
               </div>
               </div>
-                          
-               
                
                <div style="width:100%; height:10px; clear:both"></div>
                
                
-               
-               
-               
-               
-               
-               
-               
-               
                <div class="col2 align-left"> 
             	<div class="subtitle">
-                	<div class="icontitle icon-contact">CONTACTEZ DIRECTEMENT LE MAGASIN</div>
+                	<div class="icontitle icon-contact">
+                            <?php if($this->detailAnnonces['type_occaz']==1):
+                                echo "CONTACTEZ DIRECTEMENT LE VENDEUR";    
+                            endif;
+                            ?>
+                            <?php if($this->detailAnnonces['type_occaz']==2):
+                                echo "CONTACTEZ DIRECTEMENT LE MAGASIN";
+                            endif;
+                            ?>
+                            
+                        </div>
               </div>
               <div class="top-left">MOTO EXPERT <br /><span>METZ </span></div>
              
@@ -104,12 +122,11 @@
                 	<div class="subtitle2">
                 		PLAN INTERACTIF 
               		</div>
-                    <p>ZAC Rieucoulon 60 Rue Pierre et Marie Curie 34430 SAINT JEAN DE VEDAS</p>
-                	<p>Tél. : 02 51 18 83</p>
-                    <p>Fax : 0251 05 18 57 </p>
+                    <p><?=$this->detailAnnonces['adresse'];?></p>
+                	<p>Tél. : <?=$this->detailAnnonces['tel'];?></p>
+                    <p>Fax : <?=$this->detailAnnonces['fax'];?> </p>
                     <h3>HORAIRES D'OUVERTURE</h3>
-                    <p>Lundi : 14h - 19h</p>
-                    <p>du Mardi au Samedi : 9h30 - 12h / 14h - 19h</p>
+                    <p><?=$this->detailAnnonces['horaires'];?></p>
                 </div>
               
               </div>

@@ -6,12 +6,26 @@ class App_Model_Announce extends App_Db_Table_Abstract {
 	public function listSearch($datos){
 
 		$query = "
-		SELECT a.id,a.ref, a.titre, a.date, a.annee,a.cylindree, a.couleur, a.km, a.prix,a.departement,
-		a.garantie, c.nom_cat, m.marque, m.modele
-		FROM annonces a, categories c, annonce_cat ac, motos m
-		WHERE a.id_mot = m.id_mot
-		AND a.ref = ac.ref
-		AND ac.id_cat = c.id_cat
+		-- SELECT a.id,a.ref, a.titre, a.date, a.annee,a.cylindree, a.couleur, a.km, a.prix,a.departement,
+		-- a.garantie, c.nom_cat, m.marque, m.modele
+		-- FROM annonces a, categories c, annonce_cat ac, motos m
+		-- WHERE a.id_mot = m.id_mot
+		-- AND a.ref = ac.ref
+		-- AND ac.id_cat = c.id_cat
+                
+                
+                SELECT  a.id,a.ref, a.titre, a.date, a.annee,a.cylindree, a.couleur, a.km, a.prix,a.departement,
+                a.garantie, c.nom_cat, m.marque, m.modele 
+                ,foto.nom_fichier as foto, info.controle
+                FROM annonces a, categories c, annonce_cat ac, motos m 
+                ,annonces_photos foto
+                ,annonces_info info
+                WHERE a.id_mot = m.id_mot 
+                AND a.ref = ac.ref 
+                AND ac.id_cat = c.id_cat 
+                and a.ref = foto.ref_annonce
+                and a.ref = info.ref
+                and a.internet <>  '0'
 		";
 		if (!isset($datos['deparment']) and !isset($datos['category']) and !isset($datos['magasin']) and !isset($datos['marque']) and !isset($datos['modele']))
 			return false;
@@ -50,6 +64,9 @@ class App_Model_Announce extends App_Db_Table_Abstract {
 		WHERE a.id_mot = m.id_mot
 		AND a.ref = ac.ref
 		AND ac.id_cat = c.id_cat
+                AND a.internet <>  '0'
+                AND a.modere = '1'
+                AND a.ispayed =  '1'
 		";
 		if (isset($datos['deparment']) and $datos['deparment'] != 0)
 			$query.= " AND a.departement = ".$datos['deparment'];
@@ -75,6 +92,32 @@ class App_Model_Announce extends App_Db_Table_Abstract {
 		}
 	
 	}
+        
+        
+        public function detailAnnounce($id){
+            
+    
+            	$query = "SELECT * FROM  categories c, annonce_cat ac, occaz o, motos mo, annonces a
+                            LEFT JOIN annonces_info ai ON a.ref = ai.ref
+                            LEFT JOIN moto_expert me ON a.id_me = me.id_me
+                            WHERE
+                            a.internet <>  '0'
+                            AND a.modere = '1' AND 
+                            a.id_mot = mo.id_mot
+                            AND a.ref = ac.ref
+                            AND ac.id_cat = c.id_cat
+                            AND o.id_occaz = a.type_occaz
+                            AND a.ispayed =  '1'
+                            and a.id = ".$id;
+			try{
+				//echo $query;exit;
+			return $this->getAdapter()->fetchRow($query);
+			 
+		}catch (Exception $e){
+			var_dump($e->getMessage());			
+		}
+            
+        }
 
 
 }

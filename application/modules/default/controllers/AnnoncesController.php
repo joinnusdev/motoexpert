@@ -10,8 +10,7 @@ class Default_AnnoncesController extends App_Controller_Action_Default
     
     public function indexAction()
     {
-    	
-    	$datos = $this->getAllParams();
+        $datos = $this->getAllParams();
     	$form = new App_Form_SearchMotoDeta();    	
     	$this->view->announce = $datos;    	
     	$modelAnounce = new App_Model_Announce();

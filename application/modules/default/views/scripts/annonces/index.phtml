@@ -78,17 +78,28 @@
 					MOTO EXPERT primer <span>METZ</span>
 				</h3>
 				<div class="result-imgs">
-					<img src="<?=MEDIA_URL?>images/resutats-img.jpg" width="300" height="115" />
+                                    <?php
+                                    $config = Zend_Registry::get('config');
+                                    $foto = str_replace(",",".",$item['foto']);    
+                                    $ruta = $config->app->photoUrl.$item['departement'].'/'.$foto;
+                                    ?>
+                                    <a href="FicheMoto/index/id/<?php echo $item['id'];?>">
+                                        <img src="<?=$ruta;?>" width="300" height="115" />
+                                    </a>
 				</div>
 				<div class="result-price">$ <?=$item['prix']?></div>
 				<div class="result-desc">
-					<div class="result-date"><?php echo date('d/mY', $item['date']);?></div>
+					<div class="result-date"><?php echo date('d/m/Y', $item['date']);?></div>
 					<p>
 						<strong><?=$item['titre']?></strong><br /> 
 						<?php echo $item['marque']. " " . $item['modele'] . " " . $item['cylindree']. " cm3 " . $item['km']. " km" . " Année " . $item['annee']?>
 					</p>
-					<a href="fiche-moto" class="visuel">CONTRÛLE VISUEL</a> <a href="#"
-						class="garantie">GARANTIE </a>
+                                        <?php if ($item['controle']==1){?>
+					<a href="#" class="visuel">CONTRÛLE VISUEL</a>
+                                        <?php }?>
+                                        <?php if ($item['garantie']==1){?>
+                                        <a href="#" class="garantie">GARANTIE </a>
+                                        <?php }?>
 				</div>
 
 			</div>
