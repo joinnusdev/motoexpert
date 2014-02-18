@@ -16,6 +16,10 @@ class Default_AnnoncesController extends App_Controller_Action_Default
     	$this->view->form = $form;
     	$this->view->announce = $datos;
     	
+    	$modelAnounce = new App_Model_Announce();
+    	$this->view->result = $modelAnounce->listSearch($datos);    	
+    	$this->view->total = $modelAnounce->countSearch($datos);
+    	
     	
     }
     
