@@ -31,9 +31,9 @@ class App_Model_Announce extends App_Db_Table_Abstract {
 		if (isset($datos['modele']) and $datos['modele'] != 0  and !is_null($datos))
 			$query.= " AND m.id_mot = ".$datos['modele'];
 			 
-			 
+		$query.= " limit 300 ";
 			try{
-				
+				//echo $query;exit;
 			return $this->getAdapter()->fetchAll($query);
 			 
 		}catch (Exception $e){
