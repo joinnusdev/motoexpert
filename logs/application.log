@@ -42,6 +42,12 @@
 2014-02-17T23:39:30-05:00 NOTICE (5): Request Parameters
 2014-02-17T23:39:31-05:00 NOTICE (5): Page not found
 2014-02-17T23:39:31-05:00 NOTICE (5): Request Parameters
+<<<<<<< HEAD
+2014-02-17T23:44:07-05:00 NOTICE (5): Page not found
+2014-02-17T23:44:07-05:00 NOTICE (5): Request Parameters
+2014-02-18T00:03:27-05:00 NOTICE (5): Page not found
+2014-02-18T00:03:27-05:00 NOTICE (5): Request Parameters
+=======
 2014-02-17T23:40:21-05:00 NOTICE (5): Page not found
 2014-02-17T23:40:21-05:00 NOTICE (5): Request Parameters
 2014-02-17T23:40:21-05:00 NOTICE (5): Page not found
@@ -270,7 +276,11 @@
 2014-02-18T09:48:21-05:00 NOTICE (5): Request Parameters
 2014-02-18T09:48:22-05:00 NOTICE (5): Page not found
 2014-02-18T09:48:22-05:00 NOTICE (5): Request Parameters
+<<<<<<< HEAD
 2014-02-18T10:55:55-05:00 CRIT (2): Application error
 2014-02-18T10:55:55-05:00 CRIT (2): Request Parameters
 2014-02-18T10:56:01-05:00 CRIT (2): Application error
 2014-02-18T10:56:01-05:00 CRIT (2): Request Parameters
+=======
+>>>>>>> 09464d72b3e391a2c7b2df4c53e32143ce23bf85
+>>>>>>> cd3dfb2231784be4a4a77b0ef444a86f8a9c57ce
