@@ -19,10 +19,12 @@ class Default_AnnoncesController extends App_Controller_Action_Default
     	$this->view->result = "";
     	$this->view->total = 0;
     	
+    	$datos = $this->getAllParams();
+    	$form->populate($datos);
+    	$this->view->form = $form;
+    	
     	if ($this->_request->isGet()) {
-    		$datos = $form->getValues();
-    		$form->populate($datos);
-    		$this->view->form = $form;
+    		
     		if ($datos and !is_null($datos)) {
     			$this->view->result = $modelAnounce->listSearch($datos);
     			if ($this->view->result)
