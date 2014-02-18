@@ -10,7 +10,12 @@ class Default_IndexController extends App_Controller_Action_Default
     
     public function indexAction()
     {
-        //$this->_redirect('/admin/usuario');
+        $modelMoto = new App_Model_Moto();
+        
+        $result = $modelMoto->listarMarca();
+        print_r($result);
+        
+       
     } 
 
 }

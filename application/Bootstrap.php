@@ -41,7 +41,6 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap {
 
     public function _initRegistries() {
         $config = Zend_Registry::get('config');
-        
         $this->_executeResource('db');
         $adapter = $this->getResource('db');
         Zend_Registry::set('db', $adapter);
