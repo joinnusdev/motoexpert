@@ -7,10 +7,9 @@ class App_Model_Magasin extends App_Db_Table_Abstract {
 
     public function listMagasin(){
         $query = $this->_db
-        ->select()->from(array('m' => $this->_name))
+        ->select()->from(array('m' => $this->_name), array('id_me', 'ville'))
         ->where('m.actif = ?', App_Model_Magasin::ESTADO_ACTIVO)
         ->order('m.ville');       
-        return $this->_db->fetchAll($query);
+        return $this->_db->fetchPairs($query);
     }
 }
-?>
