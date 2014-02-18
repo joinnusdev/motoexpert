@@ -20,29 +20,28 @@
             	<div class="gallery">
                    <DIV class="flexslider" id="imageitems">
                         <UL class="slides">
-                          <LI><IMG   alt="" src="<?=MEDIA_URL ?>images/product/1.jpg"></LI>
-                          <LI><IMG   alt="" src="<?=MEDIA_URL ?>images/product/2.jpg"></LI>
-                          <LI><IMG   alt="" src="<?=MEDIA_URL ?>images/product/3.jpg"></LI>
-                          <LI><IMG   alt="" src="<?=MEDIA_URL ?>images/product/4.jpg"></LI>
-                          <LI><IMG   alt="" src="<?=MEDIA_URL ?>images/product/5.jpg"></LI>
-                          <LI><IMG   alt="" src="<?=MEDIA_URL ?>images/product/6.jpg"></LI>
-                          <LI><IMG   alt="" src="<?=MEDIA_URL ?>images/product/7.jpg"></LI>
-                          <LI><IMG   alt="" src="<?=MEDIA_URL ?>images/product/8.jpg"></LI>
+                          <?php
+                          $config = Zend_Registry::get('config');
+                          foreach ($this->photoAnnonces as $photo1) :
+                            $foto = str_replace(",",".",$photo1['nom_fichier']);    
+                            $ruta = $config->app->photoUrl. $this->detailAnnonces['departement'].'/'.$foto;
+                          ?>
+                          <LI><IMG   alt="" src="<?=$ruta;?>"></LI>
+                          <?php endforeach; ?>
                         </UL>
                       </DIV>
                    
                   
                       <DIV class="flexslider" id="carouselslider">
                         <UL class="slides">
-                          <LI><IMG alt="" src="<?=MEDIA_URL ?>images/product/t1.jpg"></LI>
-                          <LI><IMG alt="" src="<?=MEDIA_URL ?>images/product/t2.jpg"></LI>
-                          <LI><IMG alt="" src="<?=MEDIA_URL ?>images/product/t3.jpg"></LI>
-                          <LI><IMG alt="" src="<?=MEDIA_URL ?>images/product/t4.jpg"></LI>
-                          <LI><IMG alt="" src="<?=MEDIA_URL ?>images/product/t5.jpg"></LI>
-                          <LI><IMG alt="" src="<?=MEDIA_URL ?>images/product/t6.jpg"></LI>
-                          <LI><IMG alt="" src="<?=MEDIA_URL ?>images/product/t7.jpg"></LI>
-                          <LI><IMG alt="" src="<?=MEDIA_URL ?>images/product/t8.jpg"></LI>
-
+                          <?php
+                          $config = Zend_Registry::get('config');
+                          foreach ($this->photoAnnonces as $photo2) :
+                            $foto = str_replace(",",".",$photo2['nom_fichier']);    
+                            $ruta = $config->app->photoUrl. $this->detailAnnonces['departement'].'/'.$foto;
+                          ?>
+                          <LI><IMG alt="" src="<?=$ruta;?>"></LI>
+                           <?php endforeach; ?>
                         </UL>
                    
             </DIV>
