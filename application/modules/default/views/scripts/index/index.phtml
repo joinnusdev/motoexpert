@@ -15,7 +15,8 @@
 				<h5>Recherchez votre Magasin</h5>
 				<div class="magasins-form">
 					<form action="" method="post" name="form1" id="form1">
-						<label for="select"></label> <select id="select" name="select">
+						<label for="select"></label> 
+						<select id="select" name="select">
 							<option selected="selected" value="0">Ville</option>
 							<option value="1">Ville 1</option>
 							<option value="2">Ville 2</option>
@@ -23,7 +24,8 @@
 							<option value="4">Ville 4</option>
 							<option value="5">Ville 5</option>
 							<option value="6">Ville 6</option>
-						</select> <input type="submit" value="" id="button" name="button">
+						</select> 
+						<input type="submit" value="" id="button" name="button">
 					</form>
 				</div>
 				<img height="104" width="104"
@@ -58,26 +60,13 @@
 			<div class="occasions-recherchez">
 				<h5>Recherchez une moto d’occasion</h5>
 				<div class="occasions-form">
-					<form action="" method="post" name="form1" id="form1">
-						<label class="selectlabel1" for="select"></label> <select
-							id="select" name="select">
-							<option selected="selected" value="0">Marque</option>
-							<option value="1">Marque 1</option>
-							<option value="2">Marque 2</option>
-							<option value="3">Marque 3</option>
-							<option value="4">Marque 4</option>
-							<option value="5">Marque 5</option>
-							<option value="6">Marque 6</option>
-						</select> <label class="selectlabel2" for="select"></label> <select
-							id="select" name="select">
-							<option selected="selected" value="0">Modele</option>
-							<option value="1">Modele 1</option>
-							<option value="2">Modele 2</option>
-							<option value="3">Modele 3</option>
-							<option value="4">Modele 4</option>
-							<option value="5">Modele 5</option>
-							<option value="6">Modele 6</option>
-						</select> <input type="submit" value="" id="button" name="button">
+					<form action="annonces" method="get" name="form1" id="form1">
+						<label class="selectlabel1" for="select"></label> 
+						<?=$this->form->marque?>
+						
+						 <label class="selectlabel2" for="select"></label> 
+						 <?=$this->form->modele?> 
+						<input type="submit" value="" id="button" name="button">
 					</form>
 				</div>
 				<img height="104" width="104"
@@ -162,3 +151,4 @@
 </div>
 
 
+<script src="<?php echo MEDIA_URL ?>js/marque-back.js"></script>

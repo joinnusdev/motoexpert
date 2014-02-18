@@ -1,6 +1,6 @@
 <?php
 
-class Default_IndexController extends App_Controller_Action_Default
+class Default_AnnoncesController extends App_Controller_Action_Default
 {
 
     public function init()
@@ -10,10 +10,7 @@ class Default_IndexController extends App_Controller_Action_Default
     
     public function indexAction()
     {
-        /*$modelMoto = new App_Model_Moto();
-        $result = $modelMoto->listarMarca();
-        $this->view->listarMarca = $result; */
-    	$form = new App_Form_BuscarMoto();
+    	$form = new App_Form_SearchMotoDeta();
     	$this->view->form = $form;
     }
     
