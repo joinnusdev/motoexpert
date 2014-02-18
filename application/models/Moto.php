@@ -9,10 +9,13 @@ class App_Model_Moto extends App_Db_Table_Abstract {
         ->select()->from(array('m' => $this->_name));
         return $this->_db->fetchAll($query);
         */
-       echo $query = "SELECT marque as id, marque as value FROM  motos where id_mot>1 GROUP BY marque";
-       exit;
-        return $this->getAdapter()->fetchAll($query);		
-
+       $query = "SELECT marque as id, marque as value FROM  motos where id_mot>1 GROUP BY marque";
+       try{
+        return $this->getAdapter()->fetchAll($query);
+        
+       }catch (Exception $e){
+                var_dump($e->getMessage());
+       }
         
     }
     

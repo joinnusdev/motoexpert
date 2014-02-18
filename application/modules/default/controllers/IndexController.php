@@ -11,11 +11,8 @@ class Default_IndexController extends App_Controller_Action_Default
     public function indexAction()
     {
         $modelMoto = new App_Model_Moto();
-        
         $result = $modelMoto->listarMarca();
-        print_r($result);
-        
-       
+        $this->view->listarMarca = $result;
     } 
 
 }
