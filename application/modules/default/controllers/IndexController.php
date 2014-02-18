@@ -12,7 +12,7 @@ class Default_IndexController extends App_Controller_Action_Default
     {
         $modelMoto = new App_Model_Moto();
         $result = $modelMoto->listarMarca();
-        $this->view->listarMarca = $result;
+        $this->view->listarMarca = $result; 
     } 
 
 }
