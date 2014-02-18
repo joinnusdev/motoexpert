@@ -1021,14 +1021,14 @@ p.bjqs-caption{
 	text-align:center;
 	}
 .nprev{
-	background-image:url(images/prev.jpg);
+	background-image:url(images/slider/prev.png);
 	background-repeat:no-repeat;
 	background-position:left top;
 	padding-left:30px;
 	border-right:1px solid #000;
 }
 .nnext{
-	background-image:url(images/next.jpg);
+	background-image:url(images/slider/next.png);
 	background-repeat:no-repeat;
 	background-position:top right;
 	padding-right:30px;
@@ -1469,3 +1469,23 @@ p.bjqs-caption{
 	background: -ms-linear-gradient(top, #e8e8e8 1%,#fbfbfb 100%); /* IE10+ */
 	background: linear-gradient(to bottom, #e8e8e8 1%,#fbfbfb 100%); /* W3C */
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
