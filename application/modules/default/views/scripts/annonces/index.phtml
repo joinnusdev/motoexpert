@@ -18,7 +18,7 @@
 
 		<div class="contentrechercher-right">
 
-			<form id="form1" name="form1" method="post" action="">
+			<form id="form1" name="form1" method="get" action="">
 				<div class="zone">
 					<h2>ZONE GEOGRAPHIQUE</h2>
 					<p>
@@ -53,7 +53,7 @@
 		<div class="poster-right">POSTER VOTRE ANNONCE</div>
 	</div>
 	<div id="navigation">
-		<div class="resultats">1349 RÉSUTATS TROUVÉS</div>
+		<div class="resultats"><?php echo $this->total[0] ?> RÉSUTATS TROUVÉS</div>
 		<div class="next-prev">
 			<a href="#" class="nprev">PRECEDENTE</a><a href="" class="nnext">SUIVANTE</a>
 		</div>
@@ -70,185 +70,33 @@
 	</div>
 	<!-- //***   //-->
 	<div id="results-content">
-		<div id="list_">
-			<div class="result-col3">
+	<!-- <div class="result-col3 col3no">-->
+	<?php $i=0;foreach ($this->result as $item):$i++;?>
+		
+			<div class="result-col3 <?php  if ($i % 3 == 0) echo "col3no";?>">
 				<h3>
-					MOTO EXPERT <span>METZ</span>
+					MOTO EXPERT primer <span>METZ</span>
 				</h3>
 				<div class="result-imgs">
-					<img src="images/resutats-img.jpg" width="300" height="115" />
+					<img src="<?=MEDIA_URL?>images/resutats-img.jpg" width="300" height="115" />
 				</div>
-				<div class="result-price">4200 €</div>
+				<div class="result-price">$ <?=$item['prix']?></div>
 				<div class="result-desc">
-					<div class="result-date">05/02114</div>
+					<div class="result-date"><?php echo date('d/mY', $item['date']);?></div>
 					<p>
-						<strong>Suzuki RMZ 250</strong><br /> Honda - CB 600 F ABS - 600
-						cm3 - 15550 km Année 2005 - à débattre
+						<strong><?=$item['titre']?></strong><br /> 
+						<?php echo $item['marque']. " " . $item['modele'] . " " . $item['cylindree']. " cm3 " . $item['km']. " km" . " Année " . $item['annee']?>
 					</p>
-					<a href="#" class="visuel">CONTRÛLE VISUEL</a> <a href="#"
+					<a href="fiche-moto" class="visuel">CONTRÛLE VISUEL</a> <a href="#"
 						class="garantie">GARANTIE </a>
 				</div>
 
 			</div>
-		</div>
-		<div class="result-col3">
-			<h3>
-				MOTO EXPERT <span>METZ</span>
-			</h3>
-			<div class="result-imgs">
-				<img src="images/resutats-img.jpg" width="300" height="115" />
-			</div>
-			<div class="result-price">4200 €</div>
-			<div class="result-desc">
-				<div class="result-date">05/02114</div>
-				<p>
-					<strong>Suzuki RMZ 250</strong><br /> Honda - CB 600 F ABS - 600
-					cm3 - 15550 km Année 2005 - à débattre
-				</p>
-				<a href="#" class="visuel">CONTRÛLE VISUEL</a> <a href="#"
-					class="garantie">GARANTIE </a>
-			</div>
+		
+	<?php endforeach; ?>
+		
 
-		</div>
-		<div class="result-col3 col3no">
-			<h3>
-				MOTO EXPERT <span>METZ</span>
-			</h3>
-			<div class="result-imgs">
-				<img src="images/resutats-img.jpg" width="300" height="115" />
-			</div>
-			<div class="result-price">4200 €</div>
-			<div class="result-desc">
-				<div class="result-date">05/02114</div>
-				<p>
-					<strong>Suzuki RMZ 250</strong><br /> Honda - CB 600 F ABS - 600
-					cm3 - 15550 km Année 2005 - à débattre
-				</p>
-				<a href="#" class="visuel">CONTRÛLE VISUEL</a> <a href="#"
-					class="garantie">GARANTIE </a>
-			</div>
-
-		</div>
-
-
-		<div class="result-col3">
-			<h3>
-				MOTO EXPERT <span>METZ</span>
-			</h3>
-			<div class="result-imgs">
-				<img src="images/resutats-img.jpg" width="300" height="115" />
-			</div>
-			<div class="result-price">4200 €</div>
-			<div class="result-desc">
-				<div class="result-date">05/02114</div>
-				<p>
-					<strong>Suzuki RMZ 250</strong><br /> Honda - CB 600 F ABS - 600
-					cm3 - 15550 km Année 2005 - à débattre
-				</p>
-				<a href="#" class="visuel">CONTRÛLE VISUEL</a> <a href="#"
-					class="garantie">GARANTIE </a>
-			</div>
-
-		</div>
-
-		<div class="result-col3 ">
-			<h3>
-				MOTO EXPERT <span>METZ</span>
-			</h3>
-			<div class="result-imgs">
-				<img src="images/resutats-img.jpg" width="300" height="115" />
-			</div>
-			<div class="result-price">4200 €</div>
-			<div class="result-desc">
-				<div class="result-date">05/02114</div>
-				<p>
-					<strong>Suzuki RMZ 250</strong><br /> Honda - CB 600 F ABS - 600
-					cm3 - 15550 km Année 2005 - à débattre
-				</p>
-				<a href="#" class="visuel">CONTRÛLE VISUEL</a> <a href="#"
-					class="garantie">GARANTIE </a>
-			</div>
-
-		</div>
-
-		<div class="result-col3 col3no">
-			<h3>
-				MOTO EXPERT <span>METZ</span>
-			</h3>
-			<div class="result-imgs">
-				<img src="images/resutats-img.jpg" width="300" height="115" />
-			</div>
-			<div class="result-price">4200 €</div>
-			<div class="result-desc">
-				<div class="result-date">05/02114</div>
-				<p>
-					<strong>Suzuki RMZ 250</strong><br /> Honda - CB 600 F ABS - 600
-					cm3 - 15550 km Année 2005 - à débattre
-				</p>
-				<a href="#" class="visuel">CONTRÛLE VISUEL</a> <a href="#"
-					class="garantie">GARANTIE </a>
-			</div>
-
-		</div>
-
-		<div class="result-col3">
-			<h3>
-				MOTO EXPERT <span>METZ</span>
-			</h3>
-			<div class="result-imgs">
-				<img src="images/resutats-img.jpg" width="300" height="115" />
-			</div>
-			<div class="result-price">4200 €</div>
-			<div class="result-desc">
-				<div class="result-date">05/02114</div>
-				<p>
-					<strong>Suzuki RMZ 250</strong><br /> Honda - CB 600 F ABS - 600
-					cm3 - 15550 km Année 2005 - à débattre
-				</p>
-				<a href="#" class="visuel">CONTRÛLE VISUEL</a> <a href="#"
-					class="garantie">GARANTIE </a>
-			</div>
-
-		</div>
-
-		<div class="result-col3 ">
-			<h3>
-				MOTO EXPERT <span>METZ</span>
-			</h3>
-			<div class="result-imgs">
-				<img src="images/resutats-img.jpg" width="300" height="115" />
-			</div>
-			<div class="result-price">4200 €</div>
-			<div class="result-desc">
-				<div class="result-date">05/02114</div>
-				<p>
-					<strong>Suzuki RMZ 250</strong><br /> Honda - CB 600 F ABS - 600
-					cm3 - 15550 km Année 2005 - à débattre
-				</p>
-				<a href="#" class="visuel">CONTRÛLE VISUEL</a> <a href="#"
-					class="garantie">GARANTIE </a>
-			</div>
-
-		</div>
-
-		<div class="result-col3 col3no">
-			<h3>
-				MOTO EXPERT <span>METZ</span>
-			</h3>
-			<div class="result-imgs">
-				<img src="images/resutats-img.jpg" width="300" height="115" />
-			</div>
-			<div class="result-price">4200 €</div>
-			<div class="result-desc">
-				<div class="result-date">05/02114</div>
-				<p>
-					<strong>Suzuki RMZ 250</strong><br /> Honda - CB 600 F ABS - 600
-					cm3 - 15550 km Année 2005 - à débattre
-				</p>
-				<a href="#" class="visuel">CONTRÛLE VISUEL</a> <a href="#"
-					class="garantie">GARANTIE </a>
-			</div>
-		</div>
+<!-- fin result -->
 </div>
 
 
@@ -271,3 +119,57 @@
 </div>
 
 <script src="<?php echo MEDIA_URL ?>js/marque-back.js"></script>
+
+<script>
+$(function(){
+    
+    var combodep = {        
+        init : function() {
+           this.Combo("#marque", "#modele", "--- MARQUE ---", "/default/index/get-modele", "id", "value");           
+        },        
+        Combo : function (c, cd, def, url, fieldv, fields) {            
+            
+                var actual = $(c);
+                
+                if (actual.val() != 0) {                    
+                    
+                    $(cd).removeAttr("disabled");
+                    $.ajax({
+                        url: url,
+                        type: 'post',
+                        data: {
+                           id : actual.val()
+                        },
+                        dataType: 'json',                        
+                        success: function(data){
+                                $(cd).html("<option value='0'> -- Modele -- </option>");
+
+
+                                $.each(data, function(index, value){
+                                	var select = ' ';
+                                	if (value[fieldv] == '<?php echo $this->announce['modele']?>')
+                                         var selec = 'selected="selected "';
+                                    
+                                    $(cd).append("<option "+ selec +" value='"+value[fieldv]+"'>"+value[fields]+"</option>");
+                                });
+
+                                
+                        }
+                    });                    
+                } else {
+                    $(cd).html("");
+                    $(cd).append("<option value='0'> -- Modele -- </option>");
+                    $(cd).attr("disabled", "disabled");
+                    
+                    
+                }
+            
+       }
+    };    
+    combodep.init();
+    
+});
+
+
+
+</script>

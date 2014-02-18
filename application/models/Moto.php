@@ -39,4 +39,3 @@ class App_Model_Moto extends App_Db_Table_Abstract {
     
 	
 }
-?>

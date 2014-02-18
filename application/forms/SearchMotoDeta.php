@@ -15,16 +15,19 @@ class App_Form_SearchMotoDeta extends App_Form
         $e->setMultiOptions(array('0'=> '-- Modele --'));
         $this->addElement($e);
         
+        $multi = new App_Model_Category();
         $e = new Zend_Form_Element_Select('category');
-        $e->setMultiOptions(array('0'=> 'Catégorie'));
+        $e->setMultiOptions(array('0'=> 'Catégorie')+$multi->listCategory());
         $this->addElement($e);
         
+        $multi = new App_Model_Department();
         $e = new Zend_Form_Element_Select('deparment');
-        $e->setMultiOptions(array('0'=> 'Département'));
+        $e->setMultiOptions(array('0'=> 'Département') + $multi->listDepartment());
         $this->addElement($e);
         
+        $multi = new App_Model_Magasin();
         $e = new Zend_Form_Element_Select('magasin');
-        $e->setMultiOptions(array('0'=> 'Magasin'));
+        $e->setMultiOptions(array('0'=> 'Magasin') + $multi->listMagasin());
         $this->addElement($e);
         
         

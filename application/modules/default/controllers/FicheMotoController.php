@@ -1,6 +1,6 @@
 <?php
 
-class Default_AnnoncesController extends App_Controller_Action_Default
+class Default_FicheMotoController extends App_Controller_Action_Default
 {
 
     public function init()
@@ -10,17 +10,8 @@ class Default_AnnoncesController extends App_Controller_Action_Default
     
     public function indexAction()
     {
-    	$datos = $this->getAllParams();
     	$form = new App_Form_SearchMotoDeta();
-    	$form->populate($datos);
     	$this->view->form = $form;
-    	$this->view->announce = $datos;
-    	
-    	$modelAnounce = new App_Model_Announce();
-    	$this->view->result = $modelAnounce->listSearch($datos);    	
-    	$this->view->total = $modelAnounce->countSearch($datos);
-    	
-    	
     }
     
     public function getModeleAction()

@@ -5,8 +5,7 @@ class App_Model_Category extends App_Db_Table_Abstract {
 
     public function listCategory(){
         $query = $this->_db
-        ->select()->from(array('c' => $this->_name));
-        return $this->_db->fetchAll($query);
+        ->select()->from(array('c' => $this->_name), array('id_cat', 'nom_cat'));
+        return $this->_db->fetchPairs($query);
     }
 }
-?>
