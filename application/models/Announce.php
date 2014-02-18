@@ -13,27 +13,31 @@ class App_Model_Announce extends App_Db_Table_Abstract {
 		AND a.ref = ac.ref
 		AND ac.id_cat = c.id_cat
 		";
-		if (isset($datos['deparment']) and $datos['deparment'] != 0)
+		if (!isset($datos['deparment']) and !isset($datos['category']) and !isset($datos['magasin']) and !isset($datos['marque']) and !isset($datos['modele']))
+			return false;
+		
+		if (isset($datos['deparment']) and $datos['deparment'] != 0 and !is_null($datos))
 			 $query.= " AND a.departement = ".$datos['deparment'];
 		
-		if (isset($datos['category']) and $datos['category'] != 0)
+		if (isset($datos['category']) and $datos['category'] != 0 and !is_null($datos))
 			$query.= " AND a.id_cat = ".$datos['category'];
 		
-		if (isset($datos['magasin']) and $datos['magasin'] != 0)
+		if (isset($datos['magasin']) and $datos['magasin'] != 0 and !is_null($datos))
 			$query.= " AND a.id_me = ".$datos['magasin'];
 		
-		if (isset($datos['marque']) and $datos['marque'] != "") {
+		if (isset($datos['marque']) and $datos['marque'] != "" and $datos['marque'] != 0 and !is_null($datos)) {
 			$query.= " AND a.marque = ". '"'.$datos['marque'].'"';
 		}
-		if (isset($datos['modele']) and $datos['modele'] != 0)
+		if (isset($datos['modele']) and $datos['modele'] != 0  and !is_null($datos))
 			$query.= " AND m.id_mot = ".$datos['modele'];
 			 
 			 
 			try{
+				
 			return $this->getAdapter()->fetchAll($query);
 			 
 		}catch (Exception $e){
-			var_dump($e->getMessage());
+			var_dump($e->getMessage());			
 		}
 
 	}
