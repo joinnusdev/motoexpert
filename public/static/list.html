@@ -1,0 +1,353 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="style2.css"/>
+<link rel="stylesheet" type="text/css" href="responsive.css"/>
+<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300italic,400italic,700italic,400,300,700' rel='stylesheet' type='text/css'>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<script type="text/javascript" src="js/scroll.js"></script>
+		<script type="text/javascript">
+		$(document).ready(function()
+		{
+			$('#results-content').scrollExtend(
+			{
+				'target': '#list_',
+				'url': 'scroll.php'
+			});
+		});
+		</script>
+
+<title>MOTO EXPERT - Réseau de magasins spécialisés moto, annonces moto occasion, accessoires moto</title>
+</head>
+<body>
+	<div id="wrapper">
+		<div id="header">
+        	<div id="logo"><a href="index.html" title="MOTO EXPERT - Réseau de magasins spécialisés moto, annonces moto occasion, accessoires moto"><img src="images/logo.png" width="308" height="113"  alt="MOTO EXPERT - Réseau de magasins spécialisés moto, annonces moto occasion, accessoires moto" /></a></div>
+            <div id="header-right">
+            	<div class="header-top">
+               	<a href="#">ACTUALITE RESEAU</a> - <a href="#">NEWSLETTER</a> <a href="#" class="nomcompte">MON COMPTE</a>                
+                </div>
+                       
+            </div><div class="header-menu">
+                	<ul>
+                    	<li><a href="#" class="menu-red">ACCUEIL</a></li>
+                        <li><a href="#" class="menu-yellow">OCCASION MOTO</a></li>
+                        <li><a href="#" class="menu-blue">FRANCHISE ET SERVICES</a></li>
+                        <li class="noborder"><a href="#" class="menu-green">CONTACT</a></li>
+                    </ul>
+               	           
+                </div>
+        </div>
+        <div id="content" class="paddin30"> 
+        	<div id="content-top">
+            
+                            <div class="top-left">MOTO EXPERT <br /><span>MOTOS D'OCCASION</span></div>
+                            <div class="top-right">VOUS VENDEZ VOTRE MOTO? NOUS NOUS OCCUPONS DE TOUT</div>
+            </div>
+        	<div class="contentrechercher">
+       		  <div class="contentrechercher-left">
+               	<h2>RECHERCHER UNE MOTO PARMI 1311  VÉHICULES </h2>
+                <p>Rechercher une moto parmi 1311 véhicules d'occasion Vous souhaitez acheter une moto d'occasion. vous trouverez ici des centaines d'annonces récentes, détaillées et mises à jour quotidiennement.</p></div>
+                
+              <div class="contentrechercher-right">
+                
+                <form id="form1" name="form1" method="post" action="">
+                <div class="zone">
+                   	  <h2>ZONE GEOGRAPHIQUE</h2>
+                  <p>
+                        <label for="select3"></label>
+                    <select name="select3" id="select3">
+                          <option value="0" selected="selected">Département </option>
+                          <option value="1">Département  1</option>
+                          <option value="2">Département  2</option>
+                          <option value="3">Département  3</option>
+                          <option value="4">Département  4</option>
+                          <option value="5">Département  5</option>
+                          <option value="6">Département  6</option>
+                    </select> 
+                    <label for="select2" class="selectlabel1"></label>
+                    <select name="select2" id="select2">
+                          <option value="0" selected="selected">Magasin </option>
+                          <option value="1">Magasin  1</option>
+                          <option value="2">Magasin  2</option>
+                          <option value="3">Magasin  3</option>
+                          <option value="4">Magasin  4</option>
+                          <option value="5">Magasin  5</option>
+                          <option value="6">Magasin  6</option>
+                    </select>
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                  </p>
+                  <br />
+                              
+                        
+                  </div>
+                    <div class="vehicule">
+                   	  <h2>VEHICULE</h2>
+                  <label for="select4" class="selectlabel4"></label>
+                  <select name="select4" id="select4">
+                                	<option value="0" selected="selected">Catégorie</option>
+                                    <option value="1">Catégorie 1</option>
+                                    <option value="2">Catégorie 2</option>
+                                    <option value="3">Catégorie 3</option>
+                                    <option value="4">Catégorie 4</option>
+                                    <option value="5">Catégorie 5</option>
+                                    <option value="6">Catégorie 6</option>
+                      </select>
+                      <label for="select5" class="selectlabel1"></label>
+                  <select name="select5" id="select5">
+                                	<option value="0" selected="selected">Marque </option>
+                                    <option value="1">Marque  1</option>
+                                    <option value="2">Marque  2</option>
+                                    <option value="3">Marque  3</option>
+                                    <option value="4">Marque  4</option>
+                                    <option value="5">Marque  5</option>
+                                    <option value="6">Marque  6</option>
+                      </select>
+                  <label for="select5" class="selectlabel2"></label>
+                  <select name="select5" id="select5">
+                                	<option value="0" selected="selected">Modele </option>
+                                    <option value="1">Modele  1</option>
+                                    <option value="2">Modele  2</option>
+                                    <option value="3">Modele  3</option>
+                                    <option value="4">Modele  4</option>
+                                    <option value="5">Modele  5</option>
+                                    <option value="6">Modele  6</option>
+                      </select>
+                  
+                             
+                    </div><input type="submit" name="button2" id="button2" value="RECHERCHER " />
+                </form>
+              <!-- //magasins // --></div>
+        	</div>
+          <div id="poster">
+            	<div class="poster-left">VOUS VENDEZ VOTRE MOTO ? NOUS NOUS OCCUPONS DE TOUT </div>
+            	<div class="poster-right">POSTER VOTRE ANNONCE</div>
+          </div>
+          <div id="navigation">
+          	<div class="resultats">1349 RÉSUTATS TROUVÉS </div>
+            <div class="next-prev">
+            	<a href="#" class="nprev">PRECEDENTE</a><a href="" class="nnext">SUIVANTE</a>
+            </div>
+            <div class="trier">
+              <form id="form2" name="form2" method="post" action="">
+                <label for="select6"></label>
+                <select name="select6" id="select6">
+                  <option value="0">TRIER</option>
+                  <option value="0">TRIER 1</option>
+                  <option value="0">TRIER 2</option>
+                  <option value="0">TRIER 3</option>
+                </select>
+              </form>
+            </div>
+          </div>
+          <!-- //***   //-->
+          <div id="results-content">
+          <div id="list_">
+                    <div class="result-col3">
+                        <h3>MOTO EXPERT <span>METZ</span>                </h3>
+                        <div class="result-imgs"><img src="images/resutats-img.jpg" width="300" height="115" /></div>
+                      <div class="result-price">4200  € </div>
+                        <div class="result-desc">
+                        <div class="result-date">05/02114 </div>
+                         <p><strong>Suzuki RMZ 250</strong><br />
+                       Honda - CB 600 F ABS - 600 cm3 - 15550 km Année 2005 - à débattre</p>
+                        <a href="#" class="visuel">CONTRÛLE VISUEL</a> <a href="#" class="garantie">GARANTIE </a>
+                        </div>
+                    
+                    </div>
+           </div>
+            <div class="result-col3">
+            	<h3>MOTO EXPERT <span>METZ</span>                </h3>
+            	<div class="result-imgs"><img src="images/resutats-img.jpg" width="300" height="115" /></div>
+           	  <div class="result-price">4200  € </div>
+                <div class="result-desc">
+                <div class="result-date">05/02114 </div>
+                 <p><strong>Suzuki RMZ 250</strong><br />
+               Honda - CB 600 F ABS - 600 cm3 - 15550 km Année 2005 - à débattre</p>
+                <a href="#" class="visuel">CONTRÛLE VISUEL</a> <a href="#" class="garantie">GARANTIE </a>
+                </div>
+            
+           </div>
+            <div class="result-col3 col3no">
+            	<h3>MOTO EXPERT <span>METZ</span>                </h3>
+            	<div class="result-imgs"><img src="images/resutats-img.jpg" width="300" height="115" /></div>
+           	  <div class="result-price">4200  € </div>
+                <div class="result-desc">
+                <div class="result-date">05/02114 </div>
+                 <p><strong>Suzuki RMZ 250</strong><br />
+               Honda - CB 600 F ABS - 600 cm3 - 15550 km Année 2005 - à débattre</p>
+                <a href="#" class="visuel">CONTRÛLE VISUEL</a> <a href="#" class="garantie">GARANTIE </a>
+                </div>
+            
+           </div>
+
+
+            <div class="result-col3">
+            	<h3>MOTO EXPERT <span>METZ</span>                </h3>
+            	<div class="result-imgs"><img src="images/resutats-img.jpg" width="300" height="115" /></div>
+           	  <div class="result-price">4200  € </div>
+                <div class="result-desc">
+                <div class="result-date">05/02114 </div>
+                 <p><strong>Suzuki RMZ 250</strong><br />
+               Honda - CB 600 F ABS - 600 cm3 - 15550 km Année 2005 - à débattre</p>
+                <a href="#" class="visuel">CONTRÛLE VISUEL</a> <a href="#" class="garantie">GARANTIE </a>
+                </div>
+            
+           </div>
+
+            <div class="result-col3 ">
+            	<h3>MOTO EXPERT <span>METZ</span>                </h3>
+            	<div class="result-imgs"><img src="images/resutats-img.jpg" width="300" height="115" /></div>
+           	  <div class="result-price">4200  € </div>
+                <div class="result-desc">
+                <div class="result-date">05/02114 </div>
+                 <p><strong>Suzuki RMZ 250</strong><br />
+               Honda - CB 600 F ABS - 600 cm3 - 15550 km Année 2005 - à débattre</p>
+                <a href="#" class="visuel">CONTRÛLE VISUEL</a> <a href="#" class="garantie">GARANTIE </a>
+                </div>
+            
+           </div>
+
+            <div class="result-col3 col3no">
+            	<h3>MOTO EXPERT <span>METZ</span>                </h3>
+            	<div class="result-imgs"><img src="images/resutats-img.jpg" width="300" height="115" /></div>
+           	  <div class="result-price">4200  € </div>
+                <div class="result-desc">
+                <div class="result-date">05/02114 </div>
+                 <p><strong>Suzuki RMZ 250</strong><br />
+               Honda - CB 600 F ABS - 600 cm3 - 15550 km Année 2005 - à débattre</p>
+                <a href="#" class="visuel">CONTRÛLE VISUEL</a> <a href="#" class="garantie">GARANTIE </a>
+                </div>
+            
+           </div>
+
+            <div class="result-col3">
+            	<h3>MOTO EXPERT <span>METZ</span>                </h3>
+            	<div class="result-imgs"><img src="images/resutats-img.jpg" width="300" height="115" /></div>
+           	  <div class="result-price">4200  € </div>
+                <div class="result-desc">
+                <div class="result-date">05/02114 </div>
+                 <p><strong>Suzuki RMZ 250</strong><br />
+               Honda - CB 600 F ABS - 600 cm3 - 15550 km Année 2005 - à débattre</p>
+                <a href="#" class="visuel">CONTRÛLE VISUEL</a> <a href="#" class="garantie">GARANTIE </a>
+                </div>
+            
+           </div>
+
+            <div class="result-col3 ">
+            	<h3>MOTO EXPERT <span>METZ</span>                </h3>
+            	<div class="result-imgs"><img src="images/resutats-img.jpg" width="300" height="115" /></div>
+           	  <div class="result-price">4200  € </div>
+                <div class="result-desc">
+                <div class="result-date">05/02114 </div>
+                 <p><strong>Suzuki RMZ 250</strong><br />
+               Honda - CB 600 F ABS - 600 cm3 - 15550 km Année 2005 - à débattre</p>
+                <a href="#" class="visuel">CONTRÛLE VISUEL</a> <a href="#" class="garantie">GARANTIE </a>
+                </div>
+            
+           </div>
+
+            <div class="result-col3 col3no">
+            	<h3>MOTO EXPERT <span>METZ</span>                </h3>
+            	<div class="result-imgs"><img src="images/resutats-img.jpg" width="300" height="115" /></div>
+           	  <div class="result-price">4200  € </div>
+                <div class="result-desc">
+                <div class="result-date">05/02114 </div>
+                 <p><strong>Suzuki RMZ 250</strong><br />
+               Honda - CB 600 F ABS - 600 cm3 - 15550 km Année 2005 - à débattre</p>
+                <a href="#" class="visuel">CONTRÛLE VISUEL</a> <a href="#" class="garantie">GARANTIE </a>
+                </div>
+            
+           </div>
+
+
+
+
+
+
+
+
+
+
+          </div>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+                      <div id="navigation">
+          	<div class="resultats">1349 RÉSUTATS TROUVÉS </div>
+            <div class="next-prev">
+            	<a href="#" class="nprev">PRECEDENTE</a><a href="" class="nnext">SUIVANTE</a>
+            </div>
+            <div class="trier">
+              <form id="form2" name="form2" method="post" action="">
+                <label for="select6"></label>
+                <select name="select6" id="select6">
+                  <option value="0">TRIER</option>
+                  <option value="0">TRIER 1</option>
+                  <option value="0">TRIER 2</option>
+                  <option value="0">TRIER 3</option>
+                </select>
+              </form>
+            </div>
+          </div>
+          </div>
+          
+          
+          
+          
+          
+
+          
+          
+          
+        <div id="footer">
+        	<div class="footer-logo"><img src="images/footer-logo.png" width="264" height="97" /></div>
+            <div class="footer-col1">
+              <a href="#">DÉPOSEZ VOTRE ANNONCE GRATUITE</a></p>
+              <a href="#">MOTOS D’OCCASIONS</a></p>
+            </div>
+          <div class="footer-col2">
+	          <h3>LES SERVICES MOTO EXPERT</h3>
+              <form id="form3" name="form3" method="post" action="">
+                                <label for="select"></label>
+                                <select name="select" id="select">
+                                	<option value="0" selected="selected">Ville</option>
+                                    <option value="1">Ville 1</option>
+                                    <option value="2">Ville 2</option>
+                                    <option value="3">Ville 3</option>
+                                    <option value="4">Ville 4</option>
+                                    <option value="5">Ville 5</option>
+                                    <option value="6">Ville 6</option>
+                                </select> 
+                                <input type="submit" name="button" id="button" value="" />
+                              </form>
+              
+          </div>
+          <div class="footer-col3">
+          	<h3>LES SERVICES MOTO EXPERT</h3>
+              <a href="#">Occasion moto</a>
+              <a href="#">Service rapide</a>
+              <a href="#">Fan Club</a>
+          </div>
+          <div class="footer-col4">
+          	<a href="#">L’ACTU</a>
+            <a href="#">CONTACTS</a>         
+          </div>
+          
+          <div class="copy">© 2014 MOTOEXPERT   Réalisation : Infra - Tous droits réservé</div>
+        </div>
+	</div>
+    
+
+</body>
+</html>
