@@ -73,21 +73,21 @@
 	<!-- <div class="result-col3 col3no">-->
 	<?php $i=0;foreach ($this->result as $item):$i++;?>
 		
-			<div class="result-col3">
+			<div class="result-col3 <?php  if ($i % 3 == 0) echo "col3no";?>">
 				<h3>
 					MOTO EXPERT primer <span>METZ</span>
 				</h3>
 				<div class="result-imgs">
 					<img src="<?=MEDIA_URL?>images/resutats-img.jpg" width="300" height="115" />
 				</div>
-				<div class="result-price"><?=$item['prix']?></div>
+				<div class="result-price">$ <?=$item['prix']?></div>
 				<div class="result-desc">
 					<div class="result-date"><?php echo date('d/mY', $item['date']);?></div>
 					<p>
 						<strong><?=$item['titre']?></strong><br /> 
 						<?php echo $item['marque']. " " . $item['modele'] . " " . $item['cylindree']. " cm3 " . $item['km']. " km" . " Année " . $item['annee']?>
 					</p>
-					<a href="#" class="visuel">CONTRÛLE VISUEL</a> <a href="#"
+					<a href="fiche-moto" class="visuel">CONTRÛLE VISUEL</a> <a href="#"
 						class="garantie">GARANTIE </a>
 				</div>
 
