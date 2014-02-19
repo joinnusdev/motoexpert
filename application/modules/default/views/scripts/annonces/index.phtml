@@ -10,8 +10,8 @@
 	</div>
 	<div class="contentrechercher">
 		<div class="contentrechercher-left">
-			<h2>RECHERCHER UNE MOTO PARMI 1311 VÉHICULES</h2>
-			<p>Rechercher une moto parmi 1311 véhicules d'occasion Vous souhaitez
+			<h2>RECHERCHER UNE MOTO PARMI <?= $this->totalAnuncio['totalAnnounce'];?> VÉHICULES</h2>
+			<p>Rechercher une moto parmi <?= $this->totalAnuncio['totalAnnounce'];?> véhicules d'occasion Vous souhaitez
 				acheter une moto d'occasion. vous trouverez ici des centaines
 				d'annonces récentes, détaillées et mises à jour quotidiennement.</p>
 		</div>
@@ -37,10 +37,7 @@
 					<label for="select5" class="selectlabel1"></label> 
 					<?= $this->form->marque?>
 					 <label for="select5" class="selectlabel2"></label> 
-					 
 					 <?= $this->form->modele?>
-
-
 				</div>
 				<input type="submit" name="button2" id="button2" value="RECHERCHER " />
 			</form>

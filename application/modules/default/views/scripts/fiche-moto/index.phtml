@@ -97,24 +97,29 @@
               </div>
                
                <div style="width:100%; height:10px; clear:both"></div>
-               
-               
+               <?php if($this->detailAnnonces['type_occaz']==1): ?>
                <div class="col2 align-left"> 
-            	<div class="subtitle">
-                	<div class="icontitle icon-contact">
-                            <?php if($this->detailAnnonces['type_occaz']==1):
-                                echo "CONTACTEZ DIRECTEMENT LE VENDEUR";    
-                            endif;
-                            ?>
-                            <?php if($this->detailAnnonces['type_occaz']==2):
-                                echo "CONTACTEZ DIRECTEMENT LE MAGASIN";
-                            endif;
-                            ?>
-                            
-                        </div>
+                <div class="subtitle">
+                    <div class="icontitle icon-contact">
+                        CONTACTEZ DIRECTEMENT LE VENDEUR
+                    </div>
+                </div>
+              
+              <div class="col2 align-left margin-top">
+                    <p><?php echo $this->detailAnnonces['nom'];?></p>
+                    <p>Port: <?=$this->detailAnnonces['tel'];?> </p>
               </div>
+            </div>
+            <?php endif;?>
+            <!-- SI ES TIENDA -->   
+            <?php if($this->detailAnnonces['type_occaz']==2): ?>
+            <div class="col2 align-left"> 
+                <div class="subtitle">
+                    <div class="icontitle icon-contact">
+                         CONTACTEZ DIRECTEMENT LE MAGASIN
+                    </div>
+                </div>
               <div class="top-left">MOTO EXPERT <br /><span>METZ </span></div>
-             
               <div class="col2 align-left margin-top">
               	<div class="col21"><img src="<?=MEDIA_URL ?>images/map.jpg" width="222" height="119" /></div>
                 <div class="col22">
@@ -129,10 +134,9 @@
                 </div>
               
               </div>
-              
-              
-            
             </div>
+            <?php endif;?>   
+               
               
               <div class="col2  align-right">
               <div class="col2  align-left">

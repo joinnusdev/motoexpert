@@ -5,7 +5,7 @@
 		<h2>
 			LE RÉSEAU <br>MOTOEXPERT
 		</h2>
-		<div class="magasins-right">› 43 Magasins en France</div>
+		<div class="magasins-right">› <?= $this->countMagasin['magasin'];?> Magasins en France</div>
 	</div>
 	<div id="magasins-bg">
 		<div class="magasins-content">
@@ -14,17 +14,9 @@
 			<div class="magasins-recherchez">
 				<h5>Recherchez votre Magasin</h5>
 				<div class="magasins-form">
-					<form action="" method="post" name="form1" id="form1">
+					<form action="magasin" method="get" name="magasin" id="magasin">
 						<label for="select"></label> 
-						<select id="select" name="select">
-							<option selected="selected" value="0">Ville</option>
-							<option value="1">Ville 1</option>
-							<option value="2">Ville 2</option>
-							<option value="3">Ville 3</option>
-							<option value="4">Ville 4</option>
-							<option value="5">Ville 5</option>
-							<option value="6">Ville 6</option>
-						</select> 
+                                                    <?= $this->formMagasin->magasin?>
 						<input type="submit" value="" id="button" name="button">
 					</form>
 				</div>

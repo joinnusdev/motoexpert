@@ -37,6 +37,9 @@ p{
 	margin:0;}
 img{
 		border:0px;}
+.content960{
+	width:960px;
+	float:left;}
 /** header **/
 #header{
 	width:1004px;
@@ -126,7 +129,7 @@ img{
 
 #content{
 	float:left;
-	min-height:500px;
+	min-height:280px;
 	width:1004px;
 	margin-top:10px;
 	padding:0 20px 0  0;
@@ -230,7 +233,7 @@ img{
 	background: linear-gradient(to bottom, #e8e8e8 1%,#fbfbfb 100%); /* W3C */
 	}
 	
-.magasins-form 	label {position:relative;}
+.magasins-form 	label {position:relative; display:none !important}
 .magasins-form label:after {
     content:'◀▶';
     font:12px "Consolas", monospace;
@@ -309,6 +312,40 @@ img{
 	float:left;
 	margin:0;
 	}
+/**************************************************/
+#ye-top{
+	min-height:78px;
+	float:left;
+	width:100%;
+	background-image:url(images/line.png);
+	background-repeat:no-repeat;
+	background-position:bottom;
+	background-size:100%;
+	}
+#ye-top h2{
+	font-family: 'Roboto Condensed', sans-serif;
+	color:#000;
+	font-size:24px;
+	font-weight:700;
+	line-height:24px;
+	padding:10px 0 0 15px;
+	width:40%;
+	float:left;
+	margin:0;
+	}
+.ye-right{
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:13px;
+	color:#000;
+	float:right;
+	width:40%;
+	padding:45px 20px 0 0;
+	text-align:right;
+	background-image:url(images/ye-ri.png);
+	background-repeat:no-repeat;
+	background-position:right top;
+	}
+/**************************************************/	
 .occasions-right{
 	font-family:Arial, Helvetica, sans-serif;
 	font-size:13px;
@@ -360,6 +397,7 @@ img{
 	padding:5px 0 0 0;
 	margin:0px;
 	display:block;
+	float: left
 	}
 .occasions-form{
 	float:right;
@@ -383,7 +421,7 @@ img{
 	background: linear-gradient(to bottom, #e8e8e8 1%,#fbfbfb 100%); /* W3C */
 	}
 	
-.occasions-form label {position:relative;}
+.occasions-form label {position:relative;  display:none !important}
 .occasions-form label:after {
     content:'◀▶';
     font:12px "Consolas", monospace;
@@ -416,10 +454,11 @@ img{
 	font-weight:bold;
 	font-size:14px;
 	padding:3px 50px;
-	margin:6px 0 0 0;
+	margin:-26px 32px 0 0;
 	display: inline-block;
 	background-color:#FFF;
 	color:#EBA200;
+	float:right;
 	}
 .occasions-form input[type=submit]{
 	width:28px;
@@ -528,6 +567,18 @@ img{
 	text-decoration:none;
 	color:#333;
 	padding:10px 0}
+.block-link{
+	float:right;
+	display:block;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:14px;
+	font-weight:bold;
+	text-decoration:none;
+	color:#333;
+	padding:5px 0;
+	margin:0 35px 10px 0;
+
+}
 /** Sliders **/	
 #sliders{
 	width:985px;
@@ -762,7 +813,7 @@ p.bjqs-caption{
 	background: linear-gradient(to bottom, #e8e8e8 1%,#fbfbfb 100%); /* W3C */
 	}
 	
-.footer-col2 	label {position:relative;}
+.footer-col2 	label {position:relative;  display:none !important}
 .footer-col2 label:after {
     content:'◀▶';
     font:12px "Consolas", monospace;
@@ -902,7 +953,7 @@ p.bjqs-caption{
 	background: linear-gradient(to bottom, #e8e8e8 1%,#fbfbfb 100%); /* W3C */
 	}
 	
-.contentrechercher-right label {position:relative;}
+.contentrechercher-right label {position:relative;  display:none !important}
 .contentrechercher-right label:after {
     content:'◀▶';
     font:12px "Consolas", monospace;
@@ -1021,14 +1072,14 @@ p.bjqs-caption{
 	text-align:center;
 	}
 .nprev{
-	background-image:url(images/slider/prev.png);
+	background-image:url(images/prev.jpg);
 	background-repeat:no-repeat;
 	background-position:left top;
 	padding-left:30px;
 	border-right:1px solid #000;
 }
 .nnext{
-	background-image:url(images/slider/next.png);
+	background-image:url(images/next.jpg);
 	background-repeat:no-repeat;
 	background-position:top right;
 	padding-right:30px;
@@ -1072,6 +1123,9 @@ p.bjqs-caption{
 	min-height:228px;
 	border-bottom:1px solid #CACACA;
 	}
+.no-bor-bot{
+	border-bottom:0px !important;
+	}
 .result-col3 h3{
 	font-family: 'Roboto Condensed', sans-serif;
 	font-weight:bold;
@@ -1099,16 +1153,18 @@ p.bjqs-caption{
 
 	}
 .visuel{
-	background-image:url(images/visuel.jpg);
+	background-image:url(images/visuel.png);
 	background-repeat:no-repeat;
-	background-position:left center;
-	padding:10px 0 10px 22px;;
+	background-position:left top;
+	padding:0px 0 10px 22px;
+	margin-top:5px;
 	}
 .garantie{
-	background-image:url(images/garantie.jpg);
+	background-image:url(images/garantie.png);
 	background-repeat:no-repeat;
-	background-position:left center;
-	padding:10px 0 10px 22px;;
+	background-position:left top;
+	padding:0px 0 10px 22px;
+	margin-top:5px;
 	}
 	
 	
@@ -1128,6 +1184,23 @@ p.bjqs-caption{
 	margin:-10px 10px 0 0;
 	z-index:999
 	}
+.result-price-w{
+	position:relative;
+	font-family: 'Roboto Condensed', sans-serif;
+	font-weight:bold;
+	width:100px;
+	min-height:34px;
+	background-color:#FFF;
+	color:#FACB01;
+	float:right;
+	font-size:24px;
+	text-align:center;
+	margin-top:-25px;
+	margin:-10px 10px 0 0;
+	z-index:999
+	}
+.result-desc p{
+	width:300px !important;}
 .result-desc{
 	font-family:Arial, Helvetica, sans-serif;
 	font-size:13px;
@@ -1212,6 +1285,18 @@ p.bjqs-caption{
 	font-size:14px;
 	line-height:18px;
 	}
+.col2-lo{
+	width:470px;
+	margin:0 0 0 10px;
+	min-height:50px;
+	color:#646464;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:14px;
+	line-height:18px;
+	}
+.col470{
+	width:470px !important;
+	}
 .partager{
 	float:left;
 	width:100%;
@@ -1291,6 +1376,20 @@ p.bjqs-caption{
 	font-size:14px;
 	font-weight:bold;
 }
+.col2 .subtitle3{
+	width:100%;
+	min-height:36px;
+	background-image:url(images/title-bg.jpg);
+	background-repeat:no-repeat;
+	background-position:right top;
+	background-color:#676767;
+	color:#FFF;
+	text-align:left;
+	float:left;
+	margin:4px 0 0 0;
+	font-size:14px;
+	font-weight:bold;
+}
 .col2 .icontitle{	
 	background-repeat:no-repeat;
 	background-position:left top;
@@ -1299,6 +1398,11 @@ p.bjqs-caption{
 }
 .icon-envoyer{
 	background-image:url(images/icon-envoyer.jpg);
+}
+.icon-envoyer a{
+	color:#FFF;
+	text-decoration:none !important;
+
 }
 .icon-contact{
 	background-image:url(images/icon-contact.jpg);
@@ -1382,7 +1486,7 @@ p.bjqs-caption{
 	font-size:13px;
 	}
 
-.col2 input[type="submit"]{
+.col2 input[type="submit"], .col2-lo input[type="submit"]{
 	background-image:url(images/title-bg.jpg);
 	background-repeat:no-repeat;
 	background-position: right center;
@@ -1408,25 +1512,32 @@ p.bjqs-caption{
 .col21{
 	width:222px;
 	float:left;
-	min-height:150px;
+	min-height:100px;
 	}
 .col22{
 	width:248px;
 	float:right;
 	min-height:150px;
 	}
-.col22 p{
+.col230{
+	width:230px;
+	float: left;
+	margin:0 0 0 15px;
+	min-height:100px;
+	line-height:16px !important;
+	}
+.col22 p, .col230 p, .col21 p{
 	font-family:Arial, Helvetica, sans-serif;
 	font-size:13px;
 	}
-.col22 h3{
+.col22 h3, .col230 h3, .col21 h3{
 	font-family: 'Roboto Condensed', sans-serif;
 	font-weight:bold;
 	font-size:16px;
 	padding:0px;
 	margin:5px 0;
 	}
-.col22 .subtitle2{
+.col22 .subtitle2, .col2 .subtitle2{
 	width:100%;
 	background-image:url(images/title-bg.jpg);
 	background-repeat:no-repeat;
@@ -1441,20 +1552,53 @@ p.bjqs-caption{
 	font-size:11px;
 	font-weight:bold;
 }
+#login-c{
+	width:980px;
+	float:left;
+	margin-top:15px;
+	}
 .login{
 	width:300px;
 	border:2px solid #666;
-	min-height:180px;
+	min-height:145px;
 	}
 .login-content{
 	width:280px;
 	float:left;
-	padding:8px 8px 0 11px;}
+	padding:10px 8px 0 11px;
+}
+.passe{
+	float:right;
+	width:170px;
+	text-align:left;
+	padding:0px 0;
+	}	
+.passe a{
+	color:#676767;
+	float:right;
+	width:170px;
+	text-align:left;
+	padding:4px 0;
+	}	
+.login-content h3{
+	font-size:16px;
+font-family: 'Roboto Condensed', sans-serif;
+padding:5px 0px 10px 0;
+margin:0px;
+}
+.login-content label{
+	width:100px;}
+.login-content p{
+	font-size:13px;
+	line-height:16px;
+	font-family:Arial, Helvetica, sans-serif;
+
+}
 	
 .login input[type="text"], .login input[type="password"]{
 	float:left;
 	margin:0 0px 6px 0 ;
-	width:370px;
+	width:150px !important;
 	-webkit-border-radius:4px;
     -moz-border-radius:4px;
 	padding:5px;
@@ -1470,22 +1614,13 @@ p.bjqs-caption{
 	background: linear-gradient(to bottom, #e8e8e8 1%,#fbfbfb 100%); /* W3C */
 	}
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+/*** mgasines ******/
+
+#slidersh{
+	width:960px;
+	overflow:hidden;
+	height:300px;
+	float:left;
+	margin:0 0 15px 0;
+
+	}

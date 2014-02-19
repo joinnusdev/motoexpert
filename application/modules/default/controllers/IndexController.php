@@ -15,6 +15,10 @@ class Default_IndexController extends App_Controller_Action_Default
         $this->view->listarMarca = $result; */
     	$form = new App_Form_BuscarMoto();
     	$this->view->form = $form;
+        $formTienda = new App_Form_BuscarTienda();
+        $this->view->formMagasin = $formTienda;
+        $model = new App_Model_Magasin();
+        $this->view->countMagasin = $model->countMagasinFrance();
     }
     
     public function getModeleAction()

@@ -17,7 +17,7 @@ class Default_AnnoncesController extends App_Controller_Action_Default
     	
     	$this->view->result = "";
     	$this->view->total = 0;
-    	
+    	$this->view->totalAnuncio = $modelAnounce->countAnnounce();
     	$datos = $this->getAllParams();
     	$form->populate($datos);
     	$this->view->form = $form;

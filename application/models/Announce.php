@@ -93,6 +93,25 @@ class App_Model_Announce extends App_Db_Table_Abstract {
 	
 	}
         
+        public function countAnnounce(){
+            
+            $query = "SELECT count(distinct(a.id)) as totalAnnounce 
+                    FROM categories c, annonce_cat ac, occaz o, motos mo, 
+                    annonces a 
+                    LEFT JOIN moto_expert me ON a.id_me = me.id_me 
+                    LEFT JOIN annonces_info ai ON a.ref = ai.ref
+                    WHERE a.internet <> '0' AND a.id_mot = mo.id_mot 
+                    AND a.ref = ac.ref AND ac.id_cat = c.id_cat 
+                    AND o.id_occaz = a.type_occaz 
+                    AND a.ispayed = '1' AND a.modere = '1' ";
+			try{
+			return $this->getAdapter()->fetchRow($query);
+			 
+		}catch (Exception $e){
+			var_dump($e->getMessage());			
+		}
+        }
+        
         
         public function detailAnnounce($id){
             	$query = "SELECT * FROM  categories c, annonce_cat ac, occaz o, motos mo, annonces a
