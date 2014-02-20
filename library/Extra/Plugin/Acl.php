@@ -41,76 +41,25 @@ class Extra_Plugin_Acl
         	    	
             $user = $auth->getStorage()->read();            
                         
-            $tipoUsuario = $user->tipousuario;
+            //$tipoUsuario = 1;//$user->tipousuario;
             $module = $this->_module;
             
-            if ($tipoUsuario == 1) {
-                if ($module == "admin") {
-                    $request->setModuleName("admin");
+            //if ($tipoUsuario == 1) {
+                if ($module == "compte") {
+                    $request->setModuleName($this->_module);
                     $request->setControllerName($this->_controller);
                     $request->setActionName($this->_action);
                     return;
                 }
                 
-            }
-            if ($tipoUsuario == 2) {
-                if ($module == "empresa") {
-                    $request->setModuleName("empresa");
-                    $request->setControllerName($this->_controller);
-                    $request->setActionName($this->_action);
-                    return;
-                } 
-                if ($module == "admin") {
-                    $request->setModuleName("admin");
-                    $request->setControllerName("auth");
-                    $request->setActionName($this->_action);
-                    return;                
-                }
-            }
-            if ($tipoUsuario == 3) {
-                if ($module == "operador") {
-                    $request->setModuleName($module);
-                    $request->setControllerName($this->_controller);
-                    $request->setActionName($this->_action);
-                    return;
-                } 
-                if ($module == "admin") {
-                    $request->setModuleName($module);
-                    $request->setControllerName("auth");
-                    $request->setActionName($this->_action);
-                    return;                
-                }
-            }
-            if ($tipoUsuario == 4) {
-            	if ($module == "supervisor") {
-            		$request->setModuleName($module);
-            		$request->setControllerName($this->_controller);
-            		$request->setActionName($this->_action);
-            		return;
-            	}
-            	if ($module == "admin") {
-            		$request->setModuleName($module);
-            		$request->setControllerName("auth");
-            		$request->setActionName($this->_action);
-            		return;
-            	}
-            }
+            //}
             
-            
-        } else {            
-            
-            if ($this->_module == 'admin') {                
-                $request->setModuleName('admin');
-                $request->setControllerName('auth');
-                $request->setActionName('index');
+        } else {
+        	$request->setModuleName("default");
+        	$request->setControllerName($this->_controller);
+        	$request->setActionName($this->_action);
+                
                 return;
-            } else {                
-                $request->setModuleName('default');
-                $request->setControllerName('index');
-                $request->setActionName('index');
-                return;
-            }
-            
         }
         
     }

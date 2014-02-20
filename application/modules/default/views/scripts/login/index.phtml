@@ -1,37 +1,44 @@
-<div id="content" class="paddin30"> 
-    <div id="content-top">
-        <div class="top-left"><span>VOTRE COMPTE</span></div>
-    </div>
-<!-- //*** LOGIN  //-->
-<div id="login-c">
-    <div class="col2 align-left">
-        <div class="login  align-right">
-            <div class="login-content">
-                <h3>VOUS POSSÉDEZ DÉJÀ UN COMPTE?</h3>
-                <form id="form2" name="form2" method="post" action="">
-                    <label for="textfield4">E-mail * :</label>
-                    <input type="text" name="textfield4" class="inputcol2" id="textfield4" />
-                    <label for="textfield5">Mot de passe :</label>
-                    <input type="password" name="textfield5" class="inputcol2" id="textfield5" />
-                    <div class="passe"><a href="#">Mot de passe oublié ? </a></div>
-                </form>
-            </div>
-        <input name="ENVOYER" type="submit" id="ENVOYER" value="ENVOYER" />               
-        </div>
-    </div>
-    <div class="col2-lo align-left">
-        <div class="login  align-left ">
-            <div class="login-content">
-                <h3>VOUS SOUHAITEZ CRÉER UN COMPTE?</h3>
-                <p>Il vous permettra e déposer et gérer vos annonces moto<br>
-                <br>
-                </p>
-                <p>MOTO EXPERT s'engage à sécuriser vos informations et à les garder strictement confidentielles </p>
-            </div>
-            <input name="ENVOYER" type="submit" id="ENVOYER" value="CREER UN COMPTE " />               
-        </div>
-    </div>
+<div id="content" class="paddin30">
+	<div id="content-top">
+		<div class="top-left">
+			<span>VOTRE COMPTE</span>
+		</div>
+	</div>
+	<!-- //*** LOGIN  //-->
+	<div id="login-c">
+		<div class="col2 align-left">
+			<div class="login  align-right">
+				<form id="form2" name="form2" method="post" action="/auth">
+				<div class="login-content">
+					<h3>VOUS POSSÉDEZ DÉJÀ UN COMPTE?</h3>
+<label for="textfield4">E-mail * :</label> 
+<input type="text" name="email" class="inputcol2" id="email" required="required"/> 
+<label for="textfield5">Mot de passe :</label> 
+<input type="password" name="passe" class="inputcol2" id="passe" required="required"/>
 
+<div class="passe">
+<a href="#">Mot de passe oublié ? </a>
 </div>
+					
+				</div>
+				<input name="ENVOYER" type="submit" id="ENVOYER" value="ENVOYER" />
+				</form>
+			</div>
+		</div>
+		<div class="col2-lo align-left">
+			<div class="login  align-left ">
+				<div class="login-content">
+					<h3>VOUS SOUHAITEZ CRÉER UN COMPTE?</h3>
+					<p>
+						Il vous permettra e déposer et gérer vos annonces moto<br> <br>
+					</p>
+					<p>MOTO EXPERT s'engage à sécuriser vos informations et à les
+						garder strictement confidentielles</p>
+				</div>
+				<input name="ENVOYER" type="submit" id="ENVOYER" value="CREER UN COMPTE " />
+			</div>
+		</div>
+
+	</div>
 
 </div>

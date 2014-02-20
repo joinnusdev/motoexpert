@@ -7,34 +7,24 @@ class Default_AuthController extends App_Controller_Action
     
     public function indexAction()
     {       	
-        $this->_helper->layout->setLayout('login');
-        
-        if ($this->_request->isPost()) {            
-            
+    	
+        if ($this->_request->isPost()) {
             $data = $this->_getAllParams();
             
             $f = new Zend_Filter_StripTags();
             
             $email = $f->filter($data['email']);
-            $clave = $f->filter($data['clave']);
-            $usuario = new App_Model_UsuarioEmpresa();
-            $valido = $usuario->loguinUsuario($email, $clave);          
+            $clave = $f->filter($data['passe']);
             
-            if (Zend_Auth::getInstance()->hasIdentity()) {
-                if ($valido->tipousuario == '1')
-                    $this->_helper->redirector->gotoUrl('/admin/panel');
-                if ($valido->tipousuario == '2')
-                    $this->_helper->redirector->gotoUrl('/empresa/');
-                if ($valido->tipousuario == '3')
-                    $this->_helper->redirector->gotoUrl('/operador/');
-                if ($valido->tipousuario == '4')
-                	$this->_helper->redirector->gotoUrl('/supervisor/panel');
+            $model = new App_Model_User();
+            $valido = $model->loguinUsuario($email, $clave);          
+            
+            if (Zend_Auth::getInstance()->hasIdentity()) {            	
+            	$this->_helper->redirector->gotoUrl('/compte/');
             }
             else {
-                $this->_helper->redirector->gotoUrl('/');
+                $this->_helper->redirector->gotoUrl('/login/index?msg=error');
             }
-
-            $this->_flashMessenger->addMessage("Intentelo nuevamente datos incorrectos");
         }
         $this->_helper->redirector->gotoUrl('/');
     } 
