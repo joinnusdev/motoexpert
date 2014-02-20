@@ -80,11 +80,11 @@
                                     $foto = str_replace(",",".",$item['foto']);    
                                     $ruta = $config->app->photoUrl.$item['departement'].'/'.$foto;
                                     ?>
-                                    <a href="FicheMoto/index/id/<?php echo $item['id'];?>">
-                                        <img src="<?=$ruta;?>" width="300" height="115" />
+                                    <a href="Fiche-Moto/index/id/<?php echo $item['id'];?>">
+                                        <img src="<?=$ruta;?>" width="300" />
                                     </a>
 				</div>
-				<div class="result-price">$ <?=$item['prix']?></div>
+				<div class="result-price"><?=$item['prix']?> €</div>
 				<div class="result-desc">
 					<div class="result-date"><?php echo date('d/m/Y', $item['date']);?></div>
 					<p>

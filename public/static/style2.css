@@ -1178,6 +1178,13 @@ p.bjqs-caption{
 	
 	
 .garantie{}
+.result-imgs{
+	width:300px;
+	height:115px;
+	overflow:hidden;}
+.result-imgs img{
+	margin-top:-20%;
+	}
 .result-price{
 	position:relative;
 	font-family: 'Roboto Condensed', sans-serif;

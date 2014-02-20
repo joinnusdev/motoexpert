@@ -1,21 +1,29 @@
 <div id="content" class="paddin30"> 
         	<div id="content-top">
             
-                            <div class="top-left">MOTO EXPERT <br /><span>METZ</span></div>
+                            <div class="top-left">MOTO EXPERT <br /><span><?= $this->magasinInfo['ville'];?></span></div>
         	</div>
        	  
           <!-- //*** Magasines  //-->
           <div id="details">
                   <div id="slidersh">
                   	 <div id="owl-demo" class="owl-carousel">
-                        <div class="item"><img src="<?=MEDIA_URL ?>images/sliderh/1.jpg" alt=""></div>
+                         <?php
+                          $config = Zend_Registry::get('config');
+                          foreach ($this->magasinPhoto as $photo) :
+                            $foto = str_replace(",",".",$photo['nom_fichier']);    
+                            $ruta = $config->app->photoUrl. $this->magasinInfo['dep'].'/'.$foto;
+                          ?>
+                          <div class="item"><img src="<?=$ruta;?>" alt=""></div>
+                          <?php endforeach; ?>     
+                        <!-- <div class="item"><img src="<?=MEDIA_URL ?>images/sliderh/1.jpg" alt=""></div>
                         <div class="item"><img src="<?=MEDIA_URL ?>images/sliderh/2.jpg" alt=""></div>
                         <div class="item"><img src="<?=MEDIA_URL ?>images/sliderh/3.jpg" alt=""></div>
                         <div class="item"><img src="<?=MEDIA_URL ?>images/sliderh/4.jpg" alt=""></div>
                         <div class="item"><img src="<?=MEDIA_URL ?>images/sliderh/1.jpg" alt=""></div>
                         <div class="item"><img src="<?=MEDIA_URL ?>images/sliderh/2.jpg" alt=""></div>
                         <div class="item"><img src="<?=MEDIA_URL ?>images/sliderh/3.jpg" alt=""></div>
-                        <div class="item"><img src="<?=MEDIA_URL ?>images/sliderh/4.jpg" alt=""></div>
+                        <div class="item"><img src="<?=MEDIA_URL ?>images/sliderh/4.jpg" alt=""></div>-->
                       </div>
                   
                   
@@ -42,23 +50,25 @@
                 		PLAN INTERACTIF 
        		  </div>
             <div class="col21">
-            <p>ZAC Rieucoulon 60 Rue Pierre et Marie Curie 34430 SAINT JEAN DE VEDAS            </p><br />
-            <p><strong>Coordonnées GPS :</strong></p><p> Latitude : 43.5826</p><p> Longitude : 3.84569 </p></div>
+            <p><?= $this->magasinInfo['adresse'];?></p><br />
+            <p><strong>Coordonnées GPS :</strong></p>
+            <p> Latitude : <?= $this->magasinInfo['latitude'];?></p>
+            <p> Longitude : <?= $this->magasinInfo['longitude'];?> </p></div>
                 <div class="col230">
              
-                    <p><strong>Gérant : Philippe GEORGES</strong></p>
-                	<p>Tél. : 02 51 18 83</p>
-                    <p>Fax : 0251 05 18 57 </p>
+                    <p><strong>Gérant : <?= $this->magasinInfo['gerant'];?></strong></p>
+                    <p>Tél. : <?= $this->magasinInfo['tel'];?></p>
+                    <p>Fax : <?= $this->magasinInfo['fax'];?> </p>
                     <h3>HORAIRES D'OUVERTURE</h3>
-                    <p>Lundi : 14h - 19h</p>
-                    <p>du Mardi au Samedi : 9h30 - 12h / 14h - 19h</p>
+                    <p><?= $this->magasinInfo['horaires'];?></p>
+                    
                 </div>
                 
 			  <div class="subtitle3">
                 	<div class="icontitle icon-contact">CONTACTEZ DIRECTEMENT LE MAGASIN</div>
               </div>
               <div class="subtitle3">
-                	<div class="icontitle icon-envoyer"><a href="mailto:demo@demo.com">ENVOYER UN MAIL</a></div>
+                	<div class="icontitle icon-envoyer"><a href="mailto:<?= $this->magasinInfo['email'];?>">ENVOYER UN MAIL</a></div>
                  </div>
               
             

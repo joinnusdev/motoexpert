@@ -41,7 +41,19 @@ class App_Model_Magasin extends App_Db_Table_Abstract {
         ON	a.id_me=c.id_magasin
         WHERE a.id_me='".$idMagasin."'";   
        try{
-        return $this->getAdapter()->fetchPairs($query);
+        return $this->getAdapter()->fetchRow($query);
+         
+       }catch (Exception $e){
+                var_dump($e->getMessage());
+       }
+    }
+    
+    
+     public function magasinPhoto($idMagasin){
+        
+       $query = "SELECT * FROM magasins_photos WHERE id_magasin ='".$idMagasin."'";   
+       try{
+        return $this->getAdapter()->fetchAll($query);
          
        }catch (Exception $e){
                 var_dump($e->getMessage());
