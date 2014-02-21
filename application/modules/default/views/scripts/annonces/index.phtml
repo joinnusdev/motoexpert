@@ -71,9 +71,17 @@
 	<?php $i=0;if ($this->result)foreach ($this->result as $item):$i++;?>
 		
 			<div class="result-col3 <?php  if ($i % 3 == 0) echo "col3no";?>">
+                                <?php
+                                if($item['id_me']!=""){
+                                ?>
 				<h3>
-					MOTO EXPERT primer <span>METZ</span>
+					<?= $item['nom']?><span><?= $item['ville']?></span>
 				</h3>
+                                <?php }else{?>
+                                <h3>
+                                    Particulier <span>dep. <?= $item['departement']?></span>
+				</h3>
+                                <?php }?>
 				<div class="result-imgs">
                                     <?php
                                     $config = Zend_Registry::get('config');
@@ -109,7 +117,7 @@
 
 
 	<div id="navigation">
-		<div class="resultats">1349 RÉSUTATS TROUVÉS</div>
+		<div class="resultats"><?php echo $this->total[0]; ?> RÉSUTATS TROUVÉS</div>
 		<div class="next-prev">
 			<a href="#" class="nprev">PRECEDENTE</a><a href="" class="nnext">SUIVANTE</a>
 		</div>

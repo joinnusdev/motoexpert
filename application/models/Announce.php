@@ -6,27 +6,34 @@ class App_Model_Announce extends App_Db_Table_Abstract {
 	public function listSearch($datos){
 
 		$query = "
-		-- SELECT a.id,a.ref, a.titre, a.date, a.annee,a.cylindree, a.couleur, a.km, a.prix,a.departement,
-		-- a.garantie, c.nom_cat, m.marque, m.modele
-		-- FROM annonces a, categories c, annonce_cat ac, motos m
-		-- WHERE a.id_mot = m.id_mot
-		-- AND a.ref = ac.ref
-		-- AND ac.id_cat = c.id_cat
-                
-                
-                SELECT  a.id,a.ref, a.titre, a.date, a.annee,a.cylindree, a.couleur, a.km, a.id_cat,a.prix,a.departement,
-                a.garantie, c.nom_cat, m.marque, m.id_mot,m.modele 
-                ,foto.nom_fichier as foto, info.controle
-                FROM annonces a, categories c, annonce_cat ac, motos m 
-                ,annonces_photos foto
+               /* SELECT a.id,a.ref, a.titre, a.date, a.annee,a.cylindree, 
+                                a.couleur, a.km, a.id_cat,a.prix,a.departement,
+                                a.garantie, c.nom_cat, m.marque, m.id_mot,m.modele 
+                                ,foto.nom_fichier as foto, info.controle FROM 
+                annonces a, categories c, annonce_cat ac, motos m 
                 ,annonces_info info
-                WHERE a.id_mot = m.id_mot 
-                AND a.ref = ac.ref 
-                AND ac.id_cat = c.id_cat 
-                and a.ref = foto.ref_annonce
-                and a.ref = info.ref
-                and a.internet <>  '0'
-                and foto.ordre = 1
+                ,annonces_photos foto
+                WHERE a.id_mot = m.id_mot AND a.ref = ac.ref AND ac.id_cat = c.id_cat 
+                and foto.id_annonce = a.id
+                and info.ref = a.ref 
+                AND a.internet <> '0' 
+                AND a.modere = '1' 
+                AND a.ispayed = '1' */
+                
+                SELECT a.id,a.ref, a.titre, a.date, a.annee,a.cylindree, 
+                                a.couleur, a.km, a.id_cat,a.prix,a.departement,
+                                a.garantie, c.nom_cat, m.marque, m.id_mot,m.modele 
+                                ,foto.nom_fichier as foto, info.controle
+                                ,moto.id_me, moto.nom, moto.ville
+                FROM  annonces a
+                inner join categories c on a.id_cat = c.id_cat
+                inner join motos m on a.id_mot = m.id_mot 
+                inner join annonces_info info on info.ref = a.ref 
+                inner join annonces_photos foto on foto.id_annonce = a.id
+                left join moto_expert moto on  moto.id_me = a.id_me
+                where a.internet <> '0' 
+                AND a.modere = '1' 
+                AND a.ispayed = '1'
 		";
 		if (!isset($datos['deparment']) and !isset($datos['category']) and !isset($datos['magasin']) and !isset($datos['marque']) and !isset($datos['modele']))
 			return false;
@@ -46,9 +53,8 @@ class App_Model_Announce extends App_Db_Table_Abstract {
 		if (isset($datos['modele']) and $datos['modele'] != 0  and !is_null($datos))
 			$query.= " AND m.id_mot = ".$datos['modele'];
 			 
-		$query.= "group by a.id
-                            limit 300 ";
-			try{
+		$query.= " group by a.id";
+                	try{
 				//echo $query;exit;
 			return $this->getAdapter()->fetchAll($query);
 			 
