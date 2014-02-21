@@ -4,5 +4,8 @@ README.txt
 demos/
 extras/documentation
 library/Zend
-library/Zend/
+/library/Zend/
 /nbproject/private/
+/application/configs/*
+/var/cache/*
+var/cache/zend*
