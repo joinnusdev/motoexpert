@@ -6,3 +6,4 @@ extras/documentation
 library/Zend
 library/Zend/
 /nbproject/private/
+application/configs/
