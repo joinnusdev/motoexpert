@@ -12,6 +12,29 @@ class App_Model_Client extends App_Db_Table_Abstract {
 	const STATE_ACTIVO = '1';
 	const TABLE_CLIENT = 'client';
 	
+	private function _save($datos) {
+		$id = 0;
+		if (!empty($datos['cid'])) {
+			$id = (int) $datos['cid'];
+		}
+		unset($datos['cid']);
+		$datos = array_intersect_key($datos, array_flip($this->_getCols()));
+	
+		if ($id > 0) {
+			$cantidad = $this->update($datos, 'cid = ' . $id);
+			$id = ($cantidad < 1) ? 0 : $id;
+		} else {
+			$id = $this->insert($datos);
+		}
+		return $id;
+	}
+	
+	public function saveClient($datos) {
+		return $this->_save($datos);
+	}
+	
+	
+	
 	public function loguinUsuario($username, $passwordIng)
 	{
 	
@@ -50,6 +73,17 @@ class App_Model_Client extends App_Db_Table_Abstract {
 			Zend_Registry::get('log')->log($mens, Zend_Log::CRIT);
 			return false;
 		}
+	}
+	public function validUser($email) {
+		$db = $this->getDefaultAdapter(); 
+		$query = $db->select()->from($this->_name, array('cid'))
+		->where('email = ?', $email);
+		
+		$result = $db->fetchAll($query);
+		
+		if ($result)
+			return true;
+		return false;
 	}
 	
 
