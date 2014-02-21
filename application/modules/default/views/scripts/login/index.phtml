@@ -1,4 +1,5 @@
 <script>
+ 
   var dispatchpopup = function(){  
     $('#my_lightbox').lightbox_me({
       centered: true,
@@ -7,7 +8,19 @@
       }
     });
   }
+  var nuevo = function(){
+	  <?php if ($this->error) {?>  
+	    $('#my_lightbox').lightbox_me({
+	      centered: true,
+	      onLoad: function() {
+	        $('#my_lightbox_text').html("Stuff");
+	      }
+	    });
+	    <?php } ?>
+	  }
 </script>
+
+
 
 <div id="content" class="paddin30"> 
         	<div id="content-top">
@@ -62,9 +75,11 @@
 <div id="my_lightbox">
   <div id="wrapper-form">
     	<div id="new-form">
-        	<div id="new-navigation"><a href="#" class="new-prev" onClick="$('#my_lightbox').trigger('close');">RETOUR</a><p>VOS COORDONNÉES</p> </div>
+        	<div id="new-navigation"><a href="#" class="new-prev" onClick="$('#my_lightbox').trigger('close');">RETOUR</a>
+        	<p>VOS COORDONNÉES</p> </div>
            
         <form name="formRegister" method="post" action="">
+        <p><?php echo ($this->error)?"S'il vous plaît vérifier vos informations":''?></p>
         	<p class="in-radio"> Civilité 
         	<input type="radio" name="civilite" id="radio" value="Mme" checked="checked"/>
               <label for="radio">Mme</label>

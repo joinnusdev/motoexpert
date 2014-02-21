@@ -18,9 +18,7 @@ class Default_LoginController extends App_Controller_Action_Default
 
     		$model = new App_Model_Client();
 
-    		$user = $model->validUser($datos['email']);
-    		
-    		
+    		$user = $model->validUser($datos['email']);    		
     		
     		if ($datos['pass'] and $datos['passred'] and ($datos['pass']== $datos['passred']) 
     				and !$user and !empty($datos['adresse']) and !empty($datos['code_postal'])
@@ -55,8 +53,7 @@ class Default_LoginController extends App_Controller_Action_Default
     			}
     			
     			
-    		} else {
-    			echo "no valido";exit;
+    		} else {    		
     			$this->view->data = $datos;
     			$this->view->error = true;
     		}
