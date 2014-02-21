@@ -14,8 +14,8 @@ class App_Model_Announce extends App_Db_Table_Abstract {
 		-- AND ac.id_cat = c.id_cat
                 
                 
-                SELECT  a.id,a.ref, a.titre, a.date, a.annee,a.cylindree, a.couleur, a.km, a.prix,a.departement,
-                a.garantie, c.nom_cat, m.marque, m.modele 
+                SELECT  a.id,a.ref, a.titre, a.date, a.annee,a.cylindree, a.couleur, a.km, a.id_cat,a.prix,a.departement,
+                a.garantie, c.nom_cat, m.marque, m.id_mot,m.modele 
                 ,foto.nom_fichier as foto, info.controle
                 FROM annonces a, categories c, annonce_cat ac, motos m 
                 ,annonces_photos foto
@@ -26,6 +26,7 @@ class App_Model_Announce extends App_Db_Table_Abstract {
                 and a.ref = foto.ref_annonce
                 and a.ref = info.ref
                 and a.internet <>  '0'
+                and foto.ordre = 1
 		";
 		if (!isset($datos['deparment']) and !isset($datos['category']) and !isset($datos['magasin']) and !isset($datos['marque']) and !isset($datos['modele']))
 			return false;
@@ -45,7 +46,8 @@ class App_Model_Announce extends App_Db_Table_Abstract {
 		if (isset($datos['modele']) and $datos['modele'] != 0  and !is_null($datos))
 			$query.= " AND m.id_mot = ".$datos['modele'];
 			 
-		$query.= " limit 300 ";
+		$query.= "group by a.id
+                            limit 300 ";
 			try{
 				//echo $query;exit;
 			return $this->getAdapter()->fetchAll($query);
