@@ -1,3 +1,16 @@
+<?php
+	    $datos = '';
+	    $nom = '';
+	    $prenom = '';
+	    $adresse = '';
+	    $code_postal = '';
+	    $ville = '';
+	    $portable = '';
+	    $email = '';
+	    $pass = '';
+	    $passr = '';
+?>
+
 <script>
  
   var dispatchpopup = function(){  
@@ -16,7 +29,21 @@
 	        $('#my_lightbox_text').html("Stuff");
 	      }
 	    });
-	    <?php } ?>
+	    <?php
+	    $datos = $this->data;
+	    $nom = ($datos['nom'] and !empty($datos['nom']))?TRUE:FALSE;
+	    $prenom = ($datos['prenom'] and !empty($datos['prenom']))?TRUE:FALSE;
+	    $adresse = ($datos['adresse'] and !empty($datos['adresse']))?TRUE:FALSE;
+	    $code_postal = ($datos['code_postal'] and !empty($datos['code_postal']))?TRUE:FALSE;
+	    $ville = ($datos['ville'] and !empty($datos['ville']))?TRUE:FALSE;
+	    $portable = ($datos['portable'] and !empty($datos['portable']))?TRUE:FALSE;
+	    $email = ($datos['email'] and !empty($datos['email']))?TRUE:FALSE;
+	    $pass = ($datos['pass'] and !empty($datos['pass']))?TRUE:FALSE;
+	    $passr = $datos['passred'];
+	    if ($pass != $passr)
+	    	$pass = false;
+
+} ?>
 	  }
 </script>
 
@@ -88,21 +115,21 @@
             <input type="radio" name="civilite" id="radio" value="Mr"/>
               <label for="radio">Mr</label>
             </p>
-          <p><input name="nom" type="text" placeholder="Nom" required="required"/></p>
-          <p><input name="prenom" type="text" placeholder="Prénom" required="required"/></p>
-          <p><input name="adresse" type="text" placeholder="Adresse" required="required"/></p>
-          <p><input name="code_postal" type="text" placeholder="Code Postal" required="required"/></p>
-          <p><input name="ville" type="text" placeholder="Ville" required="required" /></p>
+          <p><input name="nom" type="text" placeholder="Nom" required="required" value="<?php echo ($nom)?$datos["nom"]:'';?>" /></p>
+          <p><input name="prenom" type="text" placeholder="Prénom" required="required" value="<?php echo ($prenom)?$datos["prenom"]:'';?>"/></p>
+          <p><input name="adresse" type="text" placeholder="Adresse" required="required" value="<?php echo ($adresse)?$datos["adresse"]:'';?>"/></p>
+          <p><input name="code_postal" type="text" placeholder="Code Postal" required="required" value="<?php echo ($code_postal)?$datos["code_postal"]:'';?>"/></p>
+          <p><input name="ville" type="text" placeholder="Ville" required="required" value="<?php echo ($ville)?$datos["ville"]:'';?>"/></p>
           <p><input name="pays" type="text" placeholder="Pays"></p>
           <p><input name="tel" type="text" placeholder="Téléphone"></p>
-          <p><input name="portable" type="text" placeholder="Mobile" required="required"/></p>
+          <p><input name="portable" type="text" placeholder="Mobile" required="required" value="<?php echo ($portable)?$datos["portable"]:'';?>"/></p>
           <p><span class="in-text">Je désire être tenu au courant de l’actualité et des nouveautés du site Moto Expert</span>
               <input name="mailing" type="checkbox" value=""/> 
           </p>
             
             <div id="new-navigation"><span>VOS INFORMATIONS DE CONNECTION</span> </div>
             <p>
-            <input name="email" type="text" placeholder="Votre adresse Email" required="required">
+            <input name="email" type="text" placeholder="Votre adresse Email" required="required" value="<?php echo ($email)?$datos["email"]:'';?>">
             </p>
           	<p class="new-p14">Vous servira d’identifiant de connection</p>
             <p><input name="pass" type="password" placeholder="Mot de Passe" required="required"/></p>
