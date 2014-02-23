@@ -29,7 +29,8 @@ class Default_AnnoncesController extends App_Controller_Action_Default
     			$this->view->result = $modelAnounce->listSearch($data);
     			
     			if ($this->view->result)
-    				$this->view->total = $modelAnounce->countSearch($data);
+    				$this->view->total = count($this->view->result);
+    			
     		}
     		
     	}

@@ -56,8 +56,9 @@ class App_Model_Announce extends App_Db_Table_Abstract {
 
 		$query.= " group by a.id";
 		try{
-			echo $query;
-			return $this->getAdapter()->fetchAll($query);
+			//echo $query;
+			$result =  $this->getAdapter()->fetchAll($query);			
+			return $result;
 
 		}catch (Exception $e){
 			var_dump($e->getMessage());
