@@ -6,9 +6,7 @@
                             <div class="top-left">MOTO EXPERT <br /><span>MOTOS D'OCCASION</span></div>
         	</div>
        	  <div id="navi-fiche">
-          	  <a href="#" class="previus">RETOUR A LA LISTE D'ANNONCES </a>
-
-            
+               <a href="<?=$_SERVER['HTTP_REFERER']?>" class="previus">RETOUR A LA LISTE D'ANNONCES </a>
             <div class="align-right text-right">
             	<a href="#" class="previus border-right">PRECEDENTE</a><a href="" class="suivante">SUIVANTE</a>
             </div>
@@ -119,9 +117,11 @@
                          CONTACTEZ DIRECTEMENT LE MAGASIN
                     </div>
                 </div>
-              <div class="top-left">MOTO EXPERT <br /><span>METZ </span></div>
+              <div class="top-left">MOTO EXPERT <br /><span><?=$this->detailAnnonces['ville']?></span></div>
               <div class="col2 align-left margin-top">
-              	<div class="col21"><img src="<?=MEDIA_URL ?>images/map.jpg" width="222" height="119" /></div>
+              	<div class="col21">
+                    <img src="<?=MEDIA_URL ?>images/map.jpg" width="222" height="119" />
+                </div>
                 <div class="col22">
                 	<div class="subtitle2">
                 		PLAN INTERACTIF 
@@ -191,7 +191,7 @@
           
           
           <div id="navi-fiche">
-          	  <a href="#" class="previus">RETOUR A LA LISTE D'ANNONCES </a>
+          	  <a href="<?=$_SERVER['HTTP_REFERER']?>" class="previus">RETOUR A LA LISTE D'ANNONCES </a>
 
            
             <div class="align-right">
