@@ -161,7 +161,8 @@ class App_Model_Announce extends App_Db_Table_Abstract {
             
         }
         
-        public function announceByCLient($idClient){
+        public function announceByCLient($idClient)
+        {
         	$query = "SELECT * FROM  annonces
         	WHERE id_client = ".$idClient;
         	
