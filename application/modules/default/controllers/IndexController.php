@@ -19,6 +19,11 @@ class Default_IndexController extends App_Controller_Action_Default
         $this->view->formMagasin = $formTienda;
         $model = new App_Model_Magasin();
         $this->view->countMagasin = $model->countMagasinFrance();
+        $modelSlider = new App_Model_Slider();
+        $this->view->slider = $modelSlider->listSlider();
+        
+        $modelAnounce = new App_Model_Announce();
+    	$this->view->totalAnuncio = $modelAnounce->countAnnounce();
     }
     
     public function getModeleAction()
