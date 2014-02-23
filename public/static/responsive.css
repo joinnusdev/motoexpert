@@ -302,7 +302,8 @@ font-size:23px;
 
 }
 #header{
-	width:300px !important;	
+	width:310px !important;	
+	padding:0 !important;
 	overflow:hidden
 	}
 
@@ -757,7 +758,6 @@ font-size:18px;
 #login-c{
 	width:300px;
 	}
-<<<<<<< HEAD
 #login-c .col2{
 	width:298px !important;
 	}
@@ -775,8 +775,9 @@ font-size:18px;
 	width:256px;
 
 }
-
-	
-=======
->>>>>>> 5173d1d86663367ad8e24a66d97cc6df36242452
+.btn-ipad{
+	display:none !important;
+	}
+.btn-smart{
+	display:block !important;}
 }

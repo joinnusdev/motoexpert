@@ -131,11 +131,7 @@ img{
 
 #content{
 	float:left;
-<<<<<<< HEAD
 	min-height:250px;
-=======
-	min-height:280px;
->>>>>>> 5173d1d86663367ad8e24a66d97cc6df36242452
 	width:1007px;
 	margin-top:4px;
 	padding:0 17px 0  0;
@@ -151,11 +147,7 @@ img{
 #magasins{
 	float:left;
 	width:483px;
-<<<<<<< HEAD
 	margin-left:15px;
-=======
-	margin-left:13px;
->>>>>>> 5173d1d86663367ad8e24a66d97cc6df36242452
 	}
 #magasins-top{
 	background-image:url(images/magasins-top.png);
@@ -2223,10 +2215,6 @@ margin-bottom:5px;
  text-indent:10px;
 font-size:16px;
 margin-bottom:5px;
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 5173d1d86663367ad8e24a66d97cc6df36242452
 }
  #services{
 	 width:957px;
@@ -2459,11 +2447,4 @@ font-family: 'Roboto Condensed', sans-serif;
 	margin:0 0 7px 0;
 	width:100%;
 	float:left;
-<<<<<<< HEAD
 	 }
-=======
-	 }
-=======
-}
->>>>>>> b4c8bf0a1973575a0e133b0f71e9d33751e3e3af
->>>>>>> 5173d1d86663367ad8e24a66d97cc6df36242452
