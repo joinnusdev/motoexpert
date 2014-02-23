@@ -9,20 +9,20 @@
            		 <div id="gerez-left">
                  <h2>GEREZ VOS INFORMATIONS<br /> PERSONNELLES</h2>
                  <div id="new-navigation"><span>VOS COORDONNÉES </span> </div>
-                 <p class="in-radio"> Civilité : <?php echo $this->authData->civilite?></p>
-                 <p class="in-radio"><?php echo $this->authData->nom?></p>
-                 <p class="in-radio"><?php echo $this->authData->prenom?></p>
-                 <p class="in-radio"><?php echo $this->authData->adresse?></p>
-                 <p class="in-radio"><?php echo $this->authData->code_postal?></p>
-                 <p class="in-radio"><?php echo $this->authData->ville?></p>
-                <p class="in-radio"><?php echo $this->authData->pays?></p>
-                 <p class="in-radio"><?php echo $this->authData->tel?></p>
-                 <p class="in-radio"><?php echo $this->authData->portable?></p>
+                 <p class="in-radio"> Civilité : <?php echo $this->datos["civilite"]?></p>
+                 <p class="in-radio"><?php echo $this->datos["nom"]?></p>
+                 <p class="in-radio"><?php echo $this->datos["prenom"]?></p>
+                 <p class="in-radio"><?php echo $this->datos["adresse"]?></p>
+                 <p class="in-radio"><?php echo $this->datos["code_postal"]?></p>
+                 <p class="in-radio"><?php echo $this->datos["ville"]?></p>
+                <p class="in-radio"><?php echo $this->datos["pays"]?></p>
+                 <p class="in-radio"><?php echo $this->datos["tel"]?></p>
+                 <p class="in-radio"><?php echo $this->datos["portable"]?></p>
               <p class="in-radio"> </p>
                  <div id="new-navigation"><span>VOS INFORMATIONS DE CONNECTION</span> </div>
                                   
                  <p class="in-radio">Votre adresse Email :</p>
-                 <p class="in-radio"><?php echo $this->authData->email?></p>
+                 <p class="in-radio"><?php echo $this->datos["email"]?></p>
                  <p><a href="/compte/modifier-client" class="btn-100" >MODIFIER</a></p>
 
                  

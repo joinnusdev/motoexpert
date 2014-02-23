@@ -17,8 +17,11 @@ class App_Model_Client extends App_Db_Table_Abstract {
 		if (!empty($datos['cid'])) {
 			$id = (int) $datos['cid'];
 		}
+		if (empty($datos['pass']))
+			unset($datos['pass']);
+		
 		unset($datos['cid']);
-		$datos = array_intersect_key($datos, array_flip($this->_getCols()));
+		$datos = array_intersect_key($datos, array_flip($this->_getCols()));		
 	
 		if ($id > 0) {
 			$cantidad = $this->update($datos, 'cid = ' . $id);
@@ -83,6 +86,18 @@ class App_Model_Client extends App_Db_Table_Abstract {
 		
 		if ($result)
 			return true;
+		return false;
+	}
+	
+	public function getClientById($idClient) {
+		$db = $this->getDefaultAdapter();
+		$query = $db->select()->from($this->_name)
+		->where('cid = ?', $idClient);
+	
+		$result = $db->fetchRow($query);
+	
+		if ($result)
+			return $result;
 		return false;
 	}
 	

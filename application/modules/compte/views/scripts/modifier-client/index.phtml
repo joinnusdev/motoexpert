@@ -1,107 +1,166 @@
-<div id="content-p28"> 
-        	<div id="content-top">
-            
-                            <div class="top-left"><span>MON COMPTE</span></div>
-        	</div>
-            <div id="gerez">
-            
-           		 <div id="new-form">
-        	<div id="new-navigation"><a href="#" class="new-prev" id="html5-close">RETOUR</a><p>VOS COORDONNÉES</p> </div>
-           
-        <form name="form1" method="post" action="">
-        	<p class="in-radio"> Civilité <input type="radio" name="radio" id="radio" value="radio">
-              <label for="radio">Mme</label>
-              <input type="radio" name="radio" id="radio" value="radio">
-              <label for="radio">Mlle</label>
-              <input type="radio" name="radio" id="radio" value="radio">
-              <label for="radio">Mr</label>
-            </p>
-          <p><input name="" type="text" placeholder="Nom"></p>
-          <p><input name="" type="text" placeholder="Prénom"></p>
-          <p><input name="" type="text" placeholder="Adresse"></p>
-          <p><input name="" type="text" placeholder="Code Postal"></p>
-          <p><input name="" type="text" placeholder="Ville"></p>
-          <p>
-            <select name="select2">
-              <option value="">Pays</option>
-              <option value="Pays">Pays2</option>
-              <option value="Pays">Pays3</option>
-              <option value="Pays">Pays4</option>
-              <option value="Pays">Pays5</option>
-              <option value="Pays">Pays6</option>
-              <option value="Pays">Pays7</option>
-            </select>
-          </p>
-          <p><input name="" type="text" placeholder="Téléphone"></p>
-          <p><input name="" type="text" placeholder="Mobile"></p>
-          <p><span class="in-text">Je désire être tenu au courant de l’actualité et des nouveautés du site Moto Expert</span><input name="" type="checkbox" value=""> </p>
-            
-            <div id="new-navigation"><span>VOS INFORMATIONS DE CONNECTION</span> </div>
-            <p><input name="" type="text" placeholder="Votre adresse Email"></p>
-          	<p class="new-p14">Vous servira d’identifiant de connection</p>
-            <p><input name="" type="password" placeholder="Mot de Passe"></p>
-   		  <p><input name="" type="password" placeholder="Confirmer le mot de Passe"></p>
-           
-            <p><input name="" type="reset" value="ANNULER"></p>
-            <p><input name="" type="submit" value="ENREGISTRER"></p>
-            
-        </form>
-    	</div>
-<div id="gerez-right">
-                    <h2>GEREZ VOS ANNONCES</h2>
-                    <p class="p14">Vous trouverez ci-dessous la liste de vos annonces déposées sur le site Moto Expert.</p>
-                    
-                    <?php foreach ($this->result as $item): 
-                    $foto = str_replace(",",".",$item['nom_fichier']);
-                    ?>
-                    <div class="gerez-block">
-                        <div class="gerez-block1" >
-                        <img src="<?php echo $this->ruta.$item['departement']."/".$foto; ?>" width="64" height="64">
-                        </div>
-                        <div class="gerez-block2" >
-                        <span>Ref. : <?= $item['ref']?></span><br>
-                          <span> <?php  if ($item['date_valid']) echo date('d-m-y', $item['date_valid'])?> </span><br>
-                          <?= $item['titre']?><br>
-                          <?= $item['prix']?> € <br>
-                        </div>
-                        <div class="gerez-block3" ><?php echo ($item['stat']== "0")?'Activée':'Désactivée';?><br>
-                        sur le site</div>
-                        <?php if ($item['stat']== "0") {?>
-                    	<div class="gerez-block4" ><a href="#" class="btn-gerez" >REACTIVER</a></div>
-                    	<?php } ?>
-                    	<div class="gerez-block5" ><a href="#" class="btn-gerez" >MODIFIER</a></div>
-                    	<div class="gerez-block6" ><a href="#" class="btn-gerez" >SUPPRIMER</a></div>
-                    </div>
-                    <?php endforeach;?>
-                    
-                    <a href="#" class="btn-100" >DEPOSER UNE ANNONCE</a>
-                    <div class="gerez-text">Pour modifier les informations relatives à une annonce cliquez sur “Modifier”. 
-                      <br>
-                      L’annonce reste modifiable à tout moment.
-                      <br>
-                      Pour visualiser une annonce cliquez sur “Modifier”.
-                      <br>
-                   Pour supprimer une annonce cliquez sur “Supprimer”.</div>
-<div class="gerez-desc">
-La publication sur motoexpert.fr de petites annonces moto d’occasion est exclusivement réservée pour les ventes de particulier à particulier et pour les membres du réseau Moto Expert. Moto Expert se réserve le droit de supprimer toutes annonces qui ne correspondraient pas.
-Après la création de votre annonce, celle-ci paraîtra sur le site après validation sous 48h ouvrable.
-Toute modification d’une annonce engendre sa revalidation.</div>
-                    
-                    
-              </div>            	 
-       	  
-          <!-- //*** DETAILS  //-->
+<div id="content-p28">
+	<div id="content-top">
 
-          
-          
-          
-          <br />
-          </div>
-          
-          
-          
-          
-          
+		<div class="top-left">
+			<span>MON COMPTE</span>
+		</div>
+	</div>
+	<div id="gerez">
 
-          
- </div>  
+		<div id="new-form">
+			<div id="new-navigation">
+				<a href="#" class="new-prev" id="html5-close">RETOUR</a>
+				<p>VOS COORDONNÉES</p>
+			</div>
+
+			<form name="formRegister" method="post" action="">				
+				<p class="in-radio">
+					Civilité 
+					<input type="radio" name="civilite" id="radio" value="Mme" <?php echo ($this->datos["civilite"]=="Mme")?'checked':'';?> />
+						<label for="radio">Mme</label> 
+					<input type="radio" name="civilite" id="radio" value="Mlle" <?php echo ($this->datos["civilite"]=="Mlle")?'checked':'';?> /> 
+						<label for="radio">Mlle</label> 
+					<input type="radio" name="civilite" id="radio" value="M" <?php echo ($this->datos["civilite"]=="M")?'checked':'';?>/> 
+						<label for="radio">Mr </label>
+				</p>
+				<p>
+					<input name="nom" type="text" placeholder="Nom" required="required"
+						value="<?php echo $this->datos["nom"]?>" />
+				</p>
+				<p>
+					<input name="prenom" type="text" placeholder="Prénom"
+						required="required"
+						value="<?php echo $this->datos["prenom"]?>" />
+				</p>
+				<p>
+					<input name="adresse" type="text" placeholder="Adresse"
+						required="required"
+						value="<?php echo $this->datos["adresse"]?>" />
+				</p>
+				<p>
+					<input name="code_postal" type="text" placeholder="Code Postal"
+						required="required"
+						value="<?php echo $this->datos["code_postal"]; ?>" />
+				</p>
+				<p>
+					<input name="ville" type="text" placeholder="Ville"
+						required="required"
+						value="<?php echo $this->datos["ville"]?>" />
+				</p>
+				<p>
+					<input name="pays" type="text" placeholder="Pays" value="<?php echo $this->datos["pays"]?>">
+				</p>
+				<p>
+					<input name="tel" type="text" placeholder="Téléphone" value="<?php echo $this->datos["tel"]?>">
+				</p>
+				<p>
+					<input name="portable" type="text" placeholder="Mobile"
+						required="required"
+						value="<?php echo $this->datos["portable"]?>" />
+				</p>
+				<p>
+					<span class="in-text">Je désire être tenu au courant de l’actualité
+						et des nouveautés du site Moto Expert</span> <input name="mailing"
+						type="checkbox" value="" />
+				</p>
+
+				<div id="new-navigation">
+					<span>VOS INFORMATIONS DE CONNECTION</span>
+				</div>
+				<p>
+					<input name="email" type="text" placeholder="Votre adresse Email"
+						required="required" disabled="disabled"
+						value="<?php echo $this->datos["email"]?>">
+				</p>
+				<p class="new-p14">Vous servira d’identifiant de connection</p>
+				<p>
+					<input name="pass" type="password" placeholder="Mot de Passe"/>
+				</p>
+				<p>
+					<input name="passred" type="password"
+						placeholder="Confirmer le mot de Passe" />
+				</p>
+
+				<p>
+					<input name="" type="reset" value="ANNULER">
+				</p>
+				<p>
+					<input name="" type="submit" value="ENREGISTRER">
+				</p>
+
+			</form>
+		</div>
+		<div id="gerez-right">
+			<h2>GEREZ VOS ANNONCES</h2>
+			<p class="p14">Vous trouverez ci-dessous la liste de vos annonces
+				déposées sur le site Moto Expert.</p>
+
+			<?php foreach ($this->result as $item): 
+			$foto = str_replace(",",".",$item['nom_fichier']);
+			?>
+			<div class="gerez-block">
+				<div class="gerez-block1">
+					<img
+						src="<?php echo $this->ruta.$item['departement']."/".$foto; ?>"
+						width="64" height="64">
+				</div>
+				<div class="gerez-block2">
+					<span>Ref. : <?= $item['ref']?>
+					</span><br> <span> <?php  if ($item['date_valid']) echo date('d-m-y', $item['date_valid'])?>
+					</span><br>
+					<?= $item['titre']?>
+					<br>
+					<?= $item['prix']?>
+					€ <br>
+				</div>
+				<div class="gerez-block3">
+					<?php echo ($item['stat']== "0")?'Activée':'Désactivée';?>
+					<br> sur le site
+				</div>
+				<?php if ($item['stat']== "0") {?>
+				<div class="gerez-block4">
+					<a href="#" class="btn-gerez">REACTIVER</a>
+				</div>
+				<?php } ?>
+				<div class="gerez-block5">
+					<a href="#" class="btn-gerez">MODIFIER</a>
+				</div>
+				<div class="gerez-block6">
+					<a href="#" class="btn-gerez">SUPPRIMER</a>
+				</div>
+			</div>
+			<?php endforeach;?>
+
+			<a href="#" class="btn-100">DEPOSER UNE ANNONCE</a>
+			<div class="gerez-text">
+				Pour modifier les informations relatives à une annonce cliquez sur
+				“Modifier”. <br> L’annonce reste modifiable à tout moment. <br> Pour
+				visualiser une annonce cliquez sur “Modifier”. <br> Pour supprimer
+				une annonce cliquez sur “Supprimer”.
+			</div>
+			<div class="gerez-desc">La publication sur motoexpert.fr de petites
+				annonces moto d’occasion est exclusivement réservée pour les ventes
+				de particulier à particulier et pour les membres du réseau Moto
+				Expert. Moto Expert se réserve le droit de supprimer toutes annonces
+				qui ne correspondraient pas. Après la création de votre annonce,
+				celle-ci paraîtra sur le site après validation sous 48h ouvrable.
+				Toute modification d’une annonce engendre sa revalidation.</div>
+
+
+		</div>
+
+		<!-- //*** DETAILS  //-->
+
+
+
+
+		<br />
+	</div>
+
+
+
+
+
+
+
+</div>
