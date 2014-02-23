@@ -119,10 +119,11 @@
 			<a href="#" class="btn-ye">PUBLIER VOTRE ANNONCE</a>
 		</form>
 
-
+	
 		<div id="movil">
 
 			<div class="title-content">CARACTERISTIQUES</div>
+			<form name="frmcarcth" method="post" action="">
 			<div class="caract-wapper">
 				<p>
 					<?= $this->form->category?>
@@ -134,29 +135,29 @@
 					<?= $this->form->modele?>
 				</p>
 				<p>
-					<input name="" type="text" placeholder="Année">
+					<input name="annee" type="text" placeholder="Année">
 				</p>
 				<p>
-					<input name="" type="text" placeholder="Cylindrée">
+					<input name="cylindree" type="text" placeholder="Cylindrée">
 				</p>
 				<p>
-					<input name="" type="text" placeholder="Couleur">
+					<input name="couleur" type="text" placeholder="Couleur">
 				</p>
 				<p>
-					<input name="" type="text" placeholder="Kilométrage">
+					<input name="km" type="text" placeholder="Kilométrage">
 				</p>
 				<p>
 					<input name="" type="checkbox" value="">Pas de compteur
 					kilométrique
 				</p>
 				<p>
-					<input name="" type="text" placeholder="Prix">
+					<input name="prix" type="text" placeholder="Prix">
 				</p>
 				<p>
 					<input name="" type="checkbox" value="">ou à débattre
 				</p>
 				<p>
-					<input name="" type="text" placeholder="Descriptif">
+					<input name="descr_site" type="text" placeholder="Descriptif">
 				</p>
 				<p>
 					<input type="submit" name="button2" id="button2"
@@ -165,6 +166,7 @@
 
 
 			</div>
+			</form>
 			<div class="caract-wapper">
 
 				<div class="login  align-left ">
