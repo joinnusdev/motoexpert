@@ -28,9 +28,9 @@ class App_Model_Announce extends App_Db_Table_Abstract {
 		,info.neuf, info.isgarantie
 		FROM  annonces a
 		inner join categories c on a.id_cat = c.id_cat
-		inner join motos m on a.id_mot = m.id_mot
-		inner join annonces_info info on info.ref = a.ref
-		inner join annonces_photos foto on foto.id_annonce = a.id
+		left join motos m on a.id_mot = m.id_mot
+		left join annonces_info info on info.ref = a.ref
+		left join annonces_photos foto on foto.id_annonce = a.id
 		left join moto_expert moto on  moto.id_me = a.id_me
 		where a.internet <> '0'
 		AND a.modere = '1'

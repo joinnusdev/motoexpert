@@ -35,10 +35,10 @@ class Compte_AnnoncePublierController extends App_Controller_Action_Default
     		$params['departement'] = substr($this->view->authData->code_postal, 0, 2);
     		$params['date_crea'] = $date;
     		$params['parution'] = '0';
-    		$params['internet'] = '0';
-    		$params['ispayed'] = '0';
+    		$params['internet'] = '1';
+    		$params['ispayed'] = '1';
     		$params['type_occaz'] = '1';
-    		$params['modere'] = '0';
+    		$params['modere'] = '1';
     		$params['id_cat'] = $params['category'];
     		$params['id_mot'] = $params['modele'];
     		$params['ref'] = $params['departement']."000".$params['id_mot']."0000";

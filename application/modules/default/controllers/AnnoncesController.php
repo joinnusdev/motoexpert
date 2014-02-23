@@ -24,11 +24,12 @@ class Default_AnnoncesController extends App_Controller_Action_Default
     	
     	if ($this->_request->isGet()) {
     		
-    		if ($datos and !is_null($datos)) {
-    			$this->view->result = $modelAnounce->listSearch($datos);
+    		if ($datos and !is_null($datos)) {    			
+    			$data = @$form->getValues();
+    			$this->view->result = $modelAnounce->listSearch($data);
     			
     			if ($this->view->result)
-    				$this->view->total = $modelAnounce->countSearch($datos);
+    				$this->view->total = $modelAnounce->countSearch($data);
     		}
     		
     	}
