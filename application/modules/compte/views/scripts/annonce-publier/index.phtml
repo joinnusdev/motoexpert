@@ -7,8 +7,8 @@
 	</div>
 
 	<!-- //*** DETAILS  //-->
-	<div class="caract-content">
-		<form name="form1" method="post" action="">
+	<div class="caract-content">		
+			<form name="form1" method="post" action="" enctype="multipart/form-data">
 			<div class="title-content">CARACTERISTIQUES</div>
 			<div class="caract-wapper">
 				<div class="caract-286">
@@ -65,6 +65,7 @@
 					</p>
 				</div>
 			</div>
+			</form>			
 			<div class="title-content">
 				AFFICHAGE DE VOS<br /> COORDONNÉES SUR LE SITE
 			</div>
@@ -78,37 +79,33 @@
 				</p>
 				<p class="p11">(votre adresse n’apparaît pas en clair sur le site)</p>
 				<p class="pinput">
-					<input type="radio" name="radio" id="radio" value="radio"> <label
-						for="radio">Oui</label> <input type="radio" name="radio"
-						id="radio" value="radio"> <label for="radio">Nom</label>
+					<input type="radio" name="rel_mail" id="radio" value="1"> 
+					<label for="radio">Oui</label> 
+					<input type="radio" name="rel_mail" id="radio" value="0"> 
+					<label for="radio">Nom</label>
 				</p>
-
-
-
-
 				<p class="pm16">
 					Faire figurer votre numéro de téléphone fixe sur votre annonce :<br>
 				</p>
 
 				<p class="pinput">
-					<input type="radio" name="radio" id="radio" value="radio"> <label
-						for="radio">Oui</label> <input type="radio" name="radio"
-						id="radio" value="radio"> <label for="radio">Nom</label>
+					<input type="radio" name="rel_tel" id="radio" value="1"> 
+					<label for="radio">Oui</label> 
+					<input type="radio" name="rel_tel" id="radio" value="0"> 
+					<label for="radio">Nom</label>
 				</p>
-
-
 				<p class="pm16">
 					Faire figurer votre numéro de portable sur votre annonce : <br>
 				</p>
 				<p class="pinput">
-					<input type="radio" name="radio" id="radio" value="radio"> <label
-						for="radio">Oui</label> <input type="radio" name="radio"
-						id="radio" value="radio"> <label for="radio">Nom</label>
+					<input type="radio" name="rel_port" id="radio" value="1"> 
+					<label for="radio">Oui</label> 
+					<input type="radio" name="rel_port" id="radio" value="0"> 
+					<label for="radio">Nom</label>
 				</p>
-
-
 				<p class="pm16">
-					<input name="" type="checkbox" value=""> permettre a Moto Expert de
+					<input name="" type="checkbox" value=""> 
+					permettre a Moto Expert de
 					diffuser cette annonce a ses partenaires <br>
 				</p>
 
@@ -117,13 +114,14 @@
 
 			<div class="title-content"></div>
 			<a href="#" class="btn-ye">PUBLIER VOTRE ANNONCE</a>
-		</form>
+		
 
 	
 		<div id="movil">
+		<form name="frmcarcth" method="post" action="" enctype="multipart/form-data">
 
 			<div class="title-content">CARACTERISTIQUES</div>
-			<form name="frmcarcth" method="post" action="">
+			
 			<div class="caract-wapper">
 				<p>
 					<?= $this->form->category?>
@@ -163,10 +161,10 @@
 					<input type="submit" name="button2" id="button2"
 						value="ENREGISTRER" />
 				</p>
-
-
 			</div>
 			</form>
+			
+			
 			<div class="caract-wapper">
 
 				<div class="login  align-left ">

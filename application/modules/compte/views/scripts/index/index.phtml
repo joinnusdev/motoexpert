@@ -44,7 +44,7 @@
                           <?= $item['titre']?><br>
                           <?= $item['prix']?> € <br>
                         </div>
-                        <div class="gerez-block3" ><?php echo ($item['stat']== "0")?'Activée':'Désactivée';?><br>
+                        <div class="gerez-block3" ><?php echo ($item['ispayed']== "0")?'Désactivée':'Activée';?><br>
                         sur le site</div>
                         <?php if ($item['ispayed']== "0") {?>
                     	<div class="gerez-block4" ><a href="#" class="btn-gerez" >REACTIVER</a></div>

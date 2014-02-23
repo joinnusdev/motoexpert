@@ -24,17 +24,35 @@ class Compte_AnnoncePublierController extends App_Controller_Action_Default
     	
     	$this->view->datos = $modelclient->getClientById($this->view->authData->cid);
     	
+    	
+    	
     	if ($this->_request->isPost()) {
     		$params = $this->_getAllParams();
-    		$params['cid'] = $this->view->authData->cid;
+    		
+    		
+    		$date = strtotime(date('d-m-Y'));
+    		$params['id_client'] = $this->view->authData->cid;
+    		$params['departement'] = substr($this->view->authData->code_postal, 0, 2);
+    		$params['date_crea'] = $date;
+    		$params['parution'] = '0';
+    		$params['internet'] = '0';
+    		$params['ispayed'] = '0';
+    		$params['type_occaz'] = '1';
+    		$params['modere'] = '0';
+    		$params['id_cat'] = $params['category'];
+    		$params['id_mot'] = $params['modele'];
+    		$params['ref'] = $params['departement']."000".$params['id_mot']."0000";
+    		
+    		$id = $modelanunce->saveClient($params);
+    		
+    		$this->_redirect('/compte');
+    		
+    		
     		
     	}
-    	
-    	
-    	
-        
     }
     
     
 }
+
 
