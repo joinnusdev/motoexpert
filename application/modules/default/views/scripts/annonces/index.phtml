@@ -47,7 +47,8 @@
 	<div id="poster">
 		<div class="poster-left">VOUS VENDEZ VOTRE MOTO ? NOUS NOUS OCCUPONS
 			DE TOUT</div>
-		<div class="poster-right">POSTER VOTRE ANNONCE</div>
+            <div class="poster-right">POSTER VOTRE ANNONCE
+            </div>
 	</div>
 	<div id="navigation">
 		<div class="resultats"><?php echo $this->total[0] ?> RÉSUTATS TROUVÉS</div>
@@ -102,7 +103,7 @@
                                         <?php if ($item['controle']==1){?>
 					<a href="#" class="visuel">CONTRÛLE VISUEL</a>
                                         <?php }?>
-                                        <?php if ($item['garantie']==1){?>
+                                        <?php if ($item['isgarantie']==1){?>
                                         <a href="#" class="garantie">GARANTIE </a>
                                         <?php }?>
 				</div>

@@ -1,3 +1,44 @@
+<?php
+	    $datos = '';
+	    $nom = '';
+	    $prenom = '';
+	    $adresse = '';
+	    $code_postal = '';
+	    $ville = '';
+	    $email = '';
+	    $telefono = '';
+          
+?>
+
+<script>
+ 
+  var dispatchpopup = function(){  
+    $('#my_lightbox').lightbox_me({
+      centered: true,
+      onLoad: function() {
+        $('#my_lightbox_text').html("Stuff");
+      }
+    });
+  }
+  var nuevo = function(){
+	  <?php if ($this->error) {?>  
+	    $('#my_lightbox').lightbox_me({
+	      centered: true,
+	      onLoad: function() {
+	        $('#my_lightbox_text').html("Stuff");
+	      }
+	    });
+	    <?php
+	    $datos = $this->data;
+	    $nom = ($datos['nom'] and !empty($datos['nom']))?TRUE:FALSE;
+	    $prenom = ($datos['prenom'] and !empty($datos['prenom']))?TRUE:FALSE;
+	    $code_postal = ($datos['code_postal'] and !empty($datos['code_postal']))?TRUE:FALSE;
+	    $email = ($datos['email'] and !empty($datos['email']))?TRUE:FALSE;
+	  
+} ?>
+	  }
+</script>
+
 <link href="<?=MEDIA_URL ?>css/flexslider.css" rel="stylesheet">
 
 <div id="content" class="paddin30"> 
@@ -64,7 +105,7 @@
                 ?>
                 <a href="#" class="visuel visu-gara">CONTRÛLE VISUEL</a> 
                 <?php endif;
-                if($this->detailAnnonces['garantie']==1):
+                if($this->detailAnnonces['isgarantie']==1):
                 ?>
                 <a href="#" class="garantie visu-gara">GARANTIE </a>
                 <?php endif;?>
@@ -144,52 +185,34 @@
                 	<div class="icontitle icon-envoyer">ENVOYER UN MAIL</div>
                  </div>
               <form id="form1" name="form1" method="post" action="">
-              
-              
-                  	<label for="textfield">Nom* :</label>
-                    <input type="text" name="textfield" id="textfield" />
-                 
-                 
-                 	<label for="textfield2">Prénom* :</label>
-                    <input type="text" name="textfield2" id="textfield2" />
-                <label for="textfield3">Adresse :</label>
-                    <input type="text" name="textfield3" id="textfield3" />
+                    <label for="textfield">Nom* :</label>
+                    <input name="nom" type="text" placeholder="Nom" required="required" value="<?php echo ($nom)?$datos["nom"]:'';?>" />
+                    <label for="textfield2">Prénom* :</label>
+                    <input name="Prenom" type="text" placeholder="Prenom" required="required" value="<?php echo ($prenom)?$datos["prenom"]:'';?>" />
+                    <label for="textfield3">Adresse :</label>
+                    <input name="Adresse" type="text" placeholder="Adresse"  value="<?php echo ($adresse)?$datos["adresse"]:'';?>" />
                     <label for="textfield4">Code postal* :</label>
-                    <input type="text" name="textfield4" class="inputcol2" id="textfield4" />
-                    
+                    <input name="CodePostal" type="text" placeholder="CodePostal" required="required" value="<?php echo ($code_postal)?$datos["code_postal"]:'';?>" />
                     <label for="textfield5">Ville :</label>
-                    <input type="text" name="textfield5" class="inputcol2" id="textfield5" />
+                    <input name="Ville" type="text" placeholder="Ville" value="<?php echo ($ville)?$datos["ville"]:'';?>" />
                     <label for="textfield6">Téléphone : </label>
-                    <input type="text" name="textfield6" id="textfield6" />
+                    <input name="telefono" type="text" placeholder="telefono"  value="<?php echo ($telefono)?$datos["telefono"]:'';?>" />
                     <label for="textfield7">E-mail :*</label>
-                    <input type="text" name="textfield7" id="textfield7" />
-                    
+                    <input name="email" type="text" placeholder="email" required="required" value="<?php echo ($email)?$datos["email"]:'';?>" />
                     <label for="textarea">Message : </label>
-                <textarea name="textarea" id="textarea" cols="45" rows="5"></textarea>
+                    <textarea name="textarea" id="textarea" cols="45" rows="5"></textarea>
                     <div class="fomrinfo">
-                    	<span>Veuillez saisir les lettres de limage dans le champ situé sous l'image en respectant les majuscules et les minuscules.</span>
+                    <span>Veuillez saisir les lettres de limage dans le champ situé sous l'image en respectant les majuscules et les minuscules.</span>
                     <div class="captcha"><img src="<?=MEDIA_URL ?>images/captcha.jpg" width="126" height="86" /></div>
-                   <div class="condition">
-                   	<input name="" type="checkbox" value="" />En cochant cette case, je souhaite recevoir la newsletter Moto Expert
-                   
-                   </div>
-                    
-                    <input name="ENVOYER" type="submit" id="ENVOYER" value="ENVOYER" />
-                    
+                    <div class="condition">
+                    <input name="" type="checkbox" value="" />En cochant cette case, je souhaite recevoir la newsletter Moto Expert
                     </div>
-
+                    <input name="ENVOYER" type="submit" id="ENVOYER" value="ENVOYER" />
+                    </div>
               </form>
               </div>  
-                 
-                
-                
             </div>
           </div>
-          
-          
-          
-          
-          
           <div id="navi-fiche">
           	  <a href="<?=$_SERVER['HTTP_REFERER']?>" class="previus">RETOUR A LA LISTE D'ANNONCES </a>
 
