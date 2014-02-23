@@ -46,7 +46,7 @@
                         </div>
                         <div class="gerez-block3" ><?php echo ($item['stat']== "0")?'Activée':'Désactivée';?><br>
                         sur le site</div>
-                        <?php if ($item['stat']== "0") {?>
+                        <?php if ($item['ispayed']== "0") {?>
                     	<div class="gerez-block4" ><a href="#" class="btn-gerez" >REACTIVER</a></div>
                     	<?php } ?>
                     	<div class="gerez-block5" ><a href="#" class="btn-gerez" >MODIFIER</a></div>
@@ -54,7 +54,7 @@
                     </div>
                     <?php endforeach;?>
                     
-                    <a href="#" class="btn-100" >DEPOSER UNE ANNONCE</a>
+                    <a href="/compte/annonce-publier" class="btn-100" >DEPOSER UNE ANNONCE</a>
                     <div class="gerez-text">Pour modifier les informations relatives à une annonce cliquez sur “Modifier”. 
                       <br>
                       L’annonce reste modifiable à tout moment.
