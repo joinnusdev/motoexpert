@@ -48,7 +48,7 @@ class App_Model_Announce extends App_Db_Table_Abstract {
 		if (isset($datos['magasin']) and $datos['magasin'] != 0 and !is_null($datos))
 			$query.= " AND a.id_me = ".$datos['magasin'];
 
-		if (isset($datos['marque']) and $datos['marque'] != "" and $datos['marque'] != 0 and !is_null($datos)) {
+		if (isset($datos['marque']) and $datos['marque'] != "") {
 			$query.= " AND a.marque = ". '"'.$datos['marque'].'"';
 		}
 		if (isset($datos['modele']) and $datos['modele'] != 0  and !is_null($datos))
@@ -56,7 +56,7 @@ class App_Model_Announce extends App_Db_Table_Abstract {
 
 		$query.= " group by a.id";
 		try{
-			//echo $query;exit;
+			echo $query;
 			return $this->getAdapter()->fetchAll($query);
 
 		}catch (Exception $e){
