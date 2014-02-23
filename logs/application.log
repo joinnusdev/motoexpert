@@ -172,7 +172,16 @@
 2014-02-22T21:21:30-05:00 NOTICE (5): Request Parameters
 2014-02-22T21:29:32-05:00 NOTICE (5): Page not found
 2014-02-22T21:29:32-05:00 NOTICE (5): Request Parameters
+<<<<<<< HEAD
 2014-02-22T21:39:24-05:00 CRIT (2): Application error
 2014-02-22T21:39:24-05:00 CRIT (2): Request Parameters
 2014-02-22T21:56:12-05:00 CRIT (2): Application error
 2014-02-22T21:56:12-05:00 CRIT (2): Request Parameters
+=======
+2014-02-22T21:37:40-05:00 NOTICE (5): Page not found
+2014-02-22T21:37:40-05:00 NOTICE (5): Request Parameters
+2014-02-22T21:37:40-05:00 NOTICE (5): Page not found
+2014-02-22T21:37:40-05:00 NOTICE (5): Request Parameters
+2014-02-22T21:38:44-05:00 NOTICE (5): Page not found
+2014-02-22T21:38:44-05:00 NOTICE (5): Request Parameters
+>>>>>>> 42e79f7398c963f1e2fdef55454d738aa5bf5f7a

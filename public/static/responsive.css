@@ -7,11 +7,32 @@
 }
 #header{
 	width:748px !important;	
-	overflow:hidden
+	overflow:hidden;
+	margin:0 0 8px 0;
 	}
 #header-right{
 	width:50% !important;
 	}
+	
+/** MENU **/	
+.header-menu{
+	margin-top:8px;
+	display:block !important;
+	text-align:right;
+	float:right;
+}
+/** LOGIN **/
+#login-c{
+	width:714px !important;
+	float:left;
+	margin-top:9px !important;
+	}	
+#login-c .col2{
+	width:348px !important;
+	}
+#login-c .col2-lo{
+	width:348px !important;	
+}
 #content{
 
 	width:748px !important;
@@ -281,7 +302,8 @@ font-size:23px;
 
 }
 #header{
-	width:300px !important;	
+	width:310px !important;	
+	padding:0 !important;
 	overflow:hidden
 	}
 
@@ -315,7 +337,6 @@ font-size:23px;
 .header-menu{
 	display:none !important}
 #content{
-
 	width:300px !important;
 	overflow:hidden
 	}
@@ -573,7 +594,7 @@ min-height:63px !important;
 	width:300px
 	}
 .paddin30{
-	padding-left:10px !important;
+	padding:0 10px !important;
 	}
 .col2{
 	width:300px;
@@ -737,4 +758,26 @@ font-size:18px;
 #login-c{
 	width:300px;
 	}
+#login-c .col2{
+	width:298px !important;
+	}
+#login-c .col2-lo{
+	width:296px !important;	
+	margin:16px 0 14px 0px !important;
+}
+#login-c form{
+	padding:0px; margin:0px}	
+.login{
+	width:296px !important;
+	border:1px solid #666;
+	}
+.btn-submit{
+	width:256px;
+
+}
+.btn-ipad{
+	display:none !important;
+	}
+.btn-smart{
+	display:block !important;}
 }

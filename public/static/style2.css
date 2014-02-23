@@ -131,7 +131,7 @@ img{
 
 #content{
 	float:left;
-	min-height:280px;
+	min-height:250px;
 	width:1007px;
 	margin-top:4px;
 	padding:0 17px 0  0;
@@ -147,7 +147,7 @@ img{
 #magasins{
 	float:left;
 	width:483px;
-	margin-left:13px;
+	margin-left:15px;
 	}
 #magasins-top{
 	background-image:url(images/magasins-top.png);
@@ -189,9 +189,9 @@ img{
 	font-size:13px;
 	color:#FFF;
 	float: left;
-	padding:0px 0px 0 4%;
+	padding:0px 0px 8px 16px;
 	text-align: left;
-	width:94%;
+	width:452px;
 	}
 .magasins-text{
 	height:28px;
@@ -217,7 +217,7 @@ img{
 	color:#FFF;
 	font-size:14px;
 	font-weight: bold;
-	padding:5px 0 0 0;
+	padding:1px 0 0 0;
 	margin:0px;
 	display:block;
 	}
@@ -277,21 +277,26 @@ img{
 .magasins-imgs{
 	float:left;
 	padding:5px 0 0 0;}
+
+.magasins-imgs img{
+	margin:0 1px 0 0 ;
+}
 	
 #magasins-footer{
 	background-image:url(images/magasins-footer.png);
 	background-repeat: no-repeat;
-	background-position:left top;
-	min-height:41px;
+	background-position:left  bottom;
+	min-height:46px;
 	float:left;
 	width:100%;
 	text-align:center;
 	}
 #magasins-footer p{
+	width:340px;
 	font-family:Arial, Helvetica, sans-serif;
 	font-weight:bold;
 	font-size:14px;
-	padding:3px 8px;
+	padding:4px 0px;
 	margin:6px 0 0 0;
 	display: inline-block;
 	background-color:#FFF;
@@ -375,9 +380,9 @@ img{
 	font-size:13px;
 	color:#000;
 	float: left;
-	padding:0px 0px 0 4%;
+	padding:0px 0px 10px 16px;
 	text-align: left;
-	width:94%;
+	width:453px;
 	}
 .occasions-text{
 	height:28px;
@@ -404,22 +409,23 @@ img{
 	color:#000;
 	font-size:14px;
 	font-weight: bold;
-	padding:5px 0 0 0;
+	padding:1px 0 0 0;
 	margin:0px;
 	display:block;
 	float: left
 	}
 .occasions-form{
 	float:right;
-	padding:5px 0 0 0;
-	width:338px;
+	padding:7px 0 0 0;
+	width:337px;
 	}
 .occasions-form select{
 	float:left;
 	width:306px;
 	-webkit-border-radius:4px;
     -moz-border-radius:4px;
-	padding:5px;
+	padding:5px !important;
+	margin:0 0 7px 0;
 	border-color:#DDDADA;
     border-radius:4px;
 	background: #e8e8e8; /* Old browsers */
@@ -463,40 +469,46 @@ img{
 	font-family:Arial, Helvetica, sans-serif;
 	font-weight:bold;
 	font-size:14px;
-	padding:3px 50px;
-	margin:-26px 32px 0 0;
+	padding:5px 52px;
+	margin:-23px 26px 0 0px;
 	display: inline-block;
 	background-color:#FFF;
 	color:#EBA200;
 	float:right;
 	}
 .occasions-form input[type=submit]{
-	width:28px;
-	height:58px;
-	padding-top:10px;
+	width:30px;
+	height:68px;
+	padding-top:9px;
 	background:url(images/occasions-submit.png);
+	background-repeat:no-repeat;
 	border:0px;
-	background-position:center center;
+	background-position:6px 3px;
 	cursor:pointer;
 }
 .occasions-imgs{
 	float:left;
 	padding:5px 0 0 0;}
+.occasions-imgs img{
+	margin:0 5px 0 0 ;}
+.nomargin{
+	margin:0px !important;}
 	
 #occasions-footer{
 	background-image:url(images/occasions-footer.png);
 	background-repeat:no-repeat;
-	background-position:left top;
-	min-height:41px;
+	background-position:left  bottom;
+	min-height:46px;
 	float:left;
 	width:100%;
 	text-align:center;
 	}
 #occasions-footer p{
+	width:340px;
 	font-family:Arial, Helvetica, sans-serif;
 	font-weight:bold;
 	font-size:14px;
-	padding:3px 80px;
+	padding:5px 0px;
 	margin:6px 0 0 0;
 	display: inline-block;
 	background-color:#FFF;
@@ -508,12 +520,12 @@ img{
 	width:985px;
 	float:left;
 	min-height:150px;
-	margin:10px 0 0 20px;
+	margin:10px 0 6px 20px;
 	}
 #actualite h2{
 	font-family: 'Roboto Condensed', sans-serif;
 	color:#000;
-	font-size:26px;
+	font-size:25px;
 	line-height:26px;
 	font-weight:700;	
 	padding:0px 0 13px 0px;
@@ -522,11 +534,17 @@ img{
 	margin:0;
 	display:block;
 	}
+	
+	
+	
 .actualite-col3{
-	width:315px;
+	width:320px;
 	padding:0 15px 0 0;
 	min-height:85px;
 	float:left;
+	}
+.actualite-col1{
+	width:323px !important;
 	}
 
 .actualite-col3right{
@@ -573,9 +591,10 @@ img{
 	float:right;
 	font-family:Arial, Helvetica, sans-serif;
 	font-size:14px;
+	letter-spacing:0.5pt;
 	font-weight:bold;
 	text-decoration:none;
-	color:#333;
+	color:#000;
 	padding:10px 0}
 .block-link{
 	float:right;
@@ -602,7 +621,7 @@ img{
 ul.bjqs{position:relative; list-style:none;padding:0;margin:0;overflow:hidden; display:none;}
 li.bjqs-slide{position:absolute; display:none;}
 ul.bjqs-controls{list-style:none;margin:0;padding:0;z-index:9999;}
-ul.bjqs-controls.v-centered li a{position:absolute;margin:-40px 0 0 0;}
+ul.bjqs-controls.v-centered li a{position:absolute;margin:-27px 0 0 0;}
 ul.bjqs-controls.v-centered li.bjqs-next a{right:0;}
 ul.bjqs-controls.v-centered li.bjqs-prev a{left:0;}
 ol.bjqs-markers{list-style: none; padding: 0; margin: 0; width:98%;}
@@ -621,15 +640,15 @@ ol.bjqs-markers.h-centered{text-align:right; }
 ol.bjqs-markers{
 	position:relative;
 	z-index:99999;
-	margin-top:-35px;
-	padding-right:10px;
+	margin-top:-28px;
+	padding-right:0px;
 }
 ol.bjqs-markers li a{
 	font-family: 'Roboto Condensed', sans-serif;
 	font-size:11px;
-	padding:2px 5px;
+	padding:0px 4px;
 	color:#fff;
-	margin:3px;
+	margin:2px 0px 2px 6px;
 	text-decoration: none;
 	border:1px #FFFFFF solid;
 }
@@ -652,7 +671,7 @@ p.bjqs-caption{
 	background-repeat:no-repeat;
 	background-position:center bottom;
 	float:left;
-	margin:15px 0 10px 20px;
+	margin:15px 0 5px 20px;
 	}
 .inscrire-left{
 	font-family:Arial, Helvetica, sans-serif;
@@ -670,7 +689,7 @@ p.bjqs-caption{
 	color:#393939;
 	text-decoration:none;
 	font-weight:bold;
-	margin:23px 280px 0 15px ;
+	margin:15px 280px 0 17px ;
 	width:162px;
 	float:left;
 	text-align: left;
@@ -681,19 +700,25 @@ p.bjqs-caption{
 	color:#666666;
 	font-size:13px;
 	font-weight:bold;
-	width:500px;
+	width:504px;
 	min-height:50px;
 	float: right;
 	text-align: left;
+	padding:0px;
 	}
+.inscrire-right form{
+	margin:0px;
+	padding:0px;
+	}	
 .inscrire-right input[type="text"]{
 	font-family:Arial, Helvetica, sans-serif;
 	color:#6B5F52;
 	font-size:13px;
-	padding:5px 10px;
+	padding:8px 10px;
 	background:none;
 	border:1px solid #676767;
-	width:206px;
+	width:228px;
+	margin:0px
 	}
 .inscrire-right input[type="submit"]{
 	background-color:#666666;
@@ -703,15 +728,16 @@ p.bjqs-caption{
 	font-family:Arial, Helvetica, sans-serif;
 	font-weight:bold;
 	cursor:pointer;
-	padding:6px 20px;
+	padding:8px 19px;
+	margin:0 0 0 2px !important
 	}
 
 .inscrire-right a{
 	font-family:Arial, Helvetica, sans-serif;
 	font-size:10px;
 	color:#415E9B;
-	padding:13px 45px 0 0;
-	margin:10px 0 7px 330px;
+	padding:13px 31px 0 0;
+	margin:0px 0 7px 354px;
 	width:105px;
 	text-decoration:none;
 	font-weight:bold;	
@@ -1572,7 +1598,15 @@ p.bjqs-caption{
 #login-c{
 	width:980px;
 	float:left;
-	margin-top:15px;
+	margin-top:24px;
+	}
+#login-c .col2{
+	width:478px;
+	min-height:50px;
+	color:#646464;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:14px;
+	line-height:18px;
 	}
 .login{
 	width:300px;
@@ -1582,7 +1616,7 @@ p.bjqs-caption{
 .login-content{
 	width:280px;
 	float:left;
-	padding:10px 8px 0 11px;
+	padding:3px 8px 0 11px;
 }
 .passe{
 	float:right;
@@ -1595,7 +1629,8 @@ p.bjqs-caption{
 	float:right;
 	width:170px;
 	text-align:left;
-	padding:4px 0;
+	padding:2px 0 1px 0;
+	text-indent:5px;
 	}	
 .login-content h3{
 	font-size:16px;
@@ -1606,7 +1641,7 @@ margin:0px;
 .login-content label{
 	width:100px;}
 .login-content p{
-	font-size:13px;
+	font-size:14px;
 	line-height:16px;
 	font-family:Arial, Helvetica, sans-serif;
 
@@ -1614,11 +1649,11 @@ margin:0px;
 	
 .login input[type="text"], .login input[type="password"]{
 	float:left;
-	margin:0 0px 6px 0 ;
-	width:150px !important;
+	margin:0 0px 6px 5px ;
+	width:165px !important;
 	-webkit-border-radius:4px;
     -moz-border-radius:4px;
-	padding:5px;
+	padding:6px 5px;
 	border-color:#DDDADA;
 	border:1px solid #DEDEDE;
     border-radius:4px;
@@ -1635,9 +1670,9 @@ margin:0px;
 	width:260px;
 	display:block;
 	float: left;
-	margin:6px 0 0 0;
+	margin:7px 0 0 0;
 	text-decoration:none;
-	padding:10px 20px;	
+	padding:9px 20px;	
 	border:0px;
 	background-color:#676767;
 	color:#FFF;
@@ -2180,7 +2215,6 @@ margin-bottom:5px;
  text-indent:10px;
 font-size:16px;
 margin-bottom:5px;
-<<<<<<< HEAD
 }
  #services{
 	 width:957px;
@@ -2414,6 +2448,3 @@ font-family: 'Roboto Condensed', sans-serif;
 	width:100%;
 	float:left;
 	 }
-=======
-}
->>>>>>> b4c8bf0a1973575a0e133b0f71e9d33751e3e3af
