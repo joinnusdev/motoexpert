@@ -11,6 +11,11 @@ class Compte_AnnoncePublierController extends App_Controller_Action_Default
     
     public function indexAction()
     {
+    	$form = new App_Form_CreateAnnounce();
+    	$this->view->form = $form;
+    	
+    	
+    	
     	$modelanunce = new App_Model_Announce();
     	$modelclient = new App_Model_Client();
     	$this->view->ruta = $this->config->app->photoUrl;    	
@@ -22,10 +27,6 @@ class Compte_AnnoncePublierController extends App_Controller_Action_Default
     	if ($this->_request->isPost()) {
     		$params = $this->_getAllParams();
     		$params['cid'] = $this->view->authData->cid;
-    		
-    		$modelclient->saveClient($params);    		
-    		
-    		$this->_redirect('/compte');
     		
     	}
     	
