@@ -154,4 +154,20 @@ class App_Model_Announce extends App_Db_Table_Abstract {
 		}
             
         }
+        
+        public function announceByCLient($idClient){
+        	$query = "SELECT * FROM  annonces
+        	WHERE id_client = ".$idClient;
+        	
+        	
+        	try{
+        		return $this->getAdapter()->fetchAll($query);
+        
+        	}catch (Exception $e){
+        		var_dump($e->getMessage());
+        	}
+        
+        }
+        
+        
 }
