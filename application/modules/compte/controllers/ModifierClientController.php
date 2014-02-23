@@ -23,7 +23,7 @@ class Compte_ModifierClientController extends App_Controller_Action_Default
     		$params = $this->_getAllParams();
     		$params['cid'] = $this->view->authData->cid;
     		
-    		$modelclient->saveClient($params);
+    		$modelclient->saveClient($params);    		
     		
     		$this->_redirect('/compte');
     		

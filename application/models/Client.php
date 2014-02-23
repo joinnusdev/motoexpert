@@ -19,10 +19,15 @@ class App_Model_Client extends App_Db_Table_Abstract {
 		}
 		if (empty($datos['pass']))
 			unset($datos['pass']);
+		if (!isset($datos['mailing']))
+			$mail = true;
+			
+		unset($datos['cid']);		
 		
-		unset($datos['cid']);
-		$datos = array_intersect_key($datos, array_flip($this->_getCols()));		
-	
+		$datos = array_intersect_key($datos, array_flip($this->_getCols()));
+		if ($mail) $datos['mailing'] = 0;
+		
+		
 		if ($id > 0) {
 			$cantidad = $this->update($datos, 'cid = ' . $id);
 			$id = ($cantidad < 1) ? 0 : $id;

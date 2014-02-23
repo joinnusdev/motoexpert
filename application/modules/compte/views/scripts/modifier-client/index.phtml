@@ -60,8 +60,9 @@
 				</p>
 				<p>
 					<span class="in-text">Je désire être tenu au courant de l’actualité
-						et des nouveautés du site Moto Expert</span> <input name="mailing"
-						type="checkbox" value="" />
+						et des nouveautés du site Moto Expert</span> 
+						<input name="mailing" type="checkbox" value="<?php echo $this->datos["mailing"]?>" <?php echo ($this->datos["mailing"]=="1")?'checked':'';?>/>
+						
 				</p>
 
 				<div id="new-navigation">
