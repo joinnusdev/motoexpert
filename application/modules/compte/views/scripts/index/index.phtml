@@ -31,9 +31,13 @@
                     <h2>GEREZ VOS ANNONCES</h2>
                     <p class="p14">Vous trouverez ci-dessous la liste de vos annonces déposées sur le site Moto Expert.</p>
                     
-                    <?php foreach ($this->result as $item):?>
+                    <?php foreach ($this->result as $item): 
+                    $foto = str_replace(",",".",$item['nom_fichier']);
+                    ?>
                     <div class="gerez-block">
-                        <div class="gerez-block1" ><img src="images/img.jpg" width="64" height="64"></div>
+                        <div class="gerez-block1" >
+                        <img src="<?php echo $this->ruta.$item['departement']."/".$foto; ?>" width="64" height="64">
+                        </div>
                         <div class="gerez-block2" >
                         <span>Ref. : <?= $item['ref']?></span><br>
                           <span> <?php  if ($item['date_valid']) echo date('d-m-y', $item['date_valid'])?> </span><br>

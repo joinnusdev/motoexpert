@@ -167,7 +167,6 @@ class App_Model_Announce extends App_Db_Table_Abstract {
         	left join annonces_photos ap on a.id = ap.id_annonce 
         	WHERE a.id_client = ".$idClient;
         	
-        	echo $query;exit;
         	try{
         		return $this->getAdapter()->fetchAll($query);
         

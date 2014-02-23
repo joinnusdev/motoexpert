@@ -185,3 +185,5 @@
 2014-02-22T21:38:44-05:00 NOTICE (5): Page not found
 2014-02-22T21:38:44-05:00 NOTICE (5): Request Parameters
 >>>>>>> 42e79f7398c963f1e2fdef55454d738aa5bf5f7a
+2014-02-22T21:58:17-05:00 CRIT (2): Application error
+2014-02-22T21:58:17-05:00 CRIT (2): Request Parameters

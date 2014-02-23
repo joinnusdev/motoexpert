@@ -12,8 +12,7 @@ class Compte_IndexController extends App_Controller_Action_Default
     {
     	$modelanunce = new App_Model_Announce();    	
     	
-    	$this->view->ruta = $this->config->app->photoUrl;
-    	echo $this->view->ruta;exit;
+    	$this->view->ruta = $this->config->app->photoUrl;    	
     	
     	$this->view->result = 
     	$modelanunce->announceByCLient($this->view->authData->cid);
