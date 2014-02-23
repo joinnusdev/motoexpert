@@ -11,6 +11,8 @@ class Default_LoginController extends App_Controller_Action_Default
     
     public function indexAction(){
     	
+    	$this->view->login = true;
+    	
     	if ($this->_request->isPost()) {
     		$datos = $this->_getAllParams();
     		
