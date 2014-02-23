@@ -5,7 +5,7 @@ class App_Model_Announce extends App_Db_Table_Abstract {
 
 	public function listSearch($datos){
 
-		$query = "
+		$query_ = "
                /* SELECT a.id,a.ref, a.titre, a.date, a.annee,a.cylindree, 
                                 a.couleur, a.km, a.id_cat,a.prix,a.departement,
                                 a.garantie, c.nom_cat, m.marque, m.id_mot,m.modele 
@@ -18,9 +18,9 @@ class App_Model_Announce extends App_Db_Table_Abstract {
                 and info.ref = a.ref 
                 AND a.internet <> '0' 
                 AND a.modere = '1' 
-                AND a.ispayed = '1' */
+                AND a.ispayed = '1' */";
                 
-                SELECT a.id,a.ref, a.titre, a.date, a.annee,a.cylindree, 
+                $query = "SELECT a.id,a.ref, a.titre, a.date, a.annee,a.cylindree, 
                                 a.couleur, a.km, a.id_cat,a.prix,a.departement,
                                 a.garantie, c.nom_cat, m.marque, m.id_mot,m.modele 
                                 ,foto.nom_fichier as foto, info.controle
