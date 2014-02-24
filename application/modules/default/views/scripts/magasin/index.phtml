@@ -1,3 +1,27 @@
+<script src="https://maps.googleapis.com/maps/api/js?sensor=false&language=fr-FR"></script>
+    <script>
+      function initialize() {
+        var map_canvas = document.getElementById('map_canvas');
+        var map_options = {
+          center: new google.maps.LatLng(<?= $this->magasinInfo['latitude'];?>, <?= $this->magasinInfo['longitude'];?>),
+          zoom: 13,
+		  			//navigationControl: false,
+			//draggable: false,
+			scrollwheel: true,
+			streetViewControl:false,
+			mapTypeControl: false,
+			zoomControl: false,
+			scaleControl: false,		  
+		  			zoomControlOptions: {
+				style: google.maps.ZoomControlStyle.SMALL
+			},
+          mapTypeId: google.maps.MapTypeId.ROADMAP,
+
+        }
+        var map = new google.maps.Map(map_canvas, map_options)
+      }
+      google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
 <div id="content" class="paddin30"> 
         	<div id="content-top">
             
@@ -43,7 +67,8 @@
     });
     </script>
 <div class="content960">
-          	<div class="col2 align-left"><img src="<?=MEDIA_URL ?>images/map50.jpg" width="479" height="256"></div>
+          <div class="col2 align-left"><div id="map_canvas"></div><br />
+            </div>
           	
             <div class="col2 col470 align-right">
                	<div class="subtitle2">
