@@ -38,7 +38,30 @@
 } ?>
 	  }
 </script>
+<script src="https://maps.googleapis.com/maps/api/js?sensor=false&language=fr-FR"></script>
+    <script>
+      function initialize() {
+        var map_canvas = document.getElementById('map_canvas_mini');
+        var map_options = {
+          center: new google.maps.LatLng(<?= $this->detailAnnonces['latitude'];?>, <?= $this->detailAnnonces['longitude'];?>),
+          zoom: 13,
+		  			//navigationControl: false,
+			//draggable: false,
+			scrollwheel: true,
+			streetViewControl:false,
+			mapTypeControl: false,
+			zoomControl: false,
+			scaleControl: false,		  
+		  			zoomControlOptions: {
+				style: google.maps.ZoomControlStyle.SMALL
+			},
+          mapTypeId: google.maps.MapTypeId.ROADMAP,
 
+        }
+        var map = new google.maps.Map(map_canvas, map_options)
+      }
+      google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
 <link href="<?=MEDIA_URL ?>css/flexslider.css" rel="stylesheet">
 
 <div id="content" class="paddin30"> 
@@ -161,11 +184,11 @@
               <div class="top-left">MOTO EXPERT <br /><span><?=$this->detailAnnonces['ville']?></span></div>
               <div class="col2 align-left margin-top">
               	<div class="col21">
-                    <img src="<?=MEDIA_URL ?>images/map.jpg" width="222" height="119" />
+                    <div class="col21"><div id="map_canvas_mini"></div><br /></div>
                 </div>
                 <div class="col22">
                 	<div class="subtitle2">
-                		PLAN INTERACTIF 
+                            <a href="<?= $this->detailAnnonces['liengmap'];?>" target="_blank">PLAN INTERACTIF</a> 
               		</div>
                     <p><?=$this->detailAnnonces['adresse'];?></p>
                 	<p>Tél. : <?=$this->detailAnnonces['tel'];?></p>
