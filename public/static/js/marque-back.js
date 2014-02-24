@@ -1,4 +1,5 @@
-$(function(){
+jQuery(function($){
+//$(function(){
     
     var producto = {        
         init : function() {
