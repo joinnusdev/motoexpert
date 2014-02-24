@@ -51,7 +51,9 @@ class App_Model_Magasin extends App_Db_Table_Abstract {
     
      public function magasinPhoto($idMagasin){
         
-       $query = "SELECT * FROM magasins_photos WHERE id_magasin ='".$idMagasin."'";   
+       $query = "SELECT m.id_me,m.nom,m.ville,p.nom_fichier,p.ordre FROM 
+                moto_expert m inner join magasins_photos p on m.id_me = p.id_magasin
+                WHERE m.id_me='".$idMagasin."'";   
        try{
         return $this->getAdapter()->fetchAll($query);
          
