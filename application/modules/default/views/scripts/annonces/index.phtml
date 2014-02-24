@@ -51,7 +51,7 @@
             </div>
 	</div>
 	<div id="navigation">
-		<div class="resultats"><?php echo $this->total[0] ?> RÉSUTATS TROUVÉS</div>
+		<div class="resultats"><?php echo $this->total ?> RÉSUTATS TROUVÉS</div>
 		<div class="next-prev">
 			<a href="#" class="nprev">PRECEDENTE</a><a href="" class="nnext">SUIVANTE</a>
 		</div>
@@ -118,7 +118,7 @@
 
 
 	<div id="navigation">
-		<div class="resultats"><?php echo $this->total[0]; ?> RÉSUTATS TROUVÉS</div>
+		<div class="resultats"><?php echo $this->total; ?> RÉSUTATS TROUVÉS</div>
 		<div class="next-prev">
 			<a href="#" class="nprev">PRECEDENTE</a><a href="" class="nnext">SUIVANTE</a>
 		</div>
@@ -148,7 +148,8 @@ $(function(){
             
                 var actual = $(c);
                 
-                if (actual.val() != 0) {                    
+                if (actual.val() != 0) {
+                                        
                     
                     $(cd).removeAttr("disabled");
                     $.ajax({
@@ -164,7 +165,7 @@ $(function(){
 
                                 $.each(data, function(index, value){
                                 	var select = ' ';
-                                	if (value[fieldv] == '<?php echo $this->announce['modele']?>')
+                                	if (value[fieldv] == "<?php echo @$this->announce['modele']?>")
                                          var selec = 'selected="selected "';
                                     
                                     $(cd).append("<option "+ selec +" value='"+value[fieldv]+"'>"+value[fields]+"</option>");
