@@ -76,7 +76,13 @@
 		</div>
 	</div>
 	<div id="occasions-footer">
-		<p>DEPOSEZ VOTRE ANNONCE</p>
+            <?php if ($this->authData){?>
+                <a class="actualite-link" href="/compte/annonce-publier"><p>DEPOSEZ VOTRE ANNONCE</p></a>
+            <?php } else {?>
+                <a class="actualite-link" href="/login"><p>DEPOSEZ VOTRE ANNONCE</p></a>
+            <?php } ?>
+            
+		
 	</div>
 
 </div>
