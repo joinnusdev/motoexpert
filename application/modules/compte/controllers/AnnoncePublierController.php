@@ -6,15 +6,15 @@ class Compte_AnnoncePublierController extends App_Controller_Action_Default
     public function init()
     {
         parent::init();
+       
+                
         
     }
     
     public function indexAction()
     {
-    	$form = new App_Form_CreateAnnounce();
+        $form = new App_Form_CreateAnnounce();
     	$this->view->form = $form;
-    	
-    	
     	
     	$modelanunce = new App_Model_Announce();
     	$modelclient = new App_Model_Client();

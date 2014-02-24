@@ -12,7 +12,30 @@
     <link href="css/owl.carousel.css" rel="stylesheet">
     <link href="css/owl.theme.css" rel="stylesheet">
 <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300italic,400italic,700italic,400,300,700' rel='stylesheet' type='text/css'>
+    <script src="https://maps.googleapis.com/maps/api/js?sensor=false&language=fr-FR"></script>
+    <script>
+      function initialize() {
+        var map_canvas = document.getElementById('map_canvas');
+        var map_options = {
+          center: new google.maps.LatLng(48.856614, 2.352222),
+          zoom: 13,
+		  			//navigationControl: false,
+			//draggable: false,
+			scrollwheel: true,
+			streetViewControl:false,
+			mapTypeControl: false,
+			zoomControl: false,
+			scaleControl: false,		  
+		  			zoomControlOptions: {
+				style: google.maps.ZoomControlStyle.SMALL
+			},
+          mapTypeId: google.maps.MapTypeId.ROADMAP,
 
+        }
+        var map = new google.maps.Map(map_canvas, map_options)
+      }
+      google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
 <title>MOTO EXPERT - Réseau de magasins spécialisés moto, annonces moto occasion, accessoires moto</title>
 </head>
 <body>
@@ -71,7 +94,8 @@
     });
     </script>
 <div class="content960">
-          	<div class="col2 align-left"><img src="images/map50.jpg" width="479" height="256"></div>
+          	<div class="col2 align-left"><div id="map_canvas"></div><br />
+</div>
           	
             <div class="col2 col470 align-right">
                	<div class="subtitle2">

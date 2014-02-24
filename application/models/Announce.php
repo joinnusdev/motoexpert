@@ -130,7 +130,7 @@ class App_Model_Announce extends App_Db_Table_Abstract {
 		a.garantie, c.nom_cat, m.marque, m.id_mot,m.modele
 		,foto.nom_fichier as foto, info.controle
 		,moto.id_me, moto.nom, moto.ville,moto.adresse ,moto.tel
-		,moto.fax , moto.horaires
+		,moto.fax , moto.horaires,moto.latitude,moto.longitude,moto.liengmap 
 		,info.type_occaz,a.descr_site,info.neuf, info.isgarantie
 		FROM  annonces a
 		inner join categories c on a.id_cat = c.id_cat

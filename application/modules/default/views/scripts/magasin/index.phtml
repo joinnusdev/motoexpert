@@ -1,22 +1,51 @@
-<div id="content" class="paddin30"> 
+<link href="<?=MEDIA_URL ?>css/owl.carousel.css" rel="stylesheet">
+<link href="<?=MEDIA_URL ?>css/owl.theme.css" rel="stylesheet">
+<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300italic,400italic,700italic,400,300,700' rel='stylesheet' type='text/css'>
+    <script src="https://maps.googleapis.com/maps/api/js?sensor=false&language=fr-FR"></script>
+    <script>
+      function initialize() {
+        var map_canvas = document.getElementById('map_canvas');
+        var map_options = {
+          center: new google.maps.LatLng(<?= $this->magasinInfo['latitude'];?>, <?= $this->magasinInfo['longitude'];?>),
+          zoom: 13,
+		  			//navigationControl: false,
+			//draggable: false,
+			scrollwheel: true,
+			streetViewControl:false,
+			mapTypeControl: false,
+			zoomControl: false,
+			scaleControl: false,		  
+		  			zoomControlOptions: {
+				style: google.maps.ZoomControlStyle.SMALL
+			},
+          mapTypeId: google.maps.MapTypeId.ROADMAP,
+
+        }
+        var map = new google.maps.Map(map_canvas, map_options)
+      }
+      google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+<body>
+        <div id="content" class="paddin30"> 
         	<div id="content-top">
             
-                            <div class="top-left">MOTO EXPERT <br /><span><?= $this->magasinInfo['ville'];?></span></div>
+                            <div class="top-left">MOTO EXPERT <br /><span>METZ</span></div>
         	</div>
        	  
           <!-- //*** Magasines  //-->
           <div id="details">
                   <div id="slidersh">
-                  	 <div id="owl-demo" class="owl-carousel">
-                         <?php
+                    <div id="owl-demo" class="owl-carousel">
+                        
+                        <?php
+                          $nombreTienda =  strtolower($this->magasinInfo['ville']).'_'.$this->magasinInfo['id_me'];
                           $config = Zend_Registry::get('config');
                           foreach ($this->magasinPhoto as $photo) :
-                            $foto = str_replace(",",".",$photo['nom_fichier']);    
-                            $ruta = $config->app->photoUrl. $this->magasinInfo['dep'].'/'.$foto;
+                            $ruta = $config->app->photoUrlTienda.$nombreTienda.'/gallery/gd/'.$photo['nom_fichier'].'.jpg';
                           ?>
                           <div class="item"><img src="<?=$ruta;?>" alt=""></div>
-                          <?php endforeach; ?>     
-                        <!-- <div class="item"><img src="<?=MEDIA_URL ?>images/sliderh/1.jpg" alt=""></div>
+                          <?php endforeach; ?> 
+                        <!--<div class="item"><img src="<?=MEDIA_URL ?>images/sliderh/1.jpg" alt=""></div>
                         <div class="item"><img src="<?=MEDIA_URL ?>images/sliderh/2.jpg" alt=""></div>
                         <div class="item"><img src="<?=MEDIA_URL ?>images/sliderh/3.jpg" alt=""></div>
                         <div class="item"><img src="<?=MEDIA_URL ?>images/sliderh/4.jpg" alt=""></div>
@@ -43,11 +72,14 @@
     });
     </script>
 <div class="content960">
-          	<div class="col2 align-left"><img src="<?=MEDIA_URL ?>images/map50.jpg" width="479" height="256"></div>
+          <div class="col2 align-left"><div id="map_canvas"></div><br />
+            </div>
           	
             <div class="col2 col470 align-right">
                	<div class="subtitle2">
-                		PLAN INTERACTIF 
+                    <a href="<?= $this->magasinInfo['liengmap'];?>" target="_blank">
+                        PLAN INTERACTIF 
+                    </a>                		
        		  </div>
             <div class="col21">
             <p><?= $this->magasinInfo['adresse'];?></p><br />
@@ -92,68 +124,99 @@
           
           
                    <!-- // actualite // -->
-          <div id="actualite">
+         <div id="actualite">
            		<h2>L’ACTUALITÉ MOTO EXPERT</h2>
             <div class="actualite-col3"><img src="<?=MEDIA_URL ?>images/solde.jpg" width="87" height="87" /><h3>Vive les Soldes d’hiver pour s’équiper pas cher !</h3><p>Elles débuteront dans votre magasin Moto Expert officiellement le mercredi 11 janvier 2012 à 8 heures</p></div>
                 <div class="actualite-col3"><img src="<?=MEDIA_URL ?>images/people.jpg" width="87" height="87" /><h3>Rejoingnez le Fan Club et bénéficiez du prix Fan* -6% immédiatement !</h3><p>Rejoingnez le Fan Club et bénéficiez du prix Fan* -6% immédiatement !</p></div>
                 <div class="actualite-col3right"><img src="<?=MEDIA_URL ?>images/house.jpg" width="87" height="87" /><h3>Fermeture du magasin de Saint-Quentin</h3><p>Le magasin est dorénavant fermé. Nous vous informerons dès sa réouverture.</p></div>
                 
-          </div>   
+          </div>    
 <!--/************************************************************************************/-->
     <a href="#" class="block-link">› VOIR TOUTES LES ACTUALITES</a>
       
       	<div style="width:970px; height:auto; padding:0 0 10px 0; margin:0 0 10px 24px ; float:left; position:relative">
-        	<!-- / top bottom /-->
-              <div style="width:47px; height:45px; position:absolute;"><img src="<?=MEDIA_URL ?>images/top.png" width="47" height="45"></div>
-          	  <div style="width:47px; height:45px; position: absolute; z-index:999; bottom:0; right:0px; float:right"><img src="<?=MEDIA_URL ?>images/botton.png" width="47" height="45"></div>
-  			<!-- / top bottom /-->
-         	 <div style="width:959px; margin:6px 5px 0px 6px; float:left; background-color:#FBCB00; background-image:url(<?=MEDIA_URL ?>images/bg-ye.jpg); background-position:top; background-repeat:repeat-x;">
-                      <div id="ye-top">
-                                <h2>NOS OCCASIONS <br />MOTO </h2>
-                                <div class="ye-right"><strong>› 1 annonce moto</strong></div>
-                      </div>
-               <div id="results-content">
-          <div id="list_">
-                    <div class="result-col3 no-bor-bot">                        
-                        <div class="result-imgs"><img src="<?=MEDIA_URL ?>images/resutats-img.jpg" width="300" height="115" /></div>
-                      <div class="result-price-w">4200  € </div>
+        <!-- / top bottom /-->
+        <div style="width:47px; height:45px; position:absolute;"><img src="<?=MEDIA_URL ?>images/top.png" width="47" height="45"></div>
+            <div style="width:47px; height:45px; position: absolute; z-index:999; bottom:0; right:0px; float:right"><img src="<?=MEDIA_URL ?>images/botton.png" width="47" height="45"></div>
+                <!-- / top bottom /-->
+            <div style="width:959px; margin:6px 5px 0px 6px; float:left; background-color:#FBCB00; background-image:url(<?=MEDIA_URL ?>images/bg-ye.jpg); background-position:top; background-repeat:repeat-x;">
+                <div id="ye-top">
+                        <h2>NOS OCCASIONS <br />MOTO </h2>
+                        <div class="ye-right"><strong>› <?= $this->countMagasin['total'];?> annonce moto</strong></div>
+                </div>
+                <div id="results-content">
+                    <div id="list_">
+                    </div>
+                <?php
+                $config = Zend_Registry::get('config');
+                $i = 0;
+                foreach ($this->lastAnnoncesMagasin as $anuncionsTienda) :
+                    $i++;
+                    $foto = str_replace(",",".",$anuncionsTienda['nom_fichier']);    
+                    $ruta = $config->app->photoUrl. $anuncionsTienda['departement'].'/'.$foto;
+                   
+                    if(count($this->lastAnnoncesMagasin)-1 == $i-1){
+                        $class = "result-col3 col3no no-bor-bot";
+                    }else{
+                        $class = "result-col3 no-bor-bot";
+                    }
+                    
+                ?>
+               
+                <div class="<?= $class;?>">                        
+                        <div class="result-imgs">
+                            <a href="Fiche-Moto/index/id/<?php echo $anuncionsTienda['id'];?>">
+                                <img src="<?=$ruta;?>" width="300" />
+                            </a>
+                        </div>
+                        <div class="result-price-w"><?= $anuncionsTienda['prix'];?> € </div>
+                        <div class="result-desc">
+                        <div class="result-date"><?php echo date('d/m/Y', $this->detailAnnonces['date'])?> </div>
+                            <p><strong><?= $anuncionsTienda['titre'];?></strong><br />
+                       <?php echo $anuncionsTienda['marque']. " " . $anuncionsTienda['modele'] . " " . 
+                               $anuncionsTienda['cylindree']. " cm3 " . $anuncionsTienda['km']. " km" . 
+                               " Année " . $anuncionsTienda['annee']?></p>
+                        <?php if ($anuncionsTienda['controle']==1){?>
+                        <a href="#" class="visuel">CONTRÛLE VISUEL</a>
+                        <?php }?>
+                        <?php if ($anuncionsTienda['isgarantie']==1){?>
+                        <a href="#" class="garantie">GARANTIE </a>
+                        <?php }?>    
+                        </div>
+
+                    </div>
+                <?php endforeach;?>
+                <!--<div class="result-col3 no-bor-bot">            
+                    <div class="result-imgs"><img src="<?=MEDIA_URL ?>images/resutats-img.jpg" width="300" height="115" /></div>
+                    <div class="result-price-w">4200  € </div>
                         <div class="result-desc">
                         <div class="result-date">05/02114 </div>
-                         <p><strong>Suzuki RMZ 250</strong><br />
-                       Honda - CB 600 F ABS - 600 cm3 - 15550 km Année 2005 - à débattre</p>
+                            <p><strong>Suzuki RMZ 250</strong><br />
+                        Honda - CB 600 F ABS - 600 cm3 - 15550 km Année 2005 - à débattre</p>
                         <a href="#" class="visuel">CONTRÛLE VISUEL</a> <a href="#" class="garantie">GARANTIE </a>
                         </div>
-                    
+
+                </div>
+                <div class="result-col3 col3no no-bor-bot">
+                    <div class="result-imgs"><img src="<?=MEDIA_URL ?>images/resutats-img.jpg" width="300" height="115" /></div>
+                        <div class="result-price-w">4200  € </div>
+                    <div class="result-desc">
+                    <div class="result-date">05/02114 </div>
+                        <p><strong>Suzuki RMZ 250</strong><br />
+                    Honda - CB 600 F ABS - 600 cm3 - 15550 km Année 2005 - à débattre</p>
+                    <a href="#" class="visuel">CONTRÛLE VISUEL</a> <a href="#" class="garantie">GARANTIE </a>
                     </div>
-           </div>
-            <div class="result-col3 no-bor-bot">            
-            	<div class="result-imgs"><img src="<?=MEDIA_URL ?>images/resutats-img.jpg" width="300" height="115" /></div>
-           	  <div class="result-price-w">4200  € </div>
-                <div class="result-desc">
-                <div class="result-date">05/02114 </div>
-                 <p><strong>Suzuki RMZ 250</strong><br />
-               Honda - CB 600 F ABS - 600 cm3 - 15550 km Année 2005 - à débattre</p>
-                <a href="#" class="visuel">CONTRÛLE VISUEL</a> <a href="#" class="garantie">GARANTIE </a>
-                </div>
-            
-           </div>
-            <div class="result-col3 col3no no-bor-bot">
-            	<div class="result-imgs"><img src="<?=MEDIA_URL ?>images/resutats-img.jpg" width="300" height="115" /></div>
-           	  <div class="result-price-w">4200  € </div>
-                <div class="result-desc">
-                <div class="result-date">05/02114 </div>
-                 <p><strong>Suzuki RMZ 250</strong><br />
-               Honda - CB 600 F ABS - 600 cm3 - 15550 km Année 2005 - à débattre</p>
-                <a href="#" class="visuel">CONTRÛLE VISUEL</a> <a href="#" class="garantie">GARANTIE </a>
-                </div>
-            
-           </div>
-               </div>     
-                      
-                      
-                      
-                      
-          	</div>
+                </div>-->
+            </div>     
+        </div>
+
+    </div>
+<a href="/annonces?magasin=<?= $this->magasinInfo['id_me'];?>" class="block-link">› VOIR TOUTES LES OCCASIONS DU MAGASIN </a><br ><br/>
+
+        <!--/*********************************************************/-->  
        
-          </div>
-<a href="#" class="block-link">› VOIR TOUTES LES OCCASIONS DU MAGASIN </a><br ><br/>
+	
+    
+
+</body>
+
