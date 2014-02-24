@@ -60,6 +60,28 @@ class App_Model_Magasin extends App_Db_Table_Abstract {
        }
     }
     
+    
+    public function countMagasin($idMagasin){
+
+		$query = "
+		SELECT count(*) as total FROM annonces a, categories c, annonce_cat ac, motos m
+		WHERE a.id_mot = m.id_mot
+		AND a.ref = ac.ref
+		AND ac.id_cat = c.id_cat
+		AND a.internet <>  '0'
+		AND a.modere = '1'
+		AND a.ispayed =  '1'
+		and a.id_me = ". $idMagasin;
+		
+		try{
+			return $this->getAdapter()->fetchRow($query);
+
+		}catch (Exception $e){
+			var_dump($e->getMessage());
+		}
+
+	}
+        
     public function lastAnnoncesMagasin($idMagasin){
         $query = "select a.id,a.prix,a.titre, a.departement,a.date,a.cylindree,a.km,a.annee,
                     m.marque,m.modele,
