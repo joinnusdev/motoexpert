@@ -124,22 +124,24 @@
           
           
                    <!-- // actualite // -->
+        <div id="maga-actualite">
          <div id="actualite">
-           		<h2>L’ACTUALITÉ MOTO EXPERT</h2>
-            <div class="actualite-col3"><img src="<?=MEDIA_URL ?>images/solde.jpg" width="87" height="87" /><h3>Vive les Soldes d’hiver pour s’équiper pas cher !</h3><p>Elles débuteront dans votre magasin Moto Expert officiellement le mercredi 11 janvier 2012 à 8 heures</p></div>
-                <div class="actualite-col3"><img src="<?=MEDIA_URL ?>images/people.jpg" width="87" height="87" /><h3>Rejoingnez le Fan Club et bénéficiez du prix Fan* -6% immédiatement !</h3><p>Rejoingnez le Fan Club et bénéficiez du prix Fan* -6% immédiatement !</p></div>
+           		<h2>L’ACTUALITÉ MOTO EXPERT METZ</h2>
+            <div class="actualite-col3   actualite-col1"><img src="<?=MEDIA_URL ?>images/solde.jpg" width="87" height="87" /><h3>Vive les Soldes d’hiver pour s’équiper pas cher !</h3><p>Elles débuteront dans votre magasin Moto Expert officiellement le mercredi 11 janvier 2012 à 8 heures</p></div>
+                <div class="actualite-col3 actualite-col2"><img src="<?=MEDIA_URL ?>images/people.jpg" width="87" height="87" /><h3>Rejoingnez le Fan Club et bénéficiez du prix Fan* -6% immédiatement !</h3><p>Rejoingnez le Fan Club et bénéficiez du prix Fan* -6% immédiatement !</p></div>
                 <div class="actualite-col3right"><img src="<?=MEDIA_URL ?>images/house.jpg" width="87" height="87" /><h3>Fermeture du magasin de Saint-Quentin</h3><p>Le magasin est dorénavant fermé. Nous vous informerons dès sa réouverture.</p></div>
                 
-          </div>    
+          </div>  
+       </div>     
 <!--/************************************************************************************/-->
-    <a href="#" class="block-link">› VOIR TOUTES LES ACTUALITES</a>
+    <a href="#" class="block-link-maga">› VOIR TOUTES LES ACTUALITES</a>
       
-      	<div style="width:970px; height:auto; padding:0 0 10px 0; margin:0 0 10px 24px ; float:left; position:relative">
+      	<div id="ye-content">
         <!-- / top bottom /-->
-        <div style="width:47px; height:45px; position:absolute;"><img src="<?=MEDIA_URL ?>images/top.png" width="47" height="45"></div>
-            <div style="width:47px; height:45px; position: absolute; z-index:999; bottom:0; right:0px; float:right"><img src="<?=MEDIA_URL ?>images/botton.png" width="47" height="45"></div>
+        <div  class="ye-top"><img src="<?=MEDIA_URL ?>images/top.png" width="47" height="45"></div>
+            <div class="ye-botton"><img src="<?=MEDIA_URL ?>images/botton.png" width="47" height="45"></div>
                 <!-- / top bottom /-->
-            <div style="width:959px; margin:6px 5px 0px 6px; float:left; background-color:#FBCB00; background-image:url(<?=MEDIA_URL ?>images/bg-ye.jpg); background-position:top; background-repeat:repeat-x;">
+            <div class="ye-contnt-b">
                 <div id="ye-top">
                         <h2>NOS OCCASIONS <br />MOTO </h2>
                         <div class="ye-right"><strong>› <?= $this->countMagasin['total'];?> annonce moto</strong></div>
@@ -177,10 +179,10 @@
                                $anuncionsTienda['cylindree']. " cm3 " . $anuncionsTienda['km']. " km" . 
                                " Année " . $anuncionsTienda['annee']?></p>
                         <?php if ($anuncionsTienda['controle']==1){?>
-                        <a href="#" class="visuel">CONTRÛLE VISUEL</a>
+                        <span class="visuel">CONTRÛLE VISUEL</span>
                         <?php }?>
                         <?php if ($anuncionsTienda['isgarantie']==1){?>
-                        <a href="#" class="garantie">GARANTIE </a>
+                        <span class="garantie">GARANTIE </span>
                         <?php }?>    
                         </div>
 
@@ -211,7 +213,7 @@
         </div>
 
     </div>
-<a href="/annonces?magasin=<?= $this->magasinInfo['id_me'];?>" class="block-link">› VOIR TOUTES LES OCCASIONS DU MAGASIN </a><br ><br/>
+<a href="/annonces?magasin=<?= $this->magasinInfo['id_me'];?>" class="block-link-maga btnfoo">› VOIR TOUTES LES OCCASIONS DU MAGASIN </a><br ><br/>
 
         <!--/*********************************************************/-->  
        

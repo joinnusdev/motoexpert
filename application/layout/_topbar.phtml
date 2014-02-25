@@ -11,7 +11,8 @@
 		<div class="header-top">
 			<a href="#">ACTUALITE RESEAU</a> - <a href="#">NEWSLETTER</a>
 			<?php if ($this->authData){?>
-			<a class="nomcompte" href="/compte">Bonjour <?= $this->authData->nom . " " . $this->authData->prenom ?> </a>			    
+			<a class="nomcompte" href="/compte">Bonjour <?= $this->authData->nom . " " . $this->authData->prenom ?> </a> |			    
+                        <a class="logout" href="/auth/logout">Salir</a>			    
 			<?php } else {?>
 			<a class="nomcompte" href="/login">MON COMPTE</a>
 			<?php } ?>
@@ -29,6 +30,14 @@
 			<li class="noborder"><a class="menu-green" href="/contact">CONTACT</a>
 			</li>
 		</ul>
+        <div class="menu-movil">
+                               <select class="menumovil" onChange="top.location.href=this.options[this.selectedIndex].value;">
+            		  <option value="/" selected>NAVIGTION</option>
+                      <option value="/">ACCUEIL</option>
+            		  <option value="/annonces" >OCCASION MOTO</option>
+            		  <option value="#">FRANCHISE ET SERVICES</option>
+            		  <option value="/contact">CONTACT</option>
+	          </select></div>  
 
 	</div>
 </div>
