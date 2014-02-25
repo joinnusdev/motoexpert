@@ -107,12 +107,12 @@ class App_Date_Calc
      * @access public
      * @static
      */
-    function dateFormat($day, $month, $year, $format)
+    public function dateFormat($day, $month, $year, $format)
     {
-        if (!Date_Calc::isValidDate($day, $month, $year)) {
-            $year  = Date_Calc::dateNow('%Y');
-            $month = Date_Calc::dateNow('%m');
-            $day   = Date_Calc::dateNow('%d');
+        if (!App_Date_Calc::isValidDate($day, $month, $year)) {
+            $year  = App_Date_Calc::dateNow('%Y');
+            $month = App_Date_Calc::dateNow('%m');
+            $day   = App_Date_Calc::dateNow('%d');
         }
 
         $output = '';
@@ -123,16 +123,16 @@ class App_Date_Calc
                 $nextchar = substr($format, $strpos + 1, 1);
                 switch($nextchar) {
                     case 'a':
-                        $output .= Date_Calc::getWeekdayAbbrname($day, $month, $year);
+                        $output .= App_Date_Calc::getWeekdayAbbrname($day, $month, $year);
                         break;
                     case 'A':
-                        $output .= Date_Calc::getWeekdayFullname($day, $month, $year);
+                        $output .= App_Date_Calc::getWeekdayFullname($day, $month, $year);
                         break;
                     case 'b':
-                        $output .= Date_Calc::getMonthAbbrname($month);
+                        $output .= App_Date_Calc::getMonthAbbrname($month);
                         break;
                     case 'B':
-                        $output .= Date_Calc::getMonthFullname($month);
+                        $output .= App_Date_Calc::getMonthFullname($month);
                         break;
                     case 'd':
                         $output .= sprintf('%02d', $day);
@@ -141,10 +141,10 @@ class App_Date_Calc
                         $output .= $day;
                         break;
                     case 'E':
-                        $output .= Date_Calc::dateToDays($day, $month, $year);
+                        $output .= App_Date_Calc::dateToDays($day, $month, $year);
                         break;
                     case 'j':
-                        $output .= Date_Calc::julianDate($day, $month, $year);
+                        $output .= App_Date_Calc::julianDate($day, $month, $year);
                         break;
                     case 'm':
                         $output .= sprintf('%02d', $month);
@@ -156,10 +156,10 @@ class App_Date_Calc
                         $output .= "\t";
                         break;
                     case 'w':
-                        $output .= Date_Calc::dayOfWeek($day, $month, $year);
+                        $output .= App_Date_Calc::dayOfWeek($day, $month, $year);
                         break;
                     case 'U':
-                        $output .= Date_Calc::weekOfYear($day, $month, $year);
+                        $output .= App_Date_Calc::weekOfYear($day, $month, $year);
                         break;
                     case 'y':
                         $output .= substr($year, 2, 2);
@@ -219,7 +219,7 @@ class App_Date_Calc
      * @access public
      * @static
      */
-    function dateToDays($day, $month, $year)
+    public function dateToDays($day, $month, $year)
     {
         $century = (int)substr($year, 0, 2);
         $year = (int)substr($year, 2, 2);
@@ -252,7 +252,7 @@ class App_Date_Calc
      * @access public
      * @static
      */
-    function daysToDate($days, $format = DATE_CALC_FORMAT)
+    public function daysToDate($days, $format = DATE_CALC_FORMAT)
     {
         $days   -= 1721119;
         $century = floor((4 * $days - 1) / 146097);
@@ -279,7 +279,7 @@ class App_Date_Calc
 
         $century = sprintf('%02d', $century);
         $year    = sprintf('%02d', $year);
-        return Date_Calc::dateFormat($day, $month, $century . $year, $format);
+        return App_Date_Calc::dateFormat($day, $month, $century . $year, $format);
     }
 
     /**
