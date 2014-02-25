@@ -10,6 +10,11 @@ class Default_IndexController extends App_Controller_Action_Default
     
     public function indexAction()
     {
+        
+         $d= new App_Date();
+         $s = $d->daysToDate('2453811',"%d/%m/%y");
+         print_r($s);
+         exit;
         /*$modelMoto = new App_Model_Moto();
         $result = $modelMoto->listarMarca();
         $this->view->listarMarca = $result; */
@@ -24,6 +29,8 @@ class Default_IndexController extends App_Controller_Action_Default
         
         $modelAnounce = new App_Model_Announce();
     	$this->view->totalAnuncio = $modelAnounce->countAnnounce();
+        
+        
     }
     
     public function getModeleAction()
