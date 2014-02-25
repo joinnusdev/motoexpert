@@ -47,7 +47,12 @@
 	<div id="poster">
 		<div class="poster-left">VOUS VENDEZ VOTRE MOTO ? NOUS NOUS OCCUPONS
 			DE TOUT</div>
-            <div class="poster-right">POSTER VOTRE ANNONCE
+            <div class="poster-right">
+                 <?php if ($this->authData){?>
+                <a class="actualite-linkof" href="/compte/annonce-publier"><p>POSTER VOTRE ANNONCE</p></a>
+                <?php } else {?>
+                    <a class="actualite-linkof" href="/login"><p>POSTER VOTRE ANNONCE</p></a>
+                <?php } ?>
             </div>
 	</div>
 	<div id="navigation">
