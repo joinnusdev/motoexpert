@@ -2,6 +2,7 @@
 <!-- //magasins // -->
 <div id="magasins">
 	<div id="magasins-top">
+     <div class="magasins-tops"></div>
 		<h2>
 			LE RÉSEAU <br>MOTOEXPERT
 		</h2>
@@ -22,7 +23,7 @@
 				</div>
 				<img height="104" width="104"
 					src="<?=MEDIA_URL ?>images/magasins-img.jpg">
-
+<p class="visual">VISUALISEZ TOUS LES MAGASINS</p>
 			</div>
 			<h6>Des services pertinents pour simplifier la vie des motards</h6>
 			<div class="magasins-imgs">
@@ -35,6 +36,7 @@
 		</div>
 	</div>
 	<div id="magasins-footer">
+     <div class="magasins-botton"></div>
 		<p>DECOUVREZ LA FRANCHISE ET LES SERVICES</p>
 	</div>
 
@@ -42,6 +44,7 @@
 <!-- //occasions // -->
 <div id="occasions">
 	<div id="occasions-top">
+    <div class="occasions-tops"></div>
 		<h2>OCCASIONS MOTO</h2>
 		<div class="occasions-right">› <?= $this->totalAnuncio['totalAnnounce'];?> annonces moto</div>
 	</div>
@@ -71,15 +74,16 @@
 				<img title="accrssoires moto"
 					src="<?=MEDIA_URL ?>images/achete-cash.jpg"> <img title="fan club"
 					src="<?=MEDIA_URL ?>images/depot-vente.jpg"> <img
-					title="service rapide" src="<?=MEDIA_URL ?>images/votre-pa.jpg">
+					title="service rapide" class="nomargin"   src="<?=MEDIA_URL ?>images/votre-pa.jpg">
 			</div>
 		</div>
 	</div>
 	<div id="occasions-footer">
+    <div class="occasions-botton"></div>
             <?php if ($this->authData){?>
-                <a class="actualite-link" href="/compte/annonce-publier"><p>DEPOSEZ VOTRE ANNONCE</p></a>
+                <a class="actualite-linkof" href="/compte/annonce-publier"><p>DEPOSEZ VOTRE ANNONCE</p></a>
             <?php } else {?>
-                <a class="actualite-link" href="/login"><p>DEPOSEZ VOTRE ANNONCE</p></a>
+                <a class="actualite-linkof" href="/login"><p>DEPOSEZ VOTRE ANNONCE</p></a>
             <?php } ?>
             
 		
@@ -89,7 +93,7 @@
 <!-- // actualite // -->
 <div id="actualite">
 	<h2>L’ACTUALITÉ MOTO EXPERT</h2>
-	<div class="actualite-col3">
+	<div class="actualite-col3   actualite-col1">
 		<img height="87" width="87" src="<?=MEDIA_URL ?>images/solde.jpg">
 		<h3>Vive les Soldes d’hiver pour s’équiper pas cher !</h3>
 		<p>Elles débuteront dans votre magasin Moto Expert officiellement le

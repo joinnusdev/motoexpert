@@ -4,13 +4,9 @@
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
 <link href="<?php echo MEDIA_URL ?>style2.css" type="text/css"	rel="stylesheet">
 <link href="<?php echo MEDIA_URL ?>responsive.css" type="text/css"	rel="stylesheet" />
-
-
-
+	
 <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
 <script src="<?php echo MEDIA_URL ?>js/jquery.lightbox_me.js" type="text/javascript" charset="utf-8"></script>
-
-
 
 <!-- fonts -->
 <link type="text/css" rel="stylesheet"
@@ -21,12 +17,12 @@
 
 </head>
 
-<body onload="<?php echo (isset($this->login))?'nuevo();':'' ?>">
+<body onLoad="<?php echo (isset($this->login))?'nuevo();':'' ?>">
 <div id="wrapper">
 
 
 	<?= $this->render('_topbar.phtml');?>	
-	<div class="content">		
+	<div id="content">		
 			<?=$this->layout()->content?>
 	</div>
 	<?= $this->render('_footer.phtml');?>
