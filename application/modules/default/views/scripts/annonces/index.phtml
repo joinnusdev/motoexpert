@@ -53,8 +53,11 @@
 	<div id="navigation">
 		<div class="resultats"><?php echo $this->total ?> RÉSUTATS TROUVÉS</div>
 		<div class="next-prev">
-			<a href="#" class="nprev">PRECEDENTE</a><a href="" class="nnext">SUIVANTE</a>
+			
+<?php echo $this->paginationControl($this->result, 'Sliding', '_pag.phtml'); ?>		
+			
 		</div>
+		
 		<!--<div class="trier">
 			<form id="form2" name="form2" method="post" action="">
 				<label for="select6"></label> <select name="select6" id="select6">

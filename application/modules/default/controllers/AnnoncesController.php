@@ -22,21 +22,22 @@ class Default_AnnoncesController extends App_Controller_Action_Default
     	$form->populate($datos);
     	$this->view->form = $form;
     	
-    	if ($this->_request->isGet()) {
-    		
-    		if ($datos and !is_null($datos)) {    			
+    	if ($this->_request->isGet()) {    		    		
+    		if ($datos and !is_null($datos)) {
+    			    			
     			$data = @$form->getValues();
-    			$this->view->result = $modelAnounce->listSearch($data);
+    			$result = $modelAnounce->listSearch($data);
     			
-    			if ($this->view->result)
-    				$this->view->total = count($this->view->result);
+    			$paginator = Zend_Paginator::factory($result);
+    			$paginator->setCurrentPageNumber($page)
+    			->setItemCountPerPage(5);
+    			$this->view->result = $paginator;
     			
+    			
+    			//if ($this->view->result)
+    			//$this->view->total = count($this->view->result);    			
     		}
-    		
     	}
-    	
-    	    	
-    	
     }
     
     public function getModeleAction()
