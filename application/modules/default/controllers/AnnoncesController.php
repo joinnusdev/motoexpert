@@ -34,7 +34,7 @@ class Default_AnnoncesController extends App_Controller_Action_Default
     			
     			$paginator = Zend_Paginator::factory($result);
     			$paginator->setCurrentPageNumber($page)
-    			->setItemCountPerPage(10);
+    			->setItemCountPerPage(12);
     			$this->view->result = $paginator;    			    			
     			
     			if ($this->view->result)

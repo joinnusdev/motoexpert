@@ -123,7 +123,7 @@
 	<div id="navigation">
 		<div class="resultats"><?php echo $this->total; ?> RÉSUTATS TROUVÉS</div>
 		<div class="next-prev">
-			<a href="#" class="nprev">PRECEDENTE</a><a href="" class="nnext">SUIVANTE</a>
+		<?php echo $this->paginationControl($this->result, 'Sliding', '_pag.phtml', array('prueba' => $this->prueba)); ?>		
 		</div>
 		<!-- <div class="trier">
 			<form id="form2" name="form2" method="post" action="">
