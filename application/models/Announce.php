@@ -3,7 +3,7 @@ class App_Model_Announce extends App_Db_Table_Abstract {
 
 	protected $_name = 'annonces';
 
-	public function listSearch($datos){
+	public function listSearch($datos=NULL){
 
 		$query_ = "
 		/* SELECT a.id,a.ref, a.titre, a.date, a.annee,a.cylindree,
@@ -36,8 +36,9 @@ class App_Model_Announce extends App_Db_Table_Abstract {
 		AND a.modere = '1'
 		AND a.ispayed = '1'
 		";
-		if (!isset($datos['deparment']) and !isset($datos['category']) and !isset($datos['magasin']) and !isset($datos['marque']) and !isset($datos['modele']))
-			return false;
+		
+		//if (!isset($datos['deparment']) and !isset($datos['category']) and !isset($datos['magasin']) and !isset($datos['marque']) and !isset($datos['modele']))
+			//return false;
 
 		if (isset($datos['deparment']) and $datos['deparment'] != 0 and !is_null($datos))
 			$query.= " AND a.departement = ".$datos['deparment'];
@@ -48,7 +49,7 @@ class App_Model_Announce extends App_Db_Table_Abstract {
 		if (isset($datos['magasin']) and $datos['magasin'] != 0 and !is_null($datos))
 			$query.= " AND a.id_me = ".$datos['magasin'];
 
-		if (isset($datos['marque']) and $datos['marque'] != "") {
+		if (isset($datos['marque']) and $datos['marque'] != 0) {
 			$query.= " AND a.marque = ". '"'.$datos['marque'].'"';
 		}
 		if (isset($datos['modele']) and $datos['modele'] != 0  and !is_null($datos))
@@ -59,6 +60,7 @@ class App_Model_Announce extends App_Db_Table_Abstract {
 			//echo $query;
 			$result =  $this->getAdapter()->fetchAll($query);			
 			return $result;
+			return $query;
 
 		}catch (Exception $e){
 			var_dump($e->getMessage());

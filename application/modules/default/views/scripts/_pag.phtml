@@ -1,0 +1,22 @@
+<?php if (isset($this->previous)): 
+$this->prueba['page'] = $this->previous;
+?>
+
+<a href="<?php echo $this->url($this->prueba, "default", false);?>" 
+	class="nprev" data="<?php echo $this->previous;?>">PRECEDENTE</a>
+
+<?php else: ?>
+<a href="#" class="nprev disabled">PRECEDENTE</a>
+<?php endif; ?>
+
+<!-- Next page link -->
+<?php if (isset($this->next)): 
+$this->prueba['page'] = $this->next;
+?>
+<a href="<?php echo $this->url($this->prueba, "default", false) ?>"
+	class="nnext" data="<?php echo $this->next;?>">SUIVANTE</a>
+<?php else: ?>
+<a href="#" class="nnext disabled">SUIVANTE</a>
+<?php endif; ?>
+
+
