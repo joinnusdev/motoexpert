@@ -24,7 +24,7 @@ class Compte_AnnoncePublierController extends App_Controller_Action_Default
     	
     	$this->view->datos = $modelclient->getClientById($this->view->authData->cid);
     	
-    	
+    	$this->view->valid = FALSE;
     	
     	if ($this->_request->isPost()) {
     		$params = $this->_getAllParams();
@@ -44,8 +44,14 @@ class Compte_AnnoncePublierController extends App_Controller_Action_Default
     		$params['ref'] = $params['departement']."000".$params['id_mot']."0000";
     		
     		$id = $modelanunce->saveClient($params);
+    		$this->view->register = $this->getParam('register', NULL);
+    		if ($this->view->register == "valid" and $id > 0) {
+    			$this->view->valid = TRUE;
+    			$this->view->caract = $params;
+    			
+    		}
     		
-    		$this->_redirect('/compte');
+    		//$this->_redirect('/compte');
     		
     		
     		

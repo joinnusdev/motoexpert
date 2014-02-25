@@ -34,30 +34,32 @@ jQuery.noConflict();
 
 	<!-- //*** DETAILS  //-->
 	<div class="caract-content">
-		<form name="form1" method="post" action="">
+		<form name="form1" method="post" action="/annonce-complete" enctype="multipart/form-data">
+		<?php if ($this->valid) {?>
+		
 			<div class="title-content">CARACTERISTIQUES</div>
 			<div class="caract-wapper">
 				<div class="caract-286">
 					<div class="result-desc">
-						<div class="result-date">05/02114</div>
+						<div class="result-date"><?= date('d/m/Y', $this->caract['date_crea']) ?></div>
 						<p>
-							<strong>Suzuki RMZ 250</strong><br /> Roadster - Honda - CB 600 F
-							ABS -<br> 600 cm3 - 15550 km - Année 2005
+							<strong><?= $this->caract['marque'] ?> <?= $this->caract['modele'] ?> 250</strong><br /> <?= $this->caract['id_cat'] ?> - <?= $this->caract['marque'] ?> 
+							<!-- ABS--> -<br> <?= $this->caract['cylindree'] ?> cm3 - <?= $this->caract['km'] ?> km - Année <?= $this->caract['annee'] ?>
 						</p>
-						<div class="price">4200 €</div>
+						<div class="price"><?= $this->caract['prix'] ?> €</div>
 					</div>
 
 				</div>
 				<div class="caract-408">
 					<strong>Descriptif :</strong><br> <br> Entretien à jour sur
-					facture.<br> nibh euismod tincidunt ut laoreet dolore magna aliquam
-					erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci
-					tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo
-					consequat. Duis autem vel eum iriure dolor in
+					facture.<br> 
+					<?= $this->caract['descr_site'] ?>
 				</div>
 			</div>
-
-			<a href="#" onClick="dispatchpopup();" class="btn-submit">MODIFIER</a>
+			
+			<?php } else {?>
+			<a href="#" onClick="dispatchpopup();" class="btn-submit">DEPOSER CARACTERISTIQUES ANNONCE</a>
+			<?php } ?>
 
 			<output id="imgim"></output>
 
@@ -70,7 +72,7 @@ jQuery.noConflict();
 							<img src="<?=MEDIA_URL ?>images/file-g.jpg" width="137"
 								height="102" />
 						</div>
-						<input type="file" name="file1" id="file1" style="display: none" />
+						<?= $this->form->file1 ?>
 					</div>
 					<div class="upload-m">
 						<div id="img-preview2">
@@ -272,7 +274,7 @@ jQuery.noConflict();
 				<p>VOS COORDONNÉES</p>
 			</div>
 
-			<form name="form1" method="post" action="">				
+			<form name="form1" method="post" action="?register=valid">				
 			<p>
 					<?= $this->form->category?>
 			</p>
@@ -312,11 +314,21 @@ jQuery.noConflict();
 					<input type="submit" name="button2" id="button2"
 						value="ENREGISTRER" />
 				</p>
+			</form>
+		</div>
 
 
+	</div>
+</div>
 
+<!-- guardar anuncio-->
+
+<div id="my_lightbox_confirm" style="display: none;">
+	<div id="wrapper-form">
+		<div id="new-form">
+			<div id="form-navigation">
+			</div>
 				<div class="caract-wappers">
-
 					<div class="login  align-left ">
 						<div class="login-content">
 							<h3>VOTRE ANNONCEA ÉTÉ ENREGISTRÉE</h3>
@@ -324,33 +336,22 @@ jQuery.noConflict();
 								Elle sera publiée après validation<br> des équipe Moto Expert
 							</p>
 						</div>
-
 						<input name="ENVOYER" type="submit" id="ENVOYER" value="FERMER" />
-
-
 					</div>
-
-
 					<div class="login  align-left ">
-
 						<p class="login-tab color-orange">SUPPRIMER LA PHOTO</p>
 						<p class="login-tab">DEPUIS LA BIBLIOTHEQUE</p>
 						<p class="login-tab no-boerder">PRENDRE UNE PHOTO</p>
 						<input name="ENVOYER" type="submit" class="no-margin" id="ENVOYER"
 							value="ANNULER" />
 					</div>
-
-
-
-
-
 				</div>
-			</form>
 		</div>
-
-
 	</div>
 </div>
+<!--  fin -->
+
+
 
 <script
 	src="<?php echo MEDIA_URL ?>js/marque-back.js"></script>
@@ -360,6 +361,17 @@ jQuery.noConflict();
       centered: true,
       onLoad: function() {
         jQuery('#my_lightbox_text').html("Stuff");
+      }
+    });
+  }
+</script>
+
+<script>
+  var confirm = function(){  
+    jQuery('#my_lightbox_confirm').lightbox_me({
+      centered: true,
+      onLoad: function() {
+        jQuery('#my_lightbox_confirm').html("Stuff");
       }
     });
   }
