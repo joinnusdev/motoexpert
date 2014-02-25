@@ -21,6 +21,7 @@ class Default_AnnoncesController extends App_Controller_Action_Default
     	$datos = $this->getAllParams();
     	$form->populate($datos);
     	$this->view->form = $form;
+    	$page = $this->_getParam('page');
     	
     	if ($this->_request->isGet()) {    		    		
     		if ($datos and !is_null($datos)) {
@@ -28,14 +29,16 @@ class Default_AnnoncesController extends App_Controller_Action_Default
     			$data = @$form->getValues();
     			$result = $modelAnounce->listSearch($data);
     			
+    			$this->view->prueba = $data;
+    			
+    			
     			$paginator = Zend_Paginator::factory($result);
     			$paginator->setCurrentPageNumber($page)
-    			->setItemCountPerPage(5);
-    			$this->view->result = $paginator;
+    			->setItemCountPerPage(10);
+    			$this->view->result = $paginator;    			    			
     			
-    			
-    			//if ($this->view->result)
-    			//$this->view->total = count($this->view->result);    			
+    			if ($this->view->result)
+    			$this->view->total = count($result);    			
     		}
     	}
     }

@@ -39,7 +39,7 @@
 					 <label for="select5" class="selectlabel2"></label> 
 					 <?= $this->form->modele?>
 				</div>
-				<input type="submit" name="button2" id="button2" value="RECHERCHER " />
+				<input type="submit" name="button2" id="button2" value="RECHERCHER" />
 			</form>
 			<!-- //magasins // -->
 		</div>
@@ -54,7 +54,7 @@
 		<div class="resultats"><?php echo $this->total ?> RÉSUTATS TROUVÉS</div>
 		<div class="next-prev">
 			
-<?php echo $this->paginationControl($this->result, 'Sliding', '_pag.phtml'); ?>		
+<?php echo $this->paginationControl($this->result, 'Sliding', '_pag.phtml', array('prueba' => $this->prueba)); ?>		
 			
 		</div>
 		
