@@ -98,7 +98,14 @@
 				</div>
 				<div class="result-price"><?=$item['prix']?> €</div>
 				<div class="result-desc">
-					<div class="result-date"><?php echo date('d/m/Y', $item['date']);?></div>
+					<div class="result-date">
+                                            
+                                            <?php 
+                                            $d = new App_Date_Calc();
+                                            echo  $d->daysToDate($item['date'], "%d/%m/%y");
+                                            
+                                            ?>
+                                        </div>
 					<p>
 						<strong><?=$item['titre']?></strong><br /> 
 						<?php echo $item['marque']. " " . $item['modele'] . " " . $item['cylindree']. " cm3 " . $item['km']. " km" . " Année " . $item['annee']?>

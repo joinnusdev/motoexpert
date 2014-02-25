@@ -10,9 +10,6 @@ class Default_IndexController extends App_Controller_Action_Default
     
     public function indexAction()
     {
-        $d = new App_Date_Calc();
-        echo  $d->daysToDate('2456391', "%d/%m/%y");
-         
         /*$modelMoto = new App_Model_Moto();
         $result = $modelMoto->listarMarca();
         $this->view->listarMarca = $result; */
