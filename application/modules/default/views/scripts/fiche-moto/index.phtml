@@ -226,7 +226,10 @@
                     <textarea name="textarea" id="textarea" cols="45" rows="5"></textarea>
                     <div class="fomrinfo">
                     <span>Veuillez saisir les lettres de limage dans le champ situé sous l'image en respectant les majuscules et les minuscules.</span>
-                    <div class="captcha"><img src="<?=MEDIA_URL ?>images/captcha.jpg" width="126" height="86" /></div>
+                    <div class="captcha">
+                    	<div class="imgcap"><img src="<?=MEDIA_URL ?>CaptchaSecurityImages.php" /></div>
+                        <div class="inpcap"><input name="" type="text"></div>
+                    </div>
                     <div class="condition">
                     <input name="" type="checkbox" value="" />En cochant cette case, je souhaite recevoir la newsletter Moto Expert
                     </div>

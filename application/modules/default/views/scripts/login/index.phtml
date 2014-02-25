@@ -46,7 +46,78 @@
 } ?>
 	  }
 </script>
+<script src="<?=MEDIA_URL ?>js/jquery.validate.js"></script>
+<script>
+$.validator.setDefaults({
+	submitHandler: function() { alert("submitted!"); }
+});
 
+$().ready(function() {
+	// validate the comment form when it is submitted
+
+
+	// validate signup form on keyup and submit
+	$("#formRegister").validate({
+		rules: {
+			nom: "required",
+			prenom: "required",
+			username: {
+				required: true,
+				minlength: 2
+			},
+			pass: {
+				required: true,
+				minlength: 5
+			},
+			tel: {
+				required: true,
+				minlength: 5
+			},
+			passred: {
+				required: true,
+				minlength: 5,
+				equalTo: "#pass"
+			},
+			email: {
+				required: true,
+				email: true
+			},
+			topic: {
+				required: "#newsletter:checked",
+				minlength: 2
+			},
+			agree: "required"
+		},
+		messages: {
+			nom: "Please enter your firstname",
+			prenom: "Please enter your lastname",
+			username: {
+				required: "Please enter a username",
+				minlength: "Your username must consist of at least 2 characters"
+			},
+			
+			tel: {
+				required: "Please provide a telephone",
+				minlength: "Your telephone must be at least 5 characters long"
+			},
+			pass: {
+				required: "Please provide a password",
+				minlength: "Your password must be at least 5 characters long"
+			},
+			passred: {
+				required: "Please provide a password",
+				minlength: "Your password must be at least 5 characters long",
+				equalTo: "Please enter the same password as above"
+			},
+			email: "Please enter a valid email address",
+			agree: "Please accept our policy"
+		}
+	});
+
+
+
+});
+</script>
 
 
 <div id="content" class="paddin30"> 
@@ -105,7 +176,7 @@
         	<div id="new-navigation"><a href="#" class="new-prev" onClick="$('#my_lightbox').trigger('close');">RETOUR</a>
         	<p>VOS COORDONNÉES</p> </div>
            
-        <form name="formRegister" method="post" action="">
+        <form name="formRegister"  class="cmxform"  id="formRegister" method="post" action="">
         <p><?php echo ($this->error)?"S'il vous plaît vérifier vos informations":''?></p>
         	<p class="in-radio"> Civilité 
         	<input type="radio" name="civilite" id="radio" value="Mme" checked="checked"/>
@@ -122,7 +193,7 @@
           <p><input name="ville" type="text" placeholder="Ville" required="required" value="<?php echo ($ville)?$datos["ville"]:'';?>"/></p>
           <p><input name="pays" type="text" placeholder="Pays"></p>
           <p><input name="tel" type="text" placeholder="Téléphone"></p>
-          <p><input name="portable" type="text" placeholder="Mobile" required="required" value="<?php echo ($portable)?$datos["portable"]:'';?>"/></p>
+          <p><input name="portable" type="text" placeholder="Mobile" value="<?php echo ($portable)?$datos["portable"]:'';?>"/></p>
           <p><span class="in-text">Je désire être tenu au courant de l’actualité et des nouveautés du site Moto Expert</span>
               <input name="mailing" type="checkbox" value=""/> 
           </p>
