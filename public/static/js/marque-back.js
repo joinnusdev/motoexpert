@@ -1,4 +1,4 @@
-$(function(){
+jQuery(function(){
     
     var producto = {        
         init : function() {
@@ -6,7 +6,7 @@ $(function(){
         },        
         ComboDependiente : function (c, cd, def, url, fieldv, fields) {            
             
-            $(c).live("change blur", function(){
+            jQuery(c).live("change blur", function(){
                 
                 var actual = $(this);
                 
