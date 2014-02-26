@@ -21,7 +21,11 @@
           mapTypeId: google.maps.MapTypeId.ROADMAP,
 
         }
-        var map = new google.maps.Map(map_canvas, map_options)
+        var map = new google.maps.Map(map_canvas, map_options);
+				var marker = new google.maps.Marker({
+    map: map,
+    position: map.getCenter()
+  });
       }
       google.maps.event.addDomListener(window, 'load', initialize);
     </script>
