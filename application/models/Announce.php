@@ -198,7 +198,7 @@ class App_Model_Announce extends App_Db_Table_Abstract {
 		return $id;
 	}
 
-	public function saveClient($datos) {
+	public function saveAnnonce($datos) {
 		return $this->_save($datos);
 	}
 

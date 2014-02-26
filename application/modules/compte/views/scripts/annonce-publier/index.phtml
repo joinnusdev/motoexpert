@@ -34,7 +34,7 @@ jQuery.noConflict();
 
 	<!-- //*** DETAILS  //-->
 	<div class="caract-content">
-		<form name="form1" method="post" action="/annonce-complete" enctype="multipart/form-data">
+		<form name="form1" method="post" action="/compte/annonce-complete" enctype="multipart/form-data">
 		<?php if ($this->valid) {?>
 		
 			<div class="title-content">CARACTERISTIQUES</div>
@@ -67,6 +67,8 @@ jQuery.noConflict();
 			<div class="caract-wapper">
 				<div class="caract-286">
 
+				<input type="hidden" name="cod_id" value="<?= $this->idannunce ?>"/>
+				<input type="hidden" name="ref" value="<?= $this->caract["ref"] ?>" />
 					<div class="upload-g">
 						<div id="img-preview">
 							<img src="<?=MEDIA_URL ?>images/file-g.jpg" width="137"
@@ -168,7 +170,8 @@ jQuery.noConflict();
 			</div>
 
 			<div class="title-content"></div>
-			<a href="#" class="btn-ye">PUBLIER VOTRE ANNONCE</a>
+			<button type="submit" class="btn-ye">PUBLIER VOTRE ANNONCE</button>
+			
 		</form>
 
 <!-- 

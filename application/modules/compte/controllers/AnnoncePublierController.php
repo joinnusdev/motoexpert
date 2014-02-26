@@ -43,12 +43,12 @@ class Compte_AnnoncePublierController extends App_Controller_Action_Default
     		$params['id_mot'] = $params['modele'];
     		$params['ref'] = $params['departement']."000".$params['id_mot']."0000";
     		
-    		$id = $modelanunce->saveClient($params);
+    		$id = $modelanunce->saveAnnonce($params);
     		$this->view->register = $this->getParam('register', NULL);
     		if ($this->view->register == "valid" and $id > 0) {
     			$this->view->valid = TRUE;
     			$this->view->caract = $params;
-    			
+    			$this->view->idannunce = $id;
     		}
     		
     		//$this->_redirect('/compte');
