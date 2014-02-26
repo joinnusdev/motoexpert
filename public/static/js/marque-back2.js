@@ -23,7 +23,7 @@ jQuery(function(){
                         success: function(data){
                                 jQuery(cd).html("<option value='0'> -- Modele -- </option>");
                                 jQuery.each(data, function(index, value){                                    
-                                    jQuery(cd).append("<option value='"+value[fieldv]+"'>"+value[fields]+"</option>");
+                                    jQuery(cd).append("<option value='"+value[fieldv]+"_"+value[fields]+"'>"+value[fields]+"</option>");
                                 });
                         }
                     });                    
