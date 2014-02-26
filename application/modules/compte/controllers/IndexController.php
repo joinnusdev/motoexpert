@@ -14,8 +14,7 @@ class Compte_IndexController extends App_Controller_Action_Default
         $modelanunce = new App_Model_Announce();
     	$modelclient = new App_Model_Client();
     	$this->view->ruta = $this->config->app->photoUrl;
-    	$this->view->result =
-    	$modelanunce->announceByCLient($this->view->authData->cid);    	 
+    	$this->view->result =$modelanunce->announceByCLient($this->view->authData->cid);    	 
     	$this->view->datos = $modelclient->getClientById($this->view->authData->cid);    	
     	
     	

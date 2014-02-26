@@ -694,31 +694,7 @@ margin-right:-11px;
 	 margin:0 0px 0 0;
 	 font-size:16px;
 	 font-weight:bold;
-	}
-	
-#not-content{
-	float:left;
-	width:710px;
-	padding-left:0px;	
-	}	
-.zone input[type=submit]{
-	width:213px;
-	display:block;
-	float: left;
-	margin-left:0px !important;
-	margin-right:10px;
-	margin-top:1px;
-	padding:10px 20px;	
-	border:0px;
-	background-color:#676767;
-	color:#FFF;
-	font-weight:bold;
-	text-align:left;
-	background-image:url(images/rechercher-btn.jpg);
-	background-repeat:no-repeat;
-	background-position: right center;
-	cursor:pointer;
-}			 
+	}		 
 }
 /************************************************************************************************************************/
 /*@media only screen and (min-width: 100px) and (max-width: 669px) {*/
@@ -1277,8 +1253,7 @@ min-height:43px !important;
 }
 .contentrechercher-right{
 
-	width:280px;
-	float:left !important;
+	width:300px;
 
 	}
 .zone{
@@ -1286,18 +1261,18 @@ min-height:43px !important;
 	float:left;
 	padding-left:2px;
 	border-right:0px;
-	margin-left:25px;
+	margin-left:40px;
 	margin-top:3px;}
 .vehicule{
 	width:300px;
 	float: left;
 	padding:0 0 0 0px;
-	margin-left:25px
+	margin-left:40px
 }
 .contentrechercher-right input[type=submit]{
 	width:210px;
 	float:left;
-	margin-left:25px;
+	margin-left:40px !important;
 
 }
 #poster{
@@ -1339,7 +1314,6 @@ font-size:18px;
 	float:left;
 	text-align:center !important;
 	padding:10px 0 0 20px ;
-	margin-left:48px;
 
 	}
 #navigation .trier{
@@ -1522,80 +1496,5 @@ display: none;
 	font-size:16px;
 	line-height:25px;
 	color:#676767;
-	}
-.fan-service img{
-	width:300px;
-	height:auto;
-	}
-.services-imglir{
-	width:300px;
-	text-align:center;
-	margin:0px 0 15px 0;
 	}	
-.services-imglil{
-	width:300px;
-	text-align:center;
-		margin:0px 0 15px 0;
-	}
-.img100 img{
-	width:300px;
-	height:auto;}
-.services-265{
-	width:300px;
-	text-align:center;
-	margin:10px 0;
-	
-	}
-/** notice **/	
-#not-content{
-	float:left;
-	width:300px;
-	padding-left:0px;	
-	}	
-.zone input[type=submit]{
-	width:213px;
-	display:block;
-	float: left;
-	margin-left:0px !important;
-	margin-right:10px;
-	margin-top:1px;
-	padding:10px 20px;	
-	border:0px;
-	background-color:#676767;
-	color:#FFF;
-	font-weight:bold;
-	text-align:left;
-	background-image:url(images/rechercher-btn.jpg);
-	background-repeat:no-repeat;
-	background-position: right center;
-	cursor:pointer;
-}
-.content-not{
-	width:300px;
-	margin:0 auto;
-	min-height:250px;
-
-	}	
-.not-body-img{
-	width:100%;
-	text-align:center;
-	min-height:150px;
-	margin:0 0px 10px 0;
-	float:left;
-	}
-.not-subtitle{
-	
-	margin-bottom:10px;
-	}
-.rechercher{
-	width:213px;
-	display:block;
-	float:right;
-	margin-left:0px !important;
-	margin-top:10px !important;
-	padding:10px 20px;	
-
-
-}
-		
 }
