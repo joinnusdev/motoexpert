@@ -41,7 +41,11 @@
                         </div>
                         <div class="gerez-block2" >
                         <span>Ref. : <?= $item['ref']?></span><br>
-                          <span> <?php  if ($item['date_valid']) echo date('d-m-y', $item['date_valid'])?> </span><br>
+                          <span> <?php  
+                          $d = new App_Date_Calc();
+                            echo  $d->daysToDate($item['date'], "%d/%m/%y");
+                         
+                           ?> </span><br>
                           <?= $item['titre']?><br>
                           <?= $item['prix']?> € <br>
                         </div>
