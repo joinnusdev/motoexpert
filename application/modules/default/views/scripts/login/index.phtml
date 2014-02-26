@@ -49,7 +49,7 @@
 <script src="<?=MEDIA_URL ?>js/jquery.validate.js"></script>
 <script>
 $.validator.setDefaults({
-	submitHandler: function() { alert("submitted!"); }
+	submitHandler: function() { $( "#formRegister" ).submit();}
 });
 
 $().ready(function() {
