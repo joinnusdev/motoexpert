@@ -69,33 +69,26 @@ $().ready(function() {
 				required: true,
 				minlength: 5
 			},
-			tel: {
-				required: true,
-				minlength: 5
-			},
 			passred: {
 				required: true,
 				minlength: 5,
 				equalTo: "#pass"
+			},			
+			tel: {
+				required: true,
+				minlength: 5
 			},
+
 			email: {
 				required: true,
 				email: true
-			},
-			topic: {
-				required: "#newsletter:checked",
-				minlength: 2
 			},
 			agree: "required"
 		},
 		messages: {
 			nom: "Please enter your firstname",
 			prenom: "Please enter your lastname",
-			username: {
-				required: "Please enter a username",
-				minlength: "Your username must consist of at least 2 characters"
-			},
-			
+
 			tel: {
 				required: "Please provide a telephone",
 				minlength: "Your telephone must be at least 5 characters long"
@@ -203,8 +196,8 @@ $().ready(function() {
             <input name="email" type="text" placeholder="Votre adresse Email" required="required" value="<?php echo ($email)?$datos["email"]:'';?>">
             </p>
           	<p class="new-p14">Vous servira d’identifiant de connection</p>
-            <p><input name="pass" type="password" placeholder="Mot de Passe" required="required"/></p>
-   		    <p><input name="passred" type="password" placeholder="Confirmer le mot de Passe" required="required"/></p>
+            <p><input name="pass" id="pass" type="password" placeholder="Mot de Passe" required="required"/></p>
+   		    <p><input name="passred" id="passred" type="password" placeholder="Confirmer le mot de Passe" required="required"/></p>
            
             <p><input name="" type="reset" value="ANNULER"></p>
             <p><input name="" type="submit" value="ENREGISTRER"></p>
