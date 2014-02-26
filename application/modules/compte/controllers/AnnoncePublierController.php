@@ -5,10 +5,7 @@ class Compte_AnnoncePublierController extends App_Controller_Action_Default
 
     public function init()
     {
-        parent::init();
-       
-                
-        
+        parent::init();       
     }
     
     public function indexAction()
@@ -24,7 +21,7 @@ class Compte_AnnoncePublierController extends App_Controller_Action_Default
     	
     	$this->view->datos = $modelclient->getClientById($this->view->authData->cid);
     	
-    	
+    	$this->view->valid = FALSE;
     	
     	if ($this->_request->isPost()) {
     		$params = $this->_getAllParams();
@@ -43,9 +40,15 @@ class Compte_AnnoncePublierController extends App_Controller_Action_Default
     		$params['id_mot'] = $params['modele'];
     		$params['ref'] = $params['departement']."000".$params['id_mot']."0000";
     		
-    		$id = $modelanunce->saveClient($params);
+    		$id = $modelanunce->saveAnnonce($params);
+    		$this->view->register = $this->getParam('register', NULL);
+    		if ($this->view->register == "valid" and $id > 0) {
+    			$this->view->valid = TRUE;
+    			$this->view->caract = $params;
+    			$this->view->idannunce = $id;
+    		}
     		
-    		$this->_redirect('/compte');
+    		//$this->_redirect('/compte');
     		
     		
     		

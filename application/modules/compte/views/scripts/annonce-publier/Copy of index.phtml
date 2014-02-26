@@ -1,0 +1,356 @@
+<script type='text/javascript'>
+jQuery.noConflict();
+    jQuery(function(){
+        //Maps your button click event to the File Upload click event
+        jQuery("#img-preview").click(function () {
+             jQuery("#file1").trigger('click');
+        });
+		        //Maps your button click event to the File Upload click event
+        jQuery("#img-preview2").click(function () {
+             jQuery("#file2").trigger('click');
+        });
+		        //Maps your button click event to the File Upload click event
+        jQuery("#img-preview3").click(function () {
+             jQuery("#file3").trigger('click');
+        });
+		        //Maps your button click event to the File Upload click event
+        jQuery("#img-preview4").click(function () {
+             jQuery("#file4").trigger('click');
+        });
+		        //Maps your button click event to the File Upload click event
+        jQuery("#img-preview5").click(function () {
+             jQuery("#file5").trigger('click');
+        });
+    });
+	
+</script>
+<div id="content-p28">
+	<div id="content-top">
+
+		<div class="top-left">
+			<span>VOTRE ANNONCE MOTO</span>
+		</div>
+	</div>
+
+	<!-- //*** DETAILS  //-->
+	<div class="caract-content">
+		<form name="form1" method="post" action=""
+			enctype="multipart/form-data">
+			<div class="title-content">CARACTERISTIQUES</div>
+			<div class="caract-wapper">
+				<div class="caract-286">
+					<div class="result-desc">
+						<div class="result-date">05/02114</div>
+						<p>
+							<strong>Suzuki RMZ 250</strong><br /> Roadster - Honda - CB 600 F
+							ABS -<br> 600 cm3 - 15550 km - Année 2005
+						</p>
+						<div class="price">4200 €</div>
+					</div>
+
+				</div>
+				<div class="caract-408">
+					<strong>Descriptif :</strong><br> <br> Entretien à jour sur
+					facture.<br> nibh euismod tincidunt ut laoreet dolore magna aliquam
+					erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci
+					tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo
+					consequat. Duis autem vel eum iriure dolor in
+				</div>
+			</div>
+			<div class="caract-subtitle">MODIFIER</div>
+
+			<div class="title-content">AJOUTER DES PHOTOS</div>
+			<div class="caract-wapper">
+				<div class="caract-286">
+					<div class="upload-g">
+						<div id="img-preview">
+							<img src="<?=MEDIA_URL ?>images/file-g.jpg" width="137" height="102" />
+						</div>
+						<input type="file" name="file1" id="file1" style="display: none" />
+					</div>
+					<div class="upload-m">
+						<div id="img-preview2">
+							<img src="<?=MEDIA_URL ?>images/file-m.jpg" width="67" height="48" />
+						</div>
+						<input type="file" name="file2" id="file2" style="display: none" />
+					</div>
+					<div class="upload-m">
+						<div id="img-preview3">
+							<img src="<?=MEDIA_URL ?>images/file-m.jpg" width="67" height="48" />
+						</div>
+						<input type="file" name="file3" id="file3" style="display: none" />
+					</div>
+					<div class="upload-m">
+						<div id="img-preview4">
+							<img src="<?=MEDIA_URL ?>images/file-m.jpg" width="67" height="48" />
+						</div>
+						<input type="file" name="file4" id="file4" style="display: none" />
+					</div>
+					<div class="upload-m">
+						<div id="img-preview5">
+							<img src="<?=MEDIA_URL ?>images/file-m.jpg" width="67" height="48" />
+						</div>
+						<input type="file" name="file5" id="file5" style="display: none" />
+					</div>
+				</div>
+				<div class="caract-408">
+					<strong>Augmentez la visibilité de votre annonce en ajoutant une ou
+						plusieurs photos.</strong><br> <br>
+					<p class="p11">
+						- Mettez une photo de votre moto UNIQUEMENT de 3 quart comme photo
+						principale.<br> - Utilisez les photos annexes pour présenter les
+						autres vues de votre moto.<br> - Ne faites pas apparaître votre
+						plaque d’immatriculation pour éviter toutes fraudes.<br>
+						Motoexpert.fr se réserve le droit de supprimer toutes annonces ou
+						photos qui ne correspondraient pas.
+					</p>
+				</div>
+			</div>
+		</form>
+		<div class="title-content">
+			AFFICHAGE DE VOS<br /> COORDONNÉES SUR LE SITE
+		</div>
+
+		<div class="caract-wapper">
+			<p class="p11">
+				<strong>(Choisissez au minimun 1 moyen de contact).</strong>
+			</p>
+			<p class="pm16">
+				Autoriser les internautes à vous contacter par e-mail : <br>
+			</p>
+			<p class="p11">(votre adresse n’apparaît pas en clair sur le site)</p>
+			<p class="pinput">
+				<input type="radio" name="rel_mail" id="radio" value="1"> <label
+					for="radio">Oui</label> <input type="radio" name="rel_mail"
+					id="radio" value="0"> <label for="radio">Non</label>
+			</p>
+			<p class="pm16">
+				Faire figurer votre numéro de téléphone fixe sur votre annonce :<br>
+			</p>
+
+			<p class="pinput">
+				<input type="radio" name="rel_tel" id="radio" value="1"> <label
+					for="radio">Oui</label> <input type="radio" name="rel_tel"
+					id="radio" value="0"> <label for="radio">Non</label>
+			</p>
+			<p class="pm16">
+				Faire figurer votre numéro de portable sur votre annonce : <br>
+			</p>
+			<p class="pinput">
+				<input type="radio" name="rel_port" id="radio" value="1"> <label
+					for="radio">Oui</label> <input type="radio" name="rel_port"
+					id="radio" value="0"> <label for="radio">Non</label>
+			</p>
+			<p class="pm16">
+				<input name="" type="checkbox" value=""> permettre a Moto Expert de
+				diffuser cette annonce a ses partenaires <br>
+			</p>
+
+
+		</div>
+
+		<div class="title-content"></div>
+		<a href="#" class="btn-ye">PUBLIER VOTRE ANNONCE</a>
+
+
+
+		<div id="movil">
+			<form name="frmcarcth" method="post" action=""
+				enctype="multipart/form-data">
+
+				<div class="title-content">CARACTERISTIQUES</div>
+
+				<div class="caract-wapper">
+					<p>
+						<?= $this->form->category?>
+					</p>
+					<p>
+						<?= $this->form->marque?>
+					</p>
+					<p>
+						<?= $this->form->modele?>
+					</p>
+					<p>
+						<input name="annee" type="text" placeholder="Année">
+					</p>
+					<p>
+						<input name="cylindree" type="text" placeholder="Cylindrée">
+					</p>
+					<p>
+						<input name="couleur" type="text" placeholder="Couleur">
+					</p>
+					<p>
+						<input name="km" type="text" placeholder="Kilométrage">
+					</p>
+					<p>
+						<input name="" type="checkbox" value="">
+						Pas de compteur kilométrique
+					</p>
+					<p>
+						<input name="prix" type="text" placeholder="Prix">
+					</p>
+					<p>
+						<input name="" type="checkbox" value="">ou à débattre
+					</p>
+					<p>
+						<input name="descr_site" type="text" placeholder="Descriptif">
+					</p>
+					<p>
+						<input type="submit" name="button2" id="button2"
+							value="ENREGISTRER" />
+					</p>
+				</div>
+			</form>
+
+
+			<div class="caract-wapper">
+
+				<div class="login  align-left ">
+					<div class="login-content">
+						<h3>VOTRE ANNONCEA ÉTÉ ENREGISTRÉE</h3>
+						<p>
+							Elle sera publiée après validation<br> des équipe Moto Expert
+						</p>
+					</div>
+
+					<input name="ENVOYER" type="submit" id="ENVOYER" value="FERMER" />
+
+
+				</div>
+
+
+				<div class="login  align-left ">
+
+					<p class="login-tab color-orange">SUPPRIMER LA PHOTO</p>
+					<p class="login-tab">DEPUIS LA BIBLIOTHEQUE</p>
+					<p class="login-tab no-boerder">PRENDRE UNE PHOTO</p>
+					<input name="ENVOYER" type="submit" class="no-margin" id="ENVOYER"
+						value="ANNULER" />
+				</div>
+				<br /> <br />
+
+
+			</div>
+
+		</div>
+		<!---// end movil //-->
+
+	</div>
+
+
+
+
+
+	<div id="navi-fiche">
+		<div class="align-right"></div>
+
+	</div>
+</div>
+
+<script src="<?php echo MEDIA_URL ?>js/marque-back.js"></script>
+
+	
+	
+    <script>
+    if (window.FileReader) {
+      function selectfile(evt) {
+        var files = evt.target.files;
+        var f = files[0];
+        var vfile = new FileReader();
+      
+          vfile.onload = (function(thefile) {
+            return function(e) {
+              document.getElementById('img-preview').innerHTML = '<img  src="'+ e.target.result +'"  width="137" height="102" />';
+            };
+          })(f);
+    
+          vfile.readAsDataURL(f);
+      }
+     } else {
+      document.getElementById('img-preview').innerHTML = "No preview";
+    }
+	/******************************************************************************/
+    if (window.FileReader) {
+      function selectfile2(evt) {
+        var files = evt.target.files;
+        var f = files[0];
+        var vfile = new FileReader();
+      
+          vfile.onload = (function(thefile) {
+            return function(e) {
+              document.getElementById('img-preview2').innerHTML = '<img  src="'+ e.target.result +'"  width="67" height="48" />';
+            };
+          })(f);
+    
+          vfile.readAsDataURL(f);
+      }
+     } else {
+      document.getElementById('img-preview2').innerHTML = "No preview";
+    }
+		/******************************************************************************/
+    if (window.FileReader) {
+      function selectfile3(evt) {
+        var files = evt.target.files;
+        var f = files[0];
+        var vfile = new FileReader();
+      
+          vfile.onload = (function(thefile) {
+            return function(e) {
+              document.getElementById('img-preview3').innerHTML = '<img  src="'+ e.target.result +'"  width="67" height="48" />';
+            };
+          })(f);
+    
+          vfile.readAsDataURL(f);
+      }
+     } else {
+      document.getElementById('img-preview3').innerHTML = "No preview";
+    }
+		/******************************************************************************/
+    if (window.FileReader) {
+      function selectfile4(evt) {
+        var files = evt.target.files;
+        var f = files[0];
+        var vfile = new FileReader();
+      
+          vfile.onload = (function(thefile) {
+            return function(e) {
+              document.getElementById('img-preview4').innerHTML = '<img  src="'+ e.target.result +'"  width="67" height="48" />';
+            };
+          })(f);
+    
+          vfile.readAsDataURL(f);
+      }
+     } else {
+      document.getElementById('img-preview4').innerHTML = "No preview";
+    }
+	
+		/******************************************************************************/
+    if (window.FileReader) {
+      function selectfile5(evt) {
+        var files = evt.target.files;
+        var f = files[0];
+        var vfile = new FileReader();
+      
+          vfile.onload = (function(thefile) {
+            return function(e) {
+              document.getElementById('img-preview5').innerHTML = '<img  src="'+ e.target.result +'"  width="67" height="48" />';
+            };
+          })(f);
+    
+          vfile.readAsDataURL(f);
+      }
+     } else {
+      document.getElementById('img-preview5').innerHTML = "No preview";
+    }
+	
+	
+	
+	
+	
+      document.getElementById('file1').addEventListener('change', selectfile, false);
+	  document.getElementById('file2').addEventListener('change', selectfile2, false);
+	  document.getElementById('file3').addEventListener('change', selectfile3, false);
+	  document.getElementById('file4').addEventListener('change', selectfile4, false);
+	  document.getElementById('file5').addEventListener('change', selectfile5, false);
+      
+    </script>
