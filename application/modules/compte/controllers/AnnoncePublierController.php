@@ -26,12 +26,26 @@ class Compte_AnnoncePublierController extends App_Controller_Action_Default
     	if ($this->_request->isPost()) {
     		$params = $this->_getAllParams();
     		
+    		$d = new App_Date_Calc();
+    		$date = $d->dateToDays(date('d'), date('m'), date('Y'));
     		
-    		$date = strtotime(date('d-m-Y'));
+    		//sumar un mes
+    		$fecha = date('d-m-Y');
+    		$nuevafecha = strtotime ( '+1 month' , strtotime ( $fecha ) ) ;
+    		$nuevafecha = date ( 'd-m-Y' , $nuevafecha );
+    		$n = explode('-', $nuevafecha);
+    		$datev = $d->dateToDays($n[0], $n[1], $n[2]);    		
+    		
     		$params['id_client'] = $this->view->authData->cid;
-    		//$params['departement'] = substr($this->view->authData->code_postal, 0, 2);
+    		
+    		$modele = explode('_', $params['modele']);
+    		
+    		$params['modele'] = $modele[0];
+    		$modeleName = $modele[1];    		
     		$params['date_crea'] = $date;
-    		$params['date_valid'] = $date;
+    		$params['departement'] = $params['deparment'];    		
+    		$params['date_valid'] = $datev;
+    		$params['titre'] = $params['marque'] . " " . $modeleName . " " . $params['cylindree'];
     		$params['parution'] = '0';
     		$params['internet'] = '1';
     		$params['ispayed'] = '1';
