@@ -29,8 +29,9 @@ class Compte_AnnoncePublierController extends App_Controller_Action_Default
     		
     		$date = strtotime(date('d-m-Y'));
     		$params['id_client'] = $this->view->authData->cid;
-    		$params['departement'] = substr($this->view->authData->code_postal, 0, 2);
+    		//$params['departement'] = substr($this->view->authData->code_postal, 0, 2);
     		$params['date_crea'] = $date;
+    		$params['date_valid'] = $date;
     		$params['parution'] = '0';
     		$params['internet'] = '1';
     		$params['ispayed'] = '1';

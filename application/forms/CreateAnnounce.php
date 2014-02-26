@@ -10,6 +10,10 @@ class App_Form_CreateAnnounce extends App_Form
         $e->setMultiOptions(array('0'=> '-- Marque --')+$multi->listarMarca());
         $this->addElement($e);
         
+        $multi = new App_Model_Department();
+        $e = new Zend_Form_Element_Select('deparment');
+        $e->setMultiOptions(array('0'=> 'Département') + $multi->listDepartment());
+        $this->addElement($e);
         
         $e = new Zend_Form_Element_Select('modele');
         $e->setMultiOptions(array('0'=> '-- Modele --'));
