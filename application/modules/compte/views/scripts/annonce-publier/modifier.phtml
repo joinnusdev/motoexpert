@@ -58,8 +58,6 @@ jQuery.noConflict();
 			</div>
 			<a href="#" onClick="dispatchpopup();" class="btn-submit">MODIFIER</a>
 			
-			<?php } else {?>
-			<a href="#" onClick="dispatchpopup();" class="btn-submit">DEPOSER CARACTERISTIQUES ANNONCE</a>
 			<?php } ?>
 
 			<output id="imgim"></output>
@@ -393,10 +391,11 @@ jQuery(function(){
                         	jQuery(cd).html("<option value='0'> -- Modele -- </option>");
 
                         	jQuery.each(data, function(index, value){
-                                	var select = ' ';
+                                	var selec = ' ';
+                                	console.log(value[fieldv] + " " + "<?php echo @$this->params['modele']?>");
                                 	if (value[fieldv] == "<?php echo @$this->params['modele']?>")
                                          var selec = 'selected="selected "';
-                                	jQuery(cd).append("<option "+ selec +"value='"+value[fieldv]+"_"+value[fields]+"'>"+value[fields]+"</option>");
+                                	jQuery(cd).append("<option "+ selec +" value='"+value[fieldv]+"_"+value[fields]+"'>"+value[fields]+"</option>");
                                 });
 
                                 

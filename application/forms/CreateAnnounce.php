@@ -25,6 +25,30 @@ class App_Form_CreateAnnounce extends App_Form
         $this->addElement($e);
         
         
+        $e = new Zend_Form_Element_Text('annee');
+        $e->setAttrib('placeholder', "Année");        
+        $this->addElement($e);
+        $e = new Zend_Form_Element_Text('cylindree');
+        $e->setAttrib('placeholder', "Cylindrée");
+        $this->addElement($e);
+        $e = new Zend_Form_Element_Text('couleur');
+        $e->setAttrib('placeholder', "Couleur");
+        $this->addElement($e);
+        $e = new Zend_Form_Element_Text('km');
+        $e->setAttrib('placeholder', "Kilométrage");
+        $this->addElement($e);
+        $e = new Zend_Form_Element_Text('prix');
+        $e->setAttrib('placeholder', "Prix");
+        $this->addElement($e);
+        $e = new Zend_Form_Element_Text('descr_site');
+        $e->setAttrib('placeholder', "Descriptif");
+        $this->addElement($e);
+        
+        $e = new Zend_Form_Element_Hidden('id');
+        $this->addElement($e);
+        
+        
+        
         $config = Zend_Registry::get('config');
         $ruta = $config->app->fotoPrincipal;
         
