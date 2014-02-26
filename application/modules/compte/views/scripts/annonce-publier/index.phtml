@@ -132,9 +132,10 @@ jQuery.noConflict();
 				</p>
 				<p class="p11">(votre adresse n’apparaît pas en clair sur le site)</p>
 				<p class="pinput">
-					<input type="radio" name="radio" id="radio" value="radio"> <label
-						for="radio">Oui</label> <input type="radio" name="radio"
-						id="radio" value="radio"> <label for="radio">Nom</label>
+					<input type="radio" name="rep_mail" id="radio" value="1"> 
+					<label for="radio">Oui</label> 
+					<input type="radio" name="rep_mail" id="radio" value="0"> 
+					<label for="radio">Nom</label>
 				</p>
 
 
@@ -145,9 +146,10 @@ jQuery.noConflict();
 				</p>
 
 				<p class="pinput">
-					<input type="radio" name="radio" id="radio" value="radio"> <label
-						for="radio">Oui</label> <input type="radio" name="radio"
-						id="radio" value="radio"> <label for="radio">Nom</label>
+					<input type="radio" name="rep_tel" id="radio1" value="1"> 
+					<label for="radio">Oui</label> 
+					<input type="radio" name="rep_tel" id="radio1" value="0"> 
+					<label for="radio">Nom</label>
 				</p>
 
 
@@ -155,14 +157,15 @@ jQuery.noConflict();
 					Faire figurer votre numéro de portable sur votre annonce : <br>
 				</p>
 				<p class="pinput">
-					<input type="radio" name="radio" id="radio" value="radio"> <label
-						for="radio">Oui</label> <input type="radio" name="radio"
-						id="radio" value="radio"> <label for="radio">Nom</label>
+					<input type="radio" name="rep_port" id="radio2" value="1"> 
+					<label for="radio">Oui</label> 
+					<input type="radio" name="rep_port" id="radio2" value="0"> 
+					<label for="radio">Nom</label>
 				</p>
 
 
 				<p class="pm16">
-					<input name="" type="checkbox" value=""> permettre a Moto Expert de
+					<input name="parution" type="checkbox" value="0"> permettre a Moto Expert de
 					diffuser cette annonce a ses partenaires <br>
 				</p>
 
@@ -170,7 +173,7 @@ jQuery.noConflict();
 			</div>
 
 			<div class="title-content"></div>
-			<button type="submit" class="btn-ye">PUBLIER VOTRE ANNONCE</button>
+			<button type="submit" class="btn-ye" <?php echo (!$this->valid)?'disabled="disabled"':'' ?>>PUBLIER VOTRE ANNONCE</button>
 			
 		</form>
 

@@ -5,10 +5,7 @@ class Compte_AnnoncePublierController extends App_Controller_Action_Default
 
     public function init()
     {
-        parent::init();
-       
-                
-        
+        parent::init();       
     }
     
     public function indexAction()

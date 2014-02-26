@@ -58,6 +58,7 @@ class Compte_AnnonceCompleteController extends App_Controller_Action_Default
     			);
     			$dataPhotoTotal[] = $dataPhoto;
     		}
+    		$file3 = $form->file3->getFileName();
     		
     		if (!empty ($file3)) {
     			$form->file3->addFilter(
@@ -74,20 +75,25 @@ class Compte_AnnonceCompleteController extends App_Controller_Action_Default
     			$dataPhotoTotal[] = $dataPhoto;
     		}
     		
-    		if (!empty ($file4)) {
+    		$file4 = $form->file4->getFileName();
+    		
+    		if (!empty ($file4)) {    			
     			$form->file4->addFilter(
     					'Rename',
     					array('target' => "pict".$params['cod_id']."-04,jpg", 'overwrite' => true)
     			);
-    			$form->file4->receive();
+    			$form->file4->receive();    			
     			$dataPhoto = array(
     					'id_annonce' => $params['cod_id'],
     					'ref_annonce' => $params['ref'],
     					'nom_fichier' => "pict".$params['cod_id']."-04,jpg",
     					'ordre' => '4'
     			);
+    			
     			$dataPhotoTotal[] = $dataPhoto;
     		}
+    		
+    		$file5 = $form->file5->getFileName();
     		
     		if (!empty ($file5)) {
     			$form->file5->addFilter(
@@ -104,12 +110,18 @@ class Compte_AnnonceCompleteController extends App_Controller_Action_Default
     			$dataPhotoTotal[] = $dataPhoto;
     		}
     		
+    		$modelPhoto = new App_Model_Photo();
+    		$modelanunce = new App_Model_Announce();
+    		// guardando las fotos 
+    		foreach ($dataPhotoTotal as $items):
+    			$modelPhoto->savePhotos($items);
+    		endforeach;
+    		// actualizando el anuncio
+    		$params['id'] = $params['cod_id'];
     		
-    		var_dump($dataPhotoTotal);exit;
-    		
-    		
-    		
-    		
+    		var_dump($params);
+    		$id = $modelanunce->saveAnnonce($params);
+    		echo $id;exit;
     		
     		$this->_redirect('/compte');
     		
