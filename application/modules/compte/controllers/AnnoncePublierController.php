@@ -38,6 +38,7 @@ class Compte_AnnoncePublierController extends App_Controller_Action_Default
     		
     		$params['id_client'] = $this->view->authData->cid;
     		
+    		$temp = $params['modele'];
     		$modele = explode('_', $params['modele']);
     		
     		$params['modele'] = $modele[0];
@@ -58,7 +59,13 @@ class Compte_AnnoncePublierController extends App_Controller_Action_Default
     		$id = $modelanunce->saveAnnonce($params);
     		$this->view->register = $this->getParam('register', NULL);
     		if ($this->view->register == "valid" and $id > 0) {
+    			$dataForm = $params;
+    			$dataForm['modele'] = $temp;
+    			$dataForm['id'] = $id;
+    			$form->populate($dataForm);
+    			
     			$this->view->valid = TRUE;
+    			$this->view->params = $params;
     			$this->view->caract = $params;
     			$this->view->idannunce = $id;
     		}

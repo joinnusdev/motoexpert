@@ -56,6 +56,7 @@ jQuery.noConflict();
 					<?= $this->caract['descr_site'] ?>
 				</div>
 			</div>
+			<a href="#" onClick="dispatchpopup();" class="btn-submit">MODIFIER</a>
 			
 			<?php } else {?>
 			<a href="#" onClick="dispatchpopup();" class="btn-submit">DEPOSER CARACTERISTIQUES ANNONCE</a>
@@ -281,6 +282,7 @@ jQuery.noConflict();
 			</div>
 
 			<form name="form1" method="post" action="?register=valid">
+			<?= $this->form->id?>
 			<p>
 					<?= $this->form->deparment?>
 			</p>				
@@ -293,31 +295,31 @@ jQuery.noConflict();
 				<p>
 					<?= $this->form->modele?>
 				</p>
-				<p>
-					<input name="annee" type="text" placeholder="Année">
+				<p>					
+					<?= $this->form->annee?>
 				</p>
 				<p>
-					<input name="cylindree" type="text" placeholder="Cylindrée">
+					<?= $this->form->cylindree?>
 				</p>
-				<p>
-					<input name="couleur" type="text" placeholder="Couleur">
+				<p>					
+					<?= $this->form->couleur?>
 				</p>
-				<p>
-					<input name="km" type="text" placeholder="Kilométrage">
+				<p>					
+					<?= $this->form->km?>
 				</p>
 				<p>
 					<input name="" type="checkbox" value="">
 					Pas de compteur kilométrique
 				</p>
-				<p>
-					<input name="prix" type="text" placeholder="Prix">
+				<p>					
+					<?= $this->form->prix?>
 				</p>
 				<p>
 					<input name="" type="checkbox" value="">
 					ou à débattre
 				</p>
 				<p>
-					<input name="descr_site" type="text" placeholder="Descriptif">
+					<?= $this->form->descr_site?>
 				</p>
 				<p>
 					<input type="submit" name="button2" id="button2"
@@ -362,8 +364,63 @@ jQuery.noConflict();
 
 
 
-<script
-	src="<?php echo MEDIA_URL ?>js/marque-back2.js"></script>
+<script	src="<?php echo MEDIA_URL ?>js/marque-back2.js"></script>
+
+
+<script>
+jQuery(function(){
+    
+    var combodep = {        
+        init : function() {
+           this.Combo("#marque", "#modele", "--- MARQUE ---", "/default/index/get-modele", "id", "value");           
+        },        
+        Combo : function (c, cd, def, url, fieldv, fields) {           
+            
+                var actual = jQuery(c);
+                
+                if (actual.val() != 0) {
+                                        
+                    
+                	jQuery(cd).removeAttr("disabled");
+                	jQuery.ajax({
+                        url: url,
+                        type: 'post',
+                        data: {
+                           id : actual.val()
+                        },
+                        dataType: 'json',                        
+                        success: function(data){
+                        	jQuery(cd).html("<option value='0'> -- Modele -- </option>");
+
+                        	jQuery.each(data, function(index, value){
+                                	var select = ' ';
+                                	if (value[fieldv] == "<?php echo @$this->params['modele']?>")
+                                         var selec = 'selected="selected "';
+                                	jQuery(cd).append("<option "+ selec +"value='"+value[fieldv]+"_"+value[fields]+"'>"+value[fields]+"</option>");
+                                });
+
+                                
+                        }
+                    });                    
+                } else {
+                	jQuery(cd).html("");
+                	jQuery(cd).append("<option value='0'> -- Modele -- </option>");
+                	jQuery(cd).attr("disabled", "disabled");
+                    
+                    
+                }
+            
+       }
+    };    
+    combodep.init();
+    
+});
+
+
+
+</script>
+
+	
 <script>
   var dispatchpopup = function(){  
     jQuery('#my_lightbox').lightbox_me({
@@ -478,11 +535,6 @@ jQuery.noConflict();
      } else {
       document.getElementById('img-preview5').innerHTML = "No preview";
     }
-	
-	
-	
-	
-	
       document.getElementById('file1').addEventListener('change', selectfile, false);
 	  document.getElementById('file2').addEventListener('change', selectfile2, false);
 	  document.getElementById('file3').addEventListener('change', selectfile3, false);
