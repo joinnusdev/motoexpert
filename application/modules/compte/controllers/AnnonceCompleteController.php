@@ -9,9 +9,7 @@ class Compte_AnnonceCompleteController extends App_Controller_Action_Default
     }
     
     public function indexAction()
-    {	
-    	
-    	
+    {
     	if ($this->_request->isPost()) {
     		
     		$form = new App_Form_CreateAnnounce();
