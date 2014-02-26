@@ -119,11 +119,11 @@ class Compte_AnnonceCompleteController extends App_Controller_Action_Default
     		// actualizando el anuncio
     		$params['id'] = $params['cod_id'];
     		
-    		var_dump($params);
-    		$id = $modelanunce->saveAnnonce($params);
-    		echo $id;exit;
     		
-    		$this->_redirect('/compte');
+    		$id = $modelanunce->saveAnnonce($params);
+    		
+    		
+    		$this->_redirect('/compte?annonce=ok'); 
     		
     		
     		
