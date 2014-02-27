@@ -35,6 +35,7 @@ class App_Model_Announce extends App_Db_Table_Abstract {
 		where a.internet <> '0'
 		AND a.modere = '1'
 		AND a.ispayed = '1'
+                AND a.prov <> 'mebe'
 		";
 		
 		//if (!isset($datos['deparment']) and !isset($datos['category']) and !isset($datos['magasin']) and !isset($datos['marque']) and !isset($datos['modele']))
@@ -79,6 +80,7 @@ class App_Model_Announce extends App_Db_Table_Abstract {
 		AND a.internet <>  '0'
 		AND a.modere = '1'
 		AND a.ispayed =  '1'
+                AND a.prov <> 'mebe'
 		";
 		if (isset($datos['deparment']) and $datos['deparment'] != 0)
 			$query.= " AND a.departement = ".$datos['deparment'];
@@ -115,7 +117,8 @@ class App_Model_Announce extends App_Db_Table_Abstract {
 		WHERE a.internet <> '0' AND a.id_mot = mo.id_mot
 		AND a.ref = ac.ref AND ac.id_cat = c.id_cat
 		AND o.id_occaz = a.type_occaz
-		AND a.ispayed = '1' AND a.modere = '1' ";
+		AND a.ispayed = '1' AND a.modere = '1'
+                AND a.prov <> 'mebe'";
 		try{
 			return $this->getAdapter()->fetchRow($query);
 
@@ -143,6 +146,7 @@ class App_Model_Announce extends App_Db_Table_Abstract {
 		where a.internet <> '0'
 		AND a.modere = '1'
 		AND a.ispayed = '1'
+                AND a.prov <> 'mebe'
 		and a.id =".$id;
 		try{
 			return $this->getAdapter()->fetchRow($query);
