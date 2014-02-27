@@ -25,13 +25,13 @@ class Default_NewsController extends App_Controller_Action_Default
                 if(count($b)==2){
                     $idTienda = $b[1];
                     if('news-mag_'.$idTienda == $arrayItem[0].'-'.$arrayItem[1]){
-                        //echo $item['id']."<br>";
+                        echo $item['id']."<br>";
                     }
                 }
                 
             }
         }
-        //exit;
+        exit;
     } 
     
     public function detailAction(){}
