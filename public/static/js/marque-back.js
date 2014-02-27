@@ -1,4 +1,4 @@
-jQuery(function(){
+$(function(){
     
     var producto = {        
         init : function() {
@@ -6,14 +6,14 @@ jQuery(function(){
         },        
         ComboDependiente : function (c, cd, def, url, fieldv, fields) {            
             
-            jQuery(c).live("change blur", function(){
+            $(c).live("change blur", function(){
                 
-                var actual = jQuery(c);
+                var actual = $(this);
                 
                 if (actual.val() != 0) {                    
                     
-                    jQuery(cd).removeAttr("disabled");
-                    jQuery.ajax({
+                    $(cd).removeAttr("disabled");
+                    $.ajax({
                         url: url,
                         type: 'post',
                         data: {
@@ -21,16 +21,16 @@ jQuery(function(){
                         },
                         dataType: 'json',                        
                         success: function(data){
-                                jQuery(cd).html("<option value='0'> -- Modele -- </option>");
-                                jQuery.each(data, function(index, value){                                    
-                                    jQuery(cd).append("<option value='"+value[fieldv]+"'>"+value[fields]+"</option>");
+                                $(cd).html("<option value='0'> -- Modele -- </option>");
+                                $.each(data, function(index, value){                                    
+                                    $(cd).append("<option value='"+value[fieldv]+"'>"+value[fields]+"</option>");
                                 });
                         }
                     });                    
                 } else {
-                    jQuery(cd).html("");
-                    jQuery(cd).append("<option value='0'> -- Modele -- </option>");
-                    jQuery(cd).attr("disabled", "disabled");
+                    $(cd).html("");
+                    $(cd).append("<option value='0'> -- Modele -- </option>");
+                    $(cd).attr("disabled", "disabled");
                     
                     
                 }
