@@ -117,7 +117,7 @@
             <!-- // Slider // -->
             <div id="sliders">
                         <!-- start -->
-                        <ul class="bjqs">
+                        <ul class="swipe-wrap">
                           <li><img src="<?=MEDIA_URL ?>images/slider/1.jpg" title=""></li>
                           <li><img src="<?=MEDIA_URL ?>images/slider/2.jpg" title=""></li>
                           <li><img src="<?=MEDIA_URL ?>images/slider/3.jpg" title=""></li>
@@ -147,39 +147,16 @@
 		<a title="facebook" href="http://www.facebook.com">SUIVEZ NOUS</a>
 	</div>-->
 </div>
+<script src="<?php echo MEDIA_URL ?>js/swipe.js"></script>
+<script>
+$(document).ready(function() {
+	Slider = $('#sliders').Swipe({
+		auto: 7000,
+		continuous: true
+	}).data('Swipe');
 
-<script src="<?php echo MEDIA_URL ?>js/bjqs-1.3.min.js"></script>
-<script class="secret-source">
-        jQuery(document).ready(function($) {          
-          $('#sliders').bjqs({       
-          
-			// animation values
-            width    : 985,
-			height   : 395, 			
-			animtype : 'fade', // accepts 'fade' or 'slide'
-			animduration : 450, // how fast the animation are
-			animspeed : 4000, // the delay between each slide
-			automatic : true, // automatic
-			
-			// control and marker configuration
-			showcontrols : true, // show next and prev controls
-			centercontrols : true, // center controls verically
-			nexttext : '<img src="<?=MEDIA_URL?>images/slider/next.png" />', 
-			prevtext : '<img src="<?=MEDIA_URL?>images/slider/prev.png" />', 
-			showmarkers : true, // Show individual slide markers
-			centermarkers : true, // Center markers horizontally
-			
-			// interaction values
-			keyboardnav : true, // enable keyboard navigation
-			hoverpause : true, // pause the slider on hover
-			
-			// presentational options
-			usecaptions : true, // show captions for images using the image title tag
-			randomstart : true, // start slider at random slide
-			responsive : true // enable responsive capabilities (beta)
-			
-					  });
-					  
-					});
-</script>	
+	//$('.next').on('click', Slider.next);
+	//$('.prev').on('click', Slider.prev);
+});
+</script>
 <script src="<?php echo MEDIA_URL ?>js/marque-back.js"></script>
