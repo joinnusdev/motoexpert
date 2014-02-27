@@ -1,5 +1,15 @@
 /*@media only screen and (min-width: 670px) and (max-width: 788px) {*/
 @media only screen and (min-width: 641px) and (max-width: 990px) {
+#det-content .col2 img{ width:100%; height:auto}	
+.det-part{
+	min-height:35px !important;
+
+	}
+.det-img img{
+	float:left;
+	width:111px;
+	margin-right:9px;
+	}
 #wrapper{
 	width:763px !important;
 	overflow:hidden !important;
@@ -40,6 +50,12 @@
 	margin-top:7px;
 	overflow:hidden
 	}
+#det-content{width:748px !important;
+	padding:0px;
+	margin-top:7px;
+	overflow:hidden
+	}
+	
 #content .paddin30{
 	padding:0 22px !important;
 	}
@@ -370,6 +386,9 @@ min-height:63px !important;
 	width:720px;
 	}
 #details{
+	width:720px
+	}
+#details-not{
 	width:720px
 	}
 .col2{
@@ -832,6 +851,11 @@ margin-right:-11px;
 	padding:0 10px !important;
 	overflow:hidden
 	}
+#det-content{
+		width:300px !important;
+	padding:0 10px !important;
+	overflow:hidden
+	}
 #magasins{
 	width:305px !important;
 	margin-left:-5px !important;
@@ -1207,6 +1231,9 @@ min-height:43px !important;
 	margin-left:30px
 	}
 #details{
+	width:300px
+	}
+#details-not{
 	width:300px
 	}
 .paddin30{
@@ -1597,5 +1624,17 @@ display: none;
 
 
 }
-		
+.det-video{
+	width:300px;}
+.det-video iframe{
+	width:100%;
+	height:184px;}
+.det-img img{
+	width:94px;
+	height:92px;
+	margin-right:5px;
+	}	
+.det-cont-img{
+	height:92px !important;
+	}		
 }
