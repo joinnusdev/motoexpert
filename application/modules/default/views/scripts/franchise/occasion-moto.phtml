@@ -112,7 +112,12 @@ Nous vous proposons 3 solutions pour vendre vite et bien votre moto :</strong>  
            
                    <br>
                    <br><center>
-                     <a href="#"><img src="<?php echo MEDIA_URL ?>images/services/annonce.png" width="255" height="61"></a>
+                     <?php if ($this->authData){?>
+			<a  href="/compte"><img src="<?php echo MEDIA_URL ?>images/services/annonce.png" width="255" height="61"></a>
+			<?php } else {?>
+			<a href="/login"><img src="<?php echo MEDIA_URL ?>images/services/annonce.png" width="255" height="61"></a>
+			<?php } ?>  
+                     
                    </center>
            </div>
            

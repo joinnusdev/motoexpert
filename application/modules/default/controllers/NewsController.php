@@ -34,6 +34,8 @@ class Default_NewsController extends App_Controller_Action_Default
         //exit;
     } 
     
+    public function detailAction(){}
+    
 }
 
 ?>
