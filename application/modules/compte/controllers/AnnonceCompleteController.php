@@ -30,6 +30,8 @@ class Compte_AnnonceCompleteController extends App_Controller_Action_Default
     					'Rename',
     					array('target' => "pict".$params['cod_id']."-01,jpg", 'overwrite' => true)
     			);
+    			$rutafinal = $ruta . $params['departement'] . "/";
+    			$form->file1->setDestination($rutafinal);
     			$form->file1->receive();    			
     			$dataPhoto = array(
     					'id_annonce' => $params['cod_id'],
@@ -47,6 +49,8 @@ class Compte_AnnonceCompleteController extends App_Controller_Action_Default
     					'Rename',
     					array('target' => "pict".$params['cod_id']."-02,jpg", 'overwrite' => true)
     			);
+    			$rutafinal = $ruta . $params['departement'] . "/";
+    			$form->file2->setDestination($rutafinal);
     			$form->file2->receive();
     			$dataPhoto = array(
     					'id_annonce' => $params['cod_id'],
@@ -63,6 +67,8 @@ class Compte_AnnonceCompleteController extends App_Controller_Action_Default
     					'Rename',
     					array('target' => "pict".$params['cod_id']."-03,jpg", 'overwrite' => true)
     			);
+    			$rutafinal = $ruta . $params['departement'] . "/";
+    			$form->file3->setDestination($rutafinal);
     			$form->file3->receive();
     			$dataPhoto = array(
     					'id_annonce' => $params['cod_id'],
@@ -80,6 +86,8 @@ class Compte_AnnonceCompleteController extends App_Controller_Action_Default
     					'Rename',
     					array('target' => "pict".$params['cod_id']."-04,jpg", 'overwrite' => true)
     			);
+    			$rutafinal = $ruta . $params['departement'] . "/";
+    			$form->file4->setDestination($rutafinal);
     			$form->file4->receive();    			
     			$dataPhoto = array(
     					'id_annonce' => $params['cod_id'],
@@ -98,6 +106,8 @@ class Compte_AnnonceCompleteController extends App_Controller_Action_Default
     					'Rename',
     					array('target' => "pict".$params['cod_id']."-05,jpg", 'overwrite' => true)
     			);
+    			$rutafinal = $ruta . $params['departement'] . "/";
+    			$form->file5->setDestination($rutafinal);
     			$form->file5->receive();
     			$dataPhoto = array(
     					'id_annonce' => $params['cod_id'],

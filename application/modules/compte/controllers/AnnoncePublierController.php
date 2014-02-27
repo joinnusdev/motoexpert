@@ -64,7 +64,7 @@ class Compte_AnnoncePublierController extends App_Controller_Action_Default
 				$dataForm['id'] = $id;
 				$form->populate($dataForm);
 					
-				$this->view->valid = TRUE;
+				$this->view->valid = TRUE;				
 				$this->view->params = $params;
 				$this->view->caract = $params;
 				$this->view->idannunce = $id;

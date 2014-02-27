@@ -53,7 +53,7 @@ class App_Form_CreateAnnounce extends App_Form
         $ruta = $config->app->fotoPrincipal;
         
         $e = new Zend_Form_Element_File('file1');        
-        $e->setDestination($ruta);        
+        $e->setDestination($ruta);                
         $this->addElement($e);
         
         $e = new Zend_Form_Element_File('file2');
