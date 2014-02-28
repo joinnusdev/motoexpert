@@ -48,7 +48,13 @@
 						value="<?php echo $this->datos["ville"]?>" />
 				</p>
 				<p>
-					<input name="pays" type="text" placeholder="Pays" value="<?php echo $this->datos["pays"]?>">
+                                    <select name="pays" id="ville" placeholder="Pays" > 
+                                        <option value="fr" <?php if($this->datos["pays"]=='fr'){ echo "selected";} ?> >France</option>
+                                        <option value="al" <?php if($this->datos["pays"]=='al'){ echo "selected";} ?>>Allemagne</option>
+                                        <option value="su" <?php if($this->datos["pays"]=='su'){ echo "selected";} ?>>Suisse</option>
+                                        <option value="be" <?php if($this->datos["pays"]=='be'){ echo "selected";} ?>>Belgique</option>
+                                    </select> 
+                                </p>
 				</p>
 				<p>
 					<input name="tel" type="text" placeholder="Téléphone" value="<?php echo $this->datos["tel"]?>">
