@@ -16,7 +16,7 @@ class Default_NewsController extends App_Controller_Action_Default
         foreach ($result as $item) {
             $i++;
             $arrayItem = explode('-', $item['id']);
-            print_r($arrayItem);
+            //print_r($arrayItem);
             
             for($x=0;$x<count($arrayItem);$x++){
                 $a = $arrayItem[1];
@@ -33,6 +33,8 @@ class Default_NewsController extends App_Controller_Action_Default
         }
         exit;
     } 
+    
+    public function detailAction(){}
     
 }
 

@@ -12,7 +12,7 @@
 			<a href="/news">ACTUALITE RESEAU</a>
                         <!-- - <a href="/contact">NEWSLETTER</a>-->
 			<?php if ($this->authData){?>
-			<a class="nomcompte" href="/compte">Bonjour <?= $this->authData->nom . " " . $this->authData->prenom ?> </a> |			    
+			<a class="nomcompte" href="/compte">Bonjour <?= $this->authData->nom;?> </a> |			    
                         <a class="logout" href="/auth/logout">Se déconnecter</a>			    
 			<?php } else {?>
 			<a class="nomcompte" href="/login">MON COMPTE</a>
