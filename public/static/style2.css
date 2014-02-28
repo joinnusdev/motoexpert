@@ -2273,6 +2273,20 @@ margin-bottom:5px;
     list-style: none;
     outline: none;
   }
+ #my_contact{
+	    display: none;
+    width: 322px;
+    height: 708px;
+    text-align: center;
+    vertical-align: middle;
+    background: #eef2f7;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    outline: none; 
+	 }
+#login-c  #my_contact{
+	display:block !important}
  #gerez{
 	 width:956px;
 	 float:left;
@@ -3087,9 +3101,12 @@ form.cmxform .gray * { color: gray; }
 	}
 .contact textarea{
 	float:left;
+		font-family:Arial, Helvetica, sans-serif;
+	font-size:16px;
+	color:#666666;
 	margin:0 0px 6px 0 ;
 	overflow:auto;
-	width:500px;
+	width:290px;
 	-webkit-border-radius:4px;
     -moz-border-radius:4px;
 	padding:5px;
@@ -3109,8 +3126,8 @@ form.cmxform .gray * { color: gray; }
 	}
 .contact .fomrinfo{
 	float: left;
-	margin:0 0px 6px 100px ;
-	width:370px;
+	margin:0 0px 6px 0px ;
+	width:290px;
 	padding:5px;
 
 	}
@@ -3140,13 +3157,13 @@ form.cmxform .gray * { color: gray; }
 	}
 .inpcap input[type="text"]{
 	background-color:#FFF !important;
-	width:110px;
-	border:1px solid #666;
-	height:25px;
+	width:98px !important;
+	border:1px solid #666 !important;
+	height:15px !important;
 	}
-.condition{
+.contact .condition{
 	float:right;
-	width:220px;
+	width:150px !important;
 	font-family:Arial, Helvetica, sans-serif;
 	font-size:13px;
 	}
