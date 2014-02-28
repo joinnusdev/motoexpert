@@ -22,8 +22,121 @@
           </div>
           <div class="footer-col4">
           	<a href="/news">L’ACTU</a>
-            <a href="mailto:info@motoexpert.fr">CONTACTS</a>         
+            <a href="/contact"  class="btn-smart" >CONTACTS</a>
+            <a href="#" onClick="contactpopup();" class="btn-ipad" >CONTACTS</a>
+      
           </div>
           
           <div class="copy">&copy; 2014 MOTOEXPERT   Réalisation : Infra - Tous droits réservé</div>
         </div>
+   <!-- /*************************************************************************************************/-->
+
+       <div id="my_contact" class="contact"> 
+  <div id="wrapper-form">
+    	<div id="new-form">
+        	<div id="new-navigation"><a href="#" class="new-prev" onClick="$('#my_contact').trigger('close');">RETOUR</a>
+        	<p>  </p> </div>
+           
+        <form name="formContant"  class="cmxform"  id="formContant" method="post" action="">
+        <p><?php echo ($this->error)?"S'il vous plaît vérifier vos informations":''?></p>
+
+<p><input name="nom" type="text" placeholder="Nom" required value="<?php echo ($nom)?$datos["nom"]:'';?>" /></p>
+<p><input name="prenom" type="text" placeholder="Prénom" required value="<?php echo ($prenom)?$datos["prenom"]:'';?>"/></p>
+<p><input name="adresse" type="text" placeholder="Adresse" required value="<?php echo ($adresse)?$datos["adresse"]:'';?>"/></p>
+          <p><input name="code_postal" type="text" placeholder="Code Postal" required value="<?php echo ($code_postal)?$datos["code_postal"]:'';?>"/></p>
+          <p><input name="ville" type="text" placeholder="Ville" required value="<?php echo ($ville)?$datos["ville"]:'';?>"/></p>
+          <p><input name="tel"  id="tel" type="text" placeholder="Téléphone"></p>
+
+            <p>
+            <input name="email" type="text" placeholder="Votre adresse Email" required value="<?php echo ($email)?$datos["email"]:'';?>">
+            </p>
+<p> <select name="magasin" id="magasin">
+
+    <option value="0">Magasin</option>
+    <option value="86">ALBERTVILLE</option>
+    <option value="91">ALENCON</option>
+    <option value="107">ANGERS</option>
+    <option value="104">ANGOULEME</option>
+    <option value="101">ANNECY</option>
+    <option value="109">AVIGNON</option>
+    <option value="108">BELFORT</option>
+    <option value="7">BESANCON</option>
+    <option value="87">BEZIERS</option>
+    <option value="10">BOURGES</option>
+    <option value="85">BRUAY LA BUISSIERE</option>
+    <option value="82">CASTRES</option>
+    <option value="97">CHAMBERY</option>
+    <option value="98">CHATEAUROUX</option>
+    <option value="81">CLERMONT FERRAND</option>
+    <option value="63">COLMAR</option>
+    <option value="68">DIJON</option>
+    <option value="84">FREJUS</option>
+    <option value="21">LA ROCHE/YON</option>
+    <option value="105">LA ROCHELLE</option>
+    <option value="88">LE HAVRE</option>
+    <option value="1">LE MANS</option>
+    <option value="110">LORIENT</option>
+    <option value="32">METZ</option>
+    <option value="31">MONT DE MARSAN</option>
+    <option value="83">MONTARGIS</option>
+    <option value="34">MONTPELLIER</option>
+    <option value="94">MULHOUSE</option>
+    <option value="36">NANTES 1</option>
+    <option value="66">NARBONNE</option>
+    <option value="37">NEVERS</option>
+    <option value="99">PAU</option>
+    <option value="42">POITIERS</option>
+    <option value="58">REIMS</option>
+    <option value="77">SAINT QUENTIN</option>
+    <option value="100">SAINTES</option>
+    <option value="103">SAUMUR</option>
+    <option value="60">TARBES</option>
+    <option value="50">TOULON</option>
+    <option value="52">TOULOUSE 2</option>
+    <option value="53">TOURS</option>
+    <option value="61">TROYES</option>
+    <option value="55">VANNES</option>
+</select></p>
+
+<p> <textarea name="message" id="message" cols="45" rows="5">message</textarea></p>
+<p></p><p></p>
+               <div class="fomrinfo">
+                    	<span>Veuillez saisir les lettres de limage dans le champ situé sous l'image en respectant les majuscules et les minuscules.</span>
+                    <div class="captcha">
+                    	<div class="imgcap"><img src="<?=MEDIA_URL ?>CaptchaSecurityImages.php" /></div>
+                        <div class="inpcap"><input name="" type="text"></div>
+                    </div>
+                   <div class="condition">
+                   	<input name="" type="checkbox" value="" />En cochant cette case, je souhaite recevoir la newsletter Moto Expert
+                   
+                   </div>
+                    
+                    <input name="ENVOYER" type="submit" id="ENVOYER" value="ENVOYER" />
+                    
+                    </div>
+<p></p>
+
+          
+
+            
+        </form>
+    	</div>
+	  
+      
+	</div>
+   </div>     
+     
+  <script>
+ 
+    var contactpopup = function(){  
+    $('#my_contact').lightbox_me({
+      centered: true,
+      onLoad: function() {
+        $('#my_contact_text').html("Stuff");
+      }
+    });
+  }
+</script>      
+        
+        
+        
