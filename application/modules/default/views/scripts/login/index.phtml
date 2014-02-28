@@ -183,19 +183,15 @@ $().ready(function() {
           <p><input name="prenom" type="text" placeholder="Prénom" required="required" value="<?php echo ($prenom)?$datos["prenom"]:'';?>"/></p>
           <p><input name="adresse" type="text" placeholder="Adresse" required="required" value="<?php echo ($adresse)?$datos["adresse"]:'';?>"/></p>
           <p><input name="code_postal" type="text" placeholder="Code Postal" required="required" value="<?php echo ($code_postal)?$datos["code_postal"]:'';?>"/></p>
-          
-          
+          <p><input name="ville" type="text" placeholder="Ville" required="required" value="<?php echo ($ville)?$datos["ville"]:'';?>"/></p>
           <p>
-            <select name="ville" id="ville" > 
+            <select name="pays" id="ville" placeholder="Pays" > 
                 <option value="fr">France</option>
                 <option value="al">Allemagne</option>
                 <option value="su">Suisse</option>
                 <option value="be">Belgique</option>
             </select> 
-              
           </p>
-          
-          <p><input name="pays" type="text" placeholder="Pays"></p>
           <p><input name="tel" type="text" placeholder="Téléphone"></p>
           <p><input name="portable" type="text" placeholder="Mobile" value="<?php echo ($portable)?$datos["portable"]:'';?>"/></p>
           <p><span class="in-text">Je désire être tenu au courant de l’actualité et des nouveautés du site Moto Expert</span>
