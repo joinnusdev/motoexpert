@@ -14,12 +14,7 @@ class Compte_AnnoncePublierController extends App_Controller_Action_Default
 		$this->view->form = $form;
 			
 		$modelanunce = new App_Model_Announce();
-		//$modelclient = new App_Model_Client();
 		$this->view->ruta = $this->config->app->photoUrl;
-		//$this->view->result =
-		//$modelanunce->announceByCLient($this->view->authData->cid);
-			
-		//$this->view->datos = $modelclient->getClientById($this->view->authData->cid);
 			
 		$this->view->valid = FALSE;
 			
@@ -54,9 +49,24 @@ class Compte_AnnoncePublierController extends App_Controller_Action_Default
 			$params['modere'] = '1';
 			$params['id_cat'] = $params['category'];
 			$params['id_mot'] = $params['modele'];
-			$params['ref'] = $params['departement']."000".$params['id_mot']."0000";
+			$alea = rand(1000, 9999);
+			$params['ref'] = $params['departement']."000".$params['id_mot'].$alea;
 
 			$id = $modelanunce->saveAnnonce($params);
+			
+			$dataAinfo = $params;
+			$dataAinfo['marque_aut'] = $params['marque'];
+			$dataAinfo['modele_aut'] = $modeleName;
+			$modeleCategory = new App_Model_Category();
+			$category = $modeleCategory->getCategoryById($params['id_cat']);						
+			$dataAinfo['categorie'] = $category;
+			$dataAinfo['date_depot'] = $params['date_valid'];
+			$dataAinfo['controle'] = '1';
+			
+			
+			$modelAinfo = new App_Model_AnnounceInfo();
+			$modelAinfo->saveAnnonceInfo($dataAinfo);
+			
 			$this->view->register = $this->getParam('register', NULL);
 			if ($this->view->register == "valid" and $id > 0) {
 				$dataForm = $params;
@@ -95,6 +105,20 @@ class Compte_AnnoncePublierController extends App_Controller_Action_Default
 			$params['id_mot'] = $params['modele'];
 				
 			$idAnnonce = $modelanunce->saveAnnonce($params);
+			
+			$dataAinfo = $params;
+			$dataAinfo['marque_aut'] = $params['marque'];
+			$dataAinfo['modele_aut'] = $modeleName;
+			$modeleCategory = new App_Model_Category();
+			$category = $modeleCategory->getCategoryById($params['id_cat']);
+			$dataAinfo['categorie'] = $category;				
+				
+			$modelAinfo = new App_Model_AnnounceInfo();
+			$modelAinfo->updateAnnonceInfo($dataAinfo);
+			
+			
+			
+			
 			$this->view->register = $this->getParam('register', NULL);
 			if ($this->view->register == "valid" and $idAnnonce > 0) {
 				$dataForm = $params;

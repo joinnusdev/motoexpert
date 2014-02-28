@@ -3,26 +3,23 @@ class App_Model_AnnounceInfo extends App_Db_Table_Abstract {
 
 	protected $_name = 'annonces_info';
 	
-	private function _save($datos) {
-		$id = 0;
-		if (!empty($datos['id'])) {
-			$id = (int) $datos['id'];
-		}
-		unset($datos['id']);
-
+	public function saveAnnonceInfo($datos) {
+		$db = $this->getDefaultAdapter();
 		$datos = array_intersect_key($datos, array_flip($this->_getCols()));
-
-		if ($id > 0) {
-			$cantidad = $this->update($datos, 'id = ' . $id);
-			$id = ($cantidad < 1) ? 0 : $id;
-		} else {
-			$id = $this->insert($datos);
-		}
+		$id = $db->insert($this->_name, $datos);
+		
 		return $id;
 	}
-
-	public function saveAnnonce($datos) {
-		return $this->_save($datos);
+	
+	public function updateAnnonceInfo($datos) {
+		$db = $this->getDefaultAdapter();
+		$ref = $datos['ref'];
+		unset($datos['ref']);
+		$datos = array_intersect_key($datos, array_flip($this->_getCols()));
+		$where = " ref = ". $ref;
+		$id = $db->update($this->_name, $datos, $where);
+	
+		return $id;
 	}
 
 
