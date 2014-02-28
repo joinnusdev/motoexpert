@@ -73,7 +73,7 @@ jQuery.noConflict();
 										
 <?php if(isset($this->photos[1])) {?>
 <img src="<?= $this->urlPhoto . $this->photos[1]['nom_fichier'] ?>" width="137" height="102" />
-<input type="hidden" name="foto1" value="1"/>
+<input type="hidden" name="foto1" value="<?= $this->photos[1]['id_photo'] ?>"/>
 <?php } else {?>
 <img src="<?=MEDIA_URL ?>images/file-g.jpg" width="137" height="102" />
 <?php } ?>
@@ -85,7 +85,7 @@ jQuery.noConflict();
 						<div id="img-preview2">
 <?php if(isset($this->photos[2])) {?>
 <img src="<?= $this->urlPhoto . $this->photos[2]['nom_fichier'] ?>" width="67" height="48" />
-<input type="hidden" name="foto2" value="1"/>
+<input type="hidden" name="foto2" value="<?= $this->photos[2]['id_photo'] ?>"/>
 <?php } else {?>
 <img src="<?=MEDIA_URL ?>images/file-m.jpg" width="67" height="48" />
 <?php } ?>	
@@ -97,7 +97,7 @@ jQuery.noConflict();
 						<div id="img-preview3">
 <?php if(isset($this->photos[3])) {?>
 <img src="<?= $this->urlPhoto . $this->photos[3]['nom_fichier'] ?>" width="67" height="48" />
-<input type="hidden" name="foto3" value="1"/>
+<input type="hidden" name="foto3" value="<?= $this->photos[3]['id_photo'] ?>"/>
 <?php } else {?>
 <img src="<?=MEDIA_URL ?>images/file-m.jpg" width="67" height="48" />
 <?php } ?>						</div>
@@ -107,7 +107,7 @@ jQuery.noConflict();
 						<div id="img-preview4">
 <?php if(isset($this->photos[4])) {?>
 <img src="<?= $this->urlPhoto . $this->photos[4]['nom_fichier'] ?>" width="67" height="48" />
-<input type="hidden" name="foto4" value="1"/>
+<input type="hidden" name="foto4" value="<?= $this->photos[4]['id_photo'] ?>"/>
 <?php } else {?>
 <img src="<?=MEDIA_URL ?>images/file-m.jpg" width="67" height="48" />
 <?php } ?>									
@@ -118,7 +118,7 @@ jQuery.noConflict();
 						<div id="img-preview5">
 <?php if(isset($this->photos[5])) {?>
 <img src="<?= $this->urlPhoto . $this->photos[5]['nom_fichier'] ?>" width="67" height="48" />
-<input type="hidden" name="foto5" value="1"/>
+<input type="hidden" name="foto5" value="<?= $this->photos[5]['id_photo'] ?>"/>
 <?php } else {?>
 <img src="<?=MEDIA_URL ?>images/file-m.jpg" width="67" height="48" />
 <?php } ?>		

@@ -42,8 +42,8 @@ class App_Model_Photo extends App_Db_Table_Abstract {
 		
 
 	}
-	public function deletePhotos($idAnnonce) {
-		$where = "id_annonce = ". $idAnnonce;
+	public function deletePhotos($id) {
+		$where = "id_photo = ". $id;		
 		$this->delete($where);
 	}
 
