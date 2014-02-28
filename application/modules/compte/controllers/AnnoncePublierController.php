@@ -65,7 +65,10 @@ class Compte_AnnoncePublierController extends App_Controller_Action_Default
 			
 			
 			$modelAinfo = new App_Model_AnnounceInfo();
-			$modelAinfo->saveAnnonceInfo($dataAinfo);
+			if (isset($params['id']) and $params['id'] > 0)
+				$modelAinfo->update($dataAinfo);
+			else 
+				$modelAinfo->saveAnnonceInfo($dataAinfo);
 			
 			$this->view->register = $this->getParam('register', NULL);
 			if ($this->view->register == "valid" and $id > 0) {
