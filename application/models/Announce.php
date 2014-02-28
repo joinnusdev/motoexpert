@@ -130,7 +130,7 @@ class App_Model_Announce extends App_Db_Table_Abstract {
 
 	public function detailAnnounce($id){
 		$query = "
-		SELECT a.id,a.ref, a.titre, a.date, a.date_crea, a.annee,a.cylindree,
+		SELECT a.parution, a.rep_mail,a.rep_tel,a.rep_port ,a.id,a.ref, a.titre, a.date, a.date_crea, a.annee,a.cylindree,
 		a.couleur, a.km, a.id_cat,a.prix,a.departement,
 		a.garantie, c.nom_cat, m.marque, m.id_mot,m.modele
 		,foto.nom_fichier as foto, info.controle
