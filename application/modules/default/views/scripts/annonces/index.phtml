@@ -95,7 +95,12 @@
                                     <?php
                                     $config = Zend_Registry::get('config');
                                     $foto = str_replace(",",".",$item['foto']);    
+                                    if($foto!=""){
                                     $ruta = $config->app->photoUrl.$item['departement'].'/'.$foto;
+                                    }else{
+                                     $ruta = $config->app->mediaUrl.'/images/placeholder.gif';
+                                        
+                                    }
                                     ?>
                                     <a href="Fiche-Moto/index/id/<?php echo $item['id'];?>">
                                         <img src="<?=$ruta;?>" width="300" />
