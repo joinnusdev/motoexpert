@@ -1,0 +1,132 @@
+<div id="content" class="paddin30"> 
+        	<div id="content-top">
+            
+                            <div class="top-left"><span>CONTACT</span></div>
+        	</div>
+       	  
+          <!-- //*** LOGIN  //-->
+          
+          
+ <div id="login-c" class="contact">
+          
+      
+  <div id="wrapper-form">
+    	<div id="new-form">
+        	<div id="new-navigation"><a href="#" class="new-prev" onClick="$('#my_lightbox').trigger('close');">RETOUR</a>
+        	<p>  </p> </div>
+           
+        <form name="formRegister"  class="cmxform"  id="formRegister" method="post" action="">
+        <p><?php echo ($this->error)?"S'il vous plaît vérifier vos informations":''?></p>
+
+<p><input name="nom" type="text" placeholder="Nom" required value="<?php echo ($nom)?$datos["nom"]:'';?>" /></p>
+<p><input name="prenom" type="text" placeholder="Prénom" required value="<?php echo ($prenom)?$datos["prenom"]:'';?>"/></p>
+<p><input name="adresse" type="text" placeholder="Adresse" required value="<?php echo ($adresse)?$datos["adresse"]:'';?>"/></p>
+          <p><input name="code_postal" type="text" placeholder="Code Postal" required value="<?php echo ($code_postal)?$datos["code_postal"]:'';?>"/></p>
+          <p><input name="ville" type="text" placeholder="Ville" required value="<?php echo ($ville)?$datos["ville"]:'';?>"/></p>
+          <p><input name="tel"  id="tel" type="text" placeholder="Téléphone"></p>
+
+            <p>
+            <input name="email" type="text" placeholder="Votre adresse Email" required value="<?php echo ($email)?$datos["email"]:'';?>">
+            </p>
+<p> <select name="select" id="select">
+                                	<option value="0" selected="selected">Magasin</option>
+                                    <option value="1">Ville 1</option>
+                                    <option value="2">Ville 2</option>
+                                    <option value="3">Ville 3</option>
+                                    <option value="4">Ville 4</option>
+                                    <option value="5">Ville 5</option>
+                                    <option value="6">Ville 6</option>
+                        </select></p>
+<p> <textarea name="message" id="message" cols="45" rows="5">message</textarea></p>
+<p></p><p></p>
+               <div class="fomrinfo">
+                    	<span>Veuillez saisir les lettres de limage dans le champ situé sous l'image en respectant les majuscules et les minuscules.</span>
+                    <div class="captcha">
+                    	<div class="imgcap"><img src="<?=MEDIA_URL ?>CaptchaSecurityImages.php" /></div>
+                        <div class="inpcap"><input name="" type="text"></div>
+                    </div>
+                   <div class="condition">
+                   	<input name="" type="checkbox" value="" />En cochant cette case, je souhaite recevoir la newsletter Moto Expert
+                   
+                   </div>
+                    
+                    <input name="ENVOYER" type="submit" id="ENVOYER" value="ENVOYER" />
+                    
+                    </div>
+<p></p>
+
+          
+
+            
+        </form>
+    	</div>
+	  
+      
+	</div>
+    
+    
+             
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+    
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+          </div><script src="<?=MEDIA_URL ?>js/jquery.validate.js"></script>
+<script>
+/*$.validator.setDefaults({
+	submitHandler: function() { alert("submitted!"); }
+});*/
+
+$().ready(function() {
+	// validate the comment form when it is submitted
+
+
+	// validate signup form on keyup and submit
+	$("#form1").validate({
+		rules: {
+			firstname: "required",
+			lastname: "required",
+			cpostal: {
+				required: true,
+				minlength: 5,
+			},
+			email: {
+				required: true,
+				email: true
+			},
+			agree: "required"
+		},
+		messages: {
+			firstname: "Please enter your firstname",
+			lastname: "Please enter your lastname",
+
+			email: "Please enter a valid email address",
+			agree: "Please accept our policy"
+		}
+	});
+
+
+
+});
+</script>
