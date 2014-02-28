@@ -941,7 +941,9 @@ p.bjqs-caption{
 	display:block;
 	padding:0px;
 	}
-	
+.footer-col2 a{
+	color:#FFF;
+	text-decoration:none;}	
 .footer-col3 a{
 	font-family:Arial, Helvetica, sans-serif;
 	font-size:11px;
@@ -2791,15 +2793,21 @@ form.cmxform fieldset fieldset {
 	background: none;
 }
 
-form.cmxform label.error, label.error {
+form.cmxform label.error, label .error {
 	display:none !important;
 	/* remove the next line when you have trouble in IE6 with labels in list */
 	color: red;
-	font-style: italic
+	font-style: italic;
+	font-size:11px;
+	margin:-5px 0 0 0 !important;
+	_position: absolute;
+	width:150px;
+	z-index:999;
+	padding:0px !important;
 }
 div.error { display: none; }
 
-input.error { border: 1px dotted red !important; background:#FFDFDF !important }
+input.error { border: 1px dotted red !important; background:#FFDFDF !important; _margin-bottom:2px !important }
 form.cmxform .gray * { color: gray; }
 
 /******************************************************************************************/
