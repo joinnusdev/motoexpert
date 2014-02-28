@@ -12,10 +12,12 @@ class App_Model_Photo extends App_Db_Table_Abstract {
 
 		$datos = array_intersect_key($datos, array_flip($this->_getCols()));
 
-		if ($id > 0) {
+		if ($id > 0) {			
 			$cantidad = $this->update($datos, 'id = ' . $id);
 			$id = ($cantidad < 1) ? 0 : $id;
 		} else {
+			$where = "id_annonce = ". $datos['id_annonce'];			
+			$this->delete($where);
 			$id = $this->insert($datos);
 		}
 		return $id;
@@ -23,6 +25,16 @@ class App_Model_Photo extends App_Db_Table_Abstract {
 
 	public function savePhotos($datos) {
 		return $this->_save($datos);
+	}
+	
+	public function getPhotosByAnnonce($idAnnonce) {
+		$db = $this->getDefaultAdapter();
+		
+		$query = $db->select()->from($this->_name)
+		->where('id_annonce = ?', $idAnnonce);
+		
+		return $db->fetchAll($query);
+
 	}
 
 

@@ -79,7 +79,8 @@ class Compte_AnnoncePublierController extends App_Controller_Action_Default
 		$idAnnonce = $this->getParam('annonce', NULL);
 		$modelanunce = new App_Model_Announce();
 		$form = new App_Form_CreateAnnounce();
-
+		
+		$modelPhotos = new App_Model_Photo() ;
 
 		if ($this->_request->isPost()) {
 			$params = $this->_getAllParams();
@@ -115,15 +116,20 @@ class Compte_AnnoncePublierController extends App_Controller_Action_Default
 
 		if ($idAnnonce > 0) {			
 			$this->view->form = $form;			
+			$photos = $modelPhotos->getPhotosByAnnonce($idAnnonce);
+			
+			$this->view->photos = $photos;
+			$this->view->urlPhoto = $this->config->app->viewPhotos;
+			echo $this->view->urlPhoto;exit; 
+			
 			$params = $modelanunce->detailAnnounce($idAnnonce);
-			//var_dump($params);exit();
 				
 			$params['deparment'] = $params['departement'];
 			$params['category'] = $params['id_cat'];
 			$params['modele'] = $params['id_mot'];
 				
 			if ($params) {
-				$this->view->ruta = $this->config->app->photoUrl;
+				$this->view->ruta = $this->config->app->photoUrl;				
 				$this->view->valid = TRUE;
 					
 				$form->populate($params);
