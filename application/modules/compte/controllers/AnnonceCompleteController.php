@@ -125,17 +125,16 @@ class Compte_AnnonceCompleteController extends App_Controller_Action_Default
     		
     		
     		foreach ($dataPhotoTotal as $items):    		    		
-    			if ($items['ordre'] == 1 and isset($params['foto1']))
+    			if (isset($params['foto1']))
     			    $modelPhoto->deletePhotos($params['foto1']);
-    			if ($items['ordre'] == 2 and isset($params['foto2']))
+    			if (isset($params['foto2']))
     				$modelPhoto->deletePhotos($params['foto2']);    			
-    			if ($items['ordre'] == 3 and isset($params['foto3']))
+    			if (isset($params['foto3']))
     				$modelPhoto->deletePhotos($params['foto3']);
-    			if ($items['ordre'] == 4 and isset($params['foto4']))
+    			if (isset($params['foto4']))
     				$modelPhoto->deletePhotos($params['foto4']);
-    			if ($items['ordre'] == 5 and isset($params['foto5']))
-    				$modelPhoto->deletePhotos($params['foto5']);
-    			
+    			if (isset($params['foto5']))
+    				$modelPhoto->deletePhotos($params['foto5']);    			
     			$modelPhoto->savePhotos($items);
     		endforeach;
     		// actualizando el anuncio
