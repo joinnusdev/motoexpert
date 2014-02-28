@@ -15,9 +15,7 @@ class App_Model_Photo extends App_Db_Table_Abstract {
 		if ($id > 0) {			
 			$cantidad = $this->update($datos, 'id = ' . $id);
 			$id = ($cantidad < 1) ? 0 : $id;
-		} else {
-			$where = "id_annonce = ". $datos['id_annonce'];			
-			$this->delete($where);
+		} else {			
 			$id = $this->insert($datos);
 		}
 		return $id;
@@ -33,8 +31,20 @@ class App_Model_Photo extends App_Db_Table_Abstract {
 		$query = $db->select()->from($this->_name)
 		->where('id_annonce = ?', $idAnnonce);
 		
-		return $db->fetchAll($query);
+		$result =  $db->fetchAll($query);
+		
+		foreach ($result as $item):
+			$total[$item['ordre']] = $item;		
+		endforeach;
+		
+		return $total;
+		
+		
 
+	}
+	public function deletePhotos($idAnnonce) {
+		$where = "id_annonce = ". $idAnnonce;
+		$this->delete($where);
 	}
 
 

@@ -117,12 +117,13 @@ class Compte_AnnoncePublierController extends App_Controller_Action_Default
 		if ($idAnnonce > 0) {			
 			$this->view->form = $form;			
 			$photos = $modelPhotos->getPhotosByAnnonce($idAnnonce);
+			$params = $modelanunce->detailAnnounce($idAnnonce);
 			
 			$this->view->photos = $photos;
-			$this->view->urlPhoto = $this->config->app->viewPhotos;
-			echo $this->view->urlPhoto;exit; 
+			$this->view->urlPhoto = $this->config->app->viewPhotos . $params['departement'] . "/";
+			//echo $this->view->urlPhoto;exit; 
 			
-			$params = $modelanunce->detailAnnounce($idAnnonce);
+			
 				
 			$params['deparment'] = $params['departement'];
 			$params['category'] = $params['id_cat'];

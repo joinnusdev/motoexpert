@@ -28,15 +28,16 @@ class Compte_AnnonceCompleteController extends App_Controller_Action_Default
     		if (!empty ($file1)) {
     			$form->file1->addFilter(
     					'Rename',
-    					array('target' => "pict".$params['cod_id']."-01,jpg", 'overwrite' => true)
+    					array('target' => "pict".$params['cod_id']."-01.jpg", 'overwrite' => true)
     			);
     			$rutafinal = $ruta . $params['departement'] . "/";
+    			
     			$form->file1->setDestination($rutafinal);
     			$form->file1->receive();    			
     			$dataPhoto = array(
     					'id_annonce' => $params['cod_id'],
     					'ref_annonce' => $params['ref'],
-    					'nom_fichier' => "pict".$params['cod_id']."-01,jpg",
+    					'nom_fichier' => "pict".$params['cod_id']."-01.jpg",
     					'ordre' => '1'
     			);
     			$dataPhotoTotal[] = $dataPhoto;
@@ -47,7 +48,7 @@ class Compte_AnnonceCompleteController extends App_Controller_Action_Default
     		if (!empty ($file2)) {
     			$form->file2->addFilter(
     					'Rename',
-    					array('target' => "pict".$params['cod_id']."-02,jpg", 'overwrite' => true)
+    					array('target' => "pict".$params['cod_id']."-02.jpg", 'overwrite' => true)
     			);
     			$rutafinal = $ruta . $params['departement'] . "/";
     			$form->file2->setDestination($rutafinal);
@@ -55,7 +56,7 @@ class Compte_AnnonceCompleteController extends App_Controller_Action_Default
     			$dataPhoto = array(
     					'id_annonce' => $params['cod_id'],
     					'ref_annonce' => $params['ref'],
-    					'nom_fichier' => "pict".$params['cod_id']."-02,jpg",
+    					'nom_fichier' => "pict".$params['cod_id']."-02.jpg",
     					'ordre' => '2'
     			);
     			$dataPhotoTotal[] = $dataPhoto;
@@ -65,7 +66,7 @@ class Compte_AnnonceCompleteController extends App_Controller_Action_Default
     		if (!empty ($file3)) {
     			$form->file3->addFilter(
     					'Rename',
-    					array('target' => "pict".$params['cod_id']."-03,jpg", 'overwrite' => true)
+    					array('target' => "pict".$params['cod_id']."-03.jpg", 'overwrite' => true)
     			);
     			$rutafinal = $ruta . $params['departement'] . "/";
     			$form->file3->setDestination($rutafinal);
@@ -73,7 +74,7 @@ class Compte_AnnonceCompleteController extends App_Controller_Action_Default
     			$dataPhoto = array(
     					'id_annonce' => $params['cod_id'],
     					'ref_annonce' => $params['ref'],
-    					'nom_fichier' => "pict".$params['cod_id']."-03,jpg",
+    					'nom_fichier' => "pict".$params['cod_id']."-03.jpg",
     					'ordre' => '3'
     			);
     			$dataPhotoTotal[] = $dataPhoto;
@@ -84,7 +85,7 @@ class Compte_AnnonceCompleteController extends App_Controller_Action_Default
     		if (!empty ($file4)) {    			
     			$form->file4->addFilter(
     					'Rename',
-    					array('target' => "pict".$params['cod_id']."-04,jpg", 'overwrite' => true)
+    					array('target' => "pict".$params['cod_id']."-04.jpg", 'overwrite' => true)
     			);
     			$rutafinal = $ruta . $params['departement'] . "/";
     			$form->file4->setDestination($rutafinal);
@@ -92,7 +93,7 @@ class Compte_AnnonceCompleteController extends App_Controller_Action_Default
     			$dataPhoto = array(
     					'id_annonce' => $params['cod_id'],
     					'ref_annonce' => $params['ref'],
-    					'nom_fichier' => "pict".$params['cod_id']."-04,jpg",
+    					'nom_fichier' => "pict".$params['cod_id']."-04.jpg",
     					'ordre' => '4'
     			);
     			
@@ -104,7 +105,7 @@ class Compte_AnnonceCompleteController extends App_Controller_Action_Default
     		if (!empty ($file5)) {
     			$form->file5->addFilter(
     					'Rename',
-    					array('target' => "pict".$params['cod_id']."-05,jpg", 'overwrite' => true)
+    					array('target' => "pict".$params['cod_id']."-05.jpg", 'overwrite' => true)
     			);
     			$rutafinal = $ruta . $params['departement'] . "/";
     			$form->file5->setDestination($rutafinal);
@@ -112,15 +113,18 @@ class Compte_AnnonceCompleteController extends App_Controller_Action_Default
     			$dataPhoto = array(
     					'id_annonce' => $params['cod_id'],
     					'ref_annonce' => $params['ref'],
-    					'nom_fichier' => "pict".$params['cod_id']."-05,jpg",
+    					'nom_fichier' => "pict".$params['cod_id']."-05.jpg",
     					'ordre' => '5'
     			);
     			$dataPhotoTotal[] = $dataPhoto;
     		}
     		
     		$modelPhoto = new App_Model_Photo();
-    		$modelanunce = new App_Model_Announce();
-    		// guardando las fotos 
+    		$modelanunce = new App_Model_Announce();    		
+    		// guardando las fotos
+    		//if (isset($dataPhotoTotal) and count($dataPhotoTotal) > 1)
+    			//$modelPhoto->deletePhotos($params['cod_id']);
+    		
     		foreach ($dataPhotoTotal as $items):
     			$modelPhoto->savePhotos($items);
     		endforeach;
