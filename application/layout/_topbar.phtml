@@ -12,8 +12,9 @@
 			<a href="/news">ACTUALITE RESEAU</a>
                         <!-- - <a href="/contact">NEWSLETTER</a>-->
 			<?php if ($this->authData){?>
-			<a class="nomcompte" href="/compte">Bonjour <?= $this->authData->nom;?> </a> |			    
-                        <a class="logout" href="/auth/logout">Se déconnecter</a>			    
+            <div class="nomcompte"><a href="/auth/logout" class="logout">Se déconnecter</a><a href="/compte" class="bonjour">Bonjour <?= $this->authData->nom;?> </a></div>
+           	
+                        		    
 			<?php } else {?>
 			<a class="nomcompte" href="/login">MON COMPTE</a>
 			<?php } ?>
@@ -28,7 +29,7 @@
 			</li>
 			<li><a class="menu-blue" href="/franchise">FRANCHISE ET SERVICES</a>
 			</li>
-			<li class="noborder"><a class="menu-green" href="/contact">CONTACT</a>
+			<li class="noborder"><a class="menu-green" href="#" onClick="contactpopup();">CONTACT</a>
 			</li>
 		</ul>
         <div class="menu-movil">

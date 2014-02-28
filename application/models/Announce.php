@@ -207,5 +207,9 @@ class App_Model_Announce extends App_Db_Table_Abstract {
 		return $this->_save($datos);
 	}
 
-
+        public function deleteAnnonce($id){
+        $where = $this->_db->quoteInto('id =?', $id);
+            $this->_db->delete($this->_name, $where);
+        }
+    
 }

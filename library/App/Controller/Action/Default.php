@@ -8,8 +8,6 @@ class App_Controller_Action_Default extends App_Controller_Action
                 $formTienda = new App_Form_BuscarTienda();
                 $this->view->formMagasin = $formTienda;
 		$this->_helper->layout->setLayout('layout');
-                
-                
-
+       
 	}
 }

@@ -41,7 +41,12 @@ jQuery.noConflict();
 			<div class="caract-wapper">
 				<div class="caract-286">
 					<div class="result-desc">
-						<div class="result-date"><?= date('d/m/Y', $this->caract['date_crea']) ?></div>
+						<div class="result-date">
+                                                <?php
+                                                 $d = new App_Date_Calc();
+                                                    echo  $d->daysToDate($this->caract['date_crea'], "%d/%m/%y");
+                                                ?>
+                                                </div>
 						<p>
 							<strong><?= $this->caract['marque'] ?> <?= $this->caract['modele'] ?> 250</strong><br /> <?= $this->caract['id_cat'] ?> - <?= $this->caract['marque'] ?> 
 							<!-- ABS--> -<br> <?= $this->caract['cylindree'] ?> cm3 - <?= $this->caract['km'] ?> km - Année <?= $this->caract['annee'] ?>

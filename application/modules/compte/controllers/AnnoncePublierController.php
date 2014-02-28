@@ -145,7 +145,13 @@ class Compte_AnnoncePublierController extends App_Controller_Action_Default
 
 	}
 
-
+    public function deleteAction(){
+            $id = $this->_getParam('id');
+            $model = new App_Model_Announce();
+            $result = $model->deleteAnnonce($id);
+            $this->_redirect('/compte');
+     }
+    
 }
 
 

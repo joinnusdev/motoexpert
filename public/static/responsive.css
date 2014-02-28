@@ -1636,5 +1636,10 @@ display: none;
 	}	
 .det-cont-img{
 	height:92px !important;
-	}		
+	}	
+#content-p28{
+	padding:0px !important;
+	margin:0px !important }
+.editsmart #new-form{	padding:0px !important;
+	margin:0px !important }
 }
