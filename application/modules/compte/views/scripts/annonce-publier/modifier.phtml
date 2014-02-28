@@ -152,11 +152,12 @@ jQuery.noConflict();
 				<p class="pm16">
 					Autoriser les internautes à vous contacter par e-mail : <br>
 				</p>
-				<p class="p11">(votre adresse n’apparaît pas en clair sur le site)</p>
+				<p class="p11">(votre adresse n’apparaît pas en clair sur le site)				
+				</p>
 				<p class="pinput">
-					<input type="radio" name="rep_mail" id="radio" value="1"> 
+					<input type="radio" name="rep_mail" id="radio" value="1" <?php echo ($this->params['rep_mail'] == "1")?'checked="checked"':'' ?>> 
 					<label for="radio">Oui</label> 
-					<input type="radio" name="rep_mail" id="radio" value="0"> 
+					<input type="radio" name="rep_mail" id="radio" value="0" <?php echo ($this->params['rep_mail'] == "0")?'checked="checked"':'' ?>> 
 					<label for="radio">Nom</label>
 				</p>
 
@@ -168,9 +169,9 @@ jQuery.noConflict();
 				</p>
 
 				<p class="pinput">
-					<input type="radio" name="rep_tel" id="radio1" value="1"> 
+					<input type="radio" name="rep_tel" id="radio1" value="1" <?php echo ($this->params['rep_tel'] == "1")?'checked="checked"':'' ?>> 
 					<label for="radio">Oui</label> 
-					<input type="radio" name="rep_tel" id="radio1" value="0"> 
+					<input type="radio" name="rep_tel" id="radio1" value="0" <?php echo ($this->params['rep_tel'] == "0")?'checked="checked"':'' ?>> 
 					<label for="radio">Nom</label>
 				</p>
 
@@ -179,15 +180,13 @@ jQuery.noConflict();
 					Faire figurer votre numéro de portable sur votre annonce : <br>
 				</p>
 				<p class="pinput">
-					<input type="radio" name="rep_port" id="radio2" value="1"> 
+					<input type="radio" name="rep_port" id="radio2" value="1" <?php echo ($this->params['rep_port'] == "1")?'checked="checked"':'' ?>> 
 					<label for="radio">Oui</label> 
-					<input type="radio" name="rep_port" id="radio2" value="0"> 
+					<input type="radio" name="rep_port" id="radio2" value="0" <?php echo ($this->params['rep_port'] == "0")?'checked="checked"':'' ?>> 
 					<label for="radio">Nom</label>
 				</p>
-
-
 				<p class="pm16">
-					<input name="parution" type="checkbox" value="0"> permettre a Moto Expert de
+					<input name="parution" type="checkbox" <?php echo ($this->params['parution'] == "1")?'checked="checked"':'' ?>> permettre a Moto Expert de
 					diffuser cette annonce a ses partenaires <br>
 				</p>
 
