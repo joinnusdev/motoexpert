@@ -75,15 +75,23 @@ $().ready(function() {
 				equalTo: "#pass"
 			},			
 
-			tel: {
+			tell: {
 				required: function(element) {
 							return $("#portable").val() < 5;
+							change:{
+								
+								$("#portable").required =false;
+								}
 						  },
 				minlength: 5
 			},
 			portable: {
 				required: function(element) {
-							return $("#tel").val() < 5;
+							return $("#tell").val() < 5;
+							change:{
+								
+								$("#tell").required =false;
+								}
 						  },
 				minlength: 5
 			},
@@ -98,7 +106,7 @@ $().ready(function() {
 			nom: "Please enter your firstname",
 			prenom: "Please enter your lastname",
 
-			tel: {
+			tell: {
 				required: "Please provide a telephone",
 				minlength: "Your telephone must be at least 5 characters long"
 			},
@@ -201,7 +209,7 @@ $().ready(function() {
                 <option value="be">Belgique</option>
             </select> 
           </p>
-          <p><input name="tel"  id="tel" type="text" placeholder="Téléphone"></p>
+          <p><input name="tell"  id="tell" type="text" placeholder="Téléphone"></p>
           <p><input name="portable" id="portable" type="text" placeholder="Mobile" value="<?php echo ($portable)?$datos["portable"]:'';?>"/></p>
           <p><span class="in-text">Je désire être tenu au courant de l’actualité et des nouveautés du site Moto Expert</span>
               <input name="mailing" type="checkbox" value=""/> 

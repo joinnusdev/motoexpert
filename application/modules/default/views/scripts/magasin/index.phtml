@@ -101,10 +101,10 @@
                 </div>
                 
 			  <div class="subtitle3">
-                	<div class="icontitle icon-contact">APPELER LE MAGASIN</div>
+                	<div class="icontitle icon-contact"><a href="tel:<?= $this->magasinInfo['tel'];?>">APPELER LE MAGASIN</a></div>
               </div>
               <div class="subtitle3">
-                	<div class="icontitle icon-envoyer"><a href="mailto:<?= $this->magasinInfo['email'];?>">ENVOYER UN MAIL</a></div>
+                	<div class="icontitle icon-envoyer"><a href="/contact"  class="btn-smart" >ENVOYER UN MAIL</a><a href="#" onClick="contactpopup();" class="btn-ipad" >ENVOYER UN MAIL</a></div>
                  </div>
               
             

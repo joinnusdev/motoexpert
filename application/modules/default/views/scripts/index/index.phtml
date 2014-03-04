@@ -107,6 +107,30 @@
 		<p>Le magasin est dorénavant fermé. Nous vous informerons dès sa
 			réouverture.</p>
 	</div>
+         <?php
+            $config = Zend_Registry::get('config');
+            $z=0;
+            foreach ($this->news  as $news) :
+             $z++;
+             $ruta = $config->app->photoNews.$news['image_1'];
+         ?>
+        <?php  if($z==1):  ?>
+	<div class="actualite-col3   actualite-col1">
+        <?php endif; if($z==2): ?>
+        <div class="actualite-col3"> 
+        <?php endif; if($z==3): ?>
+        <div class="actualite-col3right">    
+        <?php endif;  ?> 
+		<img height="87" width="87" src="<?=$ruta;?>">
+		<h3><?= $news['titre']?></h3>
+		<p><?= $news['texte_1']?></p>
+	</div>
+	
+        <?php
+        endforeach;
+        ?>
+        
+        
 	<div>
 		<a class="actualite-link" href="/news">› VOIR TOUTES LES ACTUALITES</a>
 	</div>

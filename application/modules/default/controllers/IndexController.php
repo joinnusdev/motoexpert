@@ -25,6 +25,8 @@ class Default_IndexController extends App_Controller_Action_Default
         $modelAnounce = new App_Model_Announce();
     	$this->view->totalAnuncio = $modelAnounce->countAnnounce();
         
+        $modelNews = new App_Model_Noticia();
+        $this->view->news = $modelNews->listHomeNews();
         
     }
     

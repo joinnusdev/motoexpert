@@ -2765,11 +2765,7 @@ font-family: 'Roboto Condensed', sans-serif;
 	margin:0 !important;
 	}
 	
-	#regiteruser label.error {
-	margin-left: 10px;
-	width: auto;
-	display: inline;
-}
+
 
 /**********************************
 
@@ -2793,21 +2789,22 @@ form.cmxform fieldset fieldset {
 	background: none;
 }
 
-form.cmxform label.error, label .error {
-	display:none !important;
+label.error {
+	_display:none !important;
 	/* remove the next line when you have trouble in IE6 with labels in list */
-	color: red;
+	color: red !important;
 	font-style: italic;
 	font-size:11px;
-	margin:-5px 0 0 0 !important;
-	_position: absolute;
-	width:150px;
-	z-index:999;
-	padding:0px !important;
+	display: block;
+	width:290px;
+	float: left;
+	text-align:right !important;
+	z-index:9999;
+margin-top:-30px !important;
 }
 div.error { display: none; }
 
-input.error { border: 1px dotted red !important; background:#FFDFDF !important; _margin-bottom:2px !important }
+input.error { border: 1px dotted red !important; background:#FFDFDF !important; _margin-bottom:2px !important; display:block; }
 form.cmxform .gray * { color: gray; }
 
 /******************************************************************************************/
