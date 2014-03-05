@@ -13,11 +13,13 @@ class Default_FranchiseController extends App_Controller_Action_Default
         
     } 
     public function occasionMotoAction(){
-        
+        $model = new App_Model_Servicio();
+        $result = $model->getOcasion();
+        $this->view->ocasion = $result;
     }
     public function carteFideliteAction(){
-        $model = new App_Model_FanClub();
-        $result = $model->getDatos();
+        $model = new App_Model_Servicio();
+        $result = $model->getFanClub();
         //print_r($result);   
        // echo $result[3]['copyright-text'];
         
