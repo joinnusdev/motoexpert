@@ -40,7 +40,11 @@ class App_Form_CreateAnnounce extends App_Form
         $e = new Zend_Form_Element_Text('prix');
         $e->setAttrib('placeholder', "Prix");
         $this->addElement($e);
-        $e = new Zend_Form_Element_Text('descr_site');
+        $e = new Zend_Form_Element_Textarea('descr_site');
+        $e->setAttrib('cols', '35');
+        $e->setAttrib('rows', '4');
+        $e->setRequired(true);
+        $this->addElement($e);
         $e->setAttrib('placeholder', "Descriptif");
         $this->addElement($e);
         
