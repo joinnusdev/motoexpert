@@ -117,17 +117,23 @@
 		<a class="actualite-link" href="/news">› VOIR TOUTES LES ACTUALITES</a>
 	</div>
 </div>
-
-
 <!-- SLIDE -->
             <!-- // Slider // -->
             <div id="sliders">
                         <!-- start -->
                         <ul class="swipe-wrap">
-                          <li><img src="<?=MEDIA_URL ?>images/slider/1.jpg" title=""></li>
-                          <li><img src="<?=MEDIA_URL ?>images/slider/2.jpg" title=""></li>
-                          <li><img src="<?=MEDIA_URL ?>images/slider/3.jpg" title=""></li>
-                          <li><img src="<?=MEDIA_URL ?>images/slider/4.jpg" title=""></li>
+                          <?php
+                            $config = Zend_Registry::get('config');
+                            
+      
+                           foreach ($this->slider as $slider) :
+                               $ruta = $config->app->photoNews.$slider['value'];
+                           
+                          ?>
+                          <li><img src="<?=$ruta; ?>" title=""></li>
+                          <?php
+                          endforeach;
+                          ?>
                         </ul>
                         <!-- end -->
             </div>
