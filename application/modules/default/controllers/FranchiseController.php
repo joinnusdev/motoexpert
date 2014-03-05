@@ -16,6 +16,12 @@ class Default_FranchiseController extends App_Controller_Action_Default
         
     }
     public function carteFideliteAction(){
+        $model = new App_Model_FanClub();
+        $result = $model->getDatos();
+        //print_r($result);   
+       // echo $result[3]['copyright-text'];
+        
+        $this->view->fan = $result;
         
     }
     public function serviceRapideAction(){
