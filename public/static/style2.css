@@ -1911,7 +1911,7 @@ margin:0px;
 	}
 .title-content{
 	width:722px;
-	margin:0px;
+	margin:10px 0px 0 0;
 	padding:5px 0 5px 15px;
 	border-bottom:3px solid #666666;
 	float:left;
@@ -3209,3 +3209,29 @@ form.cmxform .gray * { color: gray; }
 	background: -ms-linear-gradient(top, #e8e8e8 1%,#fbfbfb 100%); /* IE10+ */
 	background: linear-gradient(to bottom, #e8e8e8 1%,#fbfbfb 100%); /* W3C */
 	}
+/****************************************/
+.img-preview, img-preview2, img-preview3, img-preview4, img-preview5{
+	overflow:hidden;
+}
+.image-previ-g{
+	height: auto;
+	width: 137px;
+	text-align:center;
+
+	}
+.image-previ-c{
+	height: auto;
+	width: 67px;
+	text-align:center;
+
+	}
+
+
+
+
+
+
+
+
+
+

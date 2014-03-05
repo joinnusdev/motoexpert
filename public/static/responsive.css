@@ -742,7 +742,13 @@ margin-right:-11px;
 /************************************************************************************************************************/
 /*@media only screen and (min-width: 100px) and (max-width: 669px) {*/
 	@media only screen and (min-width: 100px) and (max-width: 640px) {
-		
+/* SERVICES DETAILS */	 
+#content{
+
+	width:300px;
+
+	padding:0 0px 0 10px;
+	} 		
 /* SERVICES DETAILS */	 
 #content-978{
 
@@ -839,18 +845,34 @@ margin-right:-11px;
 	
 	
 .header-top a{
-	display:none}
-.nomcompte{
-	display:block !important;
-	float:right;}
+	display:none
+	}
 
 .header-menu ul{
 	display:none !important}
-#content{
-	width:300px !important;
-	padding:0 10px !important;
-	overflow:hidden
-	}
+.nomcompte a{
+	display:block !important
+
+	 }
+.nomcompte{
+	background-image:url(images/nomcompte.png);
+	background-repeat:no-repeat;
+	background-position:85% 70%;
+	background-color:#606060;
+	display: inline-block;
+	text-align:left;
+	padding:10px 45px 10px 15px;
+	margin-left:13px;
+	color:#FFF !important;
+	 }
+.logout{
+	color:#FFF !important;
+	padding-bottom:5px;
+	display:block;
+	 }
+.bonjour{
+	color:#FFF !important;
+	 }
 #det-content{
 		width:300px !important;
 	padding:0 10px !important;
@@ -943,7 +965,8 @@ margin-right:-11px;
 #occasions{
 	width:305px !important;
 	margin-left:-5px !important;
-	margin-top:9px !important; 
+	margin-top:9px !important;
+	float:left;
 	}
 .occasions-text{
 	margin-left:3px ;
@@ -1178,6 +1201,10 @@ margin:17px 0 8px 0px;
 .footer-logo{
 
 	min-height:79px !important;}
+	
+.footer-col1, .footer-col2, .footer-col3, .footer-col4{
+	margin:0px !important;
+	padding:0px !important;}	
 .footer-col1{
 	width:100%;
 	text-align:center;
@@ -1246,7 +1273,7 @@ min-height:43px !important;
 	width:300px;
 	}
 .gallery{
-	min-height:340px;
+	min-height:280px !important;
 }
 .flex-viewport li{
 	width:75px !important;}

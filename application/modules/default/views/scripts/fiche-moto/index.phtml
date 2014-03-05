@@ -85,11 +85,20 @@
                           <?php
                           $config = Zend_Registry::get('config');
                           foreach ($this->photoAnnonces as $photo1) :
-                            $foto = str_replace(",",".",$photo1['nom_fichier']);    
+                            $foto = str_replace(",",".",$photo1['nom_fichier']);  
+							  
                             $ruta = $config->app->photoUrl. $this->detailAnnonces['departement'].'/'.$foto;
+							
+							
                           ?>
                           <LI><IMG   alt="" src="<?=$ruta;?>"></LI>
-                          <?php endforeach; ?>
+                          <?php endforeach;
+                          if($foto==""){
+								
+								echo '<LI><IMG   alt="" src="'.MEDIA_URL.'images/placeholder.gif"></LI>';
+								} 
+								
+							?>
                         </UL>
                       </DIV>
                    
@@ -103,7 +112,17 @@
                             $ruta = $config->app->photoUrl. $this->detailAnnonces['departement'].'/'.$foto;
                           ?>
                           <LI><IMG alt="" src="<?=$ruta;?>"></LI>
-                           <?php endforeach; ?>
+                           <?php endforeach; 
+						   
+						                             if($foto==""){
+								
+								echo '<LI><IMG   alt="" src="'.MEDIA_URL.'images/placeholder-mini.gif" width="90" height="90" /></LI>';
+								} 
+								
+							?>
+				                          
+                           
+                           
                         </UL>
                    
             </DIV>
@@ -127,11 +146,11 @@
                 <?php
                 if($this->detailAnnonces['controle']==1):
                 ?>
-                <a href="#" class="visuel visu-gara">CONTRÛLE VISUEL</a> 
+                <span class="visuel visu-gara">CONTRÛLE VISUEL</span> 
                 <?php endif;
                 if($this->detailAnnonces['isgarantie']==1):
                 ?>
-                <a href="#" class="garantie visu-gara">GARANTIE </a>
+                <span class="garantie visu-gara">GARANTIE </span>
                 <?php endif;?>
                 </div>
                  <div class="col2  align-left">

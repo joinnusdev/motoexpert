@@ -278,8 +278,9 @@ jQuery.noConflict();
 <div id="my_lightbox">
 	<div id="wrapper-form">
 		<div id="new-form">
+        
 			<div id="form-navigation">
-				<p>VOS COORDONNÉES</p>
+				<a href="#" class="new-prev" onClick="$('#my_lightbox').trigger('close');">RETOUR</a><p>VOS COORDONNÉES</p>
 			</div>
 
 			<form name="form1" method="post" action="?register=valid">
@@ -322,6 +323,11 @@ jQuery.noConflict();
 				<p>
 					<?= $this->form->descr_site?>
 				</p>
+                
+                <p>
+                <a onClick="$('#my_lightbox').trigger('close');" class="btn-100">ANNULER</a>
+                </p>
+                
 				<p>
 					<input type="submit" name="button2" id="button2"
 						value="ENREGISTRER" />

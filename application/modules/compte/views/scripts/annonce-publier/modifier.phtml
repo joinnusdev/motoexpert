@@ -303,7 +303,7 @@ jQuery.noConflict();
 	<div id="wrapper-form">
 		<div id="new-form">
 			<div id="form-navigation">
-				<p>VOS COORDONNÉES</p>
+				<a href="#" class="new-prev" onClick="$('#my_lightbox').trigger('close');">RETOUR</a><p>VOTRE VEHICULE</p>
 			</div>
 
 			<form name="form1" method="post" action="?register=valid">
@@ -346,6 +346,9 @@ jQuery.noConflict();
 				<p>
 					<?= $this->form->descr_site?>
 				</p>
+                <p>
+                <a onClick="$('#my_lightbox').trigger('close');" class="btn-100">ANNULER</a>
+                </p>
 				<p>
 					<input type="submit" name="button2" id="button2"
 						value="ENREGISTRER" />
@@ -479,7 +482,7 @@ jQuery(function(){
       
           vfile.onload = (function(thefile) {
             return function(e) {
-              document.getElementById('img-preview').innerHTML = '<img  src="'+ e.target.result +'"  width="137" height="102" />';
+              document.getElementById('img-preview').innerHTML = '<img  src="'+ e.target.result +'"   class="image-previ-g"/>';
             };
           })(f);
     
@@ -497,7 +500,7 @@ jQuery(function(){
       
           vfile.onload = (function(thefile) {
             return function(e) {
-              document.getElementById('img-preview2').innerHTML = '<img  src="'+ e.target.result +'"  width="67" height="48" />';
+              document.getElementById('img-preview2').innerHTML = '<img  src="'+ e.target.result +'"  class="image-previ-c"/>';
             };
           })(f);
     
@@ -515,7 +518,7 @@ jQuery(function(){
       
           vfile.onload = (function(thefile) {
             return function(e) {
-              document.getElementById('img-preview3').innerHTML = '<img  src="'+ e.target.result +'"  width="67" height="48" />';
+              document.getElementById('img-preview3').innerHTML = '<img  src="'+ e.target.result +'"  class="image-previ-c" />';
             };
           })(f);
     
@@ -533,7 +536,7 @@ jQuery(function(){
       
           vfile.onload = (function(thefile) {
             return function(e) {
-              document.getElementById('img-preview4').innerHTML = '<img  src="'+ e.target.result +'"  width="67" height="48" />';
+              document.getElementById('img-preview4').innerHTML = '<img  src="'+ e.target.result +'"  class="image-previ-c" />';
             };
           })(f);
     
@@ -552,7 +555,7 @@ jQuery(function(){
       
           vfile.onload = (function(thefile) {
             return function(e) {
-              document.getElementById('img-preview5').innerHTML = '<img  src="'+ e.target.result +'"  width="67" height="48" />';
+              document.getElementById('img-preview5').innerHTML = '<img  src="'+ e.target.result +'"   class="image-previ-c" />';
             };
           })(f);
     
