@@ -71,6 +71,7 @@ jQuery.noConflict();
 				<input type="hidden" name="cod_id" value="<?= $this->idannunce ?>"/>
 				<input type="hidden" name="ref" value="<?= $this->caract["ref"] ?>" />
 					<div class="upload-g">
+	                    <div id="img-delete-1"></div>
 						<div id="img-preview">
 							<img src="<?=MEDIA_URL ?>images/file-g.jpg" width="137"
 								height="102" />
@@ -78,6 +79,7 @@ jQuery.noConflict();
 						<?= $this->form->file1 ?>
 					</div>
 					<div class="upload-m">
+                    	<div id="img-delete-2"></div>
 						<div id="img-preview2">
 							<img src="<?=MEDIA_URL ?>images/file-m.jpg" width="67"
 								height="48" />
@@ -85,6 +87,7 @@ jQuery.noConflict();
 						<?= $this->form->file2 ?>
 					</div>
 					<div class="upload-m">
+                    	<div id="img-delete-3"></div>
 						<div id="img-preview3">
 							<img src="<?=MEDIA_URL ?>images/file-m.jpg" width="67"
 								height="48" />
@@ -92,6 +95,7 @@ jQuery.noConflict();
 						<?= $this->form->file3 ?>
 					</div>
 					<div class="upload-m">
+                    	<div id="img-delete-4"></div>
 						<div id="img-preview4">
 							<img src="<?=MEDIA_URL ?>images/file-m.jpg" width="67"
 								height="48" />
@@ -99,6 +103,7 @@ jQuery.noConflict();
 						<?= $this->form->file4 ?>
 					</div>
 					<div class="upload-m">
+	                    <div id="img-delete-5"></div>
 						<div id="img-preview5">
 							<img src="<?=MEDIA_URL ?>images/file-m.jpg" width="67"
 								height="48" />
@@ -460,7 +465,8 @@ jQuery(function(){
       
           vfile.onload = (function(thefile) {
             return function(e) {
-              document.getElementById('img-preview').innerHTML = '<img  src="'+ e.target.result +'"  width="137" height="102" />';
+              document.getElementById('img-preview').innerHTML = '<img  src="'+ e.target.result +'"   class="image-previ-g" />';
+			  document.getElementById('img-delete-1').innerHTML = '<div class="delete-upload-g"><a href="#"><img src="images/close.png" width="20" height="20"></a></div>';
             };
           })(f);
     
@@ -478,7 +484,8 @@ jQuery(function(){
       
           vfile.onload = (function(thefile) {
             return function(e) {
-              document.getElementById('img-preview2').innerHTML = '<img  src="'+ e.target.result +'"  width="67" height="48" />';
+              document.getElementById('img-preview2').innerHTML = '<img  src="'+ e.target.result +'"   class="image-previ-c"  />';
+			  document.getElementById('img-delete-2').innerHTML = '<div class="delete-upload-g"><a href="#"><img src="images/close.png" width="20" height="20"></a></div>';
             };
           })(f);
     
@@ -496,7 +503,8 @@ jQuery(function(){
       
           vfile.onload = (function(thefile) {
             return function(e) {
-              document.getElementById('img-preview3').innerHTML = '<img  src="'+ e.target.result +'"  width="67" height="48" />';
+              document.getElementById('img-preview3').innerHTML = '<img  src="'+ e.target.result +'"   class="image-previ-c"  />';
+			  document.getElementById('img-delete-3').innerHTML = '<div class="delete-upload-g"><a href="#"><img src="images/close.png" width="20" height="20"></a></div>';
             };
           })(f);
     
@@ -514,7 +522,8 @@ jQuery(function(){
       
           vfile.onload = (function(thefile) {
             return function(e) {
-              document.getElementById('img-preview4').innerHTML = '<img  src="'+ e.target.result +'"  width="67" height="48" />';
+              document.getElementById('img-preview4').innerHTML = '<img  src="'+ e.target.result +'"  class="image-previ-c"  />';
+			  document.getElementById('img-delete-4').innerHTML = '<div class="delete-upload-g"><a href="#"><img src="images/close.png" width="20" height="20"></a></div>';
             };
           })(f);
     
@@ -533,7 +542,8 @@ jQuery(function(){
       
           vfile.onload = (function(thefile) {
             return function(e) {
-              document.getElementById('img-preview5').innerHTML = '<img  src="'+ e.target.result +'"  width="67" height="48" />';
+              document.getElementById('img-preview5').innerHTML = '<img  src="'+ e.target.result +'"   class="image-previ-c"  />';
+			  document.getElementById('img-delete-5').innerHTML = '<div class="delete-upload-g"><a href="#"><img src="images/close.png" width="20" height="20"></a></div>';
             };
           })(f);
     
