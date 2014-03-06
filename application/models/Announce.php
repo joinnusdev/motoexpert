@@ -91,7 +91,7 @@ class App_Model_Announce extends App_Db_Table_Abstract {
 		if (isset($datos['magasin']) and $datos['magasin'] != 0)
 			$query.= " AND a.id_me = ".$datos['magasin'];
 
-		if (isset($datos['marque']) and $datos['marque'] != "") {
+		if (isset($datos['marque']) and $datos['marque'] != "" and $datos['marque'] != 0) {
 			$query.= " AND a.marque = ". '"'.$datos['marque'].'"';
 		}
 		if (isset($datos['modele']) and $datos['modele'] != 0)
