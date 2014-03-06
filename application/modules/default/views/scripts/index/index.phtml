@@ -1,3 +1,10 @@
+<script>
+$(function() {
+      $('#magasin').change(function() {
+            $('#magasin').submit();
+      });
+});
+</script>
 <!-- //magasins // -->
 <div id="magasins">
 	<div id="magasins-top">
@@ -14,7 +21,7 @@
 			<div class="magasins-recherchez">
 				<h5>Recherchez votre Magasin</h5>
 				<div class="magasins-form">
-					<form action="magasin" method="get" name="magasin" id="magasin">
+                                    <form action="magasin" method="get" name="magasin" id="magasin" onchange="fo">
 						<label for="select"></label> 
                                                     <?= $this->formMagasin->magasin?>
 						<input type="submit" value="" id="button" name="button">
