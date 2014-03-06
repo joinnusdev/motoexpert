@@ -5,10 +5,11 @@ class App_Form_SearchNews extends App_Form
     public function init() {
         parent::init();
         
-        $multi = new App_Model_Category();
+        $multi = new App_Model_CategoryMoto();
         $e = new Zend_Form_Element_Select('category');
         $e->setMultiOptions(array('0'=> 'Toute l’actu ')+$multi->listCategory());
         $this->addElement($e);
+        
         
         $multi = new App_Model_Department();
         $e = new Zend_Form_Element_Select('deparment');
