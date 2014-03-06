@@ -10,13 +10,39 @@ class Default_NewsController extends App_Controller_Action_Default
     
     public function indexAction()
     {
+    	$form = new App_Form_SearchNews();
+    	$this->view->form = $form;
         $modelNoticia = new App_Model_Noticia();
-        $this->view->news = $modelNoticia->listNews();
+        
+        $datos = $this->getAllParams();
+        $form->populate($datos);
+        $page = $this->_getParam('page', NULL);
+        
+        if ($this->_request->isGet()) {
+        	if ($datos and !is_null($datos)) {
+        
+        		$data = @$form->getValues();
+        		$result = $modelNoticia->listNews();
+        		 
+        		$this->view->prueba = $data;        		 
+        		 
+        		$paginator = Zend_Paginator::factory($result);
+        		$paginator->setCurrentPageNumber($page)
+        		->setItemCountPerPage(50);
+        		$this->view->result = $paginator;
+        		 
+        		if ($this->view->result){
+        			$this->view->total = count($result);        			
+        		}
+        	}
+        }
+         
        
     } 
     
-    public function detailAction(){}
+    public function detailAction()
+    {
+    	
+    }
     
 }
-
-?>
