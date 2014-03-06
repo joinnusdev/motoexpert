@@ -1,8 +1,13 @@
 
-<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300italic,400italic,700italic,400,300,700' rel='stylesheet' type='text/css'>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
-<script type="text/javascript" src="js/scroll.js"></script>
-		<script type="text/javascript">
+<link
+	href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300italic,400italic,700italic,400,300,700'
+	rel='stylesheet' type='text/css'>
+<script
+	type="text/javascript"
+	src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<script
+	type="text/javascript" src="js/scroll.js"></script>
+<script type="text/javascript">
 		$(document).ready(function()
 		{
 			$('#results-content').scrollExtend(
@@ -13,130 +18,99 @@
 		});
 		</script>
 
-		
-        <div id="content" class="paddin30"> 
-        	<div id="content-top">
-            
-                            <div class="top-left">MOTO EXPERT <br /><span>L’ACTU</span></div>
-                            <div class="top-right"></div>
-            </div>
-        	<div class="contentrechercher not-top">
-       		  <div class="contentrechercher-left">
-               	<h2>RECHERCHER UNE ACTUALITÉ</h2>
-              <p>Retrouvez en un coup d’oeil les dernières actualités postées sur le site de Moto Expert. Faites profiter vos amis des news de tout le réseau de moto expert !</p>
-       		  </div>
-                
-              <div class="contentrechercher-right">
-                
-                <form id="form1" name="form1" method="get" action="">
-                <div class="zone">
-                   	  <h2>ACTUALITÉ RÉSEAU</h2>
-                  <p>
-                    <label for="select3"></label>
-                    <?=$this->form->deparment ?> 
-                    <label for="select2" class="selectlabel1"></label>
-                    <?=$this->form->magasin ?>
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                  </p>
-                  <br />
-                              
-                        <input type="submit" name="button2" id="button2" value="RECHERCHER" />
-                  </div>
-                    </form>
-                    <div class="vehicule">
-                   	  <h2>L’ACTU MOTO EXPERT</h2>
-                 <form id="form1" name="form1" method="get" action="">
-                  <label for="select4" class="selectlabel4"></label>
-                  <?=$this->form->category ?>
-                      <label for="select5" class="selectlabel1"></label>
-                      <label for="select5" class="selectlabel2"></label>
-                    <input type="submit" name="button2" id="button2" class="rechercher" value="RECHERCHER " />
-                </form>
-                </div>
-              <!-- //magasins // --></div>
-        	</div>
-          
-          <div id="navigation" class="not-navi">
-          	<div class="resultats">30 RÉSUTATS TROUVÉS </div>
-            <div class="next-prev">
-            	<a href="#" class="nprev">PRECEDENTE</a><a href="#" class="nnext">SUIVANTE</a>
-            </div>
-          </div>
-          <!-- //***   //-->
-          <div id="not-content">
-          	<div class="content-not">
-             	<div class="not-list">
-                	<div class="not-title">MOTO EXPERT <span>METZ</span></div>
-                    <div class="not-body">
-                    	<div class="not-body-img"><img src="<?=MEDIA_URL ?>images/not1.jpg" width="200" /></div><div class="not-subtitle">Atelier: réparations, entretiens et révisions pour toutes les marques de moto</div>Le magasin MOTO EXPERT ALENCON vous propose ses services atelier:
-vidanges, freins, joints spys de fourches, embrayages, révisions, synchro carburateur, jeu aux soupapes, remplacement des courroies de distribution sur les DUCATI, réparation des accidentées ainsi que les grosses réparations moteurs, boîtes...<div class="not-btn"><a href="/news/detail" class="btn-not">LIRE LA SUITE</a></div></div>
-                </div>
-                             	<div class="not-list">
-                	<div class="not-title">MOTO EXPERT <span>METZ</span></div>
-                    <div class="not-body">
-                    	<div class="not-body-img"><img src="<?=MEDIA_URL ?>images/not2.jpg" width="200" /></div><div class="not-subtitle">Atelier: réparations, entretiens et révisions pour toutes les marques de moto</div>Le magasin MOTO EXPERT ALENCON vous propose ses services atelier:
-vidanges, freins, joints spys de fourches, embrayages, révisions, synchro carburateur, jeu aux soupapes, remplacement des courroies de distribution sur les DUCATI, réparation des accidentées ainsi que les grosses réparations moteurs, boîtes...<div class="not-btn"><a href="/news/detail" class="btn-not">LIRE LA SUITE</a></div></div>
-                </div>
-                             	<div class="not-list">
-                	<div class="not-title">MOTO EXPERT <span>METZ</span></div>
-                    <div class="not-body"><div class="not-subtitle">Atelier: réparations, entretiens et révisions pour toutes les marques de moto</div>
-                      Le magasin MOTO EXPERT ALENCON vous propose ses services atelier:
-vidanges, freins, joints spys de fourches, embrayages, révisions, synchro carburateur, jeu aux soupapes, remplacement des courroies de distribution sur les DUCATI, réparation des accidentées ainsi que les grosses réparations moteurs, boîtes...<div class="not-btn"><a href="/news/detail" class="btn-not">LIRE LA SUITE</a></div></div>
-                </div>
-                             	<div class="not-list">
-                	<div class="not-title">MOTO EXPERT <span>METZ</span></div>
-                    <div class="not-body">
-                    	<div class="not-body-img"><img src="<?=MEDIA_URL ?>images/not1.jpg" width="200" /></div><div class="not-subtitle">Atelier: réparations, entretiens et révisions pour toutes les marques de moto</div>Le magasin MOTO EXPERT ALENCON vous propose ses services atelier:
-vidanges, freins, joints spys de fourches, embrayages, révisions, synchro carburateur, jeu aux soupapes, remplacement des courroies de distribution sur les DUCATI, réparation des accidentées ainsi que les grosses réparations moteurs, boîtes...<div class="not-btn"><a href="/news/detail" class="btn-not">LIRE LA SUITE</a></div></div>
-                </div>
-                             	<div class="not-list">
-                	<div class="not-title">MOTO EXPERT <span>METZ</span></div>
-                    <div class="not-body">
-                    	<div class="not-body-img"><img src="<?=MEDIA_URL ?>images/not2.jpg" width="200" /></div><div class="not-subtitle">Atelier: réparations, entretiens et révisions pour toutes les marques de moto</div>Le magasin MOTO EXPERT ALENCON vous propose ses services atelier:
-vidanges, freins, joints spys de fourches, embrayages, révisions, synchro carburateur, jeu aux soupapes, remplacement des courroies de distribution sur les DUCATI, réparation des accidentées ainsi que les grosses réparations moteurs, boîtes...<div class="not-btn"><a href="/news/detail" class="btn-not">LIRE LA SUITE</a></div></div>
-                </div>
-           	  <div class="not-list">
-                	<div class="not-title">MOTO EXPERT <span>METZ</span></div>
-                    <div class="not-body"><div class="not-subtitle">Atelier: réparations, entretiens et révisions pour toutes les marques de moto</div>
-                      Le magasin MOTO EXPERT ALENCON vous propose ses services atelier:
-vidanges, freins, joints spys de fourches, embrayages, révisions, synchro carburateur, jeu aux soupapes, remplacement des courroies de distribution sur les DUCATI, réparation des accidentées ainsi que les grosses réparations moteurs, boîtes...<div class="not-btn"><a href="/news/detail" class="btn-not">LIRE LA SUITE</a></div></div>
-              </div>
-            
-                       	  <div class="not-list">
-                	<div class="not-title">MOTO EXPERT <span>METZ</span></div>
-                    <div class="not-body"><div class="not-subtitle">Atelier: réparations, entretiens et révisions pour toutes les marques de moto</div>
-                      Le magasin MOTO EXPERT ALENCON vous propose ses services atelier:
-vidanges, freins, joints spys de fourches, embrayages, révisions, synchro carburateur, jeu aux soupapes, remplacement des courroies de distribution sur les DUCATI, réparation des accidentées ainsi que les grosses réparations moteurs, boîtes...<div class="not-btn"><a href="/news/detail" class="btn-not">LIRE LA SUITE</a></div></div>
-              </div>
-            </div>
-          
-          </div>
-            
-            
-            
-            
-            
-            
-            
-            
-            
-                      <div id="navigation">
-          	<div class="resultats">30 RÉSUTATS TROUVÉS </div>
-            <div class="next-prev">
-            	<a href="#" class="nprev">PRECEDENTE</a><a href="" class="nnext">SUIVANTE</a>
-            </div>
-          </div>
-          </div>
-          
-          
-          
-          
-          
 
-          
-          
-          
-     
+<div id="content" class="paddin30">
+	<div id="content-top">
+
+		<div class="top-left">
+			MOTO EXPERT <br /> <span>L’ACTU</span>
+		</div>
+		<div class="top-right"></div>
+	</div>
+	<div class="contentrechercher not-top">
+		<div class="contentrechercher-left">
+			<h2>RECHERCHER UNE ACTUALITÉ</h2>
+			<p>Retrouvez en un coup d’oeil les dernières actualités postées sur
+				le site de Moto Expert. Faites profiter vos amis des news de tout le
+				réseau de moto expert !</p>
+		</div>
+
+		<div class="contentrechercher-right">
+
+			<form id="form1" name="form1" method="get" action="">
+				<div class="zone">
+					<h2>ACTUALITÉ RÉSEAU</h2>
+					<p>
+						<label for="select3"></label>
+						<?=$this->form->deparment ?>
+						<label for="select2" class="selectlabel1"></label>
+						<?=$this->form->magasin ?>
+						<br /> <br /> <br /> <br />
+					</p>
+					<br /> <input type="submit" name="button2" id="button2"
+						value="RECHERCHER" />
+				</div>
+			
+			<div class="vehicule">
+				<h2>L’ACTU MOTO EXPERT</h2>
+				
+					<label for="select4" class="selectlabel4"></label>
+					<?=$this->form->category ?>
+					<label for="select5" class="selectlabel1"></label> <label
+						for="select5" class="selectlabel2"></label> <!-- <input type="submit"
+						name="button2" id="button2" class="rechercher" value="RECHERCHER " />-->
+				
+			</div>
+			</form>
+			<!-- //magasins // -->
+		</div>
+	</div>
+
+	<div id="navigation" class="not-navi">
+		<div class="resultats"><?= $this->total?> RÉSUTATS TROUVÉS</div>
+		<div class="next-prev">
+			<!-- <a href="#" class="nprev">PRECEDENTE</a><a href="#" class="nnext">SUIVANTE</a>-->
+			<?php echo $this->paginationControl($this->result, 'Sliding', '_pagnews.phtml', array('prueba' => $this->prueba)); ?>
+		</div>
+	</div>
+	<!-- //***   //-->
+	<div id="not-content">
+		<div class="content-not">
+		<?php foreach ($this->result as $item): ?>
+			<div class="not-list">
+				<div class="not-title">
+					MOTO EXPERT <span>METZ</span>
+				</div>
+				<div class="not-body">
+					<div class="not-body-img">
+						<img src="<?=MEDIA_URL ?>images/not1.jpg" width="200" />
+					</div>
+					<div class="not-subtitle">
+					<?= $item["titre"]?>
+					</div>
+					<?= $item["texte_1"]?>
+					<div class="not-btn">
+						<a href="/news/detail/cod_new/<?=$item["id_news"] ?>" class="btn-not">LIRE LA SUITE</a>
+					</div>
+				</div>
+			</div>
+			<?php endforeach;?>
+		</div>
+	</div>
+	<div id="navigation">
+		<div class="resultats"><?= $this->total?> RÉSUTATS TROUVÉS</div>
+		<div class="next-prev">
+			<?php echo $this->paginationControl($this->result, 'Sliding', '_pagnews.phtml', array('prueba' => $this->prueba)); ?>
+		</div>
+
+	</div>
+</div>
+
+
+
+
+
+
+
+
+
