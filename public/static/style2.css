@@ -1992,7 +1992,24 @@ margin:0px;
 	cursor:pointer;
 	float:left;
 	margin:0 5px 0 0 ;
+	position:relative;
 	}
+.delete-upload-g{
+	background-color:#F0F0F0;
+	width:20px;
+	height:20px;
+	border-bottom:1px solid #000;
+	border-right:1px solid #000;
+	
+	position: absolute;
+	margin-left:0px !important;
+	padding:0 3px 3px 0; 
+	top:0px;
+	left:0px;
+	z-index:9999 !important;
+	}	
+	
+	
 .upload-g input {
     display: block !important;
     width: 137px !important;
@@ -2008,6 +2025,7 @@ margin:0px;
 	cursor:pointer;
 	float:left;
 	margin:0 0px 5px 5px; 
+	position:relative;
 	}
 .upload-m input {
     display: block !important;
@@ -2633,8 +2651,8 @@ font-family: 'Roboto Condensed', sans-serif;
 	 width:693px;
 	 float:left;
 	 margin:0 0px 0 0;
-	 font-size:16px;
-	 font-weight:bold;
+	 font-size:14px;
+	 _font-weight:bold;
 	}
 	
 .services-713{
@@ -2794,9 +2812,10 @@ label.error {
 	/* remove the next line when you have trouble in IE6 with labels in list */
 	color: red !important;
 	font-style: italic;
-	font-size:11px;
+	font-size:11px !important;
+	font-weight:normal !important;
 	display: block;
-	width:290px;
+	width:290px !important;
 	float: left;
 	text-align:right !important;
 	z-index:9999;
