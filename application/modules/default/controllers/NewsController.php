@@ -42,12 +42,17 @@ class Default_NewsController extends App_Controller_Action_Default
     {
     	$modelNoticia = new App_Model_Noticia();    	
     	$datos = $this->getAllParams();    	
-    	$page = $this->_getParam('cod_new', NULL);
+    	$page = $this->_getParam('page', NULL);
+    	$codigo = $this->_getParam('cod_new', NULL);
     	
     	if ($this->_request->isGet()) {
     		if ($datos and !is_null($datos)) {    	
-    			$result = $modelNoticia->listNews();
+    			$result = $modelNoticia->listNewsDeta($codigo);
+    			if ($codigo) {
+    				$result = $result + $modelNoticia->listNews($codigo);    				
+    			}
     			 
+    			$this->view->prueba = $datos;
     			$paginator = Zend_Paginator::factory($result);
     			$paginator->setCurrentPageNumber($page)
     			->setItemCountPerPage(1);
