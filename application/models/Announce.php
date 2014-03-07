@@ -3,7 +3,7 @@ class App_Model_Announce extends App_Db_Table_Abstract {
 
 	protected $_name = 'annonces';
 
-	public function listSearch($datos=NULL){
+	public function listSearch($datos=NULL, $trier = NULL){
 
 		$query_ = "
 		/* SELECT a.id,a.ref, a.titre, a.date, a.annee,a.cylindree,
@@ -35,11 +35,11 @@ class App_Model_Announce extends App_Db_Table_Abstract {
 		where a.internet <> '0'
 		AND a.modere = '1'
 		AND a.ispayed = '1'
-                AND a.prov <> 'mebe'
+		AND a.prov <> 'mebe'
 		";
-		
+
 		//if (!isset($datos['deparment']) and !isset($datos['category']) and !isset($datos['magasin']) and !isset($datos['marque']) and !isset($datos['modele']))
-			//return false;
+		//return false;
 
 		if (isset($datos['deparment']) and $datos['deparment'] != 0 and !is_null($datos))
 			$query.= " AND a.departement = ".$datos['deparment'];
@@ -56,12 +56,18 @@ class App_Model_Announce extends App_Db_Table_Abstract {
 		if (isset($datos['modele']) and $datos['modele'] != 0  and !is_null($datos))
 			$query.= " AND m.id_mot = ".$datos['modele'];
 
-		$query.= " group by a.id
-                    order by a.date desc";
-                
-                try{
-			//echo $query;
-			$result =  $this->getAdapter()->fetchAll($query);			
+		$query.= " group by a.id";
+		if (is_null($trier))
+			$query.= " order by a.date desc";
+		else {
+			$trier = explode("_", $trier);
+			if (($trier[0] == "date" || $trier[0] == "prix") and ($trier[1] == "asc" || $trier[0] == "desc"))
+				$query.= " order by a." . $trier[0] . " " . $trier[1];
+		}
+
+
+		try{
+			$result =  $this->getAdapter()->fetchAll($query);
 			return $result;
 			return $query;
 
@@ -82,7 +88,7 @@ class App_Model_Announce extends App_Db_Table_Abstract {
 		AND a.internet <>  '0'
 		AND a.modere = '1'
 		AND a.ispayed =  '1'
-                AND a.prov <> 'mebe'
+		AND a.prov <> 'mebe'
 		";
 		if (isset($datos['deparment']) and $datos['deparment'] != 0)
 			$query.= " AND a.departement = ".$datos['deparment'];
@@ -120,7 +126,7 @@ class App_Model_Announce extends App_Db_Table_Abstract {
 		AND a.ref = ac.ref AND ac.id_cat = c.id_cat
 		AND o.id_occaz = a.type_occaz
 		AND a.ispayed = '1' AND a.modere = '1'
-                AND a.prov <> 'mebe'";
+		AND a.prov <> 'mebe'";
 		try{
 			return $this->getAdapter()->fetchRow($query);
 
@@ -137,7 +143,7 @@ class App_Model_Announce extends App_Db_Table_Abstract {
 		a.garantie, c.nom_cat, m.marque, m.id_mot,m.modele
 		,foto.nom_fichier as foto, info.controle
 		,moto.id_me, moto.nom, moto.ville,moto.adresse ,moto.tel
-		,moto.fax , moto.horaires,moto.latitude,moto.longitude,moto.liengmap 
+		,moto.fax , moto.horaires,moto.latitude,moto.longitude,moto.liengmap
 		,info.type_occaz,a.descr_site,info.neuf, info.isgarantie
 		FROM  annonces a
 		left join categories c on a.id_cat = c.id_cat
@@ -148,7 +154,7 @@ class App_Model_Announce extends App_Db_Table_Abstract {
 		where a.internet <> '0'
 		AND a.modere = '1'
 		AND a.ispayed = '1'
-                AND a.prov <> 'mebe'
+		AND a.prov <> 'mebe'
 		and a.id =".$id;
 		try{
 			return $this->getAdapter()->fetchRow($query);
@@ -176,8 +182,8 @@ class App_Model_Announce extends App_Db_Table_Abstract {
 		$query = "SELECT * FROM  annonces a
 		left join annonces_photos ap on a.id = ap.id_annonce
 		WHERE a.id_client = ".$idClient." and a.modere = 1
-                group by a.id";
-		 
+		group by a.id";
+			
 		try{
 			return $this->getAdapter()->fetchAll($query);
 
@@ -209,9 +215,9 @@ class App_Model_Announce extends App_Db_Table_Abstract {
 		return $this->_save($datos);
 	}
 
-        public function deleteAnnonce($id){
-        $where = $this->_db->quoteInto('id =?', $id);
-            $this->_db->delete($this->_name, $where);
-        }
-    
+	public function deleteAnnonce($id){
+		$where = $this->_db->quoteInto('id =?', $id);
+		$this->_db->delete($this->_name, $where);
+	}
+
 }

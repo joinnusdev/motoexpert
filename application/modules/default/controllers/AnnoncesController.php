@@ -21,21 +21,20 @@ class Default_AnnoncesController extends App_Controller_Action_Default
     	$datos = $this->getAllParams();
     	$form->populate($datos);
     	$this->view->form = $form;
-    	$page = $this->_getParam('page');
+    	$page = $this->_getParam('page', 1);
+    	$trier = $this->_getParam('trier', NULL);
     	
-    	if ($this->_request->isGet()) {    		    		
+    	if ($this->_request->isGet() or $this->_request->isPost()) {    		    		
     		if ($datos and !is_null($datos)) {
-    			    			
-    			$data = @$form->getValues();
-    			$result = $modelAnounce->listSearch($data);
+    			$data = @$form->getValues();    			
     			
+    			$result = $modelAnounce->listSearch($data, $trier);
     			$this->view->prueba = $data;
-    			
-    			
     			$paginator = Zend_Paginator::factory($result);
     			$paginator->setCurrentPageNumber($page)
-    			->setItemCountPerPage(50);
-    			$this->view->result = $paginator;    			    			
+    			->setItemCountPerPage(5);
+    			$this->view->result = $paginator;
+    			$this->view->trier = $trier;
     			
     			if ($this->view->result)
     			$this->view->total = count($result);    			
