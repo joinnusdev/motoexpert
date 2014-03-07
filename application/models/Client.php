@@ -98,7 +98,7 @@ class App_Model_Client extends App_Db_Table_Abstract {
 		$db = $this->getDefaultAdapter();
 		echo $query = $db->select()->from($this->_name)
 		->where('cid = ?', $idClient);
-	
+		
 		$result = $db->fetchRow($query);
 	
 		if ($result)

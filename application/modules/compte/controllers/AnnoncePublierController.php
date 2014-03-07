@@ -35,7 +35,7 @@ class Compte_AnnoncePublierController extends App_Controller_Action_Default
 
 			$temp = $params['modele'];
 			$modele = explode('_', $params['modele']);
-
+                        
 			$params['modele'] = $modele[0];
 			$modeleName = $modele[1];
 			$params['date_crea'] = $date;
@@ -46,7 +46,7 @@ class Compte_AnnoncePublierController extends App_Controller_Action_Default
 			$params['internet'] = '1';
 			$params['ispayed'] = '1';
 			$params['type_occaz'] = '1';
-			$params['modere'] = '1';
+			$params['modere'] = '0';
 			$params['id_cat'] = $params['category'];
 			$params['id_mot'] = $params['modele'];
 			$alea = rand(1000, 9999);
@@ -150,7 +150,7 @@ class Compte_AnnoncePublierController extends App_Controller_Action_Default
 			$this->view->photos = $photos;
 			$this->view->urlPhoto = $this->config->app->viewPhotos . $params['departement'] . "/";
 			//echo $this->view->urlPhoto;exit; 
-			
+                        
 			
 				
 			$params['deparment'] = $params['departement'];

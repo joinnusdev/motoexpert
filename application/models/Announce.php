@@ -56,8 +56,10 @@ class App_Model_Announce extends App_Db_Table_Abstract {
 		if (isset($datos['modele']) and $datos['modele'] != 0  and !is_null($datos))
 			$query.= " AND m.id_mot = ".$datos['modele'];
 
-		$query.= " group by a.id";
-		try{
+		$query.= " group by a.id
+                    order by a.date desc";
+                
+                try{
 			//echo $query;
 			$result =  $this->getAdapter()->fetchAll($query);			
 			return $result;
@@ -173,7 +175,7 @@ class App_Model_Announce extends App_Db_Table_Abstract {
 	{
 		$query = "SELECT * FROM  annonces a
 		left join annonces_photos ap on a.id = ap.id_annonce
-		WHERE a.id_client = ".$idClient."
+		WHERE a.id_client = ".$idClient." and a.modere = 1
                 group by a.id";
 		 
 		try{

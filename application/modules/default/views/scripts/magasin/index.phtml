@@ -101,7 +101,7 @@
                 </div>
                 
 			  <div class="subtitle3">
-                	<div class="icontitle icon-contact"><a href="tel:<?= $this->magasinInfo['tel'];?>">APPELER LE MAGASIN</a></div>
+                	<div class="icontitle icon-contact"><? $telp = str_replace(" ", "", $this->magasinInfo['tel']);?><a href="tel:<? echo $telp;?>">APPELER LE MAGASIN</a></div>
               </div>
               <div class="subtitle3">
                 	<div class="icontitle icon-envoyer"><a href="/contact"  class="btn-smart" >ENVOYER UN MAIL</a><a href="#" onClick="contactpopup();" class="btn-ipad" >ENVOYER UN MAIL</a></div>
