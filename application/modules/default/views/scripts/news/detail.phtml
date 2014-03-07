@@ -1,112 +1,152 @@
-        <div id="det-content"> 
-        	<div id="content-top">
-            
-                            <div class="top-left">MOTO EXPERT<br /><span>L’ACTU</span></div>
-        	</div>
-       	  <div id="navi-fiche" class="det-nav">
-          	  <a href="#" class="previus">RETOUR A LA LISTE DES ACTUS </a>
+<div id="det-content">
+	<div id="content-top">
 
-            
-            <div class="align-right text-right">
-            	<a href="#" class="previus border-right">PRECEDENTE</a><a href="" class="suivante">SUIVANTE</a>
-            </div>
+		<div class="top-left">
+			MOTO EXPERT<br /> <span>L’ACTU</span>
+		</div>
+	</div>
+	<div id="navi-fiche" class="det-nav">
+		<a href="/news" class="previus">RETOUR A LA LISTE DES ACTUS </a>
 
-          </div>
-          <!-- //*** DETAILS  //-->
-          <div id="details-not">
-          	<div class="col2 align-left"><img src="<?=MEDIA_URL ?>images/not-det-1.jpg" >
-            	
-                
-               </div>
-               
-   
-          	<div class="col2 align-right det-not">
-            	<div class="partager det-part"><a href="http://www.facebook.com" target="_blank"><img src="<?=MEDIA_URL ?>images/p-facebook.jpg" width="26" height="26" /></a><a href="http://www.twitter.com" target="_blank"><img src="<?=MEDIA_URL ?>images/p-twitter.jpg" width="26" height="26" /></a>Partager <div class="det-subtitle" >MOTO EXPERT <span>METZ</span></div></div>
-                <h2>PROMO DE DESTOCKAGE HJC FG 15 fibre</h2>
-               
-                <div class="col2  align-left">
-           	      <p>Le magasin MOTO EXPERT ALENCON vous propose ses services atelier:<br>
-           	        <br>
-           	      </p>
-           	      <p>vidanges, freins, joints spys de fourches, embrayages, révisions, synchro carburateur, jeu aux soupapes, remplacement des courroies de distribution sur les DUCATI, réparation des accidentées ainsi que les grosses réparations moteurs, boîtes...<br>
-           	        <br>
-           	      </p>
-           	      <p>Venez nous rencontrer au magasin. Nous prenons toutes les marques (hors chinois).</p>
-                    <p></p>
- 
-              </div>
-              </div>
-                          
-               
-               
-               <div style="width:100%; height:10px; clear:both"></div>
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               
-               <div class="col2 align-left">
-                 <div class="det-subtitle-red">Révisions toutes marques</div>
-                   <br>
-                 Le magasin MOTO EXPERT ALENCON vous propose ses services atelier:</p>
-                 <br>
-                 <p>vidanges, freins, joints spys de fourches, embrayages, révisions, synchro carburateur, jeu aux soupapes, remplacement des courroies de distribution sur les DUCATI, réparation des accidentées ainsi que les grosses réparations moteurs, boîtes...<br>
-                   <br>
-                 </p>
-                 <p>Venez nous rencontrer au magasin. Nous prenons toutes les marques (hors chinois).</p> 
-          
-            </div>
-              
-              <div class="col2  align-right"><br>
-                <br>
-              <img src="<?=MEDIA_URL ?>images/not-det-2.jpg" ></div>
-              
-             <div style="width:100%; height:10px; clear:both"></div>
-            <div class="det-video">
-            <a href="#" class="det-download">Télécharger la documentation</a> 
-              <div class="det-subtitle-red">Découvrez le produit en vidéo</div>
-              <div>
-              <iframe  src="//www.youtube.com/embed/SPbN2n-iAeM" frameborder="0" id="vodep" allowfullscreen></iframe>
-              <br>
-              Le magasin MOTO EXPERT ALENCON vous propose ses services atelier.              </div>
-              <a href="#" class="det-visitez">Visitez le site</a>
-              
-              <div class="det-subtitle-red">Découvrez le produit en image</div>
-              
-              
-            </div>
-            <div  class="det-cont-img">
-    
-            	<div class="det-img"><a href="#"><img src="<?=MEDIA_URL ?>images/p1.jpg" ></a></div>
-                <div class="det-img"><a href="#"><img src="<?=MEDIA_URL ?>images/p2.jpg" ></a></div>
-                <div class="det-img"><a href="#"><img src="<?=MEDIA_URL ?>images/p1.jpg" ></a></div>
-                <div class="det-img"><a href="#"><img src="<?=MEDIA_URL ?>images/p2.jpg" ></a></div>
-                <div class="det-img"><a href="#"><img src="<?=MEDIA_URL ?>images/p1.jpg" ></a></div>
-                <div class="det-img"><a href="#"><img src="<?=MEDIA_URL ?>images/p2.jpg" ></a></div>
-                <div class="det-img"><a href="#"><img src="<?=MEDIA_URL ?>images/p1.jpg" ></a></div>
-                <div class="det-img nomargin"><a href="#"><img src="<?=MEDIA_URL ?>images/p2.jpg" ></a></div>
-       
-            
-            </div>
-          </div>
-          
-          
-          
-          
-          
-          <div id="navi-fiche">
-          	  <a href="#" class="previus">RETOUR A LA LISTE D'ANNONCES </a>
 
-           
-            <div class="align-right">
-            	<a href="#" class="previus border-right">PRECEDENTE</a><a href="" class="suivante">SUIVANTE</a>
-            </div>
+		<div class="align-right text-right">
+			
+			<?php echo $this->paginationControl($this->result, 'Sliding', '_pagdetailnews.phtml'); ?>
+		</div>
 
-          </div>
-          </div>
-    
+	</div>
+	<!-- //*** DETAILS  //-->
+	<div id="details-not">
+		<div class="col2 align-left">
+			<img src="<?=MEDIA_URL ?>images/not-det-1.jpg">
+
+
+		</div>
+
+
+		<div class="col2 align-right det-not">
+			<div class="partager det-part">
+				<a href="http://www.facebook.com" target="_blank"><img
+					src="<?=MEDIA_URL ?>images/p-facebook.jpg" width="26" height="26" />
+				</a><a href="http://www.twitter.com" target="_blank"><img
+					src="<?=MEDIA_URL ?>images/p-twitter.jpg" width="26" height="26" />
+				</a>Partager
+				<div class="det-subtitle">
+					MOTO EXPERT <span>METZ</span>
+				</div>
+			</div>
+			<h2>PROMO DE DESTOCKAGE HJC FG 15 fibre</h2>
+
+			<div class="col2  align-left">
+				<p>
+					Le magasin MOTO EXPERT ALENCON vous propose ses services atelier:<br>
+					<br>
+				</p>
+				<p>
+					vidanges, freins, joints spys de fourches, embrayages, révisions,
+					synchro carburateur, jeu aux soupapes, remplacement des courroies
+					de distribution sur les DUCATI, réparation des accidentées ainsi
+					que les grosses réparations moteurs, boîtes...<br> <br>
+				</p>
+				<p>Venez nous rencontrer au magasin. Nous prenons toutes les marques
+					(hors chinois).</p>
+				<p></p>
+
+			</div>
+		</div>
+
+
+
+		<div style="width: 100%; height: 10px; clear: both"></div>
+
+
+
+
+
+
+
+
+
+
+		<div class="col2 align-left">
+			<div class="det-subtitle-red">Révisions toutes marques</div>
+			<br> Le magasin MOTO EXPERT ALENCON vous propose ses services
+			atelier:
+			</p>
+			<br>
+			<p>
+				vidanges, freins, joints spys de fourches, embrayages, révisions,
+				synchro carburateur, jeu aux soupapes, remplacement des courroies de
+				distribution sur les DUCATI, réparation des accidentées ainsi que
+				les grosses réparations moteurs, boîtes...<br> <br>
+			</p>
+			<p>Venez nous rencontrer au magasin. Nous prenons toutes les marques
+				(hors chinois).</p>
+
+		</div>
+
+		<div class="col2  align-right">
+			<br> <br> <img src="<?=MEDIA_URL ?>images/not-det-2.jpg">
+		</div>
+
+		<div style="width: 100%; height: 10px; clear: both"></div>
+		<div class="det-video">
+			<a href="#" class="det-download">Télécharger la documentation</a>
+			<div class="det-subtitle-red">Découvrez le produit en vidéo</div>
+			<div>
+				<iframe src="//www.youtube.com/embed/SPbN2n-iAeM" frameborder="0"
+					id="vodep" allowfullscreen></iframe>
+				<br> Le magasin MOTO EXPERT ALENCON vous propose ses services
+				atelier.
+			</div>
+			<a href="#" class="det-visitez">Visitez le site</a>
+
+			<div class="det-subtitle-red">Découvrez le produit en image</div>
+
+
+		</div>
+		<div class="det-cont-img">
+
+			<div class="det-img">
+				<a href="#"><img src="<?=MEDIA_URL ?>images/p1.jpg"> </a>
+			</div>
+			<div class="det-img">
+				<a href="#"><img src="<?=MEDIA_URL ?>images/p2.jpg"> </a>
+			</div>
+			<div class="det-img">
+				<a href="#"><img src="<?=MEDIA_URL ?>images/p1.jpg"> </a>
+			</div>
+			<div class="det-img">
+				<a href="#"><img src="<?=MEDIA_URL ?>images/p2.jpg"> </a>
+			</div>
+			<div class="det-img">
+				<a href="#"><img src="<?=MEDIA_URL ?>images/p1.jpg"> </a>
+			</div>
+			<div class="det-img">
+				<a href="#"><img src="<?=MEDIA_URL ?>images/p2.jpg"> </a>
+			</div>
+			<div class="det-img">
+				<a href="#"><img src="<?=MEDIA_URL ?>images/p1.jpg"> </a>
+			</div>
+			<div class="det-img nomargin">
+				<a href="#"><img src="<?=MEDIA_URL ?>images/p2.jpg"> </a>
+			</div>
+
+
+		</div>
+	</div>
+
+
+
+
+
+	<div id="navi-fiche">
+		<a href="#" class="previus">RETOUR A LA LISTE D'ANNONCES </a>
+
+
+		<div class="align-right">
+			<?php echo $this->paginationControl($this->result, 'Sliding', '_pagdetailnews.phtml'); ?>			
+		</div>
+
+	</div>
+</div>
