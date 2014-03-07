@@ -6,19 +6,14 @@
               
             </div>
           <div class="footer-col2">
-              <script>
-$(function() {
-      $('#magasin').change(function() {
-            $('#magasin').submit();
-      });
-});
-</script>
+
 	          <h3> <a  href="/franchise">LE RÉSEAU MOTO EXPERT</a></h3>
-              <form action="magasin" method="get" name="magasin" id="magasin">
+             
+                  <form action="magasin" method="get" name="tienda" id="tienda">
 						<label for="select"></label> 
                                                     <?= $this->formMagasin->magasin?>
 						<input type="submit" value="" id="button" name="button">
-            </form>
+					</form>
               
           </div>
           <div class="footer-col3">
@@ -36,6 +31,47 @@ $(function() {
           <div class="copy">&copy; 2014 MOTOEXPERT   Réalisation : Infra - Tous droits réservé</div>
         </div>
           <!-- /*************************************************************************************************/-->
+<script>
+/*******************************************/
+$.validator.setDefaults({
+	submitHandler: function() { alert("submitted!"); }
+});
+
+$().ready(function() {
+	// validate the comment form when it is submitted
+
+
+	// validate signup form on keyup and submit
+	$("#formContant").validate({
+		rules: {
+			nom: "required",
+			prenom: "required",
+			adresse: "required",
+			code_postal: "required",
+			ville: "required",
+			telephone: "required",
+			email: {
+				required: true,
+				email: true
+			},
+		},
+		messages: {
+			nom: "Veuillez renseigner le champ nom",
+			prenom: "Veuillez renseigner le champ prenom",
+			adresse: "Veuillez renseigner votre adresse",
+			code_postal: "Veuillez renseigner votre code postal",
+			ville: "Veuillez renseigner votre ville",
+			telephone: "Veuillez renseigner votre telephone",
+			email: "Veuillez renseigner votre email",
+		}
+	});
+
+
+
+});
+
+
+</script>
 
        <div id="my_contact" class="contact"> 
   <div id="wrapper-form">
@@ -51,58 +87,15 @@ $(function() {
 <p><input name="adresse" type="text" placeholder="Adresse" required value="<?php echo ($adresse)?$datos["adresse"]:'';?>"/></p>
           <p><input name="code_postal" type="text" placeholder="Code Postal" required value="<?php echo ($code_postal)?$datos["code_postal"]:'';?>"/></p>
           <p><input name="ville" type="text" placeholder="Ville" required value="<?php echo ($ville)?$datos["ville"]:'';?>"/></p>
-          <p><input name="tel"  id="tel" type="text" placeholder="Téléphone"></p>
+          <p><input name="telephone"  id="telephone" type="text" placeholder="Téléphone"></p>
 
             <p>
             <input name="email" type="text" placeholder="Votre adresse Email" required value="<?php echo ($email)?$datos["email"]:'';?>">
             </p>
-<p> <select name="magasin" id="magasin">
+<p> 
+<?= $this->formMagasin->magasin?>
 
-    <option value="0">Magasin</option>
-    <option value="86">ALBERTVILLE</option>
-    <option value="91">ALENCON</option>
-    <option value="107">ANGERS</option>
-    <option value="104">ANGOULEME</option>
-    <option value="101">ANNECY</option>
-    <option value="109">AVIGNON</option>
-    <option value="108">BELFORT</option>
-    <option value="7">BESANCON</option>
-    <option value="87">BEZIERS</option>
-    <option value="10">BOURGES</option>
-    <option value="85">BRUAY LA BUISSIERE</option>
-    <option value="82">CASTRES</option>
-    <option value="97">CHAMBERY</option>
-    <option value="98">CHATEAUROUX</option>
-    <option value="81">CLERMONT FERRAND</option>
-    <option value="63">COLMAR</option>
-    <option value="68">DIJON</option>
-    <option value="84">FREJUS</option>
-    <option value="21">LA ROCHE/YON</option>
-    <option value="105">LA ROCHELLE</option>
-    <option value="88">LE HAVRE</option>
-    <option value="1">LE MANS</option>
-    <option value="110">LORIENT</option>
-    <option value="32">METZ</option>
-    <option value="31">MONT DE MARSAN</option>
-    <option value="83">MONTARGIS</option>
-    <option value="34">MONTPELLIER</option>
-    <option value="94">MULHOUSE</option>
-    <option value="36">NANTES 1</option>
-    <option value="66">NARBONNE</option>
-    <option value="37">NEVERS</option>
-    <option value="99">PAU</option>
-    <option value="42">POITIERS</option>
-    <option value="58">REIMS</option>
-    <option value="77">SAINT QUENTIN</option>
-    <option value="100">SAINTES</option>
-    <option value="103">SAUMUR</option>
-    <option value="60">TARBES</option>
-    <option value="50">TOULON</option>
-    <option value="52">TOULOUSE 2</option>
-    <option value="53">TOURS</option>
-    <option value="61">TROYES</option>
-    <option value="55">VANNES</option>
-</select></p>
+</p>
 
 <p> <textarea name="message" id="message" cols="45" rows="5">message</textarea></p>
 <p></p><p></p>
@@ -130,7 +123,8 @@ $(function() {
 	  
       
 	</div>
-   </div>     
+   </div>    
+   
 <script src="<?php echo MEDIA_URL ?>js/jquery.lightbox_me.js" type="text/javascript" charset="utf-8"></script>     
   <script>
  

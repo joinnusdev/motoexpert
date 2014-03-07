@@ -15,7 +15,22 @@
 
 <title>MOTO EXPERT - Réseau de magasins spécialisés moto, annonces moto
 	occasion, accessoires moto</title>
-
+<script>
+    
+$(function() {
+      $('#tienda').change(function() {
+          alert("tienda");
+            $('#tienda').submit();
+      });
+});
+$(function() {
+      $('#magasin').change(function() {
+            $('#magasin').submit();
+      });
+});
+</script>
+<script>
+</script>
 </head>
 
 <body onLoad="<?php echo (isset($this->login))?'nuevo();':'' ?>">

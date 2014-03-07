@@ -18,7 +18,7 @@ class Compte_ModifierClientController extends App_Controller_Action_Default
     	$modelanunce->announceByCLient($this->view->authData->cid);
     	
     	$this->view->datos = $modelclient->getClientById($this->view->authData->cid);
-    	
+        
     	if ($this->_request->isPost()) {
     		$params = $this->_getAllParams();
     		$params['cid'] = $this->view->authData->cid;

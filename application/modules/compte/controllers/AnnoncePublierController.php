@@ -142,6 +142,7 @@ class Compte_AnnoncePublierController extends App_Controller_Action_Default
 
 
 		if ($idAnnonce > 0) {			
+                    
 			$this->view->form = $form;			
 			$photos = $modelPhotos->getPhotosByAnnonce($idAnnonce);
 			$params = $modelanunce->detailAnnounce($idAnnonce);
@@ -159,11 +160,20 @@ class Compte_AnnoncePublierController extends App_Controller_Action_Default
 			if ($params) {
 				$this->view->ruta = $this->config->app->photoUrl;				
 				$this->view->valid = TRUE;
-					
-				$form->populate($params);
+                                
+                                $modelDpto = new App_Model_Department();
+                                $dataDpto = $modelDpto->getDepartment($params['departement']);
+                                
+                                $modelMoto = new App_Model_Moto();
+                                $dataMoto = $modelMoto->getModelo($params['modele']);
+                                $params['modelo'] = $dataMoto['value'];
+                                $params['departamento'] = $dataDpto['NOM'];
+                                
+                                $form->populate($params);
 				$this->view->caract = $params;
 				$this->view->idannunce = $idAnnonce;
 				$this->view->params = $params;
+                                
 			} else
 				$this->_redirect('/compte');
 

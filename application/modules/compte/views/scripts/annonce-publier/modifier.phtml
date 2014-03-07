@@ -48,8 +48,14 @@ jQuery.noConflict();
                                                 ?>
                                                 </div>
 						<p>
-							<strong><?= $this->caract['marque'] ?> <?= $this->caract['modele'] ?> 250</strong><br /> <?= $this->caract['id_cat'] ?> - <?= $this->caract['marque'] ?> 
-							<!-- ABS--> -<br> <?= $this->caract['cylindree'] ?> cm3 - <?= $this->caract['km'] ?> km - Année <?= $this->caract['annee'] ?>
+							<strong><?= $this->caract['marque'] ?> <?= $this->caract['modelo'] ?></strong>
+                                                        <br /> 
+                                                        <?= $this->caract['id_cat'] ?> - <?= $this->caract['marque'] ?> 
+							<!-- ABS--> 
+                                                        <br> 
+                                                        <?= $this->caract['cylindree'] ?> cm3 - <?= $this->caract['km'] ?> km - Année <?= $this->caract['annee'] ?>
+                                                        <br>
+                                                        <?= $this->caract['couleur'] ?> - <?= $this->caract['departamento'] ?> 
 						</p>
 						<div class="price"><?= $this->caract['prix'] ?> €</div>
 					</div>

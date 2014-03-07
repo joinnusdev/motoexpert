@@ -36,6 +36,14 @@ class App_Model_Moto extends App_Db_Table_Abstract {
        }
     }
     
+    public function getModelo($idModelo){
+       $query = "SELECT id_mot as id, modele as value FROM  `motos` where id_mot = ".$idModelo;
+       try{
+        return $this->getAdapter()->fetchRow($query);
+       }catch (Exception $e){
+                var_dump($e->getMessage());
+       } 
+    }
     
 	
 }
