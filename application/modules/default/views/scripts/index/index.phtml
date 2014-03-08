@@ -49,21 +49,26 @@
 			<p class="occasions-text">Rechercher une moto d’occasion dans notre
 				réseau avec des annonces provenant de toute la France !</p>
 			<div class="occasions-recherchez">
+                            <form action="annonces" method="get" name="form1" id="form1">
 				<h5>Recherchez une moto d’occasion</h5>
 				<div class="occasions-form">
-					<form action="annonces" method="get" name="form1" id="form1">
+					
 						<label class="selectlabel1" for="select"></label> 
 						<?=$this->form->marque?>
 						
 						 <label class="selectlabel2" for="select"></label> 
 						 <?=$this->form->modele?> 
 						<input type="submit" value="" id="button" name="button">
-					</form>
+					
 				</div>
 				<img height="104" width="104"
 					src="<?=MEDIA_URL ?>images/occasions-img.jpg">
-                                <p class="deposez"><a href="/annonces" >VOIR TOUTES LES ANNONCES</a></p>
-
+                                <p class="deposez">
+                                    <input type="submit" value="VOIR TOUTES LES ANNONCES" id="button" name="button">
+                                    
+                                </p>
+                                
+                            </form>
 			</div>
 			<h6>Des services pertinents pour simplifier la vie des motards</h6>
 			<div class="occasions-imgs">
