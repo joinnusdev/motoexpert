@@ -33,16 +33,14 @@
           <!-- /*************************************************************************************************/-->
 <script>
 /*******************************************/
-$.validator.setDefaults({
+jQuery.validator.setDefaults({
 	submitHandler: function() { alert("submitted!"); }
 });
 
-$().ready(function() {
+jQuery().ready(function() {
 	// validate the comment form when it is submitted
-
-
 	// validate signup form on keyup and submit
-	$("#formContant").validate({
+	jQuery("#formContant").validate({
 		rules: {
 			nom: "required",
 			prenom: "required",
@@ -76,7 +74,7 @@ $().ready(function() {
        <div id="my_contact" class="contact"> 
   <div id="wrapper-form">
     	<div id="new-form">
-        	<div id="new-navigation"><a href="#" class="new-prev" onClick="$('#my_contact').trigger('close');">RETOUR</a>
+        	<div id="new-navigation"><a href="#" class="new-prev" onClick="jQuery('#my_contact').trigger('close');">RETOUR</a>
         	<p>  </p> </div>
            
         <form name="formContant"  class="cmxform"  id="formContant" method="post" action="">
@@ -127,12 +125,11 @@ $().ready(function() {
    
 <script src="<?php echo MEDIA_URL ?>js/jquery.lightbox_me.js" type="text/javascript" charset="utf-8"></script>     
   <script>
- 
     var contactpopup = function(){  
-    $('#my_contact').lightbox_me({
+    jQuery('#my_contact').lightbox_me({
       centered: true,
       onLoad: function() {
-        $('#my_contact_text').html("Stuff");
+    	  jQuery('#my_contact_text').html("Stuff");
       }
     });
   }

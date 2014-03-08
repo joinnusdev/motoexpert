@@ -1,22 +1,10 @@
 <?php
-$ruta = "";
-$i=true; 
-foreach ($this->prueba as $index => $value):
-if ($value != "0" and !is_null($value) and $index != "page") {	
-	if ($i) {
-		$ruta.= $index."=".$value;		
-	}  
-	else 
-		$ruta.= "&".$index."=".$value;
-$i= false;	
-} 
 
-endforeach;
-if (!empty($ruta)) $sim ="&"; else $sim ="";
+if (!empty($this->ruta)) $sim ="&"; else $sim ="";
 ?>
 
 <?php if (isset($this->previous)):?>
-<a href="<?php echo "/annonces?".$ruta. $sim. "page=".$this->previous;?>" 
+<a href="<?php echo "/annonces?".$this->ruta. $sim. "page=".$this->previous;?>" 
 	class="nprev" data="<?php echo $this->previous;?>">PRECEDENTE</a>
 
 <?php else: ?>
@@ -26,8 +14,8 @@ if (!empty($ruta)) $sim ="&"; else $sim ="";
 <!-- Next page link -->
 <?php if (isset($this->next)):
 ?>
-<?php if (!empty($ruta)) $sim ="&"; else $sim ="";?>
-<a href="<?php echo "/annonces?".$ruta. $sim."page=".$this->next;?>"
+<?php if (!empty($this->ruta)) $sim ="&"; else $sim ="";?>
+<a href="<?php echo "/annonces?".$this->ruta. $sim."page=".$this->next;?>"
 	class="nnext" data="<?php echo $this->next;?>">SUIVANTE</a>
 <?php else: ?>
 <!-- <a href="#" class="nnext disabled">SUIVANTE</a>-->
