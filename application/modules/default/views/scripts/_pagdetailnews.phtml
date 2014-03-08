@@ -2,6 +2,7 @@
 $ruta = "";
 $i=true;
 
+<<<<<<< HEAD
 foreach ($this->prueba as $index => $value):
 if ($value != "0" and !is_null($value) and $index != "page" and $index=="cod_new") {
 	if ($i) {
@@ -11,6 +12,17 @@ if ($value != "0" and !is_null($value) and $index != "page" and $index=="cod_new
 		$ruta.= "&".$index."=".$value;
 	$i= false;
 }
+=======
+foreach ($this->prueba as $index => $value):
+if ($value != "0" and !is_null($value) and $index != "page" and $index=="cod_new") {
+	if ($i) {
+		$ruta.= $index."=".$value;
+	}
+	else
+		$ruta.= "&".$index."=".$value;
+	$i= false;
+}
+>>>>>>> cde70fb1a6825b62e299ee2dd180fd45e30e52f8
 endforeach;
 
 if (!empty($ruta)) $sim ="&"; else $sim ="";
