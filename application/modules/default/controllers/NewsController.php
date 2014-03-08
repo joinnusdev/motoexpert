@@ -44,7 +44,7 @@ class Default_NewsController extends App_Controller_Action_Default
     	$datos = $this->getAllParams();    	
     	$page = $this->_getParam('page', NULL);
     	$codigo = $this->_getParam('cod_new', NULL);
-    	
+        
     	if ($this->_request->isGet()) {
     		if ($datos and !is_null($datos)) {    	
     			$result = $modelNoticia->listNewsDeta($codigo);

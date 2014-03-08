@@ -18,21 +18,51 @@
 	<?php foreach ($this->result as $item):?>
 	<div id="details-not">
 		<div class="col2 align-left">
-			<img src="<?=MEDIA_URL ?>images/not-det-1.jpg">
-
-
+                    <?php
+                     $config = Zend_Registry::get('config');
+                                    $ruta = $config->app->photoNews.$item['image_1'];
+                                    if($item['image_1'] !=""):
+                    ?>
+			
+                        <img src="<?= $ruta; ?>">
+                    <?php  endif;?>
 		</div>
 
 
 		<div class="col2 align-right det-not">
 			<div class="partager det-part">
-				<a href="http://www.facebook.com" target="_blank"><img
-					src="<?=MEDIA_URL ?>images/p-facebook.jpg" width="26" height="26" />
-				</a><a href="http://www.twitter.com" target="_blank"><img
-					src="<?=MEDIA_URL ?>images/p-twitter.jpg" width="26" height="26" />
-				</a>Partager
+				
+                                <!--<script>function fbs_click() 
+                                    {u=location.href;t='titulooooo';window.open("http://www.facebook.com/sharer.php?u="+encodeURIComponent(u)+"&t="+encodeURIComponent(t),
+                                    "sharer","toolbar=0,status=0,width=626,height=436");return false;}
+                                </script>
+                                <a href="http://www.facebook.com/share.php?u=&lt;url&gt;" onclick="return fbs_click()" target="_blank">
+                                    <img alt="Compartir en Facebook" src="http://www.gxportal.com/media/design/style000001/00000001440000001270.png" border="0"/>
+                                </a>-->
+                            <a href="javascript: void(0);" 
+                                   onclick="window.open('http://www.facebook.com/sharer.php?u=http://www.motoexpert.fr/',
+                                                                                'ventanacompartir', 
+                                                                                'toolbar=0, status=0, width=650, height=450');"><img
+					src="<?=MEDIA_URL ?>images/p-facebook.jpg" width="26" height="26" /></a>
+                            
+                            <!-- <a href="http://twitter.com/home?status=<?php echo urlencode("Leyendo http://www.desarrolloWeb.com/css en DesarrolloWeb.com.");?>">Compartir en Twitter</a> -->
+                            
+                            <a href="http://twitter.com/home?status=Leyendo  . <?php echo "Noticias"?>.  en  http://www.motoexpert.fr/ " class="btwitter" title="Compartelo en Twitter" target="_blank">
+                                <img src="<?=MEDIA_URL ?>images/p-twitter.jpg" width="26" height="26" />
+                            </a> 
+                            
+                            
+                            
+                                Partager
 				<div class="det-subtitle">
-					MOTO EXPERT <span>METZ</span>
+                                        <?php
+                                        $idTienda = explode('_', $item['id_parent']);
+                                        $modelMaga = new App_Model_Magasin();
+                                        $resultMaga = $modelMaga->getMagasin($idTienda[1]);
+                                       
+                                        ?>
+					MOTO EXPERT <span><?= $resultMaga['ville']?></span>
+					
 				</div>
 			</div>
 			
@@ -40,8 +70,8 @@
 
 			<div class="col2  align-left">
 				<p>
-					Le magasin MOTO EXPERT ALENCON vous propose ses services atelier:<br>
-					<br>
+                                    Le magasin MOTO EXPERT <?= $resultMaga['ville'];?> vous propose ses services atelier:<br>
+				<br>
 				</p>
 				<p>
 					<?= $item["texte_1"]?>
@@ -57,7 +87,7 @@
 		<div style="width: 100%; height: 10px; clear: both"></div>
 		<div class="col2 align-left">
 			<div class="det-subtitle-red">Révisions toutes marques</div>
-			<br> Le magasin MOTO EXPERT ALENCON vous propose ses services
+			<br> Le magasin MOTO EXPERT  <?= $resultMaga['ville'];?> vous propose ses services
 			atelier:
 			</p>
 			<br>
@@ -69,7 +99,14 @@
 		</div>
 
 		<div class="col2  align-right">
-			<br> <br> <img src="<?=MEDIA_URL ?>images/not-det-2.jpg">
+                    <?php
+                     $config = Zend_Registry::get('config');
+                                    $ruta = $config->app->photoNews.$item['image_2'];
+                                    if($item['image_2'] !=""):
+                    ?>
+			<br> <br> 
+                                <img src="<?= $ruta; ?>">
+                    <?php  endif;?>
 		</div>
 
 		<div style="width: 100%; height: 10px; clear: both"></div>
@@ -93,8 +130,7 @@
 
 		</div>
                 <?php endif;?>
-		<div class="det-cont-img">
-
+		<!--<div class="det-cont-img">
 			<div class="det-img">
 				<a href="#">
 				<img src="<?=MEDIA_URL ?>images/p1.jpg">
@@ -124,7 +160,7 @@
 			</div>
 
 
-		</div>
+		</div>-->
 	</div>
 	<?php endforeach;?>
 
