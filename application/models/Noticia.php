@@ -22,7 +22,7 @@ class App_Model_Noticia extends App_Db_Table_Abstract {
 
 	}
 
-	public function listNews($codigo){
+	public function listNews($cod=NULL){
 		$query = "select * from `hicone-mobile-datas-news` n
 		inner join `hicone-mobile-datas-news-cat-assoc`ca on n.id_news = ca.id_news
 		where ca.id_parent !='franchise'

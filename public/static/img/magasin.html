@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="fr-FR">
+
+<head>
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width" />
+
+
+<link rel="stylesheet" href="style2.css" type='text/css' media='all' />
+<link rel="stylesheet" href="responsive.css" type='text/css' media='all' />
+    <link href="css/owl.carousel.css" rel="stylesheet">
+    <link href="css/owl.theme.css" rel="stylesheet">
+<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300italic,400italic,700italic,400,300,700' rel='stylesheet' type='text/css'>
+    <script src="https://maps.googleapis.com/maps/api/js?sensor=false&language=fr-FR"></script>
+    <script>
+      function initialize() {
+        var map_canvas = document.getElementById('map_canvas');
+        var map_options = {
+          center: new google.maps.LatLng(48.856614, 2.352222),
+          zoom: 13,
+		  			//navigationControl: false,
+			//draggable: false,
+			scrollwheel: true,
+			streetViewControl:false,
+			mapTypeControl: false,
+			zoomControl: false,
+			scaleControl: false,		  
+		  			zoomControlOptions: {
+				style: google.maps.ZoomControlStyle.SMALL
+			},
+          mapTypeId: google.maps.MapTypeId.ROADMAP,
+
+        }
+        var map = new google.maps.Map(map_canvas, map_options)
+      }
+      google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+<title>MOTO EXPERT - Réseau de magasins spécialisés moto, annonces moto occasion, accessoires moto</title>
+</head>
+<body>
+	<div id="wrapper">
+		<div id="header">
+        	<div id="logo"><a href="index.html" title="MOTO EXPERT - Réseau de magasins spécialisés moto, annonces moto occasion, accessoires moto"><img src="images/logo.png" width="308" height="113"  alt="MOTO EXPERT - Réseau de magasins spécialisés moto, annonces moto occasion, accessoires moto" /></a></div>
+            <div id="header-right">
+            	<div class="header-top">
+               	<a href="#">ACTUALITE RESEAU</a> - <a href="#">NEWSLETTER</a> <a href="#" class="nomcompte">MON COMPTE</a>                
+                </div>
+      
+            </div>                <div class="header-menu">
+                	<ul>
+                    	<li><a href="#" class="menu-red">ACCUEIL</a></li>
+                        <li><a href="#" class="menu-yellow">OCCASION MOTO</a></li>
+                        <li><a href="#" class="menu-blue">FRANCHISE ET SERVICES</a></li>
+                        <li class="noborder"><a href="#" class="menu-green">CONTACT</a></li>
+                    </ul>
+               	           
+                </div> 
+        </div>
+        <div id="content" class="paddin30"> 
+        	<div id="content-top">
+            
+                            <div class="top-left">MOTO EXPERT <br /><span>METZ</span></div>
+        	</div>
+       	  
+          <!-- //*** Magasines  //-->
+          <div id="details">
+                  <div id="slidersh">
+                  	 <div id="owl-demo" class="owl-carousel">
+                        <div class="item"><img src="images/sliderh/1.jpg" alt=""></div>
+                        <div class="item"><img src="images/sliderh/2.jpg" alt=""></div>
+                        <div class="item"><img src="images/sliderh/3.jpg" alt=""></div>
+                        <div class="item"><img src="images/sliderh/4.jpg" alt=""></div>
+                        <div class="item"><img src="images/sliderh/1.jpg" alt=""></div>
+                        <div class="item"><img src="images/sliderh/2.jpg" alt=""></div>
+                        <div class="item"><img src="images/sliderh/3.jpg" alt=""></div>
+                        <div class="item"><img src="images/sliderh/4.jpg" alt=""></div>
+                      </div>
+                  
+                  
+                  </div>
+    <script src="js/sliderh/jquery-1.9.1.min.js"></script> 
+    <script src="js/sliderh/owl.carousel.js"></script>
+
+    <script>
+    $(document).ready(function() {
+      $("#owl-demo").owlCarousel({
+        autoPlay: 3000,
+       items :3,
+        itemsDesktop : [1199,3],
+        itemsDesktopSmall : [979,3]
+      });
+
+    });
+    </script>
+<div class="content960">
+          	<div class="col2 align-left"><div id="map_canvas"></div><br />
+</div>
+          	
+            <div class="col2 col470 align-right">
+               	<div class="subtitle2">
+                		PLAN INTERACTIF 
+       		  </div>
+            <div class="col21">
+            <p>ZAC Rieucoulon 60 Rue Pierre et Marie Curie 34430 SAINT JEAN DE VEDAS            </p><br />
+            <p><strong>Coordonnées GPS :</strong></p><p> Latitude : 43.5826</p><p> Longitude : 3.84569 </p></div>
+                <div class="col230">
+             
+                    <p><strong>Gérant : Philippe GEORGES</strong></p>
+                	<p>Tél. : 02 51 18 83</p>
+                    <p>Fax : 0251 05 18 57 </p>
+                    <h3>HORAIRES D'OUVERTURE</h3>
+                    <p>Lundi : 14h - 19h</p>
+                    <p>du Mardi au Samedi : 9h30 - 12h / 14h - 19h</p>
+                </div>
+                
+			  <div class="subtitle3">
+                	<div class="icontitle icon-contact">CONTACTEZ DIRECTEMENT LE MAGASIN</div>
+              </div>
+              <div class="subtitle3">
+                	<div class="icontitle icon-envoyer"><a href="mailto:demo@demo.com">ENVOYER UN MAIL</a></div>
+                 </div>
+              
+            
+                      
+                
+            </div>
+            
+            
+            </div>
+            
+            
+            
+          </div>
+          
+          
+          
+         
+          </div>
+          
+          
+          
+          
+                   <!-- // actualite // -->
+          <div id="actualite">
+           		<h2>L’ACTUALITÉ MOTO EXPERT</h2>
+            <div class="actualite-col3"><img src="images/solde.jpg" width="87" height="87" /><h3>Vive les Soldes d’hiver pour s’équiper pas cher !</h3><p>Elles débuteront dans votre magasin Moto Expert officiellement le mercredi 11 janvier 2012 à 8 heures</p></div>
+                <div class="actualite-col3"><img src="images/people.jpg" width="87" height="87" /><h3>Rejoingnez le Fan Club et bénéficiez du prix Fan* -6% immédiatement !</h3><p>Rejoingnez le Fan Club et bénéficiez du prix Fan* -6% immédiatement !</p></div>
+                <div class="actualite-col3right"><img src="images/house.jpg" width="87" height="87" /><h3>Fermeture du magasin de Saint-Quentin</h3><p>Le magasin est dorénavant fermé. Nous vous informerons dès sa réouverture.</p></div>
+                
+          </div>   
+<!--/************************************************************************************/-->
+    <a href="#" class="block-link">› VOIR TOUTES LES ACTUALITES</a>
+      
+      	<div style="width:970px; height:auto; padding:0 0 10px 0; margin:0 0 10px 24px ; float:left; position:relative">
+        	<!-- / top bottom /-->
+              <div style="width:47px; height:45px; position:absolute;"><img src="images/top.png" width="47" height="45"></div>
+          	  <div style="width:47px; height:45px; position: absolute; z-index:999; bottom:0; right:0px; float:right"><img src="images/botton.png" width="47" height="45"></div>
+  			<!-- / top bottom /-->
+         	 <div style="width:959px; margin:6px 5px 0px 6px; float:left; background-color:#FBCB00; background-image:url(images/bg-ye.jpg); background-position:top; background-repeat:repeat-x;">
+                      <div id="ye-top">
+                                <h2>NOS OCCASIONS <br />MOTO </h2>
+                                <div class="ye-right"><strong>› 1 annonce moto</strong></div>
+                      </div>
+               <div id="results-content">
+          <div id="list_">
+                    <div class="result-col3 no-bor-bot">                        
+                        <div class="result-imgs"><img src="images/resutats-img.jpg" width="300" height="115" /></div>
+                      <div class="result-price-w">4200  € </div>
+                        <div class="result-desc">
+                        <div class="result-date">05/02114 </div>
+                         <p><strong>Suzuki RMZ 250</strong><br />
+                       Honda - CB 600 F ABS - 600 cm3 - 15550 km Année 2005 - à débattre</p>
+                        <a href="#" class="visuel">CONTRÛLE VISUEL</a> <a href="#" class="garantie">GARANTIE </a>
+                        </div>
+                    
+                    </div>
+           </div>
+            <div class="result-col3 no-bor-bot">            
+            	<div class="result-imgs"><img src="images/resutats-img.jpg" width="300" height="115" /></div>
+           	  <div class="result-price-w">4200  € </div>
+                <div class="result-desc">
+                <div class="result-date">05/02114 </div>
+                 <p><strong>Suzuki RMZ 250</strong><br />
+               Honda - CB 600 F ABS - 600 cm3 - 15550 km Année 2005 - à débattre</p>
+                <a href="#" class="visuel">CONTRÛLE VISUEL</a> <a href="#" class="garantie">GARANTIE </a>
+                </div>
+            
+           </div>
+            <div class="result-col3 col3no no-bor-bot">
+            	<div class="result-imgs"><img src="images/resutats-img.jpg" width="300" height="115" /></div>
+           	  <div class="result-price-w">4200  € </div>
+                <div class="result-desc">
+                <div class="result-date">05/02114 </div>
+                 <p><strong>Suzuki RMZ 250</strong><br />
+               Honda - CB 600 F ABS - 600 cm3 - 15550 km Année 2005 - à débattre</p>
+                <a href="#" class="visuel">CONTRÛLE VISUEL</a> <a href="#" class="garantie">GARANTIE </a>
+                </div>
+            
+           </div>
+               </div>     
+                      
+                      
+                      
+                      
+          	</div>
+       
+          </div>
+<a href="#" class="block-link">› VOIR TOUTES LES OCCASIONS DU MAGASIN </a><br ><br/>
+
+        <!--/*********************************************************/-->  
+        <div id="footer">
+        	<div class="footer-logo"><img src="images/footer-logo.png" width="264" height="97" /></div>
+            <div class="footer-col1">
+              <a href="#">DÉPOSEZ VOTRE ANNONCE GRATUITE</a></p>
+              <a href="#">MOTOS D’OCCASIONS</a></p>
+            </div>
+          <div class="footer-col2">
+	          <h3>LES SERVICES MOTO EXPERT</h3>
+              <form id="form3" name="form3" method="post" action="">
+                                <label for="select"></label>
+                                <select name="select" id="select">
+                                	<option value="0" selected="selected">Ville</option>
+                                    <option value="1">Ville 1</option>
+                                    <option value="2">Ville 2</option>
+                                    <option value="3">Ville 3</option>
+                                    <option value="4">Ville 4</option>
+                                    <option value="5">Ville 5</option>
+                                    <option value="6">Ville 6</option>
+                                </select> 
+                                <input type="submit" name="button" id="button" value="" />
+                              </form>
+              
+          </div>
+          <div class="footer-col3">
+          	<h3>LES SERVICES MOTO EXPERT</h3>
+              <a href="#">Occasion moto</a>
+              <a href="#">Service rapide</a>
+              <a href="#">Fan Club</a>
+          </div>
+          <div class="footer-col4">
+          	<a href="#">L’ACTU</a>
+            <a href="#">CONTACTS</a>         
+          </div>
+          
+          <div class="copy">© 2014 MOTOEXPERT   Réalisation : Infra - Tous droits réservé</div>
+        </div>
+	</div>
+    
+
+</body>
+</html>

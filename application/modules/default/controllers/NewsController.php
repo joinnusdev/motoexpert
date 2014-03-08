@@ -23,7 +23,7 @@ class Default_NewsController extends App_Controller_Action_Default
         
         		$data = @$form->getValues();
         		$result = $modelNoticia->listNewsSearch($datos);
-        		 
+                        
         		$this->view->prueba = $data;        		 
         		 
         		$paginator = Zend_Paginator::factory($result);

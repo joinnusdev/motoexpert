@@ -111,5 +111,17 @@ class App_Model_Magasin extends App_Db_Table_Abstract {
                 var_dump($e->getMessage());
        }
     }
-
+    
+    public function getMagasin($idMagasin){
+        $query = "select t.id_me,t.ville from moto_expert t
+                    where t.id_me = " . $idMagasin;
+      
+           
+       try{
+        return $this->getAdapter()->fetchRow($query);
+         
+       }catch (Exception $e){
+                var_dump($e->getMessage());
+       }
+    }
 }

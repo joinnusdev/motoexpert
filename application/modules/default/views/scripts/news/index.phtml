@@ -79,12 +79,27 @@
 		<?php foreach ($this->result as $item): ?>
 			<div class="not-list">
 				<div class="not-title">
-					MOTO EXPERT <span>METZ</span>
+                                        <?php
+                                        $idTienda = explode('_', $item['id_parent']);
+                                        $modelMaga = new App_Model_Magasin();
+                                        $resultMaga = $modelMaga->getMagasin($idTienda[1]);
+                                       
+                                        ?>
+					MOTO EXPERT <span><?= $resultMaga['ville']?></span>
 				</div>
 				<div class="not-body">
+                                        <?php
+                                    $config = Zend_Registry::get('config');
+                                    $ruta = $config->app->photoNews.$item['image_1'];
+                                    if($item['image_1'] !=""):
+                                    ?>
 					<div class="not-body-img">
-						<img src="<?=MEDIA_URL ?>images/not1.jpg" width="200" />
+                                            <img src="<?=$ruta;?>" width="200" />
 					</div>
+                                    <?php endif; ?>
+					<!-- <div class="not-body-img">
+						<img src="<?=MEDIA_URL ?>images/not1.jpg" width="200" />
+					</div>-->
 					<div class="not-subtitle">
 					<?= $item["titre"]?>
 					</div>
