@@ -2824,7 +2824,9 @@ margin-top:-30px !important;
 div.error { display: none; }
 
 input.error, select.error { border: 1px dotted red !important; background:#FFDFDF !important; background-color:#FFDFDF !important; _margin-bottom:2px !important; display:block; }
-
+/*.inpcap input.error{
+	 border: 1px dotted red !important; background:#FFDFDF !important; background-color:#FFDFDF !important; _margin-right:-200px !important; _margin-top:40px !important; display:block;
+	}*/
 .inpcap label.error {
 margin-right:-180px !important;
 margin-top:0px !important;
@@ -2899,7 +2901,7 @@ form.cmxform .gray * { color: gray; }
 .not-list{
 	width:100%;
 	border-bottom:1px solid #666;
-	min-height:157px;
+	_min-height:157px;
 	padding:0px !important;
 	}
 .not-title{
@@ -2922,21 +2924,31 @@ form.cmxform .gray * { color: gray; }
 	font-size:13px;
 	color:#000;
 	font-family:Arial, Helvetica, sans-serif;
-	min-height:102px;
+	min-height:172px;
+	position:relative;
+	}
+.MsoNormal{
+	margin:0px !important;
 	}
 .not-body-img{
 	width:200px;
-	min-height:150px;
+	height:150px;
 	margin:0 7px 0 0;
 	float:left;
+	overflow:hidden;
 	}
 .not-subtitle{
 	font-weight:bold;
 	margin-bottom:5px;
 	}
 .not-btn{
-	margin-top:15px;
+	_margin-top:15px;
+	width:150px;
 	height:34px;
+		bottom:0px;
+		right:0px;
+	position:absolute;
+
 	}
 .btn-not{
 	margin:0px 0 -2px 0 !important;
