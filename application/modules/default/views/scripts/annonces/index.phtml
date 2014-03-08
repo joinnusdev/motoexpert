@@ -74,7 +74,7 @@
 		<div class="resultats"><?php echo $this->total ?> RÉSUTATS TROUVÉS</div>
 		<div class="next-prev">
 <?php 
-<<<<<<< HEAD
+
 $ruta = "";
 $i=true;
 foreach ($this->prueba as $index => $value):
@@ -86,19 +86,8 @@ if ($value != "0" and !is_null($value) and $index != "page") {
 		$ruta.= "&".$index."=".$value;
 	$i= false;
 }
-=======
-$ruta = "";
-$i=true;
-foreach ($this->prueba as $index => $value):
-if ($value != "0" and !is_null($value) and $index != "page") {
-	if ($i) {
-		$ruta.= $index."=".$value;
-	}
-	else
-		$ruta.= "&".$index."=".$value;
-	$i= false;
-}
->>>>>>> cde70fb1a6825b62e299ee2dd180fd45e30e52f8
+
+
 endforeach;
 ?>		
 		

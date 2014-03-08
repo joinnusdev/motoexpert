@@ -44,6 +44,7 @@ class CaptchaSecurityImages {
 		imagejpeg($image);
 		imagedestroy($image);
 		$_SESSION['security_code'] = $code;
+		$_SESSION['contact_code'] = $code;
 	}
 
 }

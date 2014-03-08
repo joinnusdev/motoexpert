@@ -14,7 +14,11 @@
 
 
 
-
+.caract-content{
+	width:737px;
+	margin:30px 0 0 0px;
+	float:left;
+	}
 
  #gerez{
 	 width:700px;
@@ -1773,5 +1777,20 @@ display: none;
 	margin-left:10px;
 }		
 /*****************************************************************/
+#login-c #new-form{	padding:0px !important;
+	}
 	
+	
+	
+.caract-content{
+	width:300px;
+	margin:30px 0 0 0px;
+	float:left;
+	}
+.caract-wapper{
+	width:270px;
+	margin:0px;
+	padding:5px 15px;
+	float:left;
+	}	
 }

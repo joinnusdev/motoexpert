@@ -1,3 +1,50 @@
+
+<script src="<?=MEDIA_URL ?>js/jquery.validate.js"></script><script>
+/*******************************************/
+$.validator.setDefaults({
+		submitHandler: function() { $( "#formContant" ).submit();}
+});
+
+$().ready(function() {
+	// validate the comment form when it is submitted
+
+
+	// validate signup form on keyup and submit
+	$("#form1").validate({
+		rules: {
+			nom: "required",
+			prenom: "required",
+			adresse: "required",
+			code_postal: "required",
+			ville: "required",
+			telephone: "required",
+			email: {
+				required: true,
+				email: true
+			},
+		},
+		messages: {
+			nom: "Veuillez renseigner le champ nom",
+			prenom: "Veuillez renseigner le champ prenom",
+			adresse: "Veuillez renseigner votre adresse",
+			code_postal: "Veuillez renseigner votre code postal",
+			ville: "Veuillez renseigner votre ville",
+			telephone: "Veuillez renseigner votre telephone",
+			email: "Veuillez renseigner votre email",
+			/*security_code: {
+					required: "Veuillez renseigner votre Code de sécurité",
+					remote: 'code invalid'
+				  }*/
+		}
+	});
+
+
+
+});
+
+
+</script>
+
 <?php
 	    $datos = '';
 	    $nom = '';

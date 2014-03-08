@@ -32,9 +32,18 @@ jQuery(function() {
 		jQuery('#form1').submit();
       });
 });
+$(function() {
+      $('#tienda').change(function() {
+            $('#tienda').submit();
+      });
+});
+$(function() {
+      $('#magasin').change(function() {
+            $('#magasin').submit();
+      });
+});
 </script>
-<script>
-</script>
+
 </head>
 
 <body onLoad="<?php echo (isset($this->login))?'nuevo();':'' ?>">

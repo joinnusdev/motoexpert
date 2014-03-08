@@ -2815,15 +2815,23 @@ label.error {
 	font-size:11px !important;
 	font-weight:normal !important;
 	display: block;
-	width:290px !important;
-	float: left;
+	width:190px !important;
+	float: right !important;
 	text-align:right !important;
 	z-index:9999;
 margin-top:-30px !important;
 }
 div.error { display: none; }
 
-input.error { border: 1px dotted red !important; background:#FFDFDF !important; _margin-bottom:2px !important; display:block; }
+input.error, select.error { border: 1px dotted red !important; background:#FFDFDF !important; background-color:#FFDFDF !important; _margin-bottom:2px !important; display:block; }
+
+.inpcap label.error {
+margin-right:-180px !important;
+margin-top:0px !important;
+width:150px !important;
+text-align: left !important;
+}
+	
 form.cmxform .gray * { color: gray; }
 
 /******************************************************************************************/
@@ -3180,7 +3188,7 @@ form.cmxform .gray * { color: gray; }
 	height:28px;
 	}
 .inpcap input[type="text"]{
-	background-color:#FFF !important;
+	background-color:#FFF;
 	width:98px !important;
 	border:1px solid #666 !important;
 	height:15px !important;
@@ -3244,8 +3252,37 @@ form.cmxform .gray * { color: gray; }
 	text-align:center;
 
 	}
+.actualite-img{
+	width:87px;
+	height:87px;
+	overflow:hidden;
+	float:left;
+	margin-right:10px;
+	margin-bottom:5px;
+	}
 
-
+#new-form textarea{
+	float:left;
+		font-family:Arial, Helvetica, sans-serif;
+	font-size:16px;
+	color:#666666;
+	margin:0 0px 6px 0 ;
+	overflow:auto;
+	width:290px;
+	-webkit-border-radius:4px;
+    -moz-border-radius:4px;
+	padding:5px;
+	border-color:#DDDADA;
+	border:1px solid #DEDEDE;
+    border-radius:4px;
+	background: #e8e8e8; /* Old browsers */
+	background: -moz-linear-gradient(top, #e8e8e8 1%, #fbfbfb 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,#e8e8e8), color-stop(100%,#fbfbfb)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #e8e8e8 1%,#fbfbfb 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #e8e8e8 1%,#fbfbfb 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #e8e8e8 1%,#fbfbfb 100%); /* IE10+ */
+	background: linear-gradient(to bottom, #e8e8e8 1%,#fbfbfb 100%); /* W3C */
+	}
 
 
 
