@@ -109,18 +109,18 @@
         <div class="actualite-col3right">    
         <?php endif;  ?> 
         
-        
-                <?php 
-		
-		list($width, $height, $type, $attr) = getimagesize($ruta);
-
-		if($width > $height){ $sizefile = 'height="87"';}else{ $sizefile = 'width="87"'; }
-		
-		
-		
-		?>
-        
-		<div class="actualite-img"><img  <?php echo $sizefile ?>  src="<?=$ruta;?>"></div>
+		<div class="actualite-img">
+                    <?php
+                    error_reporting(E_ERROR);
+                    if($news['image_1']!=""):
+                        list($width, $height, $type, $attr) = getimagesize($ruta);
+                        if($width > $height){ $sizefile = 'height="87"';}else{ $sizefile = 'width="87"'; }
+                    ?>    
+                    <img  <?php echo $sizefile ?>  src="<?=$ruta;?>">
+                    <?php endif;
+                    ?>
+                    
+                </div>
 		<h3><?= $news['titre']?></h3>
 		<p><?= $news['texte_1']?></p>
 	</div>

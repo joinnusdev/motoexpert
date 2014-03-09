@@ -33,9 +33,7 @@
           <!-- /*************************************************************************************************/-->
 <script>
 /*******************************************/
-jQuery.validator.setDefaults({
-	submitHandler: function() { alert("submitted!"); }
-});
+
 
 jQuery().ready(function() {
 	// validate the comment form when it is submitted
@@ -51,7 +49,7 @@ jQuery().ready(function() {
 			email: {
 				required: true,
 				email: true
-			},
+			}
 		},
 		messages: {
 			nom: "Veuillez renseigner le champ nom",
@@ -60,7 +58,7 @@ jQuery().ready(function() {
 			code_postal: "Veuillez renseigner votre code postal",
 			ville: "Veuillez renseigner votre ville",
 			telephone: "Veuillez renseigner votre telephone",
-			email: "Veuillez renseigner votre email",
+			email: "Veuillez renseigner votre email"
 		}
 	});
 

@@ -1,4 +1,3 @@
-
 <link
 	href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300italic,400italic,700italic,400,300,700'
 	rel='stylesheet' type='text/css'>
@@ -57,8 +56,9 @@
 					<label for="select4" class="selectlabel4"></label>
 					<?=$this->form->category ?>
 					<label for="select5" class="selectlabel1"></label> <label
-						for="select5" class="selectlabel2"></label> <!-- <input type="submit"
-						name="button2" id="button2" class="rechercher" value="RECHERCHER " />-->
+						for="select5" class="selectlabel2"></label>
+                                               <input type="submit" name="button2" id="button2"
+						value="RECHERCHER" />
 				
 			</div>
 			</form>
@@ -87,8 +87,7 @@
                                         ?>
 					MOTO EXPERT <span><?= $resultMaga['ville']?></span>
 				</div>
-				<div class="not-body">
-                                        <?php
+				<div class="not-body">    <?php
                                     $config = Zend_Registry::get('config');
                                     $ruta = $config->app->photoNews.$item['image_1'];
                                     if($item['image_1'] !=""):
@@ -97,6 +96,7 @@
                                             <img src="<?=$ruta;?>" width="200" />
 					</div>
                                     <?php endif; ?>
+                                    
 					<!-- <div class="not-body-img">
 						<img src="<?=MEDIA_URL ?>images/not1.jpg" width="200" />
 					</div>-->
@@ -105,7 +105,7 @@
 					</div>
 					<?= $item["texte_1"]?>
 					<div class="not-btn">
-						<a href="/news/detail/cod_new/<?=$item["id_news"] ?>/mag/<?= $resultMaga['ville']?>" class="btn-not">LIRE LA SUITE</a>
+						<a href="/news/detail/cod_new/<?=$item["id_news"] ?>" class="btn-not">LIRE LA SUITE</a>
 					</div>
 				</div>
 			</div>

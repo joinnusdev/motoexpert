@@ -15,11 +15,18 @@
 
 	</div>
 	<!-- //*** DETAILS  //-->
-	<?php foreach ($this->result as $item):?>
+	<?php 
+        $config = Zend_Registry::get('config');
+        $host = $config->app->photoNews;
+        
+        
+        $url = $_SERVER['HTTP_HOST'].$_SERVER["REQUEST_URI"];
+        
+        foreach ($this->result as $item):?>
 	<div id="details-not">
 		<div class="col2 align-left">
                     <?php
-                     $config = Zend_Registry::get('config');
+                     
                                     $ruta = $config->app->photoNews.$item['image_1'];
                                     if($item['image_1'] !=""):
                     ?>
@@ -31,21 +38,13 @@
 
 		<div class="col2 align-right det-not">
 			<div class="partager det-part">
-				
-                                <!--<script>function fbs_click() 
-                                    {u=location.href;t='titulooooo';window.open("http://www.facebook.com/sharer.php?u="+encodeURIComponent(u)+"&t="+encodeURIComponent(t),
-                                    "sharer","toolbar=0,status=0,width=626,height=436");return false;}
-                                </script>
-                                <a href="http://www.facebook.com/share.php?u=&lt;url&gt;" onclick="return fbs_click()" target="_blank">
-                                    <img alt="Compartir en Facebook" src="http://www.gxportal.com/media/design/style000001/00000001440000001270.png" border="0"/>
-                                </a>-->
+			
                             <a href="javascript: void(0);" 
-                                   onclick="window.open('http://www.facebook.com/sharer.php?u=http://www.motoexpert.fr/',
+                                   onclick="window.open('http://www.facebook.com/sharer.php?u=<?php echo $url;?>',
                                                                                 'ventanacompartir', 
                                                                                 'toolbar=0, status=0, width=650, height=450');"><img
 					src="<?=MEDIA_URL ?>images/p-facebook.jpg" width="26" height="26" /></a>
                             
-                            <!-- <a href="http://twitter.com/home?status=<?php echo urlencode("Leyendo http://www.desarrolloWeb.com/css en DesarrolloWeb.com.");?>">Compartir en Twitter</a> -->
                             
                             <a href="http://twitter.com/home?status=Leyendo  . <?php echo "Noticias"?>.  en  http://www.motoexpert.fr/ " class="btwitter" title="Compartelo en Twitter" target="_blank">
                                 <img src="<?=MEDIA_URL ?>images/p-twitter.jpg" width="26" height="26" />

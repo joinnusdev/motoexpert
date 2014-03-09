@@ -103,8 +103,8 @@ endforeach;
 					<option value="0">TRIER</option>
 					<option value="/annonces?<?= $ruta ?>&trier=date_asc" <?php if ($this->trier == "date_asc") echo "selected ='selected'"  ?>>Date +</option>
 					<option value="/annonces?<?= $ruta ?>&trier=date_desc" <?php if ($this->trier == "date_desc") echo "selected ='selected'"  ?>>Date -</option>
-					<option value="/annonces?<?= $ruta ?>&trier=prix_asc" <?php if ($this->trier == "prix_asc") echo "selected ='selected'"  ?>>Prix +</option>
-					<option value="/annonces?<?= $ruta ?>&trier=prix_desc" <?php if ($this->trier == "prix_desc") echo "selected ='selected'"  ?>>Prix -</option>
+					<option value="/annonces?<?= $ruta ?>&trier=prix_desc" <?php if ($this->trier == "prix_desc") echo "selected ='selected'"  ?>>Prix +</option>
+					<option value="/annonces?<?= $ruta ?>&trier=prix_asc" <?php if ($this->trier == "prix_asc") echo "selected ='selected'"  ?>>Prix -</option>
 				</select>
 			</form>
 		</div>

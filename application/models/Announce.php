@@ -50,26 +50,24 @@ class App_Model_Announce extends App_Db_Table_Abstract {
 		if (isset($datos['magasin']) and $datos['magasin'] != 0 and !is_null($datos))
 			$query.= " AND a.id_me = ".$datos['magasin'];
 
-		if (isset($datos['marque']) and $datos['marque'] != 0) {
+		if (isset($datos['marque']) and !empty($datos['marque'])) {
 			$query.= " AND a.marque = ". '"'.$datos['marque'].'"';
 		}
 		if (isset($datos['modele']) and $datos['modele'] != 0  and !is_null($datos))
 			$query.= " AND m.id_mot = ".$datos['modele'];
 
 		$query.= " group by a.id";
-		if (is_null($trier))
-			$query.= " order by a.date desc";
+		if (is_null($trier) or empty($trier))
+			$query.= " order by a.date asc";
 		else {
 			$trier = explode("_", $trier);
 			if (($trier[0] == "date" || $trier[0] == "prix") and ($trier[1] == "asc" || $trier[0] == "desc"))
 				$query.= " order by a." . $trier[0] . " " . $trier[1];
 		}
-
-
+echo $query;
 		try{
 			$result =  $this->getAdapter()->fetchAll($query);
 			return $result;
-			return $query;
 
 		}catch (Exception $e){
 			var_dump($e->getMessage());
