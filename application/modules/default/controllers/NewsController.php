@@ -22,7 +22,7 @@ class Default_NewsController extends App_Controller_Action_Default
         	if ($datos and !is_null($datos)) {
         
         		$data = @$form->getValues();            
-                        var_dump($datos);
+                        
         		$result = $modelNoticia->listNewsSearch($datos);
                         
         		$this->view->prueba = $data;        		 

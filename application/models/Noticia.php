@@ -10,6 +10,9 @@ class App_Model_Noticia extends App_Db_Table_Abstract {
 		where ca.id_parent !='franchise'
 		and n.titre !=''";
 		
+                if (isset($data['magasin']) and $data['magasin'] > 0) 
+                    $query.= " and ca.id_parent =  'mag_".$data['magasin']."'";
+                
                 
 		try{
 			return $this->getAdapter()->fetchAll($query);
@@ -68,9 +71,5 @@ class App_Model_Noticia extends App_Db_Table_Abstract {
 		return $this->_db->fetchAll($query);
 		 
 	}
-
-
-
-
 
 }
