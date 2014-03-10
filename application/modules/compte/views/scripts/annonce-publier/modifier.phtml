@@ -74,24 +74,28 @@ jQuery.noConflict();
 				<input type="hidden" name="cod_id" value="<?= $this->idannunce ?>"/>
 				<input type="hidden" name="ref" value="<?= $this->caract["ref"] ?>" />
 					<div class="upload-g">
-                    	 <div id="img-delete-1"><?php if(isset($this->photos[1])) { echo '<div class="delete-upload-g"><a href="#"><img src="images/close.png" width="20" height="20"></a></div>'; }?></div>
+                    	 <div id="img-delete-1">
+                             <?php if(isset($this->photos[1])) { echo '<div class="delete-upload-g"><a href="#"><img src="'.MEDIA_URL.'images/close.png" width="20" height="20"></a></div>'; }?>
+                         </div>
 						<div id="img-preview">
 										
-<?php if(isset($this->photos[1])) {?>
-<img src="<?= $this->urlPhoto . $this->photos[1]['nom_fichier'] ?>" width="137" height="102" />
-<input type="hidden" name="foto1" value="<?= $this->photos[1]['id_photo'] ?>"/>
-<?php } else {?>
-<img src="<?=MEDIA_URL ?>images/file-g.jpg" width="137" height="102" />
-<?php } ?>
+                            <?php if(isset($this->photos[1])) {
+                            
+                            ?>
+                            <img src="<?= PHOTO_URL.$this->urlPhoto . $this->photos[1]['nom_fichier'] ?>" width="137" height="102" />
+                            <input type="hidden" name="foto1" value="<?= $this->photos[1]['id_photo'] ?>"/>
+                            <?php } else {?>
+                            <img src="<?=MEDIA_URL ?>images/file-g.jpg" width="137" height="102" />
+                            <?php } ?>
 
 						</div>
 						<?= $this->form->file1 ?>
 					</div>
 					<div class="upload-m">
-                    	 <div id="img-delete-2"><?php if(isset($this->photos[2])) { echo '<div class="delete-upload-g"><a href="#"><img src="images/close.png" width="20" height="20"></a></div>'; }?></div>
+                    	 <div id="img-delete-2"><?php if(isset($this->photos[2])) { echo '<div class="delete-upload-g"><a href="#"><img src="'.MEDIA_URL.'images/close.png" width="20" height="20"></a></div>'; }?></div>
 						<div id="img-preview2">
 <?php if(isset($this->photos[2])) {?>
-<img src="<?= $this->urlPhoto . $this->photos[2]['nom_fichier'] ?>" width="67" height="48" />
+<img src="<?= PHOTO_URL. $this->urlPhoto.$this->photos[2]['nom_fichier'] ?>" width="67" height="48" />
 <input type="hidden" name="foto2" value="<?= $this->photos[2]['id_photo'] ?>"/>
 <?php } else {?>
 <img src="<?=MEDIA_URL ?>images/file-m.jpg" width="67" height="48" />
@@ -101,10 +105,10 @@ jQuery.noConflict();
 						<?= $this->form->file2 ?>
 					</div>
 					<div class="upload-m">
-                     <div id="img-delete-3"><?php if(isset($this->photos[3])) { echo '<div class="delete-upload-g"><a href="#"><img src="images/close.png" width="20" height="20"></a></div>'; }?></div>
+                     <div id="img-delete-3"><?php if(isset($this->photos[3])) { echo '<div class="delete-upload-g"><a href="#"><img src="'.MEDIA_URL.'images/close.png" width="20" height="20"></a></div>'; }?></div>
 						<div id="img-preview3">
 <?php if(isset($this->photos[3])) {?>
-<img src="<?= $this->urlPhoto . $this->photos[3]['nom_fichier'] ?>" width="67" height="48" />
+<img src="<?= PHOTO_URL.$this->urlPhoto.$this->photos[3]['nom_fichier'] ?>" width="67" height="48" />
 <input type="hidden" name="foto3" value="<?= $this->photos[3]['id_photo'] ?>"/>
 <?php } else {?>
 <img src="<?=MEDIA_URL ?>images/file-m.jpg" width="67" height="48" />
@@ -112,10 +116,10 @@ jQuery.noConflict();
 						<?= $this->form->file3 ?>
 					</div>
 					<div class="upload-m">
-                     <div id="img-delete-4"><?php if(isset($this->photos[4])) { echo '<div class="delete-upload-g"><a href="#"><img src="images/close.png" width="20" height="20"></a></div>'; }?></div>
+                     <div id="img-delete-4"><?php if(isset($this->photos[4])) { echo '<div class="delete-upload-g"><a href="#"><img src="'.MEDIA_URL.'images/close.png" width="20" height="20"></a></div>'; }?></div>
 						<div id="img-preview4">
 <?php if(isset($this->photos[4])) {?>
-<img src="<?= $this->urlPhoto . $this->photos[4]['nom_fichier'] ?>" width="67" height="48" />
+<img src="<?= PHOTO_URL.$this->urlPhoto.$this->photos[4]['nom_fichier'] ?>" width="67" height="48" />
 <input type="hidden" name="foto4" value="<?= $this->photos[4]['id_photo'] ?>"/>
 <?php } else {?>
 <img src="<?=MEDIA_URL ?>images/file-m.jpg" width="67" height="48" />
@@ -124,10 +128,10 @@ jQuery.noConflict();
 						<?= $this->form->file4 ?>
 					</div>
 					<div class="upload-m">
-                     <div id="img-delete-5"><?php if(isset($this->photos[5])) { echo '<div class="delete-upload-g"><a href="#"><img src="images/close.png" width="20" height="20"></a></div>'; }?></div>
+                     <div id="img-delete-5"><?php if(isset($this->photos[5])) { echo '<div class="delete-upload-g"><a href="#"><img src="'.MEDIA_URL.'images/close.png" width="20" height="20"></a></div>'; }?></div>
 						<div id="img-preview5">
 <?php if(isset($this->photos[5])) {?>
-<img src="<?= $this->urlPhoto . $this->photos[5]['nom_fichier'] ?>" width="67" height="48" />
+<img src="<?=  PHOTO_URL.$this->urlPhoto . $this->photos[5]['nom_fichier'] ?>" width="67" height="48" />
 <input type="hidden" name="foto5" value="<?= $this->photos[5]['id_photo'] ?>"/>
 <?php } else {?>
 <img src="<?=MEDIA_URL ?>images/file-m.jpg" width="67" height="48" />
@@ -488,7 +492,7 @@ jQuery(function(){
           vfile.onload = (function(thefile) {
             return function(e) {
               document.getElementById('img-preview').innerHTML = '<img  src="'+ e.target.result +'"   class="image-previ-g"/>';
-			  document.getElementById('img-delete-1').innerHTML = '<div class="delete-upload-g"><a href="#"><img src="images/close.png" width="20" height="20"></a></div>';
+			  document.getElementById('img-delete-1').innerHTML = '<div class="delete-upload-g"><a href="#"><img src="<?= MEDIA_URL?>images/close.png" width="20" height="20"></a></div>';
 
             };
           })(f);
@@ -508,7 +512,7 @@ jQuery(function(){
           vfile.onload = (function(thefile) {
             return function(e) {
               document.getElementById('img-preview2').innerHTML = '<img  src="'+ e.target.result +'"  class="image-previ-c"/>';
-			  document.getElementById('img-delete-2').innerHTML = '<div class="delete-upload-g"><a href="#"><img src="images/close.png" width="20" height="20"></a></div>';
+			  document.getElementById('img-delete-2').innerHTML = '<div class="delete-upload-g"><a href="#"><img src="<?= MEDIA_URL?>images/close.png" width="20" height="20"></a></div>';
             };
           })(f);
     
@@ -527,7 +531,7 @@ jQuery(function(){
           vfile.onload = (function(thefile) {
             return function(e) {
               document.getElementById('img-preview3').innerHTML = '<img  src="'+ e.target.result +'"  class="image-previ-c" />';
-			  document.getElementById('img-delete-3').innerHTML = '<div class="delete-upload-g"><a href="#"><img src="images/close.png" width="20" height="20"></a></div>';
+			  document.getElementById('img-delete-3').innerHTML = '<div class="delete-upload-g"><a href="#"><img src="<?= MEDIA_URL?>images/close.png" width="20" height="20"></a></div>';
             };
           })(f);
     
@@ -546,7 +550,7 @@ jQuery(function(){
           vfile.onload = (function(thefile) {
             return function(e) {
               document.getElementById('img-preview4').innerHTML = '<img  src="'+ e.target.result +'"  class="image-previ-c" />';
-			  document.getElementById('img-delete-4').innerHTML = '<div class="delete-upload-g"><a href="#"><img src="images/close.png" width="20" height="20"></a></div>';
+			  document.getElementById('img-delete-4').innerHTML = '<div class="delete-upload-g"><a href="#"><img src="<?= MEDIA_URL?>images/close.png" width="20" height="20"></a></div>';
             };
           })(f);
     
@@ -566,7 +570,7 @@ jQuery(function(){
           vfile.onload = (function(thefile) {
             return function(e) {
               document.getElementById('img-preview5').innerHTML = '<img  src="'+ e.target.result +'"   class="image-previ-c" />';
-			  document.getElementById('img-delete-5').innerHTML = '<div class="delete-upload-g"><a href="#"><img src="images/close.png" width="20" height="20"></a></div>';
+			  document.getElementById('img-delete-5').innerHTML = '<div class="delete-upload-g"><a href="#"><img src="<?= MEDIA_URL?>images/close.png" width="20" height="20"></a></div>';
             };
           })(f);
     

@@ -27,6 +27,7 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap {
         define('MEDIA_URL', $config->app->mediaUrl);
         define('ELEMENTS_URL', $config->app->elementsUrl);
         define('SITE_URL', $config->app->siteUrl);
+        define('PHOTO_URL', $config->app->photoUrl);
 
         // Config Built-in View Helpers
         $doctypeHelper = new Zend_View_Helper_Doctype();

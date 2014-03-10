@@ -32,6 +32,8 @@ class App_Model_Photo extends App_Db_Table_Abstract {
 		->where('id_annonce = ?', $idAnnonce);
 		
 		$result =  $db->fetchAll($query);
+                
+                $total = NULL;
 		
 		foreach ($result as $item):
 			$total[$item['ordre']] = $item;		

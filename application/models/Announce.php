@@ -64,7 +64,7 @@ class App_Model_Announce extends App_Db_Table_Abstract {
 			if (($trier[0] == "date" || $trier[0] == "prix") and ($trier[1] == "asc" || $trier[0] == "desc"))
 				$query.= " order by a." . $trier[0] . " " . $trier[1];
 		}
-echo $query;
+
 		try{
 			$result =  $this->getAdapter()->fetchAll($query);
 			return $result;
@@ -150,7 +150,7 @@ echo $query;
 		left join annonces_photos foto on foto.id_annonce = a.id
 		left join moto_expert moto on  moto.id_me = a.id_me
 		where a.internet <> '0'
-		AND a.modere = '1'
+		AND a.modere = '0'
 		AND a.ispayed = '1'
 		AND a.prov <> 'mebe'
 		and a.id =".$id;
@@ -179,8 +179,10 @@ echo $query;
 	{
 		$query = "SELECT * FROM  annonces a
 		left join annonces_photos ap on a.id = ap.id_annonce
-		WHERE a.id_client = ".$idClient." and a.modere = 1
+		WHERE a.id_client = ".$idClient." and a.modere!=2                         
 		group by a.id";
+                // preguntar si se agrega 
+                //and a.modere = 0
 			
 		try{
 			return $this->getAdapter()->fetchAll($query);

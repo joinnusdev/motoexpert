@@ -139,6 +139,7 @@ class Compte_AnnonceCompleteController extends App_Controller_Action_Default
     		endforeach;
     		// actualizando el anuncio
     		$params['id'] = $params['cod_id'];
+                $params['modere'] = '0';
     		$params['parution'] = ($params['parution'] == "on")?1:0;
     			 
     		

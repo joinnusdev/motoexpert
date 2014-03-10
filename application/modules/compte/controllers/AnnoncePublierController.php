@@ -46,13 +46,17 @@ class Compte_AnnoncePublierController extends App_Controller_Action_Default
 			$params['internet'] = '1';
 			$params['ispayed'] = '1';
 			$params['type_occaz'] = '1';
-			$params['modere'] = '0';
+			$params['modere'] = '2'; //para q no se vea en el listado de mi cuenta luego al guardar las fotos
+                                                // lo pongo 0 para q aparesca en mi cuenta
 			$params['id_cat'] = $params['category'];
 			$params['id_mot'] = $params['modele'];
 			$alea = rand(1000, 9999);
 			$params['ref'] = $params['departement']."000".$params['id_mot'].$alea;
-
-			$id = $modelanunce->saveAnnonce($params);
+                        
+                        $modelDpto = new App_Model_Department();
+                        $resultDpto = $modelDpto->getDepartment($params['departement']);
+                        $params['dpto'] = $resultDpto['nombredpto'];
+                        $id = $modelanunce->saveAnnonce($params);
 			
 			$dataAinfo = $params;
 			$dataAinfo['marque_aut'] = $params['marque'];
@@ -89,6 +93,7 @@ class Compte_AnnoncePublierController extends App_Controller_Action_Default
 
 	public function modifierAction()
 	{
+            
 		$idAnnonce = $this->getParam('annonce', NULL);
 		$modelanunce = new App_Model_Announce();
 		$form = new App_Form_CreateAnnounce();
@@ -146,6 +151,11 @@ class Compte_AnnoncePublierController extends App_Controller_Action_Default
 			$this->view->form = $form;			
 			$photos = $modelPhotos->getPhotosByAnnonce($idAnnonce);
 			$params = $modelanunce->detailAnnounce($idAnnonce);
+                        
+                        if (!$params)
+                            $this->_redirect ('/compte');
+                        
+                        
 			
 			$this->view->photos = $photos;
 			$this->view->urlPhoto = $this->config->app->viewPhotos . $params['departement'] . "/";
@@ -168,6 +178,7 @@ class Compte_AnnoncePublierController extends App_Controller_Action_Default
                                 $dataMoto = $modelMoto->getModelo($params['modele']);
                                 $params['modelo'] = $dataMoto['value'];
                                 $params['departamento'] = $dataDpto['NOM'];
+                                
                                 
                                 $form->populate($params);
 				$this->view->caract = $params;

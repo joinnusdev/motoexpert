@@ -29,7 +29,7 @@ class Default_NewsController extends App_Controller_Action_Default
         		 
         		$paginator = Zend_Paginator::factory($result);
         		$paginator->setCurrentPageNumber($page)
-        		->setItemCountPerPage(2);
+        		->setItemCountPerPage(30);
         		$this->view->result = $paginator;
         		 
         		if ($this->view->result){

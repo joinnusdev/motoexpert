@@ -41,12 +41,29 @@ jQuery.noConflict();
 			<div class="caract-wapper">
 				<div class="caract-286">
 					<div class="result-desc">
-						<div class="result-date"><?= date('d/m/Y', $this->caract['date_crea']) ?></div>
+						<div class="result-date"><?php
+                                                //$d = new App_Date_Calc();
+                                                //echo  $d->daysToDate($this->caract['date_crea'], "%d/%m/%y");
+                                                ?></div>
 						<p>
-							<strong><?= $this->caract['marque'] ?> <?= $this->caract['modele'] ?> 250</strong><br /> <?= $this->caract['id_cat'] ?> - <?= $this->caract['marque'] ?> 
-							<!-- ABS--> -<br> <?= $this->caract['cylindree'] ?> cm3 - <?= $this->caract['km'] ?> km - Année <?= $this->caract['annee'] ?>
+                                                <strong>
+                                                    <?php if($this->caract['marque']!=""){ echo $this->caract['marque'];} ?> 
+                                                    <?php if($this->caract['modele']!=""){ echo $this->caract['modele'];} ?> 
+                                                </strong>
+                                                <br /> 
+                                                    <?php if($this->caract['id_cat']!=""){ echo $this->caract['id_cat'];} ?> - 
+                                                    <?php if($this->caract['marque']!=""){ echo $this->caract['marque'];} ?> 
+                                                <br> 
+                                                    <?php if($this->caract['couleur']!=""){ echo $this->caract['couleur'];} ?> - 
+                                                    <?php if($this->caract['dpto']!=""){ echo $this->caract['dpto'];} ?> 
+                                                <br> 
+                                                    <?php if($this->caract['cylindree']!=""){ echo $this->caract['cylindree']." cm3 -"; }?>   
+                                                    <?php if($this->caract['km']!=""){ echo $this->caract['km']." km - ";} ?>  
+                                                     <?php if($this->caract['annee']!=""){ echo "Année ".$this->caract['annee'];} ?>
 						</p>
+                                                <?php if($this->caract['prix']!=""){ ?>
 						<div class="price"><?= $this->caract['prix'] ?> €</div>
+                                                <?php } ?>
 					</div>
 
 				</div>

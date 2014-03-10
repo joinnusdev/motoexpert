@@ -14,12 +14,12 @@ class App_Model_Department extends App_Db_Table_Abstract {
     
     public function getDepartment($id){
         $query = $this->_db
-        ->select()->from(array('d' => $this->_name), array("numero AS NUM", "CONCAT(numero, ' - ',nom) AS NOM"))
+        ->select()->from(array('d' => $this->_name), array("numero AS NUM", "CONCAT(numero, ' - ',nom) AS NOM","nom as nombredpto"))
         ->where('d.pays = ?', 'fr')
         ->where('d.numero = ?', $id);
-        	
-        
         return $this->_db->fetchRow($query);
     }
+    
+   
     
 }
