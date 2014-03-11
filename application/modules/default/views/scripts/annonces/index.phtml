@@ -78,7 +78,7 @@
 $ruta = "";
 $i=true;
 foreach ($this->prueba as $index => $value):
-if ($value != "0" and !is_null($value) and $index != "page") {
+if ($value != "0" and !is_null($value)) {
 	if ($i) {
 		$ruta.= $index."=".$value;
 	}
