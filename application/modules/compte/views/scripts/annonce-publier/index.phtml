@@ -156,10 +156,10 @@ jQuery.noConflict();
 				</p>
 				<p class="p11">(votre adresse n’apparaît pas en clair sur le site)</p>
 				<p class="pinput">
-					<input type="radio" name="rep_mail" id="radio" value="1"> 
-					<label for="radio">Oui</label> 
-					<input type="radio" name="rep_mail" id="radio" value="0"> 
-					<label for="radio">Non</label>
+					<input type="radio" name="rep_mail" id="radio1" value="1"> 
+					<label for="radio1">Oui</label> 
+					<input type="radio" name="rep_mail" id="radio2" value="0"> 
+					<label for="radio2">Non</label>
 				</p>
 
 
@@ -170,10 +170,10 @@ jQuery.noConflict();
 				</p>
 
 				<p class="pinput">
-					<input type="radio" name="rep_tel" id="radio1" value="1"> 
-					<label for="radio">Oui</label> 
-					<input type="radio" name="rep_tel" id="radio1" value="0"> 
-					<label for="radio">Non</label>
+					<input type="radio" name="rep_tel" id="radio3" value="1"> 
+					<label for="radio3">Oui</label> 
+					<input type="radio" name="rep_tel" id="radio4" value="0"> 
+					<label for="radio4">Non</label>
 				</p>
 
 
@@ -181,10 +181,10 @@ jQuery.noConflict();
 					Faire figurer votre numéro de portable sur votre annonce : <br>
 				</p>
 				<p class="pinput">
-					<input type="radio" name="rep_port" id="radio2" value="1"> 
-					<label for="radio">Oui</label> 
-					<input type="radio" name="rep_port" id="radio2" value="0"> 
-					<label for="radio">Non</label>
+					<input type="radio" name="rep_port" id="radio5" value="1"> 
+					<label for="radio5">Oui</label> 
+					<input type="radio" name="rep_port" id="radio6" value="0"> 
+					<label for="radio6">Non</label>
 				</p>
 
 
@@ -502,7 +502,7 @@ jQuery(function(){
           vfile.onload = (function(thefile) {
             return function(e) {
               document.getElementById('img-preview2').innerHTML = '<img  src="'+ e.target.result +'"   class="image-previ-c"  />';
-			  document.getElementById('img-delete-2').innerHTML = '<div class="delete-upload-g"><a href="#"><img src="images/close.png" width="20" height="20"></a></div>';
+			 // document.getElementById('img-delete-2').innerHTML = '<div class="delete-upload-g"><a href="#"><img src="images/close.png" width="20" height="20"></a></div>';
             };
           })(f);
     

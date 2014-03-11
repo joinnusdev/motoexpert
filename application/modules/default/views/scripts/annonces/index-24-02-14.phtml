@@ -1,0 +1,192 @@
+<div id="content" class="paddin30">
+	<div id="content-top">
+
+		<div class="top-left">
+			MOTO EXPERT <br />
+			<span>MOTOS D'OCCASION</span>
+		</div>
+		<div class="top-right">VOUS VENDEZ VOTRE MOTO? NOUS NOUS OCCUPONS DE
+			TOUT</div>
+	</div>
+	<div class="contentrechercher">
+		<div class="contentrechercher-left">
+			<h2>RECHERCHER UNE MOTO PARMI <?= $this->totalAnuncio['totalAnnounce'];?> VÉHICULES</h2>
+			<p>Rechercher une moto parmi <?= $this->totalAnuncio['totalAnnounce'];?> véhicules d'occasion Vous souhaitez
+				acheter une moto d'occasion. vous trouverez ici des centaines
+				d'annonces récentes, détaillées et mises à jour quotidiennement.</p>
+		</div>
+
+		<div class="contentrechercher-right">
+
+			<form id="form1" name="form1" method="get" action="">
+				<div class="zone">
+					<h2>ZONE GEOGRAPHIQUE</h2>
+					<p>
+						<label for="select3"></label> 
+						<?= $this->form->deparment?> <label for="select2" class="selectlabel1"></label> 
+						<?= $this->form->magasin?> <br /> <br /> <br /> <br />
+					</p>
+					<br />
+
+
+				</div>
+				<div class="vehicule">
+					<h2>VEHICULE</h2>
+					<label for="select4" class="selectlabel4"></label> 
+					<?= $this->form->category?>
+					<label for="select5" class="selectlabel1"></label> 
+					<?= $this->form->marque?>
+					 <label for="select5" class="selectlabel2"></label> 
+					 <?= $this->form->modele?>
+				</div>
+				<input type="submit" name="button2" id="button2" value="RECHERCHER " />
+			</form>
+			<!-- //magasins // -->
+		</div>
+	</div>
+	<div id="poster">
+		<div class="poster-left">VOUS VENDEZ VOTRE MOTO ? NOUS NOUS OCCUPONS
+			DE TOUT</div>
+            <div class="poster-right">POSTER VOTRE ANNONCE
+            </div>
+	</div>
+	<div id="navigation">
+		<div class="resultats"><?php echo $this->total[0] ?> RÉSUTATS TROUVÉS</div>
+		<div class="next-prev">
+			<a href="#" class="nprev">PRECEDENTE</a><a href="" class="nnext">SUIVANTE</a>
+		</div>
+		<div class="trier">
+			<form id="form2" name="form2" method="post" action="">
+				<label for="select6"></label> <select name="select6" id="select6">
+					<option value="0">TRIER</option>
+					<option value="0">TRIER 1</option>
+					<option value="0">TRIER 2</option>
+					<option value="0">TRIER 3</option>
+				</select>
+			</form>
+		</div>
+	</div>
+	<!-- //***   //-->
+	<div id="results-content">
+	<!-- <div class="result-col3 col3no">-->
+	<?php $i=0;if ($this->result)foreach ($this->result as $item):$i++;?>
+		
+			<div class="result-col3 <?php  if ($i % 3 == 0) echo "col3no";?>">
+                                <?php
+                                if($item['id_me']!=""){
+                                ?>
+				<h3>
+					<?= $item['nom']?><span><?= $item['ville']?></span>
+				</h3>
+                                <?php }else{?>
+                                <h3>
+                                    Particulier <span>dep. <?= $item['departement']?></span>
+				</h3>
+                                <?php }?>
+				<div class="result-imgs">
+                                    <?php
+                                    $config = Zend_Registry::get('config');
+                                    $foto = str_replace(",",".",$item['foto']);    
+                                    $ruta = $config->app->photoUrl.$item['departement'].'/'.$foto;
+                                    ?>
+                                    <a href="Fiche-Moto/index/id/<?php echo $item['id'];?>">
+                                        <img src="<?=$ruta;?>" width="300" />
+                                    </a>
+				</div>
+				<div class="result-price"><?=$item['prix']?> €</div>
+				<div class="result-desc">
+					<div class="result-date"><?php echo date('d/m/Y', $item['date']);?></div>
+					<p>
+						<strong><?=$item['titre']?></strong><br /> 
+						<?php echo $item['marque']. " " . $item['modele'] . " " . $item['cylindree']. " cm3 " . $item['km']. " km" . " Année " . $item['annee']?>
+					</p>
+                                        <?php if ($item['controle']==1){?>
+					<a href="#" class="visuel">CONTRÛLE VISUEL</a>
+                                        <?php }?>
+                                        <?php if ($item['isgarantie']==1){?>
+                                        <a href="#" class="garantie">GARANTIE </a>
+                                        <?php }?>
+				</div>
+
+			</div>
+		
+	<?php endforeach; ?>
+		
+
+<!-- fin result -->
+</div>
+
+
+	<div id="navigation">
+		<div class="resultats"><?php echo $this->total[0]; ?> RÉSUTATS TROUVÉS</div>
+		<div class="next-prev">
+			<a href="#" class="nprev">PRECEDENTE</a><a href="" class="nnext">SUIVANTE</a>
+		</div>
+		<div class="trier">
+			<form id="form2" name="form2" method="post" action="">
+				<label for="select6"></label> <select name="select6" id="select6">
+					<option value="0">TRIER</option>
+					<option value="0">TRIER 1</option>
+					<option value="0">TRIER 2</option>
+					<option value="0">TRIER 3</option>
+				</select>
+			</form>
+		</div>
+	</div>
+</div>
+
+<script src="<?php echo MEDIA_URL ?>js/marque-back.js"></script>
+
+<script>
+$(function(){
+    
+    var combodep = {        
+        init : function() {
+           this.Combo("#marque", "#modele", "--- MARQUE ---", "/default/index/get-modele", "id", "value");           
+        },        
+        Combo : function (c, cd, def, url, fieldv, fields) {            
+            
+                var actual = $(c);
+                
+                if (actual.val() != 0) {                    
+                    
+                    $(cd).removeAttr("disabled");
+                    $.ajax({
+                        url: url,
+                        type: 'post',
+                        data: {
+                           id : actual.val()
+                        },
+                        dataType: 'json',                        
+                        success: function(data){
+                                $(cd).html("<option value='0'> -- Modele -- </option>");
+
+
+                                $.each(data, function(index, value){
+                                	var select = ' ';
+                                	if (value[fieldv] == '<?php echo $this->announce['modele']?>')
+                                         var selec = 'selected="selected "';
+                                    
+                                    $(cd).append("<option "+ selec +" value='"+value[fieldv]+"'>"+value[fields]+"</option>");
+                                });
+
+                                
+                        }
+                    });                    
+                } else {
+                    $(cd).html("");
+                    $(cd).append("<option value='0'> -- Modele -- </option>");
+                    $(cd).attr("disabled", "disabled");
+                    
+                    
+                }
+            
+       }
+    };    
+    combodep.init();
+    
+});
+
+
+
+</script>

@@ -1,0 +1,185 @@
+
+<!-- //magasins // -->
+<div id="magasins">
+	<div id="magasins-top">
+     <div class="magasins-tops"></div>
+		<h2>
+			LE RÉSEAU <br>MOTOEXPERT
+		</h2>
+		<div class="magasins-right">› <?= $this->countMagasin['magasin'];?> Magasins en France</div>
+	</div>
+	<div id="magasins-bg">
+		<div class="magasins-content">
+			<p class="magasins-text">Plus de 300 Experts, plus de 40000m²
+				d’exposition à votre service.</p>
+			<div class="magasins-recherchez">
+				<h5>Recherchez votre Magasin</h5>
+				<div class="magasins-form">
+					<form action="magasin" method="get" name="magasin" id="magasin">
+						<label for="select"></label> 
+                                                    <?= $this->formMagasin->magasin?>
+						<input type="submit" value="" id="button" name="button">
+					</form>
+				</div>
+				<img height="104" width="104" src="<?=MEDIA_URL ?>images/magasins-img.jpg">
+                                <p class="visual">VISUALISEZ TOUS LES MAGASINS</p>
+			</div>
+			<h6>Des services pertinents pour simplifier la vie des motards</h6>
+			<div class="magasins-imgs">
+                            <a href="/service"><img title="accrssoires moto" src="<?=MEDIA_URL ?>images/accrssoires-moto.jpg"></a>
+                                <a href="/service"><img title="fan club" src="<?=MEDIA_URL ?>images/fan-club.jpg"></a>
+                                <a href="/service"><img title="service rapide" src="<?=MEDIA_URL ?>images/service-rapide.jpg"></a>
+			</div>
+		</div>
+	</div>
+	<div id="magasins-footer">
+     <div class="magasins-botton"></div>
+		<a class="actualite-linkof" href="/service"><p>DECOUVREZ LA FRANCHISE ET LES SERVICES</p></a>
+	</div>
+
+</div>
+<!-- //occasions // -->
+<div id="occasions">
+	<div id="occasions-top">
+    <div class="occasions-tops"></div>
+		<h2>OCCASION MOTO</h2>
+		<div class="occasions-right">› <?= $this->totalAnuncio['totalAnnounce'];?> annonces moto</div>
+	</div>
+	<div id="occasions-bg">
+		<div class="occasions-content">
+			<p class="occasions-text">Rechercher une moto d’occasion dans notre
+				réseau avec des annonces provenant de toute la France !</p>
+			<div class="occasions-recherchez">
+				<h5>Recherchez une moto d’occasion</h5>
+				<div class="occasions-form">
+					<form action="annonces" method="get" name="form1" id="form1">
+						<label class="selectlabel1" for="select"></label> 
+						<?=$this->form->marque?>
+						
+						 <label class="selectlabel2" for="select"></label> 
+						 <?=$this->form->modele?> 
+						<input type="submit" value="" id="button" name="button">
+					</form>
+				</div>
+				<img height="104" width="104"
+					src="<?=MEDIA_URL ?>images/occasions-img.jpg">
+                                <p class="deposez"><a href="/annonces" >VOIR TOUTES LES ANNONCES</a></p>
+
+			</div>
+			<h6>Des services pertinents pour simplifier la vie des motards</h6>
+			<div class="occasions-imgs">
+                            <a href="/service"><img title="achete cash" src="<?=MEDIA_URL ?>images/achete-cash.jpg"> </a>
+                            <a href="/service"><img title="depot vente" src="<?=MEDIA_URL ?>images/depot-vente.jpg"> </a>
+                            <a href="/service"><img title="votre pa" class="nomargin" src="<?=MEDIA_URL ?>images/votre-pa.jpg"></a>
+			</div>
+		</div>
+	</div>
+	<div id="occasions-footer">
+    <div class="occasions-botton"></div>
+            <?php if ($this->authData){?>
+                <a class="actualite-linkof" href="/compte/annonce-publier"><p>DEPOSEZ VOTRE ANNONCE</p></a>
+            <?php } else {?>
+                <a class="actualite-linkof" href="/login"><p>DEPOSEZ VOTRE ANNONCE</p></a>
+            <?php } ?>
+            
+		
+	</div>
+
+</div>
+<!-- // actualite // -->
+<div id="actualite">
+	<h2>L’ACTUALITÉ MOTO EXPERT</h2>
+	<div class="actualite-col3   actualite-col1">
+		<img height="87" width="87" src="<?=MEDIA_URL ?>images/solde.jpg">
+		<h3>Vive les Soldes d’hiver pour s’équiper pas cher !</h3>
+		<p>Elles débuteront dans votre magasin Moto Expert officiellement le
+			mercredi 11 janvier 2012 à 8 heures</p>
+	</div>
+	<div class="actualite-col3">
+		<img height="87" width="87" src="<?=MEDIA_URL ?>images/people.jpg">
+		<h3>Rejoingnez le Fan Club et bénéficiez du prix Fan* -6%
+			immédiatement !</h3>
+		<p>Rejoingnez le Fan Club et bénéficiez du prix Fan* -6% immédiatement
+			!</p>
+	</div>
+	<div class="actualite-col3right">
+		<img height="87" width="87" src="<?=MEDIA_URL ?>images/house.jpg">
+		<h3>Fermeture du magasin de Saint-Quentin</h3>
+		<p>Le magasin est dorénavant fermé. Nous vous informerons dès sa
+			réouverture.</p>
+	</div>
+	<div>
+		<a class="actualite-link" href="/news">› VOIR TOUTES LES ACTUALITES</a>
+	</div>
+</div>
+
+
+<!-- SLIDE -->
+            <!-- // Slider // -->
+            <div id="sliders">
+                        <!-- start -->
+                        <ul class="bjqs">
+                          <li><img src="<?=MEDIA_URL ?>images/slider/1.jpg" title=""></li>
+                          <li><img src="<?=MEDIA_URL ?>images/slider/2.jpg" title=""></li>
+                          <li><img src="<?=MEDIA_URL ?>images/slider/3.jpg" title=""></li>
+                          <li><img src="<?=MEDIA_URL ?>images/slider/4.jpg" title=""></li>
+                        </ul>
+                        <!-- end -->
+            </div>
+             <!-- // Slider // -->
+
+<!-- FIN SLIDE -->
+
+
+
+
+<div id="inscrire">
+	<div class="inscrire-left">
+		Restez informé de toute l’actualité du site en vous<br> inscrivant à
+		la newsletter :<a href="/mentions">MENTIONS LEGALES</a>
+	</div>
+	<div class="inscrire-right">
+		<form action="" method="post" name="form2" id="form2">
+			<input type="text" placeholder="Votre adresse email" id="textfield"
+				name="textfield"> <input type="submit" value="S’INSCRIRE"
+				id="button2" name="button2">
+		</form>
+		<!-- <a title="facebook" href="http://www.facebook.com">SUIVEZ NOUS</a>-->
+	</div>
+</div>
+
+<script src="<?php echo MEDIA_URL ?>js/bjqs-1.3.min.js"></script>
+<script class="secret-source">
+        jQuery(document).ready(function($) {          
+          $('#sliders').bjqs({       
+          
+			// animation values
+            width    : 985,
+			height   : 395, 			
+			animtype : 'fade', // accepts 'fade' or 'slide'
+			animduration : 450, // how fast the animation are
+			animspeed : 4000, // the delay between each slide
+			automatic : true, // automatic
+			
+			// control and marker configuration
+			showcontrols : true, // show next and prev controls
+			centercontrols : true, // center controls verically
+			nexttext : '<img src="<?=MEDIA_URL?>images/slider/next.png" />', 
+			prevtext : '<img src="<?=MEDIA_URL?>images/slider/prev.png" />', 
+			showmarkers : true, // Show individual slide markers
+			centermarkers : true, // Center markers horizontally
+			
+			// interaction values
+			keyboardnav : true, // enable keyboard navigation
+			hoverpause : true, // pause the slider on hover
+			
+			// presentational options
+			usecaptions : true, // show captions for images using the image title tag
+			randomstart : true, // start slider at random slide
+			responsive : true // enable responsive capabilities (beta)
+			
+					  });
+					  
+					});
+</script>	
+<script src="<?php echo MEDIA_URL ?>js/marque-back.js"></script>

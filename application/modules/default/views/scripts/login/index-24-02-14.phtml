@@ -46,86 +46,7 @@
 } ?>
 	  }
 </script>
-<script src="<?=MEDIA_URL ?>js/jquery.validate.js"></script>
-<script>
-$.validator.setDefaults({
-	submitHandler: function() { $( "#formRegister" ).submit();}
-});
 
-$().ready(function() {
-	// validate the comment form when it is submitted
-
-
-	// validate signup form on keyup and submit
-	$("#formRegister").validate({
-		rules: {
-			nom: "required",
-			prenom: "required",
-			code_postal: "required",
-			adresse: "required",
-			ville: "required",
-			username: {
-				required: true,
-				minlength: 2
-			},
-			pass: {
-				required: true,
-				minlength: 3
-			},
-			passred: {
-				required: true,
-				minlength: 3,
-				equalTo: "#pass"
-			},			
-
-			tell: {
-				required: function(element) {
-							return $("#portable").val() < 3;
-						  },
-				minlength: 3
-			},
-			portable: {
-				required: function(element) {
-							return $("#tell").val() < 3;
-						  },
-				minlength: 3
-			},
-			
-			email: {
-				required: true,
-				email: true
-			},
-			agree: "required"
-		},
-		messages: {
-			code_postal:"Veuillez renseigner votre code postal",
-			nom: "Veuillez renseigner le champ nom",
-			adresse: "Veuillez renseigner votre adresse",
-			prenom: "Veuillez renseigner le champ prenom",
-			ville: "Veuillez renseigner votre ville",
-			portable: "Veuillez renseigner votre Mobile",
-			tell: {
-				required: "Veuillez renseigner le champ Téléphone",
-				minlength: ""
-			},
-			pass: {
-				required: "Veuillez renseigner votre passe",
-				minlength: ""
-			},
-			passred: {
-				required: "Veuillez renseigner votre passe",
-				minlength: "",
-				equalTo: "Veuillez en utiliser un autre pour votre inscription."
-			},
-			email: "Un compte est déjà ouvert sous cet email. ",
-			
-		}
-	});
-
-
-
-});
-</script>
 
 
 <div id="content" class="paddin30"> 
@@ -184,44 +105,37 @@ $().ready(function() {
         	<div id="new-navigation"><a href="#" class="new-prev" onClick="$('#my_lightbox').trigger('close');">RETOUR</a>
         	<p>VOS COORDONNÉES</p> </div>
            
-        <form name="formRegister"  class="cmxform"  id="formRegister" method="post" action="">
+        <form name="formRegister" method="post" action="">
         <p><?php echo ($this->error)?"S'il vous plaît vérifier vos informations":''?></p>
         	<p class="in-radio"> Civilité 
         	<input type="radio" name="civilite" id="radio" value="Mme" checked="checked"/>
               <label for="radio">Mme</label>
-            <input type="radio" name="civilite" id="radio2" value="Mlle"/>
-              <label for="radio2">Mlle</label>
-            <input type="radio" name="civilite" id="radio3" value="M"/>
-              <label for="radio3">Mr</label>
+            <input type="radio" name="civilite" id="radio" value="Mlle"/>
+              <label for="radio">Mlle</label>
+            <input type="radio" name="civilite" id="radio" value="M"/>
+              <label for="radio">Mr</label>
             </p>
           <p><input name="nom" type="text" placeholder="Nom" required="required" value="<?php echo ($nom)?$datos["nom"]:'';?>" /></p>
           <p><input name="prenom" type="text" placeholder="Prénom" required="required" value="<?php echo ($prenom)?$datos["prenom"]:'';?>"/></p>
           <p><input name="adresse" type="text" placeholder="Adresse" required="required" value="<?php echo ($adresse)?$datos["adresse"]:'';?>"/></p>
           <p><input name="code_postal" type="text" placeholder="Code Postal" required="required" value="<?php echo ($code_postal)?$datos["code_postal"]:'';?>"/></p>
           <p><input name="ville" type="text" placeholder="Ville" required="required" value="<?php echo ($ville)?$datos["ville"]:'';?>"/></p>
-          <p>
-            <select name="pays" id="ville" placeholder="Pays" > 
-                <option value="fr">France</option>
-                <option value="al">Allemagne</option>
-                <option value="su">Suisse</option>
-                <option value="be">Belgique</option>
-            </select> 
-          </p>
-          <p><input name="tell"  id="tell" type="text" placeholder="Téléphone"></p>
-          <p><input name="portable" id="portable" type="text" placeholder="Mobile" value="<?php echo ($portable)?$datos["portable"]:'';?>"/></p>
+          <p><input name="pays" type="text" placeholder="Pays"></p>
+          <p><input name="tel" type="text" placeholder="Téléphone"></p>
+          <p><input name="portable" type="text" placeholder="Mobile" required="required" value="<?php echo ($portable)?$datos["portable"]:'';?>"/></p>
           <p><span class="in-text">Je désire être tenu au courant de l’actualité et des nouveautés du site Moto Expert</span>
               <input name="mailing" type="checkbox" value=""/> 
           </p>
             
-            <div id="new-navigation"><span>VOS INFORMATIONS DE CONNEXION</span> </div>
+            <div id="new-navigation"><span>VOS INFORMATIONS DE CONNECTION</span> </div>
             <p>
             <input name="email" type="text" placeholder="Votre adresse Email" required="required" value="<?php echo ($email)?$datos["email"]:'';?>">
             </p>
-          	<p class="new-p14">Vous servira d’identifiant de connexion</p>
-            <p><input name="pass" id="pass" type="password" placeholder="Mot de Passe" required="required"/></p>
-   		    <p><input name="passred" id="passred" type="password" placeholder="Confirmer le mot de Passe" required="required"/></p>
+          	<p class="new-p14">Vous servira d’identifiant de connection</p>
+            <p><input name="pass" type="password" placeholder="Mot de Passe" required="required"/></p>
+   		    <p><input name="passred" type="password" placeholder="Confirmer le mot de Passe" required="required"/></p>
            
-            <p><a href="#" onClick="$('#my_lightbox').trigger('close')" class="btn-submit">ANNULER</a></p>
+            <p><input name="" type="reset" value="ANNULER"></p>
             <p><input name="" type="submit" value="ENREGISTRER"></p>
             
         </form>

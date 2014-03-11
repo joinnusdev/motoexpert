@@ -56,8 +56,7 @@ jQuery.noConflict();
 
 				</div>
 				<div class="caract-408">
-					<strong>Descriptif :</strong><br> <br> Entretien à jour sur
-					facture.<br> 
+					<strong>Descriptif :</strong><br> 
 					<?= $this->caract['descr_site'] ?>
 				</div>
 			</div>
@@ -74,9 +73,7 @@ jQuery.noConflict();
 				<input type="hidden" name="cod_id" value="<?= $this->idannunce ?>"/>
 				<input type="hidden" name="ref" value="<?= $this->caract["ref"] ?>" />
 					<div class="upload-g">
-                    	 <div id="img-delete-1">
-                             <?php if(isset($this->photos[1])) { echo '<div class="delete-upload-g"><a href="#"><img src="'.MEDIA_URL.'images/close.png" width="20" height="20"></a></div>'; }?>
-                         </div>
+                    	 <div id="img-delete-1"></div>
 						<div id="img-preview">
 										
                             <?php if(isset($this->photos[1])) {
@@ -169,10 +166,10 @@ jQuery.noConflict();
 				<p class="p11">(votre adresse n’apparaît pas en clair sur le site)				
 				</p>
 				<p class="pinput">
-					<input type="radio" name="rep_mail" id="radio" value="1" <?php echo ($this->params['rep_mail'] == "1")?'checked="checked"':'' ?>> 
-					<label for="radio">Oui</label> 
-					<input type="radio" name="rep_mail" id="radio" value="0" <?php echo ($this->params['rep_mail'] == "0")?'checked="checked"':'' ?>> 
-					<label for="radio">Non</label>
+					<input type="radio" name="rep_mail" id="radio1" value="1" <?php echo ($this->params['rep_mail'] == "1")?'checked="checked"':'' ?>> 
+					<label for="radio1">Oui</label> 
+					<input type="radio" name="rep_mail" id="radio2" value="0" <?php echo ($this->params['rep_mail'] == "0")?'checked="checked"':'' ?>> 
+					<label for="radio2">Non</label>
 				</p>
 
 
@@ -183,10 +180,10 @@ jQuery.noConflict();
 				</p>
 
 				<p class="pinput">
-					<input type="radio" name="rep_tel" id="radio1" value="1" <?php echo ($this->params['rep_tel'] == "1")?'checked="checked"':'' ?>> 
-					<label for="radio">Oui</label> 
-					<input type="radio" name="rep_tel" id="radio1" value="0" <?php echo ($this->params['rep_tel'] == "0")?'checked="checked"':'' ?>> 
-					<label for="radio">Non</label>
+					<input type="radio" name="rep_tel" id="radio3" value="1" <?php echo ($this->params['rep_tel'] == "1")?'checked="checked"':'' ?>> 
+					<label for="radio3">Oui</label> 
+					<input type="radio" name="rep_tel" id="radio4" value="0" <?php echo ($this->params['rep_tel'] == "0")?'checked="checked"':'' ?>> 
+					<label for="radio4">Non</label>
 				</p>
 
 
@@ -194,10 +191,10 @@ jQuery.noConflict();
 					Faire figurer votre numéro de portable sur votre annonce : <br>
 				</p>
 				<p class="pinput">
-					<input type="radio" name="rep_port" id="radio2" value="1" <?php echo ($this->params['rep_port'] == "1")?'checked="checked"':'' ?>> 
-					<label for="radio">Oui</label> 
-					<input type="radio" name="rep_port" id="radio2" value="0" <?php echo ($this->params['rep_port'] == "0")?'checked="checked"':'' ?>> 
-					<label for="radio">Non</label>
+					<input type="radio" name="rep_port" id="radio5" value="1" <?php echo ($this->params['rep_port'] == "1")?'checked="checked"':'' ?>> 
+					<label for="radio5">Oui</label> 
+					<input type="radio" name="rep_port" id="radio6" value="0" <?php echo ($this->params['rep_port'] == "0")?'checked="checked"':'' ?>> 
+					<label for="radio6">Non</label>
 				</p>
 				<p class="pm16">
 					<input name="parution" type="checkbox" <?php echo ($this->params['parution'] == "1")?'checked="checked"':'' ?>> permettre a Moto Expert de
@@ -492,7 +489,7 @@ jQuery(function(){
           vfile.onload = (function(thefile) {
             return function(e) {
               document.getElementById('img-preview').innerHTML = '<img  src="'+ e.target.result +'"   class="image-previ-g"/>';
-			  document.getElementById('img-delete-1').innerHTML = '<div class="delete-upload-g"><a href="#"><img src="<?= MEDIA_URL?>images/close.png" width="20" height="20"></a></div>';
+			  //document.getElementById('img-delete-1').innerHTML = '<div class="delete-upload-g"><a href="#"><img src="<?= MEDIA_URL?>images/close.png" width="20" height="20"></a></div>';
 
             };
           })(f);

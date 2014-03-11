@@ -35,23 +35,20 @@
                     <?php  endif;?>
 		</div>
 
-
 		<div class="col2 align-right det-not">
 			<div class="partager det-part">
 			
                             <a href="javascript: void(0);" 
-                                   onclick="window.open('http://www.facebook.com/sharer.php?u=<?php echo $url;?>',
+                                   onclick="window.open('http://www.facebook.com/sharer.php?s=100&p[title]=<?= $item["titre"]?>&p[summary]=<?= $item["texte_1"]?>&p[url]=<?php echo urlencode('http://'.$url)?><?php echo urlencode('http://'.$url)?>',
                                                                                 'ventanacompartir', 
                                                                                 'toolbar=0, status=0, width=650, height=450');"><img
 					src="<?=MEDIA_URL ?>images/p-facebook.jpg" width="26" height="26" /></a>
                             
                             
-                            <a href="http://twitter.com/home?status=Leyendo  . <?php echo "Noticias"?>.  en  http://www.motoexpert.fr/ " class="btwitter" title="Compartelo en Twitter" target="_blank">
+                            <a href="http://twitter.com/home?status=<?= $item["titre"]?>.   http://<?php echo $url;?>" class="btwitter" title="<?= $item["titre"]?>" target="_blank">
                                 <img src="<?=MEDIA_URL ?>images/p-twitter.jpg" width="26" height="26" />
-                            </a> 
-                            
-                            
-                            
+                            </a>
+ 
                                 Partager
 				<div class="det-subtitle">
                                         <?php
