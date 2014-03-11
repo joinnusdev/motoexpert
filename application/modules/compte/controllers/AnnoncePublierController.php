@@ -158,7 +158,8 @@ class Compte_AnnoncePublierController extends App_Controller_Action_Default
                         
 			
 			$this->view->photos = $photos;
-			$this->view->urlPhoto = $this->config->app->viewPhotos . $params['departement'] . "/";
+			//$this->view->urlPhoto = $this->config->app->viewPhotos . $params['departement'] . "/";
+			$this->view->urlPhoto = PHOTO_URL . $params['departement'] . "/";
 			//echo $this->view->urlPhoto;exit; 
                         
 			
