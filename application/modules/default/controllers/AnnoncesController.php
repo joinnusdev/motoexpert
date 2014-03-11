@@ -29,6 +29,8 @@ class Default_AnnoncesController extends App_Controller_Action_Default
     			$data = @$form->getValues();    			
     			
     			$result = $modelAnounce->listSearch($data, $trier);
+    		    $data["page"] = $page;
+    		    $data["trier"] = $trier;
     			$this->view->prueba = $data;
     			$paginator = Zend_Paginator::factory($result);
     			$paginator->setCurrentPageNumber($page)
