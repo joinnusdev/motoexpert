@@ -104,7 +104,7 @@
                 	<div class="icontitle icon-contact"><? $telp = str_replace(" ", "", $this->magasinInfo['tel']);?><a href="tel:<? echo $telp;?>">APPELER LE MAGASIN</a></div>
               </div>
               <div class="subtitle3">
-                	<div class="icontitle icon-envoyer"><a href="/contact"  class="btn-smart" >ENVOYER UN MAIL</a><a href="#" onClick="magasinpopup();" class="btn-ipad" >ENVOYER UN MAIL</a></div>
+                	<div class="icontitle icon-envoyer"><a href="/contact"  class="btn-smart" >ENVOYER UN MAIL</a><a href="#" onClick="contactpopup();" class="btn-ipad" >ENVOYER UN MAIL</a></div>
                  </div>
               
             
@@ -219,69 +219,10 @@
     </div>
 <a href="/annonces?magasin=<?= $this->magasinInfo['id_me'];?>" class="block-link-maga btnfoo">› VOIR TOUTES LES OCCASIONS DU MAGASIN </a><br ><br/>
 
-<!--/*********************************************************/--> 
+        <!--/*********************************************************/-->  
+       
+	
+    
 
-<div id="my_contact_magasin" class="contact"> 
-  <div id="wrapper-form">
-    	<div id="new-form">
-        	<div id="new-navigation"><a href="#" class="new-prev" onClick="jQuery('#my_contact').trigger('close');">RETOUR</a>
-        	<p>  </p> </div>
-           
-            <form name="formmagasin"  class="cmxform"  id="formmagasin" method="post" action="/magasin/mail/magasin/<?=$this->magasinInfo['id_me'];?>">
-        <p><?php echo ($this->error)?"S'il vous plaît vérifier vos informations":''?></p>
+</body>
 
-<p><input name="nom" type="text" placeholder="Nom" required value="<?php echo ($nom)?$datos["nom"]:'';?>" /></p>
-<p><input name="prenom" type="text" placeholder="Prénom" required value="<?php echo ($prenom)?$datos["prenom"]:'';?>"/></p>
-<p><input name="adresse" type="text" placeholder="Adresse" required value="<?php echo ($adresse)?$datos["adresse"]:'';?>"/></p>
-          <p><input name="code_postal" type="text" placeholder="Code Postal" required value="<?php echo ($code_postal)?$datos["code_postal"]:'';?>"/></p>
-          <p><input name="ville" type="text" placeholder="Ville" required value="<?php echo ($ville)?$datos["ville"]:'';?>"/></p>
-          <p><input name="telephone"  id="telephone" type="text" placeholder="Téléphone"></p>
-
-            <p>
-            <input name="email" type="text" placeholder="Votre adresse Email" required value="<?php echo ($email)?$datos["email"]:'';?>">
-            <input name="mailTienda" type="hidden" value="<?php echo $this->magasinInfo["email"];?>">
-            <input name="idTienda" type="hidden" value="<?php echo $this->magasinInfo["id_me"];?>">
-            </p>
-<p> 
-<?= $this->formMagasin->magasin?>
-
-</p>
-
-<p> <textarea name="message" id="message" cols="45" rows="5">message</textarea></p>
-<p></p><p></p>
-               <div class="fomrinfo">
-                    	<span>Veuillez saisir les lettres de limage dans le champ situé sous l'image en respectant les majuscules et les minuscules.</span>
-                    <div class="captcha">
-                    	<div class="imgcap"><img src="<?=MEDIA_URL ?>CaptchaSecurityImages.php" /></div>
-                        <div class="inpcap"><input name="" type="text"></div>
-                    </div>
-                   <div class="condition">
-                   	<input name="" type="checkbox" value="" />En cochant cette case, je souhaite recevoir la newsletter Moto Expert
-                   
-                   </div>
-                    
-                    <input name="ENVOYER" type="submit" id="ENVOYER" value="ENVOYER" />
-                    
-                    </div>
-<p></p>
-
-          
-
-            
-        </form>
-    	</div>
-	  
-      
-	</div>
-   </div>
-<!--/*********************************************************/-->  
-   <script>
-    var magasinpopup = function(){  
-    jQuery('#my_contact_magasin').lightbox_me({
-      centered: true,
-      onLoad: function() {
-    	  jQuery('#my_contact_magasin_text').html("Stuff");
-      }
-    });
-  }
-</script>       

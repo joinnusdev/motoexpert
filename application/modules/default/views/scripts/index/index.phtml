@@ -122,7 +122,16 @@
                     
                 </div>
 		<h3><a href="/news/detail/cod_new/<?= $news['id_news'];?>"><?= $news['titre']?></a></h3>
-                <p><?= $news['texte_1']?></p>
+                <p>
+                    <?php
+                        $texto = $news['texte_1'];
+                        $cantidadCaracteres = 85;
+                        $subcadena = substr($texto,0,$cantidadCaracteres);
+                        $indiceUltimoEspacio = strrpos($subcadena," ");
+                        $texto = substr($texto,0, $indiceUltimoEspacio);
+                        echo $texto ." ...";
+                    ?>
+                </p>
 	</div>
 	
         <?php

@@ -48,6 +48,16 @@ class App_Form_CreateAnnounce extends App_Form
         $e->setAttrib('placeholder', "Descriptif");
         $this->addElement($e);
         
+        /*$e = new Zend_Form_Element_Checkbox('prix');
+        $e->setUncheckedValue('');
+        $this->addElement($e);
+        
+        $e = new Zend_Form_Element_Checkbox('pas');
+        $e->setUncheckedValue('');
+        $this->addElement($e);
+        */
+        
+        
         $e = new Zend_Form_Element_Hidden('id');
         $this->addElement($e);
         
