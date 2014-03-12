@@ -12,9 +12,32 @@ class Compte_AnnonceCompleteController extends App_Controller_Action_Default
     {
     	if ($this->_request->isPost()) {
     		
+    		$modifier = $this->getParam('modifier', false);
+    		
     		$form = new App_Form_CreateAnnounce();
+    		$modelPhoto = new App_Model_Photo();
+    		$modelanunce = new App_Model_Announce();
     		
     		$params = $this->_getAllParams();
+    		
+    		if ($modifier) {    			
+    			$totalPhoto = $modelPhoto->getPhotosByAnnonce($params['cod_id']);    			
+    			foreach ($totalPhoto as $item1):
+    				if (!isset($params['foto1']) and $item1['ordre']=="1")
+    			    	$modelPhoto->deletePhotos($item1['id_photo']);
+    			    if (!isset($params['foto2']) and $item1['ordre']=="2")
+    			    	$modelPhoto->deletePhotos($item1['id_photo']);
+    			    if (!isset($params['foto3']) and $item1['ordre']=="3")
+    			    	$modelPhoto->deletePhotos($item1['id_photo']);
+    			    if (!isset($params['foto4']) and $item1['ordre']=="4")
+    			    	$modelPhoto->deletePhotos($item1['id_photo']);
+    			    if (!isset($params['foto5']) and $item1['ordre']=="5")
+    			    	$modelPhoto->deletePhotos($item1['id_photo']);
+    				
+    			endforeach;    	
+    					
+    		}
+    		
     		
     		/*copiamos las imagenes imagenes*/
     		$config = Zend_Registry::get('config');
@@ -44,6 +67,7 @@ class Compte_AnnonceCompleteController extends App_Controller_Action_Default
     		}
     		
     		$file2 = $form->file2->getFileName();
+    		
     		
     		if (!empty ($file2)) {
     			$form->file2->addFilter(
@@ -118,14 +142,12 @@ class Compte_AnnonceCompleteController extends App_Controller_Action_Default
     			);
     			$dataPhotoTotal[] = $dataPhoto;
     		}
-    		
-    		$modelPhoto = new App_Model_Photo();
-    		$modelanunce = new App_Model_Announce();    		
+    		    		
     		// guardando las fotos
     		
     		
     		foreach ($dataPhotoTotal as $items):    		    		
-    			if (isset($params['foto1']))
+    			/*if (isset($params['foto1']))
     			    $modelPhoto->deletePhotos($params['foto1']);
     			if (isset($params['foto2']))
     				$modelPhoto->deletePhotos($params['foto2']);    			
@@ -134,7 +156,7 @@ class Compte_AnnonceCompleteController extends App_Controller_Action_Default
     			if (isset($params['foto4']))
     				$modelPhoto->deletePhotos($params['foto4']);
     			if (isset($params['foto5']))
-    				$modelPhoto->deletePhotos($params['foto5']);    			
+    				$modelPhoto->deletePhotos($params['foto5']);*/    			
     			$modelPhoto->savePhotos($items);
     		endforeach;
     		// actualizando el anuncio
