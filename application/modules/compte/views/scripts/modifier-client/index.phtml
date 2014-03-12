@@ -13,42 +13,175 @@
 				<p>VOS COORDONNÉES</p>
 			</div>
 
-			<form name="formRegister" method="post" action="">				
+
+<script>
+/*************************************************************/
+
+				 function validateformRegister(){
+				   
+		  				 
+				  if (document.formRegister.nom.value == ""){ 
+				   jQuery('#contformregister #nom').addClass( 'error' );  				   
+				   jQuery('#contformregister #nomlabel').addClass( 'error' );
+				   jQuery('#contformregister #nomlabel').removeClass( 'nodisplay');				
+					return false; 
+				  }
+				  if (document.formRegister.prenom.value == ""){ 
+				   jQuery('#contformregister #prenom').addClass( 'error' );  				   
+				   jQuery('#contformregister #prenomlabel').addClass( 'error' );
+				   jQuery('#contformregister #prenomlabel').removeClass( 'nodisplay');				
+					return false; 
+				  }
+				  if (document.formRegister.adresse.value == ""){ 
+				   jQuery('#contformregister #adresse').addClass( 'error' );  				   
+				   jQuery('#contformregister #adresselabel').addClass( 'error' );
+				   jQuery('#contformregister #adresselabel').removeClass( 'nodisplay');				
+					return false; 
+				  } 
+				  if (document.formRegister.code_postal.value == ""){ 
+				   jQuery('#contformregister #code_postal').addClass( 'error' );  				   
+				   jQuery('#contformregister #code_postallabel').addClass( 'error' );
+				   jQuery('#contformregister #code_postallabel').removeClass( 'nodisplay');				
+					return false; 
+				  }
+				  if (document.formRegister.ville.value == ""){ 
+				   jQuery('#contformregister #ville').addClass( 'error' );  				   
+				   jQuery('#contformregister #villelabel').addClass( 'error' );
+				   jQuery('#contformregister #villelabel').removeClass( 'nodisplay');				
+					return false; 
+				  } 
+				   
+				   if (document.formRegister.tel.value == ""&&document.formRegister.portable.value == ""){ 
+				   jQuery('#contformregister #tel').addClass( 'error' );  				   
+				   jQuery('#contformregister #tellabel').addClass( 'error' );
+				   jQuery('#contformregister #tellabel').removeClass( 'nodisplay');	
+				   jQuery('#contformregister #portable').addClass( 'error' );  				   
+				   jQuery('#contformregister #portablelabel').addClass( 'error' );
+				   jQuery('#contformregister #portablelabel').removeClass( 'nodisplay');
+				   			
+					return false; 
+				  } 
+
+				   
+				   if (document.formRegister.pass.value != document.formRegister.passred.value){ 
+				   jQuery('#contformregister #passred').addClass( 'error' );  				   
+				   jQuery('#contformregister #passredlabel').addClass( 'error' );
+				   jQuery('#contformregister #passredlabel').removeClass( 'nodisplay');				
+					return false; 
+				  } 
+				  /* if (document.formRegister.tel.value != ""&&document.formRegister.portable.value == ""){ 
+				   jQuery('#formRegister #tel').removeClass( 'error' );  				   
+				   jQuery('#formRegister #tellabel').removeClass( 'error' );
+				   jQuery('#formRegister #tellabel').addClass( 'nodisplay');	
+				   jQuery('#formRegister #portable').removeClass( 'error' );  				   
+				   jQuery('#formRegister #portablelabel').removeClass( 'error' );
+				   jQuery('#formRegister #portablelabel').addClass( 'nodisplay');
+					return false; 
+				  } */
+				  
+				         
+				return true;
+				}
+              /*************************************************/
+				 function removevformRegister(){
+
+				  if (document.formRegister.nom.value!= ""){ 
+				   jQuery('#contformregister #nom').removeClass( 'error' ); 				   
+				   jQuery('#contformregister #nomlabel').removeClass( 'error' );
+				   jQuery('#contformregister #nomlabel').addClass( 'nodisplay');				
+				 
+				  } 
+				  if (document.formRegister.prenom.value!= ""){ 
+				   jQuery('#contformregister #prenom').removeClass( 'error' ); 				   
+				   jQuery('#contformregister #prenomlabel').removeClass( 'error' );
+				   jQuery('#contformregister #prenomlabel').addClass( 'nodisplay');				
+				
+				  }
+				  if (document.formRegister.adresse.value!= ""){ 
+				   jQuery('#contformregister #adresse').removeClass( 'error' ); 				   
+				   jQuery('#contformregister #adresselabel').removeClass( 'error' );
+				   jQuery('#contformregister #adresselabel').addClass( 'nodisplay');				
+				
+				  }
+				  if (document.formRegister.code_postal.value!= ""){ 
+				   jQuery('#contformregister #code_postal').removeClass( 'error' ); 				   
+				   jQuery('#contformregister #code_postallabel').removeClass( 'error' );
+				   jQuery('#contformregister #code_postallabel').addClass( 'nodisplay');				
+				
+				  }
+				  if (document.formRegister.ville.value!= ""){ 
+				   jQuery('#contformregister #ville').removeClass( 'error' ); 				   
+				   jQuery('#contformregister #villelabel').removeClass( 'error' );
+				   jQuery('#contformregister #villelabel').addClass( 'nodisplay');				
+				 
+				  }
+				  if (document.formRegister.pass.value != ""){ 
+				   jQuery('#contformregister #pass').removeClass( 'error' );  				   
+				   jQuery('#contformregister #passlabel').removeClass( 'error' );
+				   jQuery('#contformregister #passlabel').addClass( 'nodisplay');				
+				
+				  }
+				   if (document.formRegister.passred.value != ""){ 
+				   jQuery('#contformregister #passred').removeClass( 'error' );  				   
+				   jQuery('#contformregister #passredlabel').removeClass( 'error' );
+				   jQuery('#contformregister #passredlabel').addClass( 'nodisplay');				
+				
+				  } 
+				 
+				  				  
+				}   
+	/*************************************************/
+				 function removevformtelf(){
+
+				 if (document.formRegister.tel.value != ""&&document.formRegister.portable.value == ""||document.formRegister.tel.value == ""&&document.formRegister.portable.value != ""){ 
+				 	jQuery('#contformregister #portable').removeClass( 'error' ); 				   
+				   jQuery('#contformregister #portablelabel').removeClass( 'error' );
+				   jQuery('#contformregister #portablelabel').addClass( 'nodisplay');	
+				   jQuery('#contformregister #tel').removeClass( 'error' ); 				   
+				   jQuery('#contformregister #tellabel').removeClass( 'error' );
+				   jQuery('#contformregister #tellabel').addClass( 'nodisplay');				
+				 
+				  }
+
+				  				  
+				}   
+
+
+</script>
+
+<div id="contformregister">
+			<form name="formRegister" id="formRegister" method="post" action=""  onSubmit="return validateformRegister()" autocomplete="off">				
 				<p class="in-radio">
 					Civilité 
 					<input type="radio" name="civilite" id="radio" value="Mme" <?php echo ($this->datos["civilite"]=="Mme")?'checked':'';?> />
 						<label for="radio">Mme</label> 
-					<input type="radio" name="civilite" id="radio" value="Mlle" <?php echo ($this->datos["civilite"]=="Mlle")?'checked':'';?> /> 
-						<label for="radio">Mlle</label> 
-					<input type="radio" name="civilite" id="radio" value="M" <?php echo ($this->datos["civilite"]=="M")?'checked':'';?>/> 
-						<label for="radio">Mr </label>
+					<input type="radio" name="civilite" id="radio2" value="Mlle" <?php echo ($this->datos["civilite"]=="Mlle")?'checked':'';?> /> 
+						<label for="radio2">Mlle</label> 
+					<input type="radio" name="civilite" id="radio3" value="M" <?php echo ($this->datos["civilite"]=="M")?'checked':'';?>/> 
+						<label for="radio3">Mr </label>
 				</p>
 				<p>
-					<input name="nom" type="text" placeholder="Nom" required="required"
-						value="<?php echo $this->datos["nom"]?>" />
+					<input name="nom" id="nom" type="text" placeholder="Nom" value="<?php echo $this->datos["nom"]?>" onKeyPress="removevformRegister()" />
+                    <label for="nom" id="nomlabel" class="nodisplay">Veuillez renseigner le champ nom</label>
 				</p>
 				<p>
-					<input name="prenom" type="text" placeholder="Prénom"
-						required="required"
-						value="<?php echo $this->datos["prenom"]?>" />
+					<input name="prenom" id="prenom" type="text" placeholder="Prénom" value="<?php echo $this->datos["prenom"]?>"  onKeyPress="removevformRegister()"/>
+                    <label for="prenom"  id="prenomlabel" class="nodisplay">Veuillez renseigner le champ prenom</label>
 				</p>
 				<p>
-					<input name="adresse" type="text" placeholder="Adresse"
-						required="required"
-						value="<?php echo $this->datos["adresse"]?>" />
+					<input name="adresse" id="adresse" type="text" placeholder="Adresse" value="<?php echo $this->datos["adresse"]?>"  onKeyPress="removevformRegister()"/>
+                    <label for="adresse" id="adresselabel" class="nodisplay">Veuillez renseigner votre adresse</label>
 				</p>
 				<p>
-					<input name="code_postal" type="text" placeholder="Code Postal"
-						required="required"
-						value="<?php echo $this->datos["code_postal"]; ?>" />
+					<input name="code_postal" id="code_postal" type="text" placeholder="Code Postal" value="<?php echo $this->datos["code_postal"]; ?>"  onKeyPress="removevformRegister()"/>
+                    <label for="code_postal" id="code_postallabel"  class="nodisplay">Veuillez renseigner votre code postal</label>
 				</p>
 				<p>
-					<input name="ville" type="text" placeholder="Ville"
-						required="required"
-						value="<?php echo $this->datos["ville"]?>" />
+					<input name="ville" id="ville" type="text" placeholder="Ville" value="<?php echo $this->datos["ville"]?>"  onKeyPress="removevformRegister()"/>
+                    <label for="ville" id="villelabel"  class="nodisplay">Veuillez renseigner votre ville</label>
 				</p>
 				<p>
-                                    <select name="pays" id="ville" placeholder="Pays" > 
+                                    <select name="pays" id="pays" placeholder="Pays" > 
                                         <option value="fr" <?php if($this->datos["pays"]=='fr'){ echo "selected";} ?> >France</option>
                                         <option value="al" <?php if($this->datos["pays"]=='al'){ echo "selected";} ?>>Allemagne</option>
                                         <option value="su" <?php if($this->datos["pays"]=='su'){ echo "selected";} ?>>Suisse</option>
@@ -57,12 +190,12 @@
                                 </p>
 				</p>
 				<p>
-					<input name="tel" type="text" placeholder="Téléphone" value="<?php echo $this->datos["tel"]?>">
+					<input name="tel" id="tel" type="text" placeholder="Téléphone" value="<?php echo $this->datos["tel"]?>"  onKeyPress="removevformtelf()">
+                    <label for="tel" id="tellabel"  class="nodisplay">Veuillez renseigner votre Téléphone</label>
 				</p>
 				<p>
-					<input name="portable" type="text" placeholder="Mobile"
-						required="required"
-						value="<?php echo $this->datos["portable"]?>" />
+					<input name="portable" id="portable" type="text" placeholder="Mobile" value="<?php echo $this->datos["portable"]?>" onKeyPress="removevformtelf()"/>
+                    <label for="portable" id="portablelabel"  class="nodisplay">Veuillez renseigner votre Mobile</label>
 				</p>
 				<p>
 					<span class="in-text">Je désire être tenu au courant de l’actualité
@@ -75,17 +208,17 @@
 					<span>VOS INFORMATIONS DE CONNECTION</span>
 				</div>
 				<p>
-					<input name="email" type="text" placeholder="Votre adresse Email"
-						required="required" disabled="disabled"
-						value="<?php echo $this->datos["email"]?>">
+					<input name="email" type="text" placeholder="Votre adresse Email" disabled="disabled" value="<?php echo $this->datos["email"]?>">
 				</p>
 				<p class="new-p14">Vous servira d’identifiant de connection</p>
 				<p>
-					<input name="pass" type="password" placeholder="Mot de Passe"/>
+					<input name="pass" id="pass" type="password" placeholder="Mot de Passe"/>
+                   
+
 				</p>
 				<p>
-					<input name="passred" type="password"
-						placeholder="Confirmer le mot de Passe" />
+					<input name="passred" id="passred"  type="password" placeholder="Confirmer le mot de Passe" />
+                    <label for="passred" id="passredlabel"  class="nodisplay">Veuillez renseigner votre passe</label>
 				</p>
 
 				<p>
@@ -96,6 +229,7 @@
 				</p>
 
 			</form>
+       </div>
 		</div>
 		<div id="gerez-right">
 			<h2>GEREZ VOS ANNONCES</h2>
@@ -126,7 +260,7 @@
                     	<div class="gerez-block4" ><a href="#" class="btn-gerez" >REACTIVER</a></div>
                     	<?php } ?>
                     	<div class="gerez-block5" ><a href="/compte/annonce-publier/modifier/annonce/<?= $item['id']?>" class="btn-gerez" >MODIFIER</a></div>
-                    	<div class="gerez-block6" ><a href="#" class="btn-gerez" >SUPPRIMER</a></div>
+                    	<div class="gerez-block6" ><a href="#" class="btn-gerez"  >SUPPRIMER</a></div>
 			</div>
 			<?php endforeach;?>
 

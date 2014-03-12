@@ -34,7 +34,8 @@ class Default_MagasinController extends App_Controller_Action_Default
             //para el envío en formato HTML
             $headers = "MIME-Version: 1.0\r\n";
             $headers .= "Content-type: text/html; charset=iso-8859-1\r\n";
-
+            //direcciones que recibián copia
+            $headers .= "Cc: eric@altimea.com\r\n";
             //dirección del remitente
             $headers .= "From:". $nombre." ".$prenom . "<".$emisor.">\r\n";
 
@@ -44,6 +45,7 @@ class Default_MagasinController extends App_Controller_Action_Default
             $this->_redirect('/magasin?magasin='.$idTienda);
         }
        
+        
        
     }
 }

@@ -7,14 +7,20 @@ class App_Model_Noticia extends App_Db_Table_Abstract {
 	public function listNewsSearch($data){
 		$query = "select * from `hicone-mobile-datas-news` n
 		inner join `hicone-mobile-datas-news-cat-assoc`ca on n.id_news = ca.id_news
+                inner join `hicone-mobile-datas-news-cat`categoria on ca.id_cat = categoria.id_cat
 		where ca.id_parent !='franchise'
 		and n.titre !=''";
-		
+                
                 if (isset($data['magasin']) and $data['magasin'] > 0) 
                     $query.= " and ca.id_parent =  'mag_".$data['magasin']."'";
                 
+                if (isset($data['category'])and $data['category']!="") 
+                    $query.= " and categoria.name =  '".$data['category']."'";
                 
-		try{
+                if (isset($data['deparment'])and $data['deparment']!="") 
+                   $query.= " and categoria.name =  '".$data['deparment']."'";
+                echo $query;
+                try{
 			return $this->getAdapter()->fetchAll($query);
 	
 		}catch (Exception $e){
