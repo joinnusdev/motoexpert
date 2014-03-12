@@ -23,6 +23,8 @@ class Default_AnnoncesController extends App_Controller_Action_Default
     	$this->view->form = $form;
     	$page = $this->_getParam('page', 1);
     	$trier = $this->_getParam('trier', NULL);
+    	$this->view->page = $page;
+    	$this->view->trier = $trier;
     	
     	if ($this->_request->isGet() or $this->_request->isPost()) {    		    		
     		if ($datos and !is_null($datos)) {

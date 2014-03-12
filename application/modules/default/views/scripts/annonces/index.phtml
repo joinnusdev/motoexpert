@@ -79,7 +79,7 @@
 $ruta = "";
 $i=true;
 foreach ($this->prueba as $index => $value):
-if ($value != "0" and !is_null($value)) {
+if ($value != "0" and !is_null($value) and $index != "page" and $index != "trier") {
 	if ($i) {
 		$ruta.= $index."=".$value;
 	}
@@ -91,21 +91,22 @@ if ($value != "0" and !is_null($value)) {
 
 endforeach;
 ?>		
-		
+<?php $page = ''; if (isset($this->page) and $this->page > 1) $page="&page=".$this->page;?>		
 			
-<?php echo $this->paginationControl($this->result, 'Sliding', '_pag.phtml', array('prueba' => $this->prueba, 'ruta' => $ruta));?>		
+<?php echo $this->paginationControl($this->result, 'Sliding', '_pag.phtml', array('prueba' => $this->prueba, 'ruta' => $ruta, 'trier' => $this->trier));?>		
 			
 			
 		</div>		
 		<div class="trier">
 			<form id="form" name="form" method="post" action="">
-				<label for="select6"></label> 
+				<label for="select6"></label>
+				 
 				<select name="trier" id="trier"  onchange="this.form.action = this.value; this.disabled = true; this.form.submit()" >
 					<option value="0">TRIER</option>
-					<option value="/annonces?<?= $ruta ?>&trier=date_asc" <?php if ($this->trier == "date_asc") echo "selected ='selected'"  ?>>Date +</option>
-					<option value="/annonces?<?= $ruta ?>&trier=date_desc" <?php if ($this->trier == "date_desc") echo "selected ='selected'"  ?>>Date -</option>
-					<option value="/annonces?<?= $ruta ?>&trier=prix_desc" <?php if ($this->trier == "prix_desc") echo "selected ='selected'"  ?>>Prix +</option>
-					<option value="/annonces?<?= $ruta ?>&trier=prix_asc" <?php if ($this->trier == "prix_asc") echo "selected ='selected'"  ?>>Prix -</option>
+					<option value="/annonces?<?= $ruta ?>&trier=date_asc<?= $page?>" <?php if ($this->trier == "date_asc") echo "selected ='selected'"  ?>>Date +</option>
+					<option value="/annonces?<?= $ruta ?>&trier=date_desc<?= $page?>" <?php if ($this->trier == "date_desc") echo "selected ='selected'"  ?>>Date -</option>
+					<option value="/annonces?<?= $ruta ?>&trier=prix_desc<?= $page?>" <?php if ($this->trier == "prix_desc") echo "selected ='selected'"  ?>>Prix +</option>
+					<option value="/annonces?<?= $ruta ?>&trier=prix_asc<?= $page?>" <?php if ($this->trier == "prix_asc") echo "selected ='selected'"  ?>>Prix -</option>
 				</select>
 			</form>
 		</div>
@@ -171,7 +172,7 @@ endforeach;
 	<div id="navigation">
 		<div class="resultats"><?php echo $this->total; ?> RÉSUTATS TROUVÉS</div>
 		<div class="next-prev">
-		<?php echo $this->paginationControl($this->result, 'Sliding', '_pag.phtml', array('prueba' => $this->prueba, 'ruta' => $ruta));?>		
+<?php echo $this->paginationControl($this->result, 'Sliding', '_pag.phtml', array('prueba' => $this->prueba, 'ruta' => $ruta, 'trier' => $this->trier));?>		
 		</div>
 		<!-- <div class="trier">
 			<form id="form2" name="form2" method="post" action="">
