@@ -88,8 +88,26 @@ jQuery.noConflict();
 						</div>
 						<?= $this->form->file1 ?>
 					</div>
+                    <script>
+                    function deleteimage2(){						
+						 jQuery("#img-preview2").html('<img src="<?=MEDIA_URL ?>images/file-m.jpg" width="67" height="48" />');
+						 jQuery("#img-delete-2").html('');
+						}
+					function deleteimage3(){						
+						 jQuery("#img-preview3").html('<img src="<?=MEDIA_URL ?>images/file-m.jpg" width="67" height="48" />');
+						 jQuery("#img-delete-3").html('');
+						}
+					function deleteimage4(){						
+						 jQuery("#img-preview4").html('<img src="<?=MEDIA_URL ?>images/file-m.jpg" width="67" height="48" />');
+						 jQuery("#img-delete-4").html('');
+						}
+					function deleteimage5(){						
+						 jQuery("#img-preview5").html('<img src="<?=MEDIA_URL ?>images/file-m.jpg" width="67" height="48" />');
+						 jQuery("#img-delete-5").html('');
+						}
+                    </script>
 					<div class="upload-m">
-                    	 <div id="img-delete-2"><?php if(isset($this->photos[2])) { echo '<div class="delete-upload-g"><a href="#"><img src="'.MEDIA_URL.'images/close.png" width="20" height="20"></a></div>'; }?></div>
+                    	 <div id="img-delete-2"><?php if(isset($this->photos[2])) { echo '<div class="delete-upload-g"><a href="javascript:deleteimage2();"  onclick="return confirm(\'Etes-vous sûr de vouloir supprimer la photo ?\')"><img src="'.MEDIA_URL.'images/close.png" width="20" height="20"></a></div>'; }?></div>
 						<div id="img-preview2">
 <?php if(isset($this->photos[2])) {?>
 <img src="<?= PHOTO_URL. $this->urlPhoto.$this->photos[2]['nom_fichier'] ?>" width="67" height="48" />
@@ -102,7 +120,7 @@ jQuery.noConflict();
 						<?= $this->form->file2 ?>
 					</div>
 					<div class="upload-m">
-                     <div id="img-delete-3"><?php if(isset($this->photos[3])) { echo '<div class="delete-upload-g"><a href="#"><img src="'.MEDIA_URL.'images/close.png" width="20" height="20"></a></div>'; }?></div>
+                     <div id="img-delete-3"><?php if(isset($this->photos[3])) { echo '<div class="delete-upload-g"><a href="javascript:deleteimage3();""  onclick="return confirm(\'Etes-vous sûr de vouloir supprimer la photo ?\')"><img src="'.MEDIA_URL.'images/close.png" width="20" height="20"></a></div>'; }?></div>
 						<div id="img-preview3">
 <?php if(isset($this->photos[3])) {?>
 <img src="<?= PHOTO_URL.$this->urlPhoto.$this->photos[3]['nom_fichier'] ?>" width="67" height="48" />
@@ -113,7 +131,7 @@ jQuery.noConflict();
 						<?= $this->form->file3 ?>
 					</div>
 					<div class="upload-m">
-                     <div id="img-delete-4"><?php if(isset($this->photos[4])) { echo '<div class="delete-upload-g"><a href="#"><img src="'.MEDIA_URL.'images/close.png" width="20" height="20"></a></div>'; }?></div>
+                     <div id="img-delete-4"><?php if(isset($this->photos[4])) { echo '<div class="delete-upload-g"><a href="javascript:deleteimage4();"  onclick="return confirm(\'Etes-vous sûr de vouloir supprimer la photo ?\')"><img src="'.MEDIA_URL.'images/close.png" width="20" height="20"></a></div>'; }?></div>
 						<div id="img-preview4">
 <?php if(isset($this->photos[4])) {?>
 <img src="<?= PHOTO_URL.$this->urlPhoto.$this->photos[4]['nom_fichier'] ?>" width="67" height="48" />
@@ -125,7 +143,7 @@ jQuery.noConflict();
 						<?= $this->form->file4 ?>
 					</div>
 					<div class="upload-m">
-                     <div id="img-delete-5"><?php if(isset($this->photos[5])) { echo '<div class="delete-upload-g"><a href="#"><img src="'.MEDIA_URL.'images/close.png" width="20" height="20"></a></div>'; }?></div>
+                     <div id="img-delete-5"><?php if(isset($this->photos[5])) { echo '<div class="delete-upload-g"><a href="javascript:deleteimage5();"  onclick="return confirm(\'Etes-vous sûr de vouloir supprimer la photo ?\')"><img src="'.MEDIA_URL.'images/close.png" width="20" height="20"></a></div>'; }?></div>
 						<div id="img-preview5">
 <?php if(isset($this->photos[5])) {?>
 <img src="<?=  PHOTO_URL.$this->urlPhoto . $this->photos[5]['nom_fichier'] ?>" width="67" height="48" />
@@ -304,6 +322,141 @@ jQuery.noConflict();
 
 	</div>
 </div>
+ <script>
+
+				 function validateform1(){
+				   
+				 if (document.getElementById("deparment").value == "0"&&document.getElementById("category").value == "0"&&document.getElementById("marque").value == "0"&&document.getElementById("modele").value == "0"&&document.getElementById("annee").value == ""&&document.getElementById("cylindree").value == ""&&document.getElementById("couleur").value == ""&&document.getElementById("km").value == ""&&document.getElementById("prix").value == ""){ 
+					jQuery('#deparment').addClass( 'error' );
+					jQuery('#category').addClass( 'error' );
+					jQuery('#marque').addClass( 'error' );  
+					jQuery('#modele').addClass( 'error' );				   			
+				   jQuery('#annee').addClass( 'error' );  				   
+				   jQuery('#anneelabel').addClass( 'error' );
+				   jQuery('#anneelabel').removeClass( 'nodisplay');
+				   jQuery('#cylindree').addClass( 'error' );  				   
+				   jQuery('#cylindreelabel').addClass( 'error' );
+				   jQuery('#cylindreelabel').removeClass( 'nodisplay');
+				   jQuery('#couleur').addClass( 'error' );  				   
+				   jQuery('#couleurlabel').addClass( 'error' );
+				   jQuery('#couleurlabel').removeClass( 'nodisplay');	
+				   jQuery('#km').addClass( 'error' );  				   
+				   jQuery('#kmlabel').addClass( 'error' );
+				   jQuery('#kmlabel').removeClass( 'nodisplay');
+				   jQuery('#prix').addClass( 'error' );  				   
+				   jQuery('#prixlabel').addClass( 'error' );
+				   jQuery('#prixlabel').removeClass( 'nodisplay');
+				   	return false; 
+				  }
+				
+				  if (document.getElementById("deparment").value == "0"){ 
+				   jQuery('#deparment').addClass( 'error' );  				   
+				   //$('#nomlabel').addClass( 'error' );
+				  // $('#nomlabel').removeClass( 'nodisplay');				
+					return false; 
+				  }
+				 if (document.getElementById("category").value == "0"){ 
+				   jQuery('#category').addClass( 'error' );  				   
+				   //$('#prenomlabel').addClass( 'error' );
+				   //$('#prenomlabel').removeClass( 'nodisplay');				
+					return false; 
+				  }
+				  if (document.getElementById("marque").value == "0"){ 
+				  jQuery('#marque').addClass( 'error' );  				   
+				   //$('#adresselabel').addClass( 'error' );
+				   //$('#adresselabel').removeClass( 'nodisplay');				
+					return false; 
+				  } 
+				  if (document.getElementById("modele").value == "0"){ 
+				   jQuery('#modele').addClass( 'error' );  				   
+				  // $('#code_postallabel').addClass( 'error' );
+				  // $('#code_postallabel').removeClass( 'nodisplay');				
+					return false; 
+				  }
+				  if (document.getElementById("annee").value == ""){ 
+				   jQuery('#annee').addClass( 'error' );  				   
+				   jQuery('#anneelabel').addClass( 'error' );
+				   jQuery('#anneelabel').removeClass( 'nodisplay');				
+					return false; 
+				  } 
+				   if (document.getElementById("cylindree").value == ""){ 
+				   jQuery('#cylindree').addClass( 'error' );  				   
+				   jQuery('#cylindreelabel').addClass( 'error' );
+				   jQuery('#cylindreelabel').removeClass( 'nodisplay');				
+					return false; 
+				  }
+				   if (document.getElementById("couleur").value == ""){ 
+				   jQuery('#couleur').addClass( 'error' );  				   
+				   jQuery('#couleurlabel').addClass( 'error' );
+				   jQuery('#couleurlabel').removeClass( 'nodisplay');				
+					return false; 
+				  }				  
+				  if (document.getElementById("km").value == ""){ 
+				   jQuery('#km').addClass( 'error' );  				   
+				   jQuery('#kmlabel').addClass( 'error' );
+				   jQuery('#kmlabel').removeClass( 'nodisplay');				
+					return false; 
+				  } 
+        		if (document.getElementById("prix").value == ""){ 
+				   jQuery('#prix').addClass( 'error' );  				   
+				   jQuery('#prixlabel').addClass( 'error' );
+				   jQuery('#prixlabel').removeClass( 'nodisplay');				
+					return false; 
+				  } 
+				return true;
+				}
+              /*************************************************/
+				 function removevalidateform1(){
+
+				 if (document.getElementById("deparment").value != "0"){ 
+				   jQuery('#deparment').removeClass( 'error' );  	
+				  }
+				   if (document.getElementById("category").value != "0"){ 
+				   jQuery('#category').removeClass( 'error' );  				   
+				  }
+				  if (document.getElementById("marque").value != "0"){ 
+				  jQuery('#marque').removeClass( 'error' );  				   
+
+				  } 
+				  if (document.getElementById("modele").value != "0"){ 
+				   jQuery('#modele').removeClass( 'error' );  				   
+
+				  }
+				  if (document.getElementById("annee").value != ""){ 
+				   jQuery('#annee').removeClass( 'error' );  				   
+				   jQuery('#anneelabel').removeClass( 'error' );
+				   jQuery('#anneelabel').addClass( 'nodisplay');				
+					return false; 
+				  } 
+				   if (document.getElementById("cylindree").value != ""){ 
+				   jQuery('#cylindree').removeClass( 'error' );  				   
+				   jQuery('#cylindreelabel').removeClass( 'error' );
+				   jQuery('#cylindreelabel').addClass( 'nodisplay');				
+					return false; 
+				  }
+				   if (document.getElementById("couleur").value != ""){ 
+				   jQuery('#couleur').removeClass( 'error' );  				   
+				   jQuery('#couleurlabel').removeClass( 'error' );
+				   jQuery('#couleurlabel').addClass( 'nodisplay');				
+					return false; 
+				  }				  
+				  if (document.getElementById("km").value != ""){ 
+				   jQuery('#km').removeClass( 'error' );  				   
+				   jQuery('#kmlabel').removeClass( 'error' );
+				   jQuery('#kmlabel').addClass( 'nodisplay');				
+					return false; 
+				  } 
+        		if (document.getElementById("prix").value != ""){ 
+				   jQuery('#prix').removeClass( 'error' );  				   
+				   jQuery('#prixlabel').removeClass( 'error' );
+				   jQuery('#prixlabel').addClass( 'nodisplay');				
+					return false; 
+				  } 
+				  				   
+				  
+				} 
+        </script>  
+
 
 <div id="my_lightbox">
 	<div id="wrapper-form">
@@ -312,7 +465,7 @@ jQuery.noConflict();
 				<a href="#" class="new-prev" onClick="jQuery('#my_lightbox').trigger('close');">RETOUR</a><p>VOTRE VEHICULE</p>
 			</div>
 
-			<form name="form1" method="post" action="?register=valid">
+			<form name="form1" id="form1" method="post" action="?register=valid"  onSubmit="return validateform1()">
 			<?= $this->form->id?>
 			<p>
 					<?= $this->form->deparment?>
@@ -328,30 +481,35 @@ jQuery.noConflict();
 				</p>
 				<p>					
 					<?= $this->form->annee?>
+                     <label for="annee" id="anneelabel"  class="nodisplay">Veuillez renseigner votre code annee</label>
 				</p>
 				<p>
 					<?= $this->form->cylindree?>
+                     <label for="cylindree" id="cylindreelabel"  class="nodisplay">Veuillez renseigner votre code cylindree</label>
 				</p>
 				<p>					
 					<?= $this->form->couleur?>
+                    <label for="couleur" id="couleurlabel"  class="nodisplay">Veuillez renseigner votre code couleur</label>
 				</p>
 				<p>					
 					<?= $this->form->km?>
 				</p>
-				 <p>
-					<input name="" type="checkbox" value="">
-					Pas de compteur kilométrique
-				</p>
+
 				<p>					
 					<?= $this->form->prix?>
+                    <label for="km" id="kmlabel"  class="nodisplay">Veuillez renseigner votre code km</label>
 				</p>
-				 <p>
-					<input name="" type="checkbox" value="">
-					ou à débattre
-				</p>
+
 				<p>
 					<?= $this->form->descr_site?>
 				</p>
+                <p class="validatecheckox"><input name="" type="checkbox" class="validcheckox" value="">Pas de compteur kilométrique
+				</p>
+                <p class="validatecheckox"><input name="" type="checkbox"  class="validcheckox" value="">ou à débattre
+				</p>               
+                
+                
+                
                 <p>
                 <a onClick="jQuery('#my_lightbox').trigger('close');" class="btn-100">ANNULER</a>
                 </p>
@@ -368,7 +526,7 @@ jQuery.noConflict();
 
 <!-- guardar anuncio-->
 
-<div id="my_lightbox_confirm" style="display: none;">
+<div id="my_lightbox_confirm2" style="display: none;">
 	<div id="wrapper-form">
 		<div id="new-form">
 			<div id="form-navigation">
@@ -468,11 +626,11 @@ jQuery(function(){
 </script>
 
 <script>
-  var confirm = function(){  
-    jQuery('#my_lightbox_confirm').lightbox_me({
+  var confirm2 = function(){  
+    jQuery('#my_lightbox_confirm2').lightbox_me({
       centered: true,
       onLoad: function() {
-        jQuery('#my_lightbox_confirm').html("Stuff");
+        jQuery('#my_lightbox_confirm2').html("Stuff");
       }
     });
   }
@@ -509,7 +667,7 @@ jQuery(function(){
           vfile.onload = (function(thefile) {
             return function(e) {
               document.getElementById('img-preview2').innerHTML = '<img  src="'+ e.target.result +'"  class="image-previ-c"/>';
-			  document.getElementById('img-delete-2').innerHTML = '<div class="delete-upload-g"><a href="#"><img src="<?= MEDIA_URL?>images/close.png" width="20" height="20"></a></div>';
+			  document.getElementById('img-delete-2').innerHTML = '<div class="delete-upload-g"><a href="javascript:deleteimage2()"  onclick="return confirm(\'Etes-vous sûr de vouloir supprimer la photo ?\')"><img src="<?= MEDIA_URL?>images/close.png" width="20" height="20"></a></div>';
             };
           })(f);
     
@@ -528,7 +686,7 @@ jQuery(function(){
           vfile.onload = (function(thefile) {
             return function(e) {
               document.getElementById('img-preview3').innerHTML = '<img  src="'+ e.target.result +'"  class="image-previ-c" />';
-			  document.getElementById('img-delete-3').innerHTML = '<div class="delete-upload-g"><a href="#"><img src="<?= MEDIA_URL?>images/close.png" width="20" height="20"></a></div>';
+			  document.getElementById('img-delete-3').innerHTML = '<div class="delete-upload-g"><a href="javascript:deleteimage3();"  onclick="return confirm(\'Etes-vous sûr de vouloir supprimer la photo ?\')"><img src="<?= MEDIA_URL?>images/close.png" width="20" height="20"></a></div>';
             };
           })(f);
     
@@ -547,7 +705,7 @@ jQuery(function(){
           vfile.onload = (function(thefile) {
             return function(e) {
               document.getElementById('img-preview4').innerHTML = '<img  src="'+ e.target.result +'"  class="image-previ-c" />';
-			  document.getElementById('img-delete-4').innerHTML = '<div class="delete-upload-g"><a href="#"><img src="<?= MEDIA_URL?>images/close.png" width="20" height="20"></a></div>';
+			  document.getElementById('img-delete-4').innerHTML = '<div class="delete-upload-g"><a href="javascript:deleteimage4();"  onclick="return confirm(\'Etes-vous sûr de vouloir supprimer la photo ?\')"><img src="<?= MEDIA_URL?>images/close.png" width="20" height="20"></a></div>';
             };
           })(f);
     
@@ -567,7 +725,7 @@ jQuery(function(){
           vfile.onload = (function(thefile) {
             return function(e) {
               document.getElementById('img-preview5').innerHTML = '<img  src="'+ e.target.result +'"   class="image-previ-c" />';
-			  document.getElementById('img-delete-5').innerHTML = '<div class="delete-upload-g"><a href="#"><img src="<?= MEDIA_URL?>images/close.png" width="20" height="20"></a></div>';
+			  document.getElementById('img-delete-5').innerHTML = '<div class="delete-upload-g"><a href="javascript:deleteimage5();" onclick="return confirm(\'Etes-vous sûr de vouloir supprimer la photo ?\')"><img src="<?= MEDIA_URL?>images/close.png" width="20" height="20"></a></div>';
             };
           })(f);
     

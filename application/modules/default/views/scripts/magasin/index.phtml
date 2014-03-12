@@ -224,21 +224,141 @@
 <div id="my_contact_magasin" class="contact"> 
   <div id="wrapper-form">
     	<div id="new-form">
-        	<div id="new-navigation"><a href="#" class="new-prev" onClick="jQuery('#my_contact').trigger('close');">RETOUR</a>
+        	<div id="new-navigation"><a href="#" class="new-prev" onClick="jQuery('#my_contact_magasin').trigger('close');">RETOUR</a>
         	<p>  </p> </div>
-           
-            <form name="formmagasin"  class="cmxform"  id="formmagasin" method="post" action="/magasin/mail/magasin/<?=$this->magasinInfo['id_me'];?>">
+ <script>
+				 function validate(){
+				   
+				  if (document.formmagasin.email.value == ""&&document.formmagasin.ville.value == ""&&document.formmagasin.code_postal.value == ""&&document.formmagasin.adresse.value == ""&&document.formmagasin.prenom.value == ""&&document.formmagasin.nom.value == ""){ 
+				   jQuery('#formmagasin #email').addClass( 'error' );  				   
+				   jQuery('#formmagasin #emaillabel').addClass( 'error' );
+				   jQuery('#formmagasin #emaillabel').removeClass( 'nodisplay');	
+				   jQuery('#formmagasin #ville').addClass( 'error' );  				   
+				   jQuery('#formmagasin #villelabel').addClass( 'error' );
+				   jQuery('#formmagasin #villelabel').removeClass( 'nodisplay');	
+				   jQuery('#formmagasin #code_postal').addClass( 'error' );  				   
+				   jQuery('#formmagasin #code_postallabel').addClass( 'error' );
+				   jQuery('#formmagasin #code_postallabel').removeClass( 'nodisplay');
+				   jQuery('#formmagasin #adresse').addClass( 'error' );  				   
+				   jQuery('#formmagasin #adresselabel').addClass( 'error' );
+				   jQuery('#formmagasin #adresselabel').removeClass( 'nodisplay');
+				   jQuery('#formmagasin #prenom').addClass( 'error' );  				   
+				   jQuery('#formmagasin #prenomlabel').addClass( 'error' );
+				   jQuery('#formmagasin #prenomlabel').removeClass( 'nodisplay');	
+				   jQuery('#formmagasin #nom').addClass( 'error' );  				   
+				   jQuery('#formmagasin #nomlabel').addClass( 'error' );
+				   jQuery('#formmagasin #nomlabel').removeClass( 'nodisplay');
+				   			
+					return false; 
+				  }
+				  
+				  if (document.formmagasin.nom.value == ""){ 
+				   jQuery('#formmagasin #nom').addClass( 'error' );  				   
+				   jQuery('#formmagasin #nomlabel').addClass( 'error' );
+				   jQuery('#formmagasin #nomlabel').removeClass( 'nodisplay');				
+					return false; 
+				  }
+				  if (document.formmagasin.prenom.value == ""){ 
+				   jQuery('#formmagasin #prenom').addClass( 'error' );  				   
+				   jQuery('#formmagasin #prenomlabel').addClass( 'error' );
+				   jQuery('#formmagasin #prenomlabel').removeClass( 'nodisplay');				
+					return false; 
+				  }
+				  if (document.formmagasin.adresse.value == ""){ 
+				   jQuery('#formmagasin #adresse').addClass( 'error' );  				   
+				   jQuery('#formmagasin #adresselabel').addClass( 'error' );
+				   jQuery('#formmagasin #adresselabel').removeClass( 'nodisplay');				
+					return false; 
+				  } 
+				  if (document.formmagasin.code_postal.value == ""){ 
+				   jQuery('#formmagasin #code_postal').addClass( 'error' );  				   
+				   jQuery('#formmagasin #code_postallabel').addClass( 'error' );
+				   jQuery('#formmagasin #code_postallabel').removeClass( 'nodisplay');				
+					return false; 
+				  }
+				  if (document.formmagasin.ville.value == ""){ 
+				   jQuery('#formmagasin #ville').addClass( 'error' );  				   
+				   jQuery('#formmagasin #villelabel').addClass( 'error' );
+				   jQuery('#formmagasin #villelabel').removeClass( 'nodisplay');				
+					return false; 
+				  } 
+				   if (document.formmagasin.email.value == ""){ 
+				   jQuery('#formmagasin #email').addClass( 'error' );  				   
+				   jQuery('#formmagasin #emaillabel').addClass( 'error' );
+				   jQuery('#formmagasin #emaillabel').removeClass( 'nodisplay');				
+					return false; 
+				  }        
+				return true;
+				}
+              /*************************************************/
+				 function validacion(){
+
+				  if (document.formmagasin.nom.value!= ""){ 
+				   jQuery('#formmagasin #nom').removeClass( 'error' ); 				   
+				   jQuery('#formmagasin #nomlabel').removeClass( 'error' );
+				   jQuery('#formmagasin #nomlabel').addClass( 'nodisplay');				
+				 
+				  } 
+				  if (document.formmagasin.prenom.value!= ""){ 
+				   jQuery('#formmagasin #prenom').removeClass( 'error' ); 				   
+				   jQuery('#formmagasin #prenomlabel').removeClass( 'error' );
+				   jQuery('#formmagasin #prenomlabel').addClass( 'nodisplay');				
+				
+				  }
+				  if (document.formmagasin.adresse.value!= ""){ 
+				   jQuery('#formmagasin #adresse').removeClass( 'error' ); 				   
+				   jQuery('#formmagasin #adresselabel').removeClass( 'error' );
+				   jQuery('#formmagasin #adresselabel').addClass( 'nodisplay');				
+				
+				  }
+				  if (document.formmagasin.code_postal.value!= ""){ 
+				   jQuery('#formmagasin #code_postal').removeClass( 'error' ); 				   
+				   jQuery('#formmagasin #code_postallabel').removeClass( 'error' );
+				   jQuery('#formmagasin #code_postallabel').addClass( 'nodisplay');				
+				
+				  }
+				  if (document.formmagasin.ville.value!= ""){ 
+				   jQuery('#formmagasin #ville').removeClass( 'error' ); 				   
+				   jQuery('#formmagasin #villelabel').removeClass( 'error' );
+				   jQuery('#formmagasin #villelabel').addClass( 'nodisplay');				
+				 
+				  }
+				if (document.formmagasin.email.value!= ""){ 
+				   jQuery('#formmagasin #email').removeClass( 'error' ); 				   
+				   jQuery('#formmagasin #emaillabel').removeClass( 'error' );
+				   jQuery('#formmagasin #emaillabel').addClass( 'nodisplay');				
+			
+				  }
+				  
+				   
+				  
+				}   
+        </script> 
+                  
+            <form name="formmagasin"  class="cmxform"  id="formmagasin" method="post" action="/magasin/mail/magasin/<?=$this->magasinInfo['id_me'];?>"  onSubmit="return validate()">
         <p><?php echo ($this->error)?"S'il vous plaît vérifier vos informations":''?></p>
 
-<p><input name="nom" type="text" placeholder="Nom" required value="<?php echo ($nom)?$datos["nom"]:'';?>" /></p>
-<p><input name="prenom" type="text" placeholder="Prénom" required value="<?php echo ($prenom)?$datos["prenom"]:'';?>"/></p>
-<p><input name="adresse" type="text" placeholder="Adresse" required value="<?php echo ($adresse)?$datos["adresse"]:'';?>"/></p>
-          <p><input name="code_postal" type="text" placeholder="Code Postal" required value="<?php echo ($code_postal)?$datos["code_postal"]:'';?>"/></p>
-          <p><input name="ville" type="text" placeholder="Ville" required value="<?php echo ($ville)?$datos["ville"]:'';?>"/></p>
+<p><input name="nom" id="nom" type="text" placeholder="Nom" value="<?php echo ($nom)?$datos["nom"]:'';?>" onKeyPress="validacion()"  />
+<label for="nom" id="nomlabel" class="nodisplay">Veuillez renseigner le champ nom</label>
+</p>
+<p><input name="prenom" id="prenom" type="text" placeholder="Prénom" value="<?php echo ($prenom)?$datos["prenom"]:'';?>" onKeyPress="validacion()" />
+<label for="prenom"  id="prenomlabel" class="nodisplay">Veuillez renseigner le champ prenom</label>
+</p>
+<p><input name="adresse" id="adresse" type="text" placeholder="Adresse"  value="<?php echo ($adresse)?$datos["adresse"]:'';?>"  onKeyPress="validacion()" />
+ <label for="adresse" id="adresselabel" class="nodisplay">Veuillez renseigner votre adresse</label>
+</p>
+<p><input name="code_postal" id="code_postal" type="text" placeholder="Code Postal"  value="<?php echo ($code_postal)?$datos["code_postal"]:'';?>" onKeyPress="validacion()" />
+<label for="code_postal" id="code_postallabel"  class="nodisplay">Veuillez renseigner votre code postal</label>
+</p>
+<p><input name="ville" id="ville" type="text" placeholder="Ville" value="<?php echo ($ville)?$datos["ville"]:'';?>"  onKeyPress="validacion()" />
+<label for="ville" id="villelabel"  class="nodisplay">Veuillez renseigner votre ville</label>
+</p>
           <p><input name="telephone"  id="telephone" type="text" placeholder="Téléphone"></p>
 
             <p>
-            <input name="email" type="text" placeholder="Votre adresse Email" required value="<?php echo ($email)?$datos["email"]:'';?>">
+            <input name="email" id="email" type="text" placeholder="Votre adresse Email" value="<?php echo ($email)?$datos["email"]:'';?>"  onKeyPress="validacion()">
+            <label for="email" id="emaillabel"  class="nodisplay">Veuillez renseigner votre email</label>
+            
             <input name="mailTienda" type="hidden" value="<?php echo $this->magasinInfo["email"];?>">
             <input name="idTienda" type="hidden" value="<?php echo $this->magasinInfo["id_me"];?>">
             </p>

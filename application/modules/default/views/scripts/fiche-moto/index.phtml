@@ -92,13 +92,7 @@
 							
                           ?>
                           <LI><IMG   alt="" src="<?=$ruta;?>"></LI>
-                          <?php endforeach;
-                          if($foto==""){
-								
-								echo '<LI><IMG   alt="" src="'.MEDIA_URL.'images/placeholder.gif"></LI>';
-								} 
-								
-							?>
+                          <?php endforeach;?>
                         </UL>
                       </DIV>
                    
@@ -112,14 +106,7 @@
                             $ruta = $config->app->photoUrl. $this->detailAnnonces['departement'].'/'.$foto;
                           ?>
                           <LI><IMG alt="" src="<?=$ruta;?>"></LI>
-                           <?php endforeach; 
-						   
-						                             if($foto==""){
-								
-								echo '<LI><IMG   alt="" src="'.MEDIA_URL.'images/placeholder-mini.gif" width="90" height="90" /></LI>';
-								} 
-								
-							?>
+                           <?php endforeach; ?>
 				                          
                            
                            
@@ -227,23 +214,149 @@
                  <div class="subtitle">
                 	<div class="icontitle icon-envoyer">ENVOYER UN MAIL</div>
                  </div>
-              <form id="form1" name="form1" method="post" action="">
-                    <label for="textfield">Nom* :</label>
-                    <input name="nom" type="text" placeholder="Nom" required="required" value="<?php echo ($nom)?$datos["nom"]:'';?>" />
-                    <label for="textfield2">Prénom* :</label>
-                    <input name="Prenom" type="text" placeholder="Prenom" required="required" value="<?php echo ($prenom)?$datos["prenom"]:'';?>" />
-                    <label for="textfield3">Adresse :</label>
-                    <input name="Adresse" type="text" placeholder="Adresse"  value="<?php echo ($adresse)?$datos["adresse"]:'';?>" />
-                    <label for="textfield4">Code postal* :</label>
-                    <input name="CodePostal" type="text" placeholder="CodePostal" required="required" value="<?php echo ($code_postal)?$datos["code_postal"]:'';?>" />
-                    <label for="textfield5">Ville :</label>
-                    <input name="Ville" type="text" placeholder="Ville" value="<?php echo ($ville)?$datos["ville"]:'';?>" />
-                    <label for="textfield6">Téléphone : </label>
-                    <input name="Telephone" type="text" placeholder="Téléphone"  value="<?php echo ($telefono)?$datos["Téléphone"]:'';?>" />
-                    <label for="textfield7">E-mail :*</label>
-                    <input name="email" type="text" placeholder="email" required="required" value="<?php echo ($email)?$datos["email"]:'';?>" />
-                    <label for="textarea">Message : </label>
-                    <textarea name="textarea" id="textarea" cols="45" rows="5"></textarea>
+                 <script>
+/*************************************************************/
+
+				 function validateformfichemoto(){
+				   
+		   
+				  if (document.formfichemoto.email.value == ""&&document.formfichemoto.ville.value == ""&&document.formfichemoto.code_postal.value == ""&&document.formfichemoto.adresse.value == ""&&document.formfichemoto.prenom.value == ""&&document.formfichemoto.nom.value == ""){ 
+				   jQuery('#contformfichemoto #email').addClass( 'error' );  				   
+				   jQuery('#contformfichemoto #emaillabel').addClass( 'error' );
+				   jQuery('#contformfichemoto #emaillabel').removeClass( 'nodisplay');	
+				   jQuery('#contformfichemoto #ville').addClass( 'error' );  				   
+				   jQuery('#contformfichemoto #villelabel').addClass( 'error' );
+				   jQuery('#contformfichemoto #villelabel').removeClass( 'nodisplay');	
+				   jQuery('#contformfichemoto #code_postal').addClass( 'error' );  				   
+				   jQuery('#contformfichemoto #code_postallabel').addClass( 'error' );
+				   jQuery('#contformfichemoto #code_postallabel').removeClass( 'nodisplay');
+				   jQuery('#contformfichemoto #adresse').addClass( 'error' );  				   
+				   jQuery('#contformfichemoto #adresselabel').addClass( 'error' );
+				   jQuery('#contformfichemoto #adresselabel').removeClass( 'nodisplay');
+				   jQuery('#contformfichemoto #prenom').addClass( 'error' );  				   
+				   jQuery('#contformfichemoto #prenomlabel').addClass( 'error' );
+				   jQuery('#contformfichemoto #prenomlabel').removeClass( 'nodisplay');	
+				   jQuery('#contformfichemoto #nom').addClass( 'error' );  				   
+				   jQuery('#contformfichemoto #nomlabel').addClass( 'error' );
+				   jQuery('#contformfichemoto #nomlabel').removeClass( 'nodisplay');
+				   			
+					return false; 
+				  }
+				 
+				  if (document.formfichemoto.nom.value == ""){ 
+				   jQuery('#contformfichemoto #nom').addClass( 'error' );  				   
+				   jQuery('#contformfichemoto #nomlabel').addClass( 'error' );
+				   jQuery('#contformfichemoto #nomlabel').removeClass( 'nodisplay');				
+					return false; 
+				  }
+				  if (document.formfichemoto.prenom.value == ""){ 
+				   jQuery('#contformfichemoto #prenom').addClass( 'error' );  				   
+				   jQuery('#contformfichemoto #prenomlabel').addClass( 'error' );
+				   jQuery('#contformfichemoto #prenomlabel').removeClass( 'nodisplay');				
+					return false; 
+				  }
+				  if (document.formfichemoto.adresse.value == ""){ 
+				   jQuery('#contformfichemoto #adresse').addClass( 'error' );  				   
+				   jQuery('#contformfichemoto #adresselabel').addClass( 'error' );
+				   jQuery('#contformfichemoto #adresselabel').removeClass( 'nodisplay');				
+					return false; 
+				  } 
+				  if (document.formfichemoto.code_postal.value == ""){ 
+				   jQuery('#contformfichemoto #code_postal').addClass( 'error' );  				   
+				   jQuery('#contformfichemoto #code_postallabel').addClass( 'error' );
+				   jQuery('#contformfichemoto #code_postallabel').removeClass( 'nodisplay');				
+					return false; 
+				  }
+				  if (document.formfichemoto.ville.value == ""){ 
+				   jQuery('#contformfichemoto #ville').addClass( 'error' );  				   
+				   jQuery('#contformfichemoto #villelabel').addClass( 'error' );
+				   jQuery('#contformfichemoto #villelabel').removeClass( 'nodisplay');				
+					return false; 
+				  } 
+				   if (document.formfichemoto.email.value == ""){ 
+				   jQuery('#contformfichemoto #email').addClass( 'error' );  				   
+				   jQuery('#contformfichemoto #emaillabel').addClass( 'error' );
+				   jQuery('#contformfichemoto #emaillabel').removeClass( 'nodisplay');				
+					return false; 
+				  }        
+				return true;
+				}
+              /*************************************************/
+				 function removeformfichemoto(){
+
+				  if (document.formfichemoto.nom.value!= ""){ 
+				   jQuery('#contformfichemoto #nom').removeClass( 'error' ); 				   
+				   jQuery('#contformfichemoto #nomlabel').removeClass( 'error' );
+				   jQuery('#contformfichemoto #nomlabel').addClass( 'nodisplay');				
+				 
+				  } 
+				  if (document.formfichemoto.prenom.value!= ""){ 
+				   jQuery('#contformfichemoto #prenom').removeClass( 'error' ); 				   
+				   jQuery('#contformfichemoto #prenomlabel').removeClass( 'error' );
+				   jQuery('#contformfichemoto #prenomlabel').addClass( 'nodisplay');				
+				
+				  }
+				  if (document.formfichemoto.adresse.value!= ""){ 
+				   jQuery('#contformfichemoto #adresse').removeClass( 'error' ); 				   
+				   jQuery('#contformfichemoto #adresselabel').removeClass( 'error' );
+				   jQuery('#contformfichemoto #adresselabel').addClass( 'nodisplay');				
+				
+				  }
+				  if (document.formfichemoto.code_postal.value!= ""){ 
+				   jQuery('#contformfichemoto #code_postal').removeClass( 'error' ); 				   
+				   jQuery('#contformfichemoto #code_postallabel').removeClass( 'error' );
+				   jQuery('#contformfichemoto #code_postallabel').addClass( 'nodisplay');				
+				
+				  }
+				  if (document.formfichemoto.ville.value!= ""){ 
+				   jQuery('#contformfichemoto #ville').removeClass( 'error' ); 				   
+				   jQuery('#contformfichemoto #villelabel').removeClass( 'error' );
+				   jQuery('#contformfichemoto #villelabel').addClass( 'nodisplay');				
+				 
+				  }
+				if (document.formfichemoto.email.value!= ""){ 
+				   jQuery('#contformfichemoto #email').removeClass( 'error' ); 				   
+				   jQuery('#contformfichemoto #emaillabel').removeClass( 'error' );
+				   jQuery('#contformfichemoto #emaillabel').addClass( 'nodisplay');				
+			
+				  }
+				  				  
+				}   
+
+</script>
+
+
+               <div id="contformfichemoto">  
+              <form id="formfichemoto" name="formfichemoto" method="post" action=""  onSubmit="return validateformfichemoto()">
+                    <label for="nom">Nom* :</label>
+                    <input name="nom" id="nom" type="text" placeholder="Nom"  value="<?php echo ($nom)?$datos["nom"]:'';?>"  onKeyPress="removeformfichemoto()"/>
+                    <label for="nom" id="nomlabel" class="nodisplay">Veuillez renseigner le champ nom</label>
+                    
+                    <label for="prenom">Prénom* :</label>
+                    <input name="prenom" id="prenom" type="text" placeholder="Prenom"  value="<?php echo ($prenom)?$datos["prenom"]:'';?>" onKeyPress="removeformfichemoto()" />
+                    <label for="prenom"  id="prenomlabel" class="nodisplay">Veuillez renseigner le champ prenom</label>
+                     
+                    <label for="adresse">Adresse :</label>
+                    <input name="adresse" id="adresse" type="text" placeholder="Adresse"  value="<?php echo ($adresse)?$datos["adresse"]:'';?>" onKeyPress="removeformfichemoto()"/>
+                    <label for="adresse" id="adresselabel" class="nodisplay">Veuillez renseigner votre adresse</label>
+                    
+                    <label for="code_postal">Code postal* :</label>
+                    <input name="code_postal" id="code_postal" type="text" placeholder="Code Postal"  value="<?php echo ($code_postal)?$datos["code_postal"]:'';?>" onKeyPress="removeformfichemoto()"/>
+                    <label for="code_postal" id="code_postallabel"  class="nodisplay">Veuillez renseigner votre code postal</label>
+                    
+                    <label for="ville">Ville :</label>
+                    <input name="ville" id="ville" type="text" placeholder="Ville" value="<?php echo ($ville)?$datos["ville"]:'';?>" onKeyPress="removeformfichemoto()"/>
+                    <label for="ville" id="villelabel"  class="nodisplay">Veuillez renseigner votre ville</label>
+                    
+                    <label for="telephone">Téléphone : </label>
+                    <input name="telephone" id="telephone" type="text" placeholder="Téléphone"  value="<?php echo ($telefono)?$datos["Téléphone"]:'';?>" />
+                    
+                    <label for="email">E-mail :*</label>
+                    <input name="email" id="email" type="text" placeholder="email" value="<?php echo ($email)?$datos["email"]:'';?>" onKeyPress="removeformfichemoto()"/>
+                    <label for="email" id="emaillabel"  class="nodisplay">Veuillez renseigner votre email</label>
+                    
+                    <label for="message">Message : </label>
+                    <textarea name="message" id="message" cols="45" rows="5"></textarea>
                     <div class="fomrinfo">
                     <span>Veuillez saisir les lettres de limage dans le champ situé sous l'image en respectant les majuscules et les minuscules.</span>
                     <div class="captcha">
@@ -256,6 +369,7 @@
                     <input name="ENVOYER" type="submit" id="ENVOYER" value="ENVOYER" />
                     </div>
               </form>
+              </div>
               </div>  
             </div>
           </div>
