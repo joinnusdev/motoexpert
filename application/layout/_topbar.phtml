@@ -10,7 +10,7 @@
 	<div id="header-right">
 		<div class="header-top">
 			<a href="/news">ACTUALITE RESEAU</a>
-                        <a href="/contact">NEWSLETTER</a>
+                        <a href="#"  onClick="newsletterpo();" class="btn-ipad" >NEWSLETTER</a>
 			<?php if ($this->authData){?>
             <div class="nomcompte"><a href="/auth/logout" class="logout">Se déconnecter</a><a href="/compte" class="bonjour">Bonjour <?= $this->authData->nom;?> </a></div>
            	
@@ -38,7 +38,10 @@
                       <option value="/">ACCUEIL</option>
             		  <option value="/annonces" >OCCASION MOTO</option>
             		  <option value="/franchise">FRANCHISE ET SERVICES</option>
-            		  <option value="/contact">CONTACT</option>
+            		  <option value="/news">ACTUALITÉ RÉSEAU</option>
+                       <option value="/newsletter">NEWSLETTER</option>
+                      <option value="/contact">CONTACT</option>
+                      
 	          </select></div>  
 
 	</div>

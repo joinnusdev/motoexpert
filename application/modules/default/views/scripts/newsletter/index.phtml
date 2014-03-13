@@ -1,0 +1,148 @@
+<script>
+/*************************************************************/
+
+				 function validateformNewsletter(){
+				   
+		   
+				  if (document.formNewsletter.email.value == ""&&document.formNewsletter.prenom.value == ""&&document.formNewsletter.nom.value == ""){ 
+				   jQuery('#formNewsletter #email').addClass( 'error' );  				   
+				   jQuery('#formNewsletter #emaillabel').addClass( 'error' );
+				   jQuery('#formNewsletter #emaillabel').removeClass( 'nodisplay');	
+				   jQuery('#formNewsletter #prenom').addClass( 'error' );  				   
+				   jQuery('#formNewsletter #prenomlabel').addClass( 'error' );
+				   jQuery('#formNewsletter #prenomlabel').removeClass( 'nodisplay');	
+				   jQuery('#formNewsletter #nom').addClass( 'error' );  				   
+				   jQuery('#formNewsletter #nomlabel').addClass( 'error' );
+				   jQuery('#formNewsletter #nomlabel').removeClass( 'nodisplay');
+				   			
+					return false; 
+				  }
+				 
+				  if (document.formNewsletter.nom.value == ""){ 
+				   jQuery('#formNewsletter #nom').addClass( 'error' );  				   
+				   jQuery('#formNewsletter #nomlabel').addClass( 'error' );
+				   jQuery('#formNewsletter #nomlabel').removeClass( 'nodisplay');				
+					return false; 
+				  }
+				  if (document.formNewsletter.prenom.value == ""){ 
+				   jQuery('#formNewsletter #prenom').addClass( 'error' );  				   
+				   jQuery('#formNewsletter #prenomlabel').addClass( 'error' );
+				   jQuery('#formNewsletter #prenomlabel').removeClass( 'nodisplay');				
+					return false; 
+				  }
+
+				   if (document.formNewsletter.email.value == ""){ 
+				   jQuery('#formNewsletter #email').addClass( 'error' );  				   
+				   jQuery('#formNewsletter #emaillabel').addClass( 'error' );
+				   jQuery('#formNewsletter #emaillabel').removeClass( 'nodisplay');				
+					return false; 
+				  } 
+				  	  if (document.formNewsletter.email.value.indexOf('@', 0) == -1 || document.formNewsletter.email.value.indexOf('.', 0) == -1){
+					  jQuery('#formNewsletter #email').addClass( 'error' );  				   
+					   jQuery('#formNewsletter #emaillabel').addClass( 'error' );
+					   jQuery('#formNewsletter #emaillabel').removeClass( 'nodisplay')
+					   return false; 
+				  }    
+				return true;
+				}
+              /*************************************************/
+				 function removeformNewsletter(){
+
+				  if (document.formNewsletter.nom.value!= ""){ 
+				   jQuery('#formNewsletter #nom').removeClass( 'error' ); 				   
+				   jQuery('#formNewsletter #nomlabel').removeClass( 'error' );
+				   jQuery('#formNewsletter #nomlabel').addClass( 'nodisplay');				
+				 
+				  } 
+				  if (document.formNewsletter.prenom.value!= ""){ 
+				   jQuery('#formNewsletter #prenom').removeClass( 'error' ); 				   
+				   jQuery('#formNewsletter #prenomlabel').removeClass( 'error' );
+				   jQuery('#formNewsletter #prenomlabel').addClass( 'nodisplay');				
+				
+				  }
+
+				if (document.formNewsletter.email.value!= ""){ 
+				   jQuery('#formNewsletter #email').removeClass( 'error' ); 				   
+				   jQuery('#formNewsletter #emaillabel').removeClass( 'error' );
+				   jQuery('#formNewsletter #emaillabel').addClass( 'nodisplay');				
+			
+				  }
+				  				  
+				}   
+
+</script> 
+
+
+
+    
+<div id="content" class="paddin30"> 
+        	<div id="content-top">
+            <div class="top-left">INSCRIPTION À LA <br /><span>NEWSLETTER</span></div>
+        	</div>
+       	  
+          <!-- //*** LOGIN  //-->
+          
+          
+ <div id="login-c" class="contact">
+          
+      
+  <div id="wrapper-form">
+   	<div id="new-form">
+   	  <div id="new-navigation"><a href="<?=$_SERVER['HTTP_REFERER']?>" class="new-prev">RETOUR</a> </div>
+      <div class="newsletter-boby">
+            <div class="newsletter-text">
+              <p>Recevez les offres spéciales Moto Expert. Vous serez également informé, dès leurs lancements, des services exclusifs et des évènements liés au site moto-expert.fr. </p>
+            </div>
+      </div>
+          
+          
+        	<form name="formNewsletter"  class="cmxform"  id="formNewsletter" method="post" action="/newsletter/"  onsubmit="return validateformNewsletter()">
+        	  <p><?php echo ($this->error)?"S'il vous plaît vérifier vos informations":''?></p>
+        	  <p>
+        	    <input name="nom"  id="nom" type="text" placeholder="Nom"  value="<?php echo ($nom)?$datos["nom"]:'';?>"  onkeypress="removeformNewsletter()"/>
+        	    <label for="nom" id="nomlabel" class="nodisplay">Veuillez renseigner le champ nom</label>
+      	    </p>
+        	  <p>
+        	    <input name="prenom" id="prenom" type="text" placeholder="Prénom"  value="<?php echo ($prenom)?$datos["prenom"]:'';?>" onkeypress="removeformNewsletter()"/>
+        	    <label for="prenom"  id="prenomlabel" class="nodisplay">Veuillez renseigner le champ prenom</label>
+      	    </p>
+        	  <p>
+        	    <input name="adresse" id="adresse" type="text" placeholder="Adresse"  value="<?php echo ($adresse)?$datos["adresse"]:'';?>" onkeypress="removeformNewsletter()"/>
+        	    
+      	    </p>
+        	  <p>
+        	    <input name="code_postal"  id="code_postal" type="text" placeholder="Code Postal"  value="<?php echo ($code_postal)?$datos["code_postal"]:'';?>" onkeypress="removeformNewsletter()"/>
+        	    
+      	    </p>
+        	  <p>
+        	    <input name="ville" id="ville" type="text" placeholder="Ville"  value="<?php echo ($ville)?$datos["ville"]:'';?>" onkeypress="removeformNewsletter()"/>
+        	    <label for="ville" id="villelabel"  class="nodisplay">Veuillez renseigner votre ville</label>
+      	    </p>
+        	  <p>
+        	    <input name="telephone"  id="telephone" type="text" placeholder="Téléphone" />
+      	    </p>
+        	  <p>
+        	    <input name="email" id="email" type="text" placeholder="Votre adresse Email"  value="<?php echo ($email)?$datos["email"]:'';?>" onkeypress="removeformNewsletter()" />
+        	    <label for="email" id="emaillabel"  class="nodisplay">Veuillez renseigner votre email</label>
+      	    </p>
+        	  <p></p>
+        	  <p></p>
+        	  <div class="fomrinfo"> <span>Veuillez saisir les lettres de limage dans le champ situé sous l'image en respectant les majuscules et les minuscules.</span>
+        	    <div class="captcha">
+        	      <div class="imgcap"><img src="<?=MEDIA_URL ?>CaptchaSecurityImages.php" /></div>
+        	      <div class="inpcap">
+        	        <input name="input" type="text" />
+      	        </div>
+      	      </div>
+        	    <div class="condition">
+        	      <input name="input" type="checkbox" value="" />
+        	      En cochant cette case, je souhaite recevoir la newsletter Moto Expert </div>
+        	    <input name="ENVOYER" type="submit" id="ENVOYER" value="ENVOYER" />
+      	    </div>
+        	  <p></p>
+      	  </form>
+    	</div>
+   </div>
+ </div>
+          
+          

@@ -1,0 +1,329 @@
+<?php 
+session_start();
+
+
+   if( $_SESSION['security_code'] == $_POST['security_code'] && !empty($_SESSION['security_code'] ) ) {
+		// Insert you code for processing the form here, e.g emailing the submission, entering it into a database. 
+		//echo 'Thank you. Your message said "'.$_POST['message'].'"';
+		/*******************************************************************************************************************/
+		$emaito="hegel@altimea.com";
+		//$emaito="info@motoexpert.fr";
+		$nom=$_POST['nom'];
+		$prenom=$_POST['prenom'];
+		$adresse=$_POST['adresse'];
+		$code_postal=$_POST['code_postal'];
+		$ville=$_POST['ville'];
+		$tel=$_POST['tel'];
+		$email=$_POST['email'];
+		$magasin=$_POST['magasin'];
+		$newsletter=$_POST['newsletter'];
+		$message=$_POST['message'];
+		
+		/*********************************************************/
+$headers="MIME-Version: 1.0\r\n";
+$headers.="Content-type: text/html; charset=utf-8\r\n";
+$headers.="From:Accueil contacts<no-reply@motoexpert.fr>\r\n";
+//$headers.="bcc:info@motoexpert.fr\r\n";
+//$headers.="Cc:info@motoexpert.fr\r\n";
+$body = '
+<html>
+<head>
+	 <style type="text/css">	 
+body
+{
+background:#666666;
+	margin:0px;
+	padding:0px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:13px;
+}
+td,a,p
+{
+	font-size:12px;
+}
+.Estilo2 {font-family:Arial, Helvetica, sans-serif;
+	font-size:13px; color: #04386A; font-weight: bold; }
+.estilo1 {font-family:Arial, Helvetica, sans-serif;
+	font-size:13px; color:#04386A}
+.texto1 {font-family:Arial, Helvetica, sans-serif;
+	font-size:13px;}
+.titulo {font-family:Arial, Helvetica, sans-serif;
+	font-size:13px;}
+.titulo {font-family:Arial, Helvetica, sans-serif;
+	font-size:13px;}
+     </style>
+</head>
+<body>
+<table width="550" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+  <tr>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><table width="100%" border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td width="30">&nbsp;</td>
+        <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td height="6" align="center" class="titulo"></td>
+          </tr>
+          <tr>
+            <td height="30" align="center" class="titulo"><b>CONTACTS</b></td>
+          </tr>
+          <tr>
+            <td height="6"><hr noshade="noshade" color="#006666" size="1" /></td>
+          </tr>
+          <tr>
+            <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td height="12" colspan="3" valign="top" class="texto1"></td>
+              </tr>
+              <tr>
+                <td width="150" valign="top" class="estilo1"><b>Nom :
+                   
+                </b></td>
+                <td width="10" valign="top" class="estilo1">&nbsp;</td>
+                <td height="22" valign="top" class="estilo1">'.$nom.'</td>
+              </tr>
+              <tr>
+                <td height="4" colspan="3" valign="top" class="estilo1"></td>
+              </tr>
+              <tr>
+                <td valign="top" class="Estilo2"><b>Prenom :</b></td>
+                <td valign="top" class="estilo1">&nbsp;</td>
+                <td height="22" valign="top" class="estilo1">'.$prenom.'</td>
+              </tr>
+              <tr>
+                <td height="4" colspan="3" valign="top" class="estilo1"></td>
+              </tr>
+              <tr>
+                <td valign="top" class="Estilo2"><b>Adresse : </b></td>
+                <td valign="top" class="estilo1">&nbsp;</td>
+                <td height="22" valign="top" class="estilo1">'.$adresse.'</td>
+              </tr>
+              <tr>
+                <td height="4" colspan="3" valign="top" class="estilo1"></td>
+              </tr>
+              <tr>
+                <td valign="top" class="Estilo2"><b>Code postal : </b></td>
+                <td valign="top" class="estilo1">&nbsp;</td>
+                <td height="22" valign="top" class="estilo1">'.$code_postal.'</td>
+              </tr>
+              <tr>
+                <td height="4" colspan="3" valign="top" class="estilo1"></td>
+              </tr>
+              <tr>
+                <td valign="top" class="Estilo2"><b>Ville : </b></td>
+                <td valign="top" class="estilo1">&nbsp;</td>
+                <td height="22" valign="top" class="estilo1">'.$ville.'</td>
+              </tr>
+              <tr>
+                <td height="4" colspan="3" valign="top" class="estilo1"></td>
+              </tr>
+              <tr>
+                <td valign="top" class="Estilo2"><b>Téléphone : </b></td>
+                <td valign="top" class="estilo1">&nbsp;</td>
+                <td height="22" valign="top" class="estilo1">'.$tel.'</td>
+              </tr>
+              <tr>
+                <td height="4" colspan="3" valign="top" class="estilo1"></td>
+              </tr>
+              <tr>
+                <td valign="top" class="Estilo2"><b>E-mail : </b></td>
+                <td valign="top" class="estilo1">&nbsp;</td>
+                <td height="22" valign="top" class="estilo1">'.$email.'</td>
+              </tr>
+              <tr>
+                <td height="4" colspan="3" valign="top" class="estilo1"></td>
+              </tr>
+              <tr>
+                <td valign="top" class="Estilo2"><b>Magasin : </b></td>
+                <td valign="top" class="estilo1">&nbsp;</td>
+                <td height="22" valign="top" class="estilo1">'.$magasin.'</td>
+              </tr>
+              <tr>
+                <td height="4" colspan="3" valign="top" class="estilo1"></td>
+              </tr>
+              <tr>
+                <td valign="top" class="Estilo2"><b>Newsletter : </b></td>
+                <td valign="top" class="estilo1">&nbsp;</td>
+                <td height="22" valign="top" class="estilo1">'.$newsletter.'</td>
+              </tr>
+              <tr>
+                <td height="4" colspan="3" valign="top" class="estilo1"></td>
+              </tr>
+              <tr>
+                <td valign="top" class="Estilo2"><b>Message  : </b></td>
+                <td valign="top" class="estilo1">&nbsp;</td>
+                <td height="80" valign="top" class="estilo1">'.$message.'</td>
+              </tr>
+            </table></td>
+          </tr>
+          <tr>
+            <td>&nbsp;</td>
+          </tr>
+        </table></td>
+        <td width="30">&nbsp;</td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+</body>';
+$subject="CONTACTS";
+mail($emaito, $subject, $body, $headers);
+/*******************************************************************************************/
+
+		
+		/*******************************************************************************************************************/
+		//unset($_SESSION['security_code']);
+   } else {
+		// Insert your code for showing an error message here
+		$error = '<label for="security_code" class="error">code invalid</label>';
+		$enom=$_POST['nom'];
+		$eprenom=$_POST['prenom'];
+		$eadresse=$_POST['adresse'];
+		$ecode_postal=$_POST['code_postal'];
+		$eville=$_POST['ville'];
+		$etel=$_POST['tel'];
+		$eemail=$_POST['email'];
+		$emagasin=$_POST['magasin'];
+		$enewsletter=$_POST['newsletter'];
+		$emessage=$_POST['message'];		
+		
+   }
+
+?>
+<div id="content" class="paddin30"> 
+        	<div id="content-top">
+            
+                            <div class="top-left"><span>CONTACT</span></div>
+        	</div>
+       	  
+          <!-- //*** LOGIN  //-->
+          
+          
+ <div id="login-c" class="contact">
+          
+      
+  <div id="wrapper-form">
+    	<div id="new-form">
+        	<div id="new-navigation"><a href="#" class="new-prev" onClick="$('#my_lightbox').trigger('close');">RETOUR</a>
+        	<p>  </p> </div>
+           
+        <form name="formContantp"  class="cmxform"  id="formContantp" method="post" action="">
+        <p><?php echo ($this->error)?"S'il vous plaît vérifier vos informations":''?></p>
+
+<p><input name="nom" type="text" placeholder="Nom" required value="<?php echo $enom ;?>" /></p>
+<p><input name="prenom" type="text" placeholder="Prénom" required value="<?php echo $eprenom;?>"/></p>
+<p><input name="adresse" type="text" placeholder="Adresse" required value="<?php echo $eadresse;?>"/></p>
+          <p><input name="code_postal" type="text" placeholder="Code Postal" required value="<?php echo $ecode_postal;?>"/></p>
+          <p><input name="ville" type="text" placeholder="Ville" required value="<?php echo $eville;?>"/></p>
+          <p><input name="tel"  id="tel" type="text" placeholder="Téléphone" value="<?php echo $etel;?>"></p>
+
+            <p>
+            <input name="email"  id="email" type="text" placeholder="Votre adresse Email" required value="<?php echo $eemail;?>">
+            </p>
+<p><? 
+
+if($emagasin!=''){
+
+$emagasinse = str_replace($emagasin.'"', $emagasin.'" selected="selected"', $this->formMagasin->magasin);
+
+echo $emagasinse;
+}else{
+echo $this->formMagasin->magasin;
+}
+
+?>
+
+
+
+</p>
+<p> <textarea name="message" id="message" cols="45" rows="5"><?php if($emessage=='message'||$emessage==''){ echo 'message';}else{echo $emessage;}?></textarea></p>
+<p></p><p></p>
+               <div class="fomrinfo">
+                    	<span>Veuillez saisir les lettres de limage dans le champ situé sous l'image en respectant les majuscules et les minuscules.</span>
+                    <div class="captcha">
+                    	<div class="imgcap"><img src="<?=MEDIA_URL ?>CaptchaSecurityImages.php" /></div>
+                        <div class="inpcap"><input name="security_code" id="security_code" type="text"><?php echo $error; ?></div>
+                    </div>
+                   <div class="condition">
+                   	<input name="newsletter" id="newsletter" type="checkbox" value="newsletter" <?php if($enewsletter=='newsletter'){ echo 'checked="checked"';}else{echo '';}?> />En cochant cette case, je souhaite recevoir la newsletter Moto Expert
+                   <br />
+                   <br />
+                   
+                   
+                   </div>
+                    
+                    <input name="ENVOYER" type="submit" id="ENVOYER" value="ENVOYER" />
+                    
+                    </div>
+<p></p>
+
+          
+
+            
+        </form>
+    	</div>
+	  
+      
+	</div>
+    
+
+ 
+          </div><script src="<?=MEDIA_URL ?>js/jquery.validate.js"></script>
+<script>
+/*******************************************/
+$.validator.setDefaults({
+	submitHandler: function() { $( "#formContantp" ).submit();}
+});
+
+$().ready(function() {
+	// validate the comment form when it is submitted
+
+
+	// validate signup form on keyup and submit
+	$("#formContantp").validate({
+		rules: {
+			nom: "required",
+			prenom: "required",
+			adresse: "required",
+			code_postal: "required",
+			ville: "required",
+			telephone: "required",
+			email: {
+				required: true,
+				email: true
+			},
+			/*security_code: {
+					required: true,
+					remote: {
+					  url: "<?=MEDIA_URL ?>check-captcha.php",
+					  type: "post"
+					}
+				  }
+	  */
+		},
+		messages: {
+			nom: "Veuillez renseigner le champ nom",
+			prenom: "Veuillez renseigner le champ prenom",
+			adresse: "Veuillez renseigner votre adresse",
+			code_postal: "Veuillez renseigner votre code postal",
+			ville: "Veuillez renseigner votre ville",
+			telephone: "Veuillez renseigner votre telephone",
+			email: "Veuillez renseigner votre email",
+			/*security_code: {
+					required: "Veuillez renseigner votre Code de sécurité",
+					remote: 'code invalid'
+				  }*/
+		}
+	});
+
+
+
+});
+
+
+</script>

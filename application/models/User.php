@@ -47,7 +47,6 @@ class App_Model_User extends App_Db_Table_Abstract {
 			return false;
 		}
 	}
-	
-
-	
+        
+      	
 }

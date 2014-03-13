@@ -12,4 +12,47 @@ class Default_ContactController extends App_Controller_Action_Default
     public function indexAction(){
         
     }
+    
+    public function contactarAction(){
+         if ($this->_request->isPost()) {
+            $datos = $this->_getAllParams();
+            
+            $mail = $datos['email'];
+            
+
+            $destinatario = 'info@moto-expert.fr';
+            //$destinatario = 'jsteve.villano@gmail.com';
+            $cuerpo = " 
+
+
+                Nom : ". $datos['nom'] ."<br>
+                Prénom : ". $datos['prenom'] ."<br>
+                E-Mail : ". $mail ."<br>
+                Téléphone : ". $datos['telephone'] ."<br>
+                Adresse : ". $datos['adresse'] ."<br>
+                Code postal : ". $datos['code_postal'] ."<<br>
+                Ville : ". $datos['ville'] ."<br>
+                Magasin : ". $datos['magasin'] ."<br>
+                Message : " . $datos['message'] . "<br>
+                <p>
+                MOTO EXPERT - SIÈGE SOCIAL - 36 Rue Berthelot<br>
+                Tel. : +33 (0)2 43 85 29 88<br>
+                Fax : +33 (0)2 43 85 29 50<br>
+
+
+                    ";
+            $asunto = "MOTO EXPERT - Une demande d'information générale";
+            $headers = "MIME-Version: 1.0\r\n";
+            $headers .= "Content-type: text/html; charset=iso-8859-1\r\n";
+            $headers .= "Cc: eric@altimea.com\r\n";
+            $headers .= "From:<".$mail.">\r\n";
+
+            mail($destinatario,$asunto,$cuerpo,$headers) ;
+
+            echo "<script>alert('vous recevrez un email avec votre nouveau mot de passe');</script>";
+            $this->_redirect('/');
+
+
+        }
+    }
 }

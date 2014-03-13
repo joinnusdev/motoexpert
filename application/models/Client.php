@@ -106,6 +106,13 @@ class App_Model_Client extends App_Db_Table_Abstract {
 		return false;
 	}
 	
-
+          public function findUser($datos){
+            
+             $query = $this->_db
+            ->select()->from(array('u' => $this->_name))
+            ->where('u.email = ?', $datos);
+             return $this->_db->fetchRow($query);
+        }
+	
 	
 }

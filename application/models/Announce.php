@@ -163,6 +163,37 @@ class App_Model_Announce extends App_Db_Table_Abstract {
 
 	}
 
+        
+        
+        public function detailFichaAnnounce($id){
+		$query = "
+		SELECT a.parution, a.rep_mail,a.rep_tel,a.rep_port ,a.id,a.ref, a.titre, a.date, a.date_crea, a.annee,a.cylindree,
+		a.couleur, a.km, a.id_cat,a.prix,a.departement,
+		a.garantie, c.nom_cat, m.marque, m.id_mot,m.modele
+		,foto.nom_fichier as foto, info.controle
+		,moto.id_me, moto.nom, moto.ville,moto.adresse ,moto.tel
+		,moto.fax , moto.horaires,moto.latitude,moto.longitude,moto.liengmap
+		,info.type_occaz,a.descr_site,info.neuf, info.isgarantie
+		FROM  annonces a
+		left join categories c on a.id_cat = c.id_cat
+		left join motos m on a.id_mot = m.id_mot
+		left join annonces_info info on info.ref = a.ref
+		left join annonces_photos foto on foto.id_annonce = a.id
+		left join moto_expert moto on  moto.id_me = a.id_me
+		where a.internet <> '0'
+		AND a.modere = '1'
+		AND a.ispayed = '1'
+		AND a.prov <> 'mebe'
+		and a.id =".$id;
+		try{
+			return $this->getAdapter()->fetchRow($query);
+
+		}catch (Exception $e){
+			var_dump($e->getMessage());
+		}
+
+	}
+        
 	public function photoDetailAnnonce($id){
 		$query = "select * from annonces_photos where id_annonce=".$id;
 		try{

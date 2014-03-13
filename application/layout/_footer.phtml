@@ -32,40 +32,113 @@
         </div>
           <!-- /*************************************************************************************************/-->
 <script>
-/*******************************************/
+/*************************************************************/
 
+				 function validateformContant(){
+				   
+		   
+				  if (document.formContant.email.value == ""&&document.formContant.ville.value == ""&&document.formContant.code_postal.value == ""&&document.formContant.adresse.value == ""&&document.formContant.prenom.value == ""&&document.formContant.nom.value == ""){ 
+				   jQuery('#formContant #email').addClass( 'error' );  				   
+				   jQuery('#formContant #emaillabel').addClass( 'error' );
+				   jQuery('#formContant #emaillabel').removeClass( 'nodisplay');	
+				   jQuery('#formContant #ville').addClass( 'error' );  				   
+				   jQuery('#formContant #villelabel').addClass( 'error' );
+				   jQuery('#formContant #villelabel').removeClass( 'nodisplay');	
+				   jQuery('#formContant #code_postal').addClass( 'error' );  				   
+				   jQuery('#formContant #code_postallabel').addClass( 'error' );
+				   jQuery('#formContant #code_postallabel').removeClass( 'nodisplay');
+				   jQuery('#formContant #adresse').addClass( 'error' );  				   
+				   jQuery('#formContant #adresselabel').addClass( 'error' );
+				   jQuery('#formContant #adresselabel').removeClass( 'nodisplay');
+				   jQuery('#formContant #prenom').addClass( 'error' );  				   
+				   jQuery('#formContant #prenomlabel').addClass( 'error' );
+				   jQuery('#formContant #prenomlabel').removeClass( 'nodisplay');	
+				   jQuery('#formContant #nom').addClass( 'error' );  				   
+				   jQuery('#formContant #nomlabel').addClass( 'error' );
+				   jQuery('#formContant #nomlabel').removeClass( 'nodisplay');
+				   			
+					return false; 
+				  }
+				 
+				  if (document.formContant.nom.value == ""){ 
+				   jQuery('#formContant #nom').addClass( 'error' );  				   
+				   jQuery('#formContant #nomlabel').addClass( 'error' );
+				   jQuery('#formContant #nomlabel').removeClass( 'nodisplay');				
+					return false; 
+				  }
+				  if (document.formContant.prenom.value == ""){ 
+				   jQuery('#formContant #prenom').addClass( 'error' );  				   
+				   jQuery('#formContant #prenomlabel').addClass( 'error' );
+				   jQuery('#formContant #prenomlabel').removeClass( 'nodisplay');				
+					return false; 
+				  }
+				  if (document.formContant.adresse.value == ""){ 
+				   jQuery('#formContant #adresse').addClass( 'error' );  				   
+				   jQuery('#formContant #adresselabel').addClass( 'error' );
+				   jQuery('#formContant #adresselabel').removeClass( 'nodisplay');				
+					return false; 
+				  } 
+				  if (document.formContant.code_postal.value == ""){ 
+				   jQuery('#formContant #code_postal').addClass( 'error' );  				   
+				   jQuery('#formContant #code_postallabel').addClass( 'error' );
+				   jQuery('#formContant #code_postallabel').removeClass( 'nodisplay');				
+					return false; 
+				  }
+				  if (document.formContant.ville.value == ""){ 
+				   jQuery('#formContant #ville').addClass( 'error' );  				   
+				   jQuery('#formContant #villelabel').addClass( 'error' );
+				   jQuery('#formContant #villelabel').removeClass( 'nodisplay');				
+					return false; 
+				  } 
+				   if (document.formContant.email.value == ""){ 
+				   jQuery('#formContant #email').addClass( 'error' );  				   
+				   jQuery('#formContant #emaillabel').addClass( 'error' );
+				   jQuery('#formContant #emaillabel').removeClass( 'nodisplay');				
+					return false; 
+				  }        
+				return true;
+				}
+              /*************************************************/
+				 function removeformContant(){
 
-jQuery().ready(function() {
-	// validate the comment form when it is submitted
-	// validate signup form on keyup and submit
-	jQuery("#formContant").validate({
-		rules: {
-			nom: "required",
-			prenom: "required",
-			adresse: "required",
-			code_postal: "required",
-			ville: "required",
-			telephone: "required",
-			email: {
-				required: true,
-				email: true
-			}
-		},
-		messages: {
-			nom: "Veuillez renseigner le champ nom",
-			prenom: "Veuillez renseigner le champ prenom",
-			adresse: "Veuillez renseigner votre adresse",
-			code_postal: "Veuillez renseigner votre code postal",
-			ville: "Veuillez renseigner votre ville",
-			telephone: "Veuillez renseigner votre telephone",
-			email: "Veuillez renseigner votre email"
-		}
-	});
-
-
-
-});
-
+				  if (document.formContant.nom.value!= ""){ 
+				   jQuery('#formContant #nom').removeClass( 'error' ); 				   
+				   jQuery('#formContant #nomlabel').removeClass( 'error' );
+				   jQuery('#formContant #nomlabel').addClass( 'nodisplay');				
+				 
+				  } 
+				  if (document.formContant.prenom.value!= ""){ 
+				   jQuery('#formContant #prenom').removeClass( 'error' ); 				   
+				   jQuery('#formContant #prenomlabel').removeClass( 'error' );
+				   jQuery('#formContant #prenomlabel').addClass( 'nodisplay');				
+				
+				  }
+				  if (document.formContant.adresse.value!= ""){ 
+				   jQuery('#formContant #adresse').removeClass( 'error' ); 				   
+				   jQuery('#formContant #adresselabel').removeClass( 'error' );
+				   jQuery('#formContant #adresselabel').addClass( 'nodisplay');				
+				
+				  }
+				  if (document.formContant.code_postal.value!= ""){ 
+				   jQuery('#formContant #code_postal').removeClass( 'error' ); 				   
+				   jQuery('#formContant #code_postallabel').removeClass( 'error' );
+				   jQuery('#formContant #code_postallabel').addClass( 'nodisplay');				
+				
+				  }
+				  if (document.formContant.ville.value!= ""){ 
+				   jQuery('#formContant #ville').removeClass( 'error' ); 				   
+				   jQuery('#formContant #villelabel').removeClass( 'error' );
+				   jQuery('#formContant #villelabel').addClass( 'nodisplay');				
+				 
+				  }
+				if (document.formContant.email.value!= ""){ 
+				   jQuery('#formContant #email').removeClass( 'error' ); 				   
+				   jQuery('#formContant #emaillabel').removeClass( 'error' );
+				   jQuery('#formContant #emaillabel').addClass( 'nodisplay');				
+			
+				  }
+				  				  
+				}   
 
 </script>
 
@@ -75,25 +148,24 @@ jQuery().ready(function() {
         	<div id="new-navigation"><a href="#" class="new-prev" onClick="jQuery('#my_contact').trigger('close');">RETOUR</a>
         	<p>  </p> </div>
            
-        <form name="formContant"  class="cmxform"  id="formContant" method="post" action="">
+        <form name="formContant"  class="cmxform"  id="formContant" method="post" action="/contact/contactar"  onSubmit="return validateformContant()">
         <p><?php echo ($this->error)?"S'il vous plaît vérifier vos informations":''?></p>
-
-<p><input name="nom" type="text" placeholder="Nom" required value="<?php echo ($nom)?$datos["nom"]:'';?>" /></p>
-<p><input name="prenom" type="text" placeholder="Prénom" required value="<?php echo ($prenom)?$datos["prenom"]:'';?>"/></p>
-<p><input name="adresse" type="text" placeholder="Adresse" required value="<?php echo ($adresse)?$datos["adresse"]:'';?>"/></p>
-          <p><input name="code_postal" type="text" placeholder="Code Postal" required value="<?php echo ($code_postal)?$datos["code_postal"]:'';?>"/></p>
-          <p><input name="ville" type="text" placeholder="Ville" required value="<?php echo ($ville)?$datos["ville"]:'';?>"/></p>
-          <p><input name="telephone"  id="telephone" type="text" placeholder="Téléphone"></p>
-
-            <p>
-            <input name="email" type="text" placeholder="Votre adresse Email" required value="<?php echo ($email)?$datos["email"]:'';?>">
-            </p>
-<p> 
-<?= $this->formMagasin->magasin?>
-
-</p>
-
-<p> <textarea name="message" id="message" cols="45" rows="5">message</textarea></p>
+		<p><input name="nom"  id="nom" type="text" placeholder="Nom"  value="<?php echo ($nom)?$datos["nom"]:'';?>"  onKeyPress="removeformContant()"/>
+        <label for="nom" id="nomlabel" class="nodisplay">Veuillez renseigner le champ nom</label></p>
+		<p><input name="prenom" id="prenom" type="text" placeholder="Prénom"  value="<?php echo ($prenom)?$datos["prenom"]:'';?>" onKeyPress="removeformContant()"/>
+        <label for="prenom"  id="prenomlabel" class="nodisplay">Veuillez renseigner le champ prenom</label></p>
+		<p><input name="adresse" id="adresse" type="text" placeholder="Adresse"  value="<?php echo ($adresse)?$datos["adresse"]:'';?>" onKeyPress="removeformContant()"/>
+         <label for="adresse" id="adresselabel" class="nodisplay">Veuillez renseigner votre adresse</label>
+		</p>
+        <p><input name="code_postal"  id="code_postal" type="text" placeholder="Code Postal"  value="<?php echo ($code_postal)?$datos["code_postal"]:'';?>" onKeyPress="removeformContant()"/>
+        <label for="code_postal" id="code_postallabel"  class="nodisplay">Veuillez renseigner votre code postal</label></p>
+        <p><input name="ville" id="ville" type="text" placeholder="Ville"  value="<?php echo ($ville)?$datos["ville"]:'';?>" onKeyPress="removeformContant()"/>
+        <label for="ville" id="villelabel"  class="nodisplay">Veuillez renseigner votre ville</label></p>
+        <p><input name="telephone"  id="telephone" type="text" placeholder="Téléphone"></p>
+		<p><input name="email" id="email" type="text" placeholder="Votre adresse Email"  value="<?php echo ($email)?$datos["email"]:'';?>" onKeyPress="removeformContant()">
+        <label for="email" id="emaillabel"  class="nodisplay">Veuillez renseigner votre email</label></p>
+        <p><?= $this->formMagasin->magasin?></p>
+		<p> <textarea name="message" id="message" cols="45" rows="5">message</textarea></p>
 <p></p><p></p>
                <div class="fomrinfo">
                     	<span>Veuillez saisir les lettres de limage dans le champ situé sous l'image en respectant les majuscules et les minuscules.</span>
@@ -131,4 +203,143 @@ jQuery().ready(function() {
       }
     });
   }
-</script>      
+    var newsletterpo = function(){  
+    jQuery('#my_newsletter_popup').lightbox_me({
+      centered: true,
+      onLoad: function() {
+    	  jQuery('#my_newsletter_popup_text').html("Stuff");
+      }
+    });
+  } 
+  
+</script>
+
+<!--/***************************************************************************************************************   /-->
+<!--/***************************************************************************************************************   /-->
+<!--/***************************************************************************************************************   /-->
+<!--/* NEWSLETTER **************************************************************************************************   /-->
+<!--/***************************************************************************************************************   /-->
+
+  <script>
+/*************************************************************/
+
+				 function validateformNewsletterpopup(){
+				   
+		   
+				  if (document.formNewsletterpopup.email.value == ""&&document.formNewsletterpopup.prenom.value == ""&&document.formNewsletterpopup.nom.value == ""){ 
+				   jQuery('#formNewsletterpopup #email').addClass( 'error' );  				   
+				   jQuery('#formNewsletterpopup #emaillabel').addClass( 'error' );
+				   jQuery('#formNewsletterpopup #emaillabel').removeClass( 'nodisplay');	
+				   jQuery('#formNewsletterpopup #prenom').addClass( 'error' );  				   
+				   jQuery('#formNewsletterpopup #prenomlabel').addClass( 'error' );
+				   jQuery('#formNewsletterpopup #prenomlabel').removeClass( 'nodisplay');	
+				   jQuery('#formNewsletterpopup #nom').addClass( 'error' );  				   
+				   jQuery('#formNewsletterpopup #nomlabel').addClass( 'error' );
+				   jQuery('#formNewsletterpopup #nomlabel').removeClass( 'nodisplay');
+				   			
+					return false; 
+				  }
+				 
+				  if (document.formNewsletterpopup.nom.value == ""){ 
+				   jQuery('#formNewsletterpopup #nom').addClass( 'error' );  				   
+				   jQuery('#formNewsletterpopup #nomlabel').addClass( 'error' );
+				   jQuery('#formNewsletterpopup #nomlabel').removeClass( 'nodisplay');				
+					return false; 
+				  }
+				  if (document.formNewsletterpopup.prenom.value == ""){ 
+				   jQuery('#formNewsletterpopup #prenom').addClass( 'error' );  				   
+				   jQuery('#formNewsletterpopup #prenomlabel').addClass( 'error' );
+				   jQuery('#formNewsletterpopup #prenomlabel').removeClass( 'nodisplay');				
+					return false; 
+				  }
+
+				   if (document.formNewsletterpopup.email.value == ""){ 
+				   jQuery('#formNewsletterpopup #email').addClass( 'error' );  				   
+				   jQuery('#formNewsletterpopup #emaillabel').addClass( 'error' );
+				   jQuery('#formNewsletterpopup #emaillabel').removeClass( 'nodisplay');				
+					return false; 
+				  } 
+				  	  if (document.formNewsletterpopup.email.value.indexOf('@', 0) == -1 || document.formNewsletterpopup.email.value.indexOf('.', 0) == -1){
+					  jQuery('#formNewsletterpopup #email').addClass( 'error' );  				   
+					   jQuery('#formNewsletterpopup #emaillabel').addClass( 'error' );
+					   jQuery('#formNewsletterpopup #emaillabel').removeClass( 'nodisplay')
+					   return false; 
+				  }    
+				return true;
+				}
+              /*************************************************/
+				 function removeformNewsletterpopup(){
+
+				  if (document.formNewsletterpopup.nom.value!= ""){ 
+				   jQuery('#formNewsletterpopup #nom').removeClass( 'error' ); 				   
+				   jQuery('#formNewsletterpopup #nomlabel').removeClass( 'error' );
+				   jQuery('#formNewsletterpopup #nomlabel').addClass( 'nodisplay');				
+				 
+				  } 
+				  if (document.formNewsletterpopup.prenom.value!= ""){ 
+				   jQuery('#formNewsletterpopup #prenom').removeClass( 'error' ); 				   
+				   jQuery('#formNewsletterpopup #prenomlabel').removeClass( 'error' );
+				   jQuery('#formNewsletterpopup #prenomlabel').addClass( 'nodisplay');				
+				
+				  }
+
+				if (document.formNewsletterpopup.email.value!= ""){ 
+				   jQuery('#formNewsletterpopup #email').removeClass( 'error' ); 				   
+				   jQuery('#formNewsletterpopup #emaillabel').removeClass( 'error' );
+				   jQuery('#formNewsletterpopup #emaillabel').addClass( 'nodisplay');				
+			
+				  }
+				  				  
+				}   
+
+</script> 
+
+<div id="my_newsletter_popup" class="contact"> 
+  <div id="wrapper-form">
+    	<div id="new-form">
+        	<div id="new-navigation"><a href="#" class="new-prev" onClick="jQuery('#my_newsletter_popup').trigger('close');">RETOUR</a><p>INSCRIPTION À LA NEWSLETTER</p>
+        	<p>  </p> </div>
+           
+        <form name="formNewsletterpopup"  class="cmxform"  id="formNewsletterpopup" method="post" action="/newsletter/"  onSubmit="return validateformNewsletterpopup()">
+        <p><?php echo ($this->error)?"S'il vous plaît vérifier vos informations":''?></p>
+		<p><input name="nom"  id="nom" type="text" placeholder="Nom"  value="<?php echo ($nom)?$datos["nom"]:'';?>"  onKeyPress="removeformNewsletterpopup()"/>
+        <label for="nom" id="nomlabel" class="nodisplay">Veuillez renseigner le champ nom</label></p>
+		<p><input name="prenom" id="prenom" type="text" placeholder="Prénom"  value="<?php echo ($prenom)?$datos["prenom"]:'';?>" onKeyPress="removeformNewsletterpopup()"/>
+        <label for="prenom"  id="prenomlabel" class="nodisplay">Veuillez renseigner le champ prenom</label></p>
+		<p><input name="adresse" id="adresse" type="text" placeholder="Adresse"  value="<?php echo ($adresse)?$datos["adresse"]:'';?>" onKeyPress="removeformNewsletterpopup()"/>
+         <label for="adresse" id="adresselabel" class="nodisplay">Veuillez renseigner votre adresse</label>
+		</p>
+        <p><input name="code_postal"  id="code_postal" type="text" placeholder="Code Postal"  value="<?php echo ($code_postal)?$datos["code_postal"]:'';?>" onKeyPress="removeformNewsletterpopup()"/>
+        <label for="code_postal" id="code_postallabel"  class="nodisplay">Veuillez renseigner votre code postal</label></p>
+        <p><input name="ville" id="ville" type="text" placeholder="Ville"  value="<?php echo ($ville)?$datos["ville"]:'';?>" onKeyPress="removeformNewsletterpopup()"/>
+        <label for="ville" id="villelabel"  class="nodisplay">Veuillez renseigner votre ville</label></p>
+        <p><input name="telephone"  id="telephone" type="text" placeholder="Téléphone"></p>
+		<p><input name="email" id="email" type="text" placeholder="Votre adresse Email"  value="<?php echo ($email)?$datos["email"]:'';?>" onKeyPress="removeformNewsletterpopup()">
+        <label for="email" id="emaillabel"  class="nodisplay">Veuillez renseigner votre email</label></p>
+<p></p><p></p>
+               <div class="fomrinfo">
+                    	<span>Veuillez saisir les lettres de limage dans le champ situé sous l'image en respectant les majuscules et les minuscules.</span>
+                    <div class="captcha">
+                    	<div class="imgcap"><img src="<?=MEDIA_URL ?>CaptchaSecurityImages.php" /></div>
+                        <div class="inpcap"><input name="" type="text"></div>
+                    </div>
+                   <div class="condition">
+                   	<input name="" type="checkbox" value="" />En cochant cette case, je souhaite recevoir la newsletter Moto Expert
+                   
+                   </div>
+                    
+                    <input name="ENVOYER" type="submit" id="ENVOYER" value="ENVOYER" />
+                    
+                    </div>
+<p></p>
+
+          
+
+            
+        </form>
+    	</div>
+	  
+      
+	</div>
+   </div> 
+

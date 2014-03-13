@@ -14,7 +14,7 @@ class Default_FicheMotoController extends App_Controller_Action_Default
     	$this->view->form = $form;
         $id = $this->_getParam('id');
         $model = new App_Model_Announce();
-        $result = $model->detailAnnounce($id);
+        $result = $model->detailFichaAnnounce($id);
         $this->view->detailAnnonces = $result;
         
         $resultPhoto = $model->photoDetailAnnonce($id);

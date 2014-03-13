@@ -1,0 +1,462 @@
+[19-Feb-2014 15:25:54] PHP Fatal error:  Unsupported operand types in /home/altimea/subdomains/motoexpert/application/forms/BuscarMoto.php on line 10
+[19-Feb-2014 15:27:51] PHP Fatal error:  Unsupported operand types in /home/altimea/subdomains/motoexpert/application/forms/BuscarMoto.php on line 10
+[19-Feb-2014 15:32:08] PHP Fatal error:  Unsupported operand types in /home/altimea/subdomains/motoexpert/application/forms/BuscarMoto.php on line 10
+[19-Feb-2014 23:48:54] PHP Fatal error:  Unsupported operand types in /home/altimea/subdomains/motoexpert/application/forms/BuscarMoto.php on line 10
+[20-Feb-2014 08:06:51] PHP Fatal error:  Unsupported operand types in /home/altimea/subdomains/motoexpert/application/forms/BuscarMoto.php on line 10
+[20-Feb-2014 10:47:00] PHP Fatal error:  Unsupported operand types in /home/altimea/subdomains/motoexpert/application/forms/BuscarMoto.php on line 10
+[20-Feb-2014 11:11:42] PHP Fatal error:  Unsupported operand types in /home/altimea/subdomains/motoexpert/application/forms/BuscarMoto.php on line 10
+[20-Feb-2014 11:24:49] PHP Fatal error:  Unsupported operand types in /home/altimea/subdomains/motoexpert/application/forms/BuscarMoto.php on line 10
+[20-Feb-2014 17:31:01] PHP Fatal error:  Uncaught exception 'Zend_Config_Exception' with message 'Error parsing /home/altimea/subdomains/motoexpert/application/configs/application.ini on line 25
+' in /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php:182
+Stack trace:
+#0 /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php(202): Zend_Config_Ini->_parseIniFile('/home/altimea/s...')
+#1 /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php(126): Zend_Config_Ini->_loadIniFile('/home/altimea/s...')
+#2 /home/altimea/subdomains/motoexpert/library/Zend/Application.php(386): Zend_Config_Ini->__construct('/home/altimea/s...', 'development')
+#3 /home/altimea/subdomains/motoexpert/library/Zend/Application.php(85): Zend_Application->_loadConfig('/home/altimea/s...')
+#4 /home/altimea/subdomains/motoexpert/public/index.php(30): Zend_Application->__construct('development', '/home/altimea/s...')
+#5 {main}
+  thrown in /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php on line 182
+[20-Feb-2014 17:31:56] PHP Fatal error:  Uncaught exception 'Zend_Config_Exception' with message 'Error parsing /home/altimea/subdomains/motoexpert/application/configs/application.ini on line 25
+' in /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php:182
+Stack trace:
+#0 /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php(202): Zend_Config_Ini->_parseIniFile('/home/altimea/s...')
+#1 /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php(126): Zend_Config_Ini->_loadIniFile('/home/altimea/s...')
+#2 /home/altimea/subdomains/motoexpert/library/Zend/Application.php(386): Zend_Config_Ini->__construct('/home/altimea/s...', 'development')
+#3 /home/altimea/subdomains/motoexpert/library/Zend/Application.php(85): Zend_Application->_loadConfig('/home/altimea/s...')
+#4 /home/altimea/subdomains/motoexpert/public/index.php(30): Zend_Application->__construct('development', '/home/altimea/s...')
+#5 {main}
+  thrown in /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php on line 182
+[20-Feb-2014 17:32:03] PHP Fatal error:  Uncaught exception 'Zend_Config_Exception' with message 'Error parsing /home/altimea/subdomains/motoexpert/application/configs/application.ini on line 25
+' in /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php:182
+Stack trace:
+#0 /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php(202): Zend_Config_Ini->_parseIniFile('/home/altimea/s...')
+#1 /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php(126): Zend_Config_Ini->_loadIniFile('/home/altimea/s...')
+#2 /home/altimea/subdomains/motoexpert/library/Zend/Application.php(386): Zend_Config_Ini->__construct('/home/altimea/s...', 'development')
+#3 /home/altimea/subdomains/motoexpert/library/Zend/Application.php(85): Zend_Application->_loadConfig('/home/altimea/s...')
+#4 /home/altimea/subdomains/motoexpert/public/index.php(30): Zend_Application->__construct('development', '/home/altimea/s...')
+#5 {main}
+  thrown in /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php on line 182
+[20-Feb-2014 17:32:04] PHP Fatal error:  Uncaught exception 'Zend_Config_Exception' with message 'Error parsing /home/altimea/subdomains/motoexpert/application/configs/application.ini on line 25
+' in /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php:182
+Stack trace:
+#0 /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php(202): Zend_Config_Ini->_parseIniFile('/home/altimea/s...')
+#1 /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php(126): Zend_Config_Ini->_loadIniFile('/home/altimea/s...')
+#2 /home/altimea/subdomains/motoexpert/library/Zend/Application.php(386): Zend_Config_Ini->__construct('/home/altimea/s...', 'development')
+#3 /home/altimea/subdomains/motoexpert/library/Zend/Application.php(85): Zend_Application->_loadConfig('/home/altimea/s...')
+#4 /home/altimea/subdomains/motoexpert/public/index.php(30): Zend_Application->__construct('development', '/home/altimea/s...')
+#5 {main}
+  thrown in /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php on line 182
+[20-Feb-2014 17:34:19] PHP Fatal error:  Uncaught exception 'Zend_Config_Exception' with message 'Error parsing /home/altimea/subdomains/motoexpert/application/configs/application.ini on line 25
+' in /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php:182
+Stack trace:
+#0 /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php(202): Zend_Config_Ini->_parseIniFile('/home/altimea/s...')
+#1 /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php(126): Zend_Config_Ini->_loadIniFile('/home/altimea/s...')
+#2 /home/altimea/subdomains/motoexpert/library/Zend/Application.php(386): Zend_Config_Ini->__construct('/home/altimea/s...', 'development')
+#3 /home/altimea/subdomains/motoexpert/library/Zend/Application.php(85): Zend_Application->_loadConfig('/home/altimea/s...')
+#4 /home/altimea/subdomains/motoexpert/public/index.php(30): Zend_Application->__construct('development', '/home/altimea/s...')
+#5 {main}
+  thrown in /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php on line 182
+[20-Feb-2014 17:34:19] PHP Fatal error:  Uncaught exception 'Zend_Config_Exception' with message 'Error parsing /home/altimea/subdomains/motoexpert/application/configs/application.ini on line 25
+' in /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php:182
+Stack trace:
+#0 /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php(202): Zend_Config_Ini->_parseIniFile('/home/altimea/s...')
+#1 /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php(126): Zend_Config_Ini->_loadIniFile('/home/altimea/s...')
+#2 /home/altimea/subdomains/motoexpert/library/Zend/Application.php(386): Zend_Config_Ini->__construct('/home/altimea/s...', 'development')
+#3 /home/altimea/subdomains/motoexpert/library/Zend/Application.php(85): Zend_Application->_loadConfig('/home/altimea/s...')
+#4 /home/altimea/subdomains/motoexpert/public/index.php(30): Zend_Application->__construct('development', '/home/altimea/s...')
+#5 {main}
+  thrown in /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php on line 182
+[20-Feb-2014 17:34:19] PHP Fatal error:  Uncaught exception 'Zend_Config_Exception' with message 'Error parsing /home/altimea/subdomains/motoexpert/application/configs/application.ini on line 25
+' in /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php:182
+Stack trace:
+#0 /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php(202): Zend_Config_Ini->_parseIniFile('/home/altimea/s...')
+#1 /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php(126): Zend_Config_Ini->_loadIniFile('/home/altimea/s...')
+#2 /home/altimea/subdomains/motoexpert/library/Zend/Application.php(386): Zend_Config_Ini->__construct('/home/altimea/s...', 'development')
+#3 /home/altimea/subdomains/motoexpert/library/Zend/Application.php(85): Zend_Application->_loadConfig('/home/altimea/s...')
+#4 /home/altimea/subdomains/motoexpert/public/index.php(30): Zend_Application->__construct('development', '/home/altimea/s...')
+#5 {main}
+  thrown in /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php on line 182
+[20-Feb-2014 17:37:53] PHP Fatal error:  Uncaught exception 'Zend_Config_Exception' with message 'Error parsing /home/altimea/subdomains/motoexpert/application/configs/application.ini on line 25
+' in /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php:182
+Stack trace:
+#0 /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php(202): Zend_Config_Ini->_parseIniFile('/home/altimea/s...')
+#1 /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php(126): Zend_Config_Ini->_loadIniFile('/home/altimea/s...')
+#2 /home/altimea/subdomains/motoexpert/library/Zend/Application.php(386): Zend_Config_Ini->__construct('/home/altimea/s...', 'development')
+#3 /home/altimea/subdomains/motoexpert/library/Zend/Application.php(85): Zend_Application->_loadConfig('/home/altimea/s...')
+#4 /home/altimea/subdomains/motoexpert/public/index.php(30): Zend_Application->__construct('development', '/home/altimea/s...')
+#5 {main}
+  thrown in /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php on line 182
+[20-Feb-2014 11:51:43] PHP Fatal error:  Unsupported operand types in /home/altimea/subdomains/motoexpert/application/forms/BuscarMoto.php on line 10
+[20-Feb-2014 17:53:43] PHP Fatal error:  Uncaught exception 'Zend_Config_Exception' with message 'Error parsing /home/altimea/subdomains/motoexpert/application/configs/application.ini on line 25
+' in /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php:182
+Stack trace:
+#0 /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php(202): Zend_Config_Ini->_parseIniFile('/home/altimea/s...')
+#1 /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php(126): Zend_Config_Ini->_loadIniFile('/home/altimea/s...')
+#2 /home/altimea/subdomains/motoexpert/library/Zend/Application.php(386): Zend_Config_Ini->__construct('/home/altimea/s...', 'development')
+#3 /home/altimea/subdomains/motoexpert/library/Zend/Application.php(85): Zend_Application->_loadConfig('/home/altimea/s...')
+#4 /home/altimea/subdomains/motoexpert/public/index.php(30): Zend_Application->__construct('development', '/home/altimea/s...')
+#5 {main}
+  thrown in /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php on line 182
+[20-Feb-2014 17:54:58] PHP Fatal error:  Uncaught exception 'Zend_Config_Exception' with message 'Error parsing /home/altimea/subdomains/motoexpert/application/configs/application.ini on line 25
+' in /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php:182
+Stack trace:
+#0 /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php(202): Zend_Config_Ini->_parseIniFile('/home/altimea/s...')
+#1 /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php(126): Zend_Config_Ini->_loadIniFile('/home/altimea/s...')
+#2 /home/altimea/subdomains/motoexpert/library/Zend/Application.php(386): Zend_Config_Ini->__construct('/home/altimea/s...', 'development')
+#3 /home/altimea/subdomains/motoexpert/library/Zend/Application.php(85): Zend_Application->_loadConfig('/home/altimea/s...')
+#4 /home/altimea/subdomains/motoexpert/public/index.php(30): Zend_Application->__construct('development', '/home/altimea/s...')
+#5 {main}
+  thrown in /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php on line 182
+[20-Feb-2014 17:56:03] PHP Fatal error:  Uncaught exception 'Zend_Config_Exception' with message 'Error parsing /home/altimea/subdomains/motoexpert/application/configs/application.ini on line 25
+' in /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php:182
+Stack trace:
+#0 /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php(202): Zend_Config_Ini->_parseIniFile('/home/altimea/s...')
+#1 /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php(126): Zend_Config_Ini->_loadIniFile('/home/altimea/s...')
+#2 /home/altimea/subdomains/motoexpert/library/Zend/Application.php(386): Zend_Config_Ini->__construct('/home/altimea/s...', 'development')
+#3 /home/altimea/subdomains/motoexpert/library/Zend/Application.php(85): Zend_Application->_loadConfig('/home/altimea/s...')
+#4 /home/altimea/subdomains/motoexpert/public/index.php(30): Zend_Application->__construct('development', '/home/altimea/s...')
+#5 {main}
+  thrown in /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php on line 182
+[20-Feb-2014 17:56:20] PHP Fatal error:  Uncaught exception 'Zend_Config_Exception' with message 'Error parsing /home/altimea/subdomains/motoexpert/application/configs/application.ini on line 25
+' in /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php:182
+Stack trace:
+#0 /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php(202): Zend_Config_Ini->_parseIniFile('/home/altimea/s...')
+#1 /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php(126): Zend_Config_Ini->_loadIniFile('/home/altimea/s...')
+#2 /home/altimea/subdomains/motoexpert/library/Zend/Application.php(386): Zend_Config_Ini->__construct('/home/altimea/s...', 'development')
+#3 /home/altimea/subdomains/motoexpert/library/Zend/Application.php(85): Zend_Application->_loadConfig('/home/altimea/s...')
+#4 /home/altimea/subdomains/motoexpert/public/index.php(30): Zend_Application->__construct('development', '/home/altimea/s...')
+#5 {main}
+  thrown in /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php on line 182
+[20-Feb-2014 11:56:38] PHP Fatal error:  Unsupported operand types in /home/altimea/subdomains/motoexpert/application/forms/BuscarMoto.php on line 10
+[20-Feb-2014 17:57:33] PHP Fatal error:  Uncaught exception 'Zend_Config_Exception' with message 'Error parsing /home/altimea/subdomains/motoexpert/application/configs/application.ini on line 25
+' in /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php:182
+Stack trace:
+#0 /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php(202): Zend_Config_Ini->_parseIniFile('/home/altimea/s...')
+#1 /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php(126): Zend_Config_Ini->_loadIniFile('/home/altimea/s...')
+#2 /home/altimea/subdomains/motoexpert/library/Zend/Application.php(386): Zend_Config_Ini->__construct('/home/altimea/s...', 'development')
+#3 /home/altimea/subdomains/motoexpert/library/Zend/Application.php(85): Zend_Application->_loadConfig('/home/altimea/s...')
+#4 /home/altimea/subdomains/motoexpert/public/index.php(30): Zend_Application->__construct('development', '/home/altimea/s...')
+#5 {main}
+  thrown in /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php on line 182
+[20-Feb-2014 17:58:08] PHP Fatal error:  Uncaught exception 'Zend_Config_Exception' with message 'Error parsing /home/altimea/subdomains/motoexpert/application/configs/application.ini on line 25
+' in /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php:182
+Stack trace:
+#0 /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php(202): Zend_Config_Ini->_parseIniFile('/home/altimea/s...')
+#1 /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php(126): Zend_Config_Ini->_loadIniFile('/home/altimea/s...')
+#2 /home/altimea/subdomains/motoexpert/library/Zend/Application.php(386): Zend_Config_Ini->__construct('/home/altimea/s...', 'development')
+#3 /home/altimea/subdomains/motoexpert/library/Zend/Application.php(85): Zend_Application->_loadConfig('/home/altimea/s...')
+#4 /home/altimea/subdomains/motoexpert/public/index.php(30): Zend_Application->__construct('development', '/home/altimea/s...')
+#5 {main}
+  thrown in /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php on line 182
+[20-Feb-2014 17:58:37] PHP Fatal error:  Uncaught exception 'Zend_Config_Exception' with message 'Error parsing /home/altimea/subdomains/motoexpert/application/configs/application.ini on line 25
+' in /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php:182
+Stack trace:
+#0 /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php(202): Zend_Config_Ini->_parseIniFile('/home/altimea/s...')
+#1 /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php(126): Zend_Config_Ini->_loadIniFile('/home/altimea/s...')
+#2 /home/altimea/subdomains/motoexpert/library/Zend/Application.php(386): Zend_Config_Ini->__construct('/home/altimea/s...', 'development')
+#3 /home/altimea/subdomains/motoexpert/library/Zend/Application.php(85): Zend_Application->_loadConfig('/home/altimea/s...')
+#4 /home/altimea/subdomains/motoexpert/public/index.php(30): Zend_Application->__construct('development', '/home/altimea/s...')
+#5 {main}
+  thrown in /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php on line 182
+[20-Feb-2014 17:59:50] PHP Fatal error:  Uncaught exception 'Zend_Config_Exception' with message 'Error parsing /home/altimea/subdomains/motoexpert/application/configs/application.ini on line 25
+' in /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php:182
+Stack trace:
+#0 /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php(202): Zend_Config_Ini->_parseIniFile('/home/altimea/s...')
+#1 /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php(126): Zend_Config_Ini->_loadIniFile('/home/altimea/s...')
+#2 /home/altimea/subdomains/motoexpert/library/Zend/Application.php(386): Zend_Config_Ini->__construct('/home/altimea/s...', 'development')
+#3 /home/altimea/subdomains/motoexpert/library/Zend/Application.php(85): Zend_Application->_loadConfig('/home/altimea/s...')
+#4 /home/altimea/subdomains/motoexpert/public/index.php(30): Zend_Application->__construct('development', '/home/altimea/s...')
+#5 {main}
+  thrown in /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php on line 182
+[20-Feb-2014 18:00:24] PHP Fatal error:  Uncaught exception 'Zend_Config_Exception' with message 'Error parsing /home/altimea/subdomains/motoexpert/application/configs/application.ini on line 25
+' in /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php:182
+Stack trace:
+#0 /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php(202): Zend_Config_Ini->_parseIniFile('/home/altimea/s...')
+#1 /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php(126): Zend_Config_Ini->_loadIniFile('/home/altimea/s...')
+#2 /home/altimea/subdomains/motoexpert/library/Zend/Application.php(386): Zend_Config_Ini->__construct('/home/altimea/s...', 'development')
+#3 /home/altimea/subdomains/motoexpert/library/Zend/Application.php(85): Zend_Application->_loadConfig('/home/altimea/s...')
+#4 /home/altimea/subdomains/motoexpert/public/index.php(30): Zend_Application->__construct('development', '/home/altimea/s...')
+#5 {main}
+  thrown in /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php on line 182
+[20-Feb-2014 18:00:34] PHP Fatal error:  Uncaught exception 'Zend_Config_Exception' with message 'Error parsing /home/altimea/subdomains/motoexpert/application/configs/application.ini on line 25
+' in /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php:182
+Stack trace:
+#0 /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php(202): Zend_Config_Ini->_parseIniFile('/home/altimea/s...')
+#1 /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php(126): Zend_Config_Ini->_loadIniFile('/home/altimea/s...')
+#2 /home/altimea/subdomains/motoexpert/library/Zend/Application.php(386): Zend_Config_Ini->__construct('/home/altimea/s...', 'development')
+#3 /home/altimea/subdomains/motoexpert/library/Zend/Application.php(85): Zend_Application->_loadConfig('/home/altimea/s...')
+#4 /home/altimea/subdomains/motoexpert/public/index.php(30): Zend_Application->__construct('development', '/home/altimea/s...')
+#5 {main}
+  thrown in /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php on line 182
+[20-Feb-2014 18:00:41] PHP Fatal error:  Uncaught exception 'Zend_Config_Exception' with message 'Error parsing /home/altimea/subdomains/motoexpert/application/configs/application.ini on line 26
+' in /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php:182
+Stack trace:
+#0 /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php(202): Zend_Config_Ini->_parseIniFile('/home/altimea/s...')
+#1 /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php(126): Zend_Config_Ini->_loadIniFile('/home/altimea/s...')
+#2 /home/altimea/subdomains/motoexpert/library/Zend/Application.php(386): Zend_Config_Ini->__construct('/home/altimea/s...', 'development')
+#3 /home/altimea/subdomains/motoexpert/library/Zend/Application.php(85): Zend_Application->_loadConfig('/home/altimea/s...')
+#4 /home/altimea/subdomains/motoexpert/public/index.php(30): Zend_Application->__construct('development', '/home/altimea/s...')
+#5 {main}
+  thrown in /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php on line 182
+[20-Feb-2014 12:00:57] PHP Fatal error:  Unsupported operand types in /home/altimea/subdomains/motoexpert/application/forms/BuscarMoto.php on line 10
+[20-Feb-2014 12:01:28] PHP Fatal error:  Unsupported operand types in /home/altimea/subdomains/motoexpert/application/forms/BuscarMoto.php on line 10
+[20-Feb-2014 18:01:41] PHP Fatal error:  Uncaught exception 'Zend_Config_Exception' with message 'Error parsing /home/altimea/subdomains/motoexpert/application/configs/application.ini on line 25
+' in /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php:182
+Stack trace:
+#0 /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php(202): Zend_Config_Ini->_parseIniFile('/home/altimea/s...')
+#1 /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php(126): Zend_Config_Ini->_loadIniFile('/home/altimea/s...')
+#2 /home/altimea/subdomains/motoexpert/library/Zend/Application.php(386): Zend_Config_Ini->__construct('/home/altimea/s...', 'development')
+#3 /home/altimea/subdomains/motoexpert/library/Zend/Application.php(85): Zend_Application->_loadConfig('/home/altimea/s...')
+#4 /home/altimea/subdomains/motoexpert/public/index.php(30): Zend_Application->__construct('development', '/home/altimea/s...')
+#5 {main}
+  thrown in /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php on line 182
+[20-Feb-2014 12:01:58] PHP Fatal error:  Unsupported operand types in /home/altimea/subdomains/motoexpert/application/forms/BuscarMoto.php on line 10
+[20-Feb-2014 18:02:31] PHP Fatal error:  Uncaught exception 'Zend_Config_Exception' with message 'Error parsing /home/altimea/subdomains/motoexpert/application/configs/application.ini on line 25
+' in /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php:182
+Stack trace:
+#0 /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php(202): Zend_Config_Ini->_parseIniFile('/home/altimea/s...')
+#1 /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php(126): Zend_Config_Ini->_loadIniFile('/home/altimea/s...')
+#2 /home/altimea/subdomains/motoexpert/library/Zend/Application.php(386): Zend_Config_Ini->__construct('/home/altimea/s...', 'development')
+#3 /home/altimea/subdomains/motoexpert/library/Zend/Application.php(85): Zend_Application->_loadConfig('/home/altimea/s...')
+#4 /home/altimea/subdomains/motoexpert/public/index.php(30): Zend_Application->__construct('development', '/home/altimea/s...')
+#5 {main}
+  thrown in /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php on line 182
+[20-Feb-2014 18:02:33] PHP Fatal error:  Uncaught exception 'Zend_Config_Exception' with message 'Error parsing /home/altimea/subdomains/motoexpert/application/configs/application.ini on line 25
+' in /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php:182
+Stack trace:
+#0 /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php(202): Zend_Config_Ini->_parseIniFile('/home/altimea/s...')
+#1 /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php(126): Zend_Config_Ini->_loadIniFile('/home/altimea/s...')
+#2 /home/altimea/subdomains/motoexpert/library/Zend/Application.php(386): Zend_Config_Ini->__construct('/home/altimea/s...', 'development')
+#3 /home/altimea/subdomains/motoexpert/library/Zend/Application.php(85): Zend_Application->_loadConfig('/home/altimea/s...')
+#4 /home/altimea/subdomains/motoexpert/public/index.php(30): Zend_Application->__construct('development', '/home/altimea/s...')
+#5 {main}
+  thrown in /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php on line 182
+[20-Feb-2014 18:03:20] PHP Fatal error:  Uncaught exception 'Zend_Config_Exception' with message 'Error parsing /home/altimea/subdomains/motoexpert/application/configs/application.ini on line 87
+' in /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php:182
+Stack trace:
+#0 /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php(202): Zend_Config_Ini->_parseIniFile('/home/altimea/s...')
+#1 /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php(126): Zend_Config_Ini->_loadIniFile('/home/altimea/s...')
+#2 /home/altimea/subdomains/motoexpert/library/Zend/Application.php(386): Zend_Config_Ini->__construct('/home/altimea/s...', 'development')
+#3 /home/altimea/subdomains/motoexpert/library/Zend/Application.php(85): Zend_Application->_loadConfig('/home/altimea/s...')
+#4 /home/altimea/subdomains/motoexpert/public/index.php(30): Zend_Application->__construct('development', '/home/altimea/s...')
+#5 {main}
+  thrown in /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php on line 182
+[20-Feb-2014 18:03:36] PHP Fatal error:  Uncaught exception 'Zend_Config_Exception' with message 'Error parsing /home/altimea/subdomains/motoexpert/application/configs/application.ini on line 87
+' in /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php:182
+Stack trace:
+#0 /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php(202): Zend_Config_Ini->_parseIniFile('/home/altimea/s...')
+#1 /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php(126): Zend_Config_Ini->_loadIniFile('/home/altimea/s...')
+#2 /home/altimea/subdomains/motoexpert/library/Zend/Application.php(386): Zend_Config_Ini->__construct('/home/altimea/s...', 'development')
+#3 /home/altimea/subdomains/motoexpert/library/Zend/Application.php(85): Zend_Application->_loadConfig('/home/altimea/s...')
+#4 /home/altimea/subdomains/motoexpert/public/index.php(30): Zend_Application->__construct('development', '/home/altimea/s...')
+#5 {main}
+  thrown in /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php on line 182
+[20-Feb-2014 18:03:38] PHP Fatal error:  Uncaught exception 'Zend_Config_Exception' with message 'Error parsing /home/altimea/subdomains/motoexpert/application/configs/application.ini on line 87
+' in /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php:182
+Stack trace:
+#0 /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php(202): Zend_Config_Ini->_parseIniFile('/home/altimea/s...')
+#1 /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php(126): Zend_Config_Ini->_loadIniFile('/home/altimea/s...')
+#2 /home/altimea/subdomains/motoexpert/library/Zend/Application.php(386): Zend_Config_Ini->__construct('/home/altimea/s...', 'development')
+#3 /home/altimea/subdomains/motoexpert/library/Zend/Application.php(85): Zend_Application->_loadConfig('/home/altimea/s...')
+#4 /home/altimea/subdomains/motoexpert/public/index.php(30): Zend_Application->__construct('development', '/home/altimea/s...')
+#5 {main}
+  thrown in /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php on line 182
+[20-Feb-2014 18:03:51] PHP Fatal error:  Uncaught exception 'Zend_Config_Exception' with message 'Error parsing /home/altimea/subdomains/motoexpert/application/configs/application.ini on line 25
+' in /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php:182
+Stack trace:
+#0 /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php(202): Zend_Config_Ini->_parseIniFile('/home/altimea/s...')
+#1 /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php(126): Zend_Config_Ini->_loadIniFile('/home/altimea/s...')
+#2 /home/altimea/subdomains/motoexpert/library/Zend/Application.php(386): Zend_Config_Ini->__construct('/home/altimea/s...', 'development')
+#3 /home/altimea/subdomains/motoexpert/library/Zend/Application.php(85): Zend_Application->_loadConfig('/home/altimea/s...')
+#4 /home/altimea/subdomains/motoexpert/public/index.php(30): Zend_Application->__construct('development', '/home/altimea/s...')
+#5 {main}
+  thrown in /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php on line 182
+[20-Feb-2014 18:03:53] PHP Fatal error:  Uncaught exception 'Zend_Config_Exception' with message 'Error parsing /home/altimea/subdomains/motoexpert/application/configs/application.ini on line 25
+' in /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php:182
+Stack trace:
+#0 /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php(202): Zend_Config_Ini->_parseIniFile('/home/altimea/s...')
+#1 /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php(126): Zend_Config_Ini->_loadIniFile('/home/altimea/s...')
+#2 /home/altimea/subdomains/motoexpert/library/Zend/Application.php(386): Zend_Config_Ini->__construct('/home/altimea/s...', 'development')
+#3 /home/altimea/subdomains/motoexpert/library/Zend/Application.php(85): Zend_Application->_loadConfig('/home/altimea/s...')
+#4 /home/altimea/subdomains/motoexpert/public/index.php(30): Zend_Application->__construct('development', '/home/altimea/s...')
+#5 {main}
+  thrown in /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php on line 182
+[20-Feb-2014 18:03:54] PHP Fatal error:  Uncaught exception 'Zend_Config_Exception' with message 'Error parsing /home/altimea/subdomains/motoexpert/application/configs/application.ini on line 25
+' in /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php:182
+Stack trace:
+#0 /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php(202): Zend_Config_Ini->_parseIniFile('/home/altimea/s...')
+#1 /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php(126): Zend_Config_Ini->_loadIniFile('/home/altimea/s...')
+#2 /home/altimea/subdomains/motoexpert/library/Zend/Application.php(386): Zend_Config_Ini->__construct('/home/altimea/s...', 'development')
+#3 /home/altimea/subdomains/motoexpert/library/Zend/Application.php(85): Zend_Application->_loadConfig('/home/altimea/s...')
+#4 /home/altimea/subdomains/motoexpert/public/index.php(30): Zend_Application->__construct('development', '/home/altimea/s...')
+#5 {main}
+  thrown in /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php on line 182
+[20-Feb-2014 18:04:26] PHP Fatal error:  Uncaught exception 'Zend_Config_Exception' with message 'Error parsing /home/altimea/subdomains/motoexpert/application/configs/application.ini on line 25
+' in /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php:182
+Stack trace:
+#0 /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php(202): Zend_Config_Ini->_parseIniFile('/home/altimea/s...')
+#1 /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php(126): Zend_Config_Ini->_loadIniFile('/home/altimea/s...')
+#2 /home/altimea/subdomains/motoexpert/library/Zend/Application.php(386): Zend_Config_Ini->__construct('/home/altimea/s...', 'development')
+#3 /home/altimea/subdomains/motoexpert/library/Zend/Application.php(85): Zend_Application->_loadConfig('/home/altimea/s...')
+#4 /home/altimea/subdomains/motoexpert/public/index.php(30): Zend_Application->__construct('development', '/home/altimea/s...')
+#5 {main}
+  thrown in /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php on line 182
+[20-Feb-2014 18:04:39] PHP Fatal error:  Uncaught exception 'Zend_Config_Exception' with message 'Error parsing /home/altimea/subdomains/motoexpert/application/configs/application.ini on line 25
+' in /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php:182
+Stack trace:
+#0 /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php(202): Zend_Config_Ini->_parseIniFile('/home/altimea/s...')
+#1 /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php(126): Zend_Config_Ini->_loadIniFile('/home/altimea/s...')
+#2 /home/altimea/subdomains/motoexpert/library/Zend/Application.php(386): Zend_Config_Ini->__construct('/home/altimea/s...', 'development')
+#3 /home/altimea/subdomains/motoexpert/library/Zend/Application.php(85): Zend_Application->_loadConfig('/home/altimea/s...')
+#4 /home/altimea/subdomains/motoexpert/public/index.php(30): Zend_Application->__construct('development', '/home/altimea/s...')
+#5 {main}
+  thrown in /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php on line 182
+[20-Feb-2014 18:04:43] PHP Fatal error:  Uncaught exception 'Zend_Config_Exception' with message 'Error parsing /home/altimea/subdomains/motoexpert/application/configs/application.ini on line 25
+' in /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php:182
+Stack trace:
+#0 /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php(202): Zend_Config_Ini->_parseIniFile('/home/altimea/s...')
+#1 /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php(126): Zend_Config_Ini->_loadIniFile('/home/altimea/s...')
+#2 /home/altimea/subdomains/motoexpert/library/Zend/Application.php(386): Zend_Config_Ini->__construct('/home/altimea/s...', 'development')
+#3 /home/altimea/subdomains/motoexpert/library/Zend/Application.php(85): Zend_Application->_loadConfig('/home/altimea/s...')
+#4 /home/altimea/subdomains/motoexpert/public/index.php(30): Zend_Application->__construct('development', '/home/altimea/s...')
+#5 {main}
+  thrown in /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php on line 182
+[20-Feb-2014 18:05:41] PHP Fatal error:  Uncaught exception 'Zend_Config_Exception' with message 'Error parsing /home/altimea/subdomains/motoexpert/application/configs/application.ini on line 25
+' in /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php:182
+Stack trace:
+#0 /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php(202): Zend_Config_Ini->_parseIniFile('/home/altimea/s...')
+#1 /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php(126): Zend_Config_Ini->_loadIniFile('/home/altimea/s...')
+#2 /home/altimea/subdomains/motoexpert/library/Zend/Application.php(386): Zend_Config_Ini->__construct('/home/altimea/s...', 'development')
+#3 /home/altimea/subdomains/motoexpert/library/Zend/Application.php(85): Zend_Application->_loadConfig('/home/altimea/s...')
+#4 /home/altimea/subdomains/motoexpert/public/index.php(30): Zend_Application->__construct('development', '/home/altimea/s...')
+#5 {main}
+  thrown in /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php on line 182
+[20-Feb-2014 18:06:00] PHP Fatal error:  Uncaught exception 'Zend_Config_Exception' with message 'Error parsing /home/altimea/subdomains/motoexpert/application/configs/application.ini on line 25
+' in /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php:182
+Stack trace:
+#0 /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php(202): Zend_Config_Ini->_parseIniFile('/home/altimea/s...')
+#1 /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php(126): Zend_Config_Ini->_loadIniFile('/home/altimea/s...')
+#2 /home/altimea/subdomains/motoexpert/library/Zend/Application.php(386): Zend_Config_Ini->__construct('/home/altimea/s...', 'development')
+#3 /home/altimea/subdomains/motoexpert/library/Zend/Application.php(85): Zend_Application->_loadConfig('/home/altimea/s...')
+#4 /home/altimea/subdomains/motoexpert/public/index.php(30): Zend_Application->__construct('development', '/home/altimea/s...')
+#5 {main}
+  thrown in /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php on line 182
+[20-Feb-2014 18:06:11] PHP Fatal error:  Uncaught exception 'Zend_Config_Exception' with message 'Error parsing /home/altimea/subdomains/motoexpert/application/configs/application.ini on line 25
+' in /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php:182
+Stack trace:
+#0 /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php(202): Zend_Config_Ini->_parseIniFile('/home/altimea/s...')
+#1 /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php(126): Zend_Config_Ini->_loadIniFile('/home/altimea/s...')
+#2 /home/altimea/subdomains/motoexpert/library/Zend/Application.php(386): Zend_Config_Ini->__construct('/home/altimea/s...', 'development')
+#3 /home/altimea/subdomains/motoexpert/library/Zend/Application.php(85): Zend_Application->_loadConfig('/home/altimea/s...')
+#4 /home/altimea/subdomains/motoexpert/public/index.php(30): Zend_Application->__construct('development', '/home/altimea/s...')
+#5 {main}
+  thrown in /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php on line 182
+[20-Feb-2014 18:06:13] PHP Fatal error:  Uncaught exception 'Zend_Config_Exception' with message 'Error parsing /home/altimea/subdomains/motoexpert/application/configs/application.ini on line 25
+' in /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php:182
+Stack trace:
+#0 /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php(202): Zend_Config_Ini->_parseIniFile('/home/altimea/s...')
+#1 /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php(126): Zend_Config_Ini->_loadIniFile('/home/altimea/s...')
+#2 /home/altimea/subdomains/motoexpert/library/Zend/Application.php(386): Zend_Config_Ini->__construct('/home/altimea/s...', 'development')
+#3 /home/altimea/subdomains/motoexpert/library/Zend/Application.php(85): Zend_Application->_loadConfig('/home/altimea/s...')
+#4 /home/altimea/subdomains/motoexpert/public/index.php(30): Zend_Application->__construct('development', '/home/altimea/s...')
+#5 {main}
+  thrown in /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php on line 182
+[20-Feb-2014 18:06:51] PHP Fatal error:  Uncaught exception 'Zend_Config_Exception' with message 'Error parsing /home/altimea/subdomains/motoexpert/application/configs/application.ini on line 25
+' in /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php:182
+Stack trace:
+#0 /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php(202): Zend_Config_Ini->_parseIniFile('/home/altimea/s...')
+#1 /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php(126): Zend_Config_Ini->_loadIniFile('/home/altimea/s...')
+#2 /home/altimea/subdomains/motoexpert/library/Zend/Application.php(386): Zend_Config_Ini->__construct('/home/altimea/s...', 'development')
+#3 /home/altimea/subdomains/motoexpert/library/Zend/Application.php(85): Zend_Application->_loadConfig('/home/altimea/s...')
+#4 /home/altimea/subdomains/motoexpert/public/index.php(30): Zend_Application->__construct('development', '/home/altimea/s...')
+#5 {main}
+  thrown in /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php on line 182
+[20-Feb-2014 18:06:59] PHP Fatal error:  Uncaught exception 'Zend_Config_Exception' with message 'Error parsing /home/altimea/subdomains/motoexpert/application/configs/application.ini on line 25
+' in /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php:182
+Stack trace:
+#0 /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php(202): Zend_Config_Ini->_parseIniFile('/home/altimea/s...')
+#1 /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php(126): Zend_Config_Ini->_loadIniFile('/home/altimea/s...')
+#2 /home/altimea/subdomains/motoexpert/library/Zend/Application.php(386): Zend_Config_Ini->__construct('/home/altimea/s...', 'development')
+#3 /home/altimea/subdomains/motoexpert/library/Zend/Application.php(85): Zend_Application->_loadConfig('/home/altimea/s...')
+#4 /home/altimea/subdomains/motoexpert/public/index.php(30): Zend_Application->__construct('development', '/home/altimea/s...')
+#5 {main}
+  thrown in /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php on line 182
+[20-Feb-2014 18:07:36] PHP Fatal error:  Uncaught exception 'Zend_Config_Exception' with message 'Error parsing /home/altimea/subdomains/motoexpert/application/configs/application.ini on line 25
+' in /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php:182
+Stack trace:
+#0 /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php(202): Zend_Config_Ini->_parseIniFile('/home/altimea/s...')
+#1 /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php(126): Zend_Config_Ini->_loadIniFile('/home/altimea/s...')
+#2 /home/altimea/subdomains/motoexpert/library/Zend/Application.php(386): Zend_Config_Ini->__construct('/home/altimea/s...', 'development')
+#3 /home/altimea/subdomains/motoexpert/library/Zend/Application.php(85): Zend_Application->_loadConfig('/home/altimea/s...')
+#4 /home/altimea/subdomains/motoexpert/public/index.php(30): Zend_Application->__construct('development', '/home/altimea/s...')
+#5 {main}
+  thrown in /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php on line 182
+[20-Feb-2014 18:10:01] PHP Fatal error:  Uncaught exception 'Zend_Config_Exception' with message 'Error parsing /home/altimea/subdomains/motoexpert/application/configs/application.ini on line 25
+' in /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php:182
+Stack trace:
+#0 /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php(202): Zend_Config_Ini->_parseIniFile('/home/altimea/s...')
+#1 /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php(126): Zend_Config_Ini->_loadIniFile('/home/altimea/s...')
+#2 /usr/lib/php/Zend/Application.php(383): Zend_Config_Ini->__construct('/home/altimea/s...', 'development')
+#3 /usr/lib/php/Zend/Application.php(85): Zend_Application->_loadConfig('/home/altimea/s...')
+#4 /home/altimea/subdomains/motoexpert/public/index.php(30): Zend_Application->__construct('development', '/home/altimea/s...')
+#5 {main}
+  thrown in /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php on line 182
+[20-Feb-2014 18:12:40] PHP Fatal error:  Uncaught exception 'Zend_Config_Exception' with message 'Error parsing /home/altimea/subdomains/motoexpert/application/configs/application.ini on line 25
+' in /usr/lib/php/Zend/Config/Ini.php:181
+Stack trace:
+#0 /usr/lib/php/Zend/Config/Ini.php(201): Zend_Config_Ini->_parseIniFile('/home/altimea/s...')
+#1 /usr/lib/php/Zend/Config/Ini.php(125): Zend_Config_Ini->_loadIniFile('/home/altimea/s...')
+#2 /home/altimea/subdomains/motoexpert/library/Zend/Application.php(386): Zend_Config_Ini->__construct('/home/altimea/s...', 'development')
+#3 /home/altimea/subdomains/motoexpert/library/Zend/Application.php(85): Zend_Application->_loadConfig('/home/altimea/s...')
+#4 /home/altimea/subdomains/motoexpert/public/index.php(30): Zend_Application->__construct('development', '/home/altimea/s...')
+#5 {main}
+  thrown in /usr/lib/php/Zend/Config/Ini.php on line 181
+[20-Feb-2014 12:14:52] PHP Fatal error:  Unsupported operand types in /home/altimea/subdomains/motoexpert/application/forms/BuscarMoto.php on line 10
+[20-Feb-2014 12:16:34] PHP Fatal error:  Unsupported operand types in /home/altimea/subdomains/motoexpert/application/forms/BuscarMoto.php on line 10
+[20-Feb-2014 12:16:51] PHP Fatal error:  Unsupported operand types in /home/altimea/subdomains/motoexpert/application/forms/BuscarMoto.php on line 10
+[20-Feb-2014 12:18:03] PHP Parse error:  syntax error, unexpected $end in /home/altimea/subdomains/motoexpert/library/Zend/Db/Adapter/Abstract.php on line 388
+[20-Feb-2014 12:18:07] PHP Parse error:  syntax error, unexpected $end in /home/altimea/subdomains/motoexpert/library/Zend/Db/Table/Abstract.php on line 471
+[20-Feb-2014 12:18:10] PHP Fatal error:  Unsupported operand types in /home/altimea/subdomains/motoexpert/application/forms/BuscarMoto.php on line 10
+[20-Feb-2014 12:18:14] PHP Fatal error:  Unsupported operand types in /home/altimea/subdomains/motoexpert/application/forms/BuscarMoto.php on line 10
+[20-Feb-2014 12:18:27] PHP Fatal error:  Unsupported operand types in /home/altimea/subdomains/motoexpert/application/forms/BuscarMoto.php on line 10
+[20-Feb-2014 12:18:28] PHP Fatal error:  Unsupported operand types in /home/altimea/subdomains/motoexpert/application/forms/BuscarMoto.php on line 10
+[20-Feb-2014 12:18:42] PHP Fatal error:  Unsupported operand types in /home/altimea/subdomains/motoexpert/application/forms/BuscarMoto.php on line 10
+[20-Feb-2014 12:19:26] PHP Fatal error:  Unsupported operand types in /home/altimea/subdomains/motoexpert/application/forms/BuscarMoto.php on line 10
+[20-Feb-2014 12:19:55] PHP Fatal error:  Unsupported operand types in /home/altimea/subdomains/motoexpert/application/forms/BuscarMoto.php on line 10
+[20-Feb-2014 12:19:59] PHP Fatal error:  Unsupported operand types in /home/altimea/subdomains/motoexpert/application/forms/BuscarMoto.php on line 10
+[20-Feb-2014 12:22:39] PHP Fatal error:  Unsupported operand types in /home/altimea/subdomains/motoexpert/application/forms/BuscarMoto.php on line 10
+[20-Feb-2014 12:34:12] PHP Fatal error:  Unsupported operand types in /home/altimea/subdomains/motoexpert/application/forms/BuscarMoto.php on line 10
+[20-Feb-2014 12:46:40] PHP Fatal error:  Unsupported operand types in /home/altimea/subdomains/motoexpert/application/forms/BuscarMoto.php on line 10
+[20-Feb-2014 12:46:57] PHP Fatal error:  Unsupported operand types in /home/altimea/subdomains/motoexpert/application/forms/BuscarMoto.php on line 10
+[20-Feb-2014 12:49:06] PHP Fatal error:  Unsupported operand types in /home/altimea/subdomains/motoexpert/application/forms/BuscarMoto.php on line 10
+[20-Feb-2014 12:49:31] PHP Fatal error:  Unsupported operand types in /home/altimea/subdomains/motoexpert/application/forms/BuscarMoto.php on line 10
+[20-Feb-2014 12:49:33] PHP Fatal error:  Unsupported operand types in /home/altimea/subdomains/motoexpert/application/forms/BuscarMoto.php on line 10
+[20-Feb-2014 12:50:22] PHP Fatal error:  Unsupported operand types in /home/altimea/subdomains/motoexpert/application/forms/BuscarMoto.php on line 10
+[20-Feb-2014 13:49:17] PHP Fatal error:  Unsupported operand types in /home/altimea/subdomains/motoexpert/application/forms/BuscarMoto.php on line 10
+[20-Feb-2014 13:49:58] PHP Fatal error:  Unsupported operand types in /home/altimea/subdomains/motoexpert/application/forms/BuscarMoto.php on line 10
+[20-Feb-2014 13:51:16] PHP Fatal error:  Unsupported operand types in /home/altimea/subdomains/motoexpert/application/forms/BuscarMoto.php on line 10
+[20-Feb-2014 19:52:26] PHP Fatal error:  Uncaught exception 'Zend_Config_Exception' with message 'Error parsing /home/altimea/subdomains/motoexpert/application/configs/application.ini on line 25
+' in /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php:182
+Stack trace:
+#0 /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php(202): Zend_Config_Ini->_parseIniFile('/home/altimea/s...')
+#1 /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php(126): Zend_Config_Ini->_loadIniFile('/home/altimea/s...')
+#2 /home/altimea/subdomains/motoexpert/library/Zend/Application.php(386): Zend_Config_Ini->__construct('/home/altimea/s...', 'development')
+#3 /home/altimea/subdomains/motoexpert/library/Zend/Application.php(85): Zend_Application->_loadConfig('/home/altimea/s...')
+#4 /home/altimea/subdomains/motoexpert/public/index.php(30): Zend_Application->__construct('development', '/home/altimea/s...')
+#5 {main}
+  thrown in /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php on line 182
+[20-Feb-2014 13:53:30] PHP Fatal error:  Unsupported operand types in /home/altimea/subdomains/motoexpert/application/forms/BuscarMoto.php on line 10
+[20-Feb-2014 13:56:12] PHP Fatal error:  Unsupported operand types in /home/altimea/subdomains/motoexpert/application/forms/BuscarMoto.php on line 10
+[20-Feb-2014 13:56:40] PHP Fatal error:  Unsupported operand types in /home/altimea/subdomains/motoexpert/application/forms/BuscarMoto.php on line 10
+[20-Feb-2014 13:57:59] PHP Fatal error:  Unsupported operand types in /home/altimea/subdomains/motoexpert/application/forms/BuscarMoto.php on line 10
+[20-Feb-2014 20:00:16] PHP Fatal error:  Uncaught exception 'Zend_Config_Exception' with message 'Section 'development' cannot be found in /home/altimea/subdomains/motoexpert/application/configs/application.ini' in /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php:151
+Stack trace:
+#0 /home/altimea/subdomains/motoexpert/library/Zend/Application.php(386): Zend_Config_Ini->__construct('/home/altimea/s...', 'development')
+#1 /home/altimea/subdomains/motoexpert/library/Zend/Application.php(85): Zend_Application->_loadConfig('/home/altimea/s...')
+#2 /home/altimea/subdomains/motoexpert/public/index.php(30): Zend_Application->__construct('development', '/home/altimea/s...')
+#3 {main}
+  thrown in /home/altimea/subdomains/motoexpert/library/Zend/Config/Ini.php on line 151
+[21-Feb-2014 03:11:58] PHP Warning:  Invalid argument supplied for foreach() in /home/altimea/subdomains/motoexpert/application/modules/default/views/scripts/fiche-moto/index.phtml on line 25
+[21-Feb-2014 03:11:58] PHP Warning:  Invalid argument supplied for foreach() in /home/altimea/subdomains/motoexpert/application/modules/default/views/scripts/fiche-moto/index.phtml on line 39
+[24-Feb-2014 21:05:11] PHP Warning:  Invalid argument supplied for foreach() in /home/altimea/subdomains/motoexpert/application/modules/default/views/scripts/magasin/index.phtml on line 156
+[25-Feb-2014 16:23:24] PHP Warning:  Invalid argument supplied for foreach() in /home/altimea/subdomains/motoexpert/application/modules/default/views/scripts/magasin/index.phtml on line 156

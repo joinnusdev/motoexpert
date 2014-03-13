@@ -12,7 +12,15 @@
 ?>
 
 <script>
- 
+   var passredpopup = function(){  
+    $('#my_passerd').lightbox_me({
+      centered: true,
+      onLoad: function() {
+        $('#my_passerd_text').html("Stuff");
+      }
+    });
+  }
+
   var dispatchpopup = function(){  
     $('#my_lightbox').lightbox_me({
       centered: true,
@@ -57,21 +65,24 @@
           <div id="login-c">
           	<div class="col2 align-left">
            	  <div class="login  align-right">
-              	<form id="form2" name="form2" method="post" action="/auth" style="margin: 0">
+              <div id="validateloginform">
+              	<form id="form2" name="form2" method="post" action="/auth" style="margin: 0"  onSubmit="return validatelogin()" autocomplete="off">
 				<div class="login-content">
 					<h3>VOUS POSSÉDEZ DÉJÀ UN COMPTE?</h3>
 <label for="textfield4">E-mail * :</label> 
-<input type="text" name="email" class="inputcol2" id="email" required="required"/> 
+<input type="text" name="email" class="inputcol2" id="email"  onKeyPress="removelogin()"/>
+<div id="emaillabel"  class="nodisplay">Champ obligatoire.</div>
 <label for="textfield5">Mot de passe :</label> 
-<input type="password" name="passe" class="inputcol2" id="passe" required="required"/>
+<input type="password" name="passe" class="inputcol2" id="passe" onKeyPress="removelogin()"/>
+<div id="passlabel"  class="nodisplay">Champ obligatoire.</div>
 
 <div class="passe">
-<a href="#">Mot de passe oublié ? </a>
+<a href="#" onClick="passredpopup();">Mot de passe oublié ? </a>
 </div>
 					
 				</div>
 				<input name="ENVOYER" type="submit" id="ENVOYER" value="ENVOYER" />
-				</form>
+				</form></div>
                 </div>
           	</div>
           	<div class="col2-lo align-left">
@@ -99,7 +110,53 @@
 <!--/*****************************************************************************************************************************/-->
 <script>
 /*************************************************************/
+ function validatelogin(){
+	 
+	  if (document.form2.email.value == ''&&document.form2.passe.value == ""){ 
+				   jQuery('#validateloginform #email').addClass( 'error' );  				   
+				   jQuery('#validateloginform #emaillabel').addClass( 'error' );
+				   jQuery('#validateloginform #emaillabel').removeClass( 'nodisplay');
+				   jQuery('#validateloginform #passe').addClass( 'error' );  				   
+				   jQuery('#validateloginform #passlabel').addClass( 'error' );
+				   jQuery('#validateloginform #passlabel').removeClass( 'nodisplay');					
+					return false; 
+				  }
+	  if (document.form2.email.value == ''){ 
+				   jQuery('#validateloginform #email').addClass( 'error' );  				   
+				   jQuery('#validateloginform #emaillabel').addClass( 'error' );
+				   jQuery('#validateloginform #emaillabel').removeClass( 'nodisplay');				
+					return false; 
+				  }
+	  if (document.form2.email.value.indexOf('@', 0) == -1 || document.form2.email.value.indexOf('.', 0) == -1){
+					  jQuery('#validateloginform #email').addClass( 'error' );  				   
+					   jQuery('#validateloginform #emaillabel').addClass( 'error' );
+					   jQuery('#validateloginform #emaillabel').removeClass( 'nodisplay')
+					  return false; 
+				 }
+	 if (document.form2.passe.value == ""){ 
+				   jQuery('#validateloginform #passe').addClass( 'error' );  				   
+				   jQuery('#validateloginform #passlabel').addClass( 'error' );
+				   jQuery('#validateloginform #passlabel').removeClass( 'nodisplay');				
+					return false; 
+				 } 
+	 
+	 }
+ function removelogin(){
 
+	if (document.form2.email.value!= ""){ 
+				   jQuery('#validateloginform #email').removeClass( 'error' ); 				   
+				   jQuery('#validateloginform #emaillabel').removeClass( 'error' );
+				   jQuery('#validateloginform #emaillabel').addClass( 'nodisplay');				
+				  } 
+	if (document.form2.passe.value!= ""){ 
+				   jQuery('#validateloginform #pass').removeClass( 'error' ); 				   
+				   jQuery('#validateloginform #passlabel').removeClass( 'error' );
+				   jQuery('#validateloginform #passlabel').addClass( 'nodisplay');				
+				  }
+ }
+ /********************************************************************************************************************/
+ 
+ 
 				 function validateformRegister(){
 				  if (document.formRegister.nom.value == ""&&document.formRegister.prenom.value == ""&&document.formRegister.adresse.value == ""&&document.formRegister.code_postal.value == ""&&document.formRegister.ville.value == ""&&document.formRegister.tell.value == ""&&document.formRegister.portable.value == ""&&document.formRegister.email.value == ''&&document.formRegister.pass.value ==""&&document.formRegister.passred.value==""){ 
 				   jQuery('#contformregister #nom').addClass( 'error' );  				   
@@ -297,6 +354,38 @@
 				  				  
 				}   
 
+/************************************************************************/
+				 function validateformpasserd(){
+
+				  if (document.formpasserd.email.value == ''){ 
+				   jQuery('#formpasserd #email').addClass( 'error' );  				   
+				   //jQuery('#formpasserd #emaillabel').addClass( 'error' );
+				   //jQuery('#formpasserd #emaillabel').removeClass( 'nodisplay');				
+					return false; 
+				  }
+				  if (document.formpasserd.email.value.indexOf('@', 0) == -1 || document.formpasserd.email.value.indexOf('.', 0) == -1){
+					  jQuery('#formpasserd #email').addClass( 'error' );  				   
+					   //jQuery('#formpasserd #emaillabel').addClass( 'error' );
+					   //jQuery('#formpasserd #emaillabel').removeClass( 'nodisplay')
+					  return false; 
+					  }
+
+				         
+				return true;
+				}
+				
+				function removeformpasserd(){
+
+				 if (document.formpasserd.email.value != ""){ 
+				 	jQuery('#formpasserd #email').removeClass( 'error' ); 				   
+				 
+				  }
+
+				  				  
+				}   
+				
+				
+              /*************************************************/
 
 </script>
 <!--/*****************************************************************************************************************************/-->
@@ -368,6 +457,40 @@
             
         </form>
         
+        </div>
+    	</div>
+	  
+      
+	</div>
+</div>
+
+<!--/*****************************************************************************************************************************/-->
+<!--/*****************************************************************************************************************************/-->
+<!--//  Reset Passerd -->
+<!--/*****************************************************************************************************************************/-->
+<!--/*****************************************************************************************************************************/-->
+<div id="my_passerd">
+  <div id="wrapper-form">
+    	<div id="new-form">
+        	<div id="new-navigation"><a href="#" class="new-prev" onClick="$('#my_passerd').trigger('close');">RETOUR</a>
+        	<p>      </p> </div>
+   <div id="contformasserd">   
+   <div class="passred-content">     
+        <form name="formpasserd"  class="cmxform"  id="formpasserd" method="post" action="/login/recover-password"  onSubmit="return validateformpasserd()" autocomplete="off">
+        <h3>DEMANDE DE NOUVEAU MOT DE PASSE</h3>
+        <p>Saisissez votre adresse email dans le champ ci-dessous, un message vous parviendra instantanément avec votre nouveau mot de passe.</p>
+
+            <p>
+            <label for="email">Email * : </label>
+            <input name="email" id="email" type="text" value="<?php echo ($email)?$datos["email"]:'';?>" onKeyPress="removeformpasserd()" >
+			<div class="erroremail">Cet e-mail n'existe pas</div>
+           <!-- <label for="email" id="emaillabel"  class="nodisplay">Un compte est déjà ouvert sous cet email.</label>-->
+            </p>
+            <p><a href="#" onClick="$('#my_passerd').trigger('close')" class="btn-submit">ANNULER</a></p>
+            <p><input name="" type="submit" value="ENVOYER"></p>
+            
+        </form>
+        </div>
         </div>
     	</div>
 	  
