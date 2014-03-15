@@ -22,29 +22,6 @@ class Default_FicheMotoController extends App_Controller_Action_Default
         
         
         
-        $page = $this->_getParam('page', NULL);
-    	$codigo = $this->_getParam('id', NULL);
-        $modelNoticia = new App_Model_Noticia();
-    	if ($this->_request->isGet()) {
-    		if ($datos and !is_null($datos)) {    	
-    			$result = $modelNoticia->listNewsDeta($codigo);
-    			if ($codigo) {
-    				$result = $result + $modelNoticia->listNews($codigo);    				
-    			}
-    			 
-    			$this->view->prueba = $datos;
-    			$paginator = Zend_Paginator::factory($result);
-    			$paginator->setCurrentPageNumber($page)
-    			->setItemCountPerPage(1);
-    			$this->view->result = $paginator;
-    			 
-    			if ($this->view->result){
-    				$this->view->total = count($result);
-    			}
-    		}
-    	}
-        
-        
     }
     
     public function getModeleAction()
