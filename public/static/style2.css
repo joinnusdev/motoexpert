@@ -1549,6 +1549,11 @@ p.bjqs-caption{
 	font-size:14px;
 	line-height:18px;
 	}
+#details-not .col2 img{
+width:480px !important;
+height:auto;
+	}
+#details-not .col2 .partager img {width:26px !important;}
 .col2-lo{
 	width:470px;
 	margin:0 0 0 10px;
@@ -2365,7 +2370,7 @@ margin-bottom:5px;
     list-style: none;
     outline: none; 
 	 }
-#my_newsletter{
+ #my_newsletter_popup{
 	display: none;
     width: 322px;
     height:525px;
@@ -2740,7 +2745,9 @@ font-family: 'Roboto Condensed', sans-serif;
 	}
 	
 .services-978 p{
-	 width:693px;
+	 /*width:693px;*/
+	 max-width:623px;
+	 padding:0 5px;
 	 float:left;
 	 margin:0 0px 0 0;
 	 font-size:14px;
@@ -2780,15 +2787,26 @@ font-family: 'Roboto Condensed', sans-serif;
 	 margin:0 20px 0 0px;
 	}
 .services-978{
-	 width:978px;
+	 background:#DFDFDF;
+	 /*width:978px;*/
+	 max-width:623px;
 	 float:left;
-	 padding:0px 0px 0px 0px;
+	 padding:0;
 	 margin:0 0px 0 0;
 	 font-family:Arial, Helvetica, sans-serif;
 	 font-size:14px;
 	 line-height:18px;
 	 color:#000;
+	 position:relative;
 	}
+.services-978.no-back {background:none;}
+.services-978.no-back p {font-size:10px;}
+.services-978 .services-fan-arrow {
+	position:absolute;
+	top:-8px;
+	left:-8px;
+}
+.services-978 .fan-service.first {margin-left:70px;}
 .services-234{
 	 width:234px;
 	 float:left;

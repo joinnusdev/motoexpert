@@ -103,15 +103,15 @@ class Default_LoginController extends App_Controller_Action_Default
                             
 
                             Toute l'équipe MotoExpert vous remercie de votre confiance.";
-                $asunto = "Recuperar Contraseña";
+                $asunto = "MOTO EXPERT - Mot de passe oublié";
                 // $destinatario = "jsteve.villano@gmail.com";
                 //para el envío en formato HTML
                 $headers = "MIME-Version: 1.0\r\n";
-                $headers .= "Content-type: text/html; charset=iso-8859-1\r\n";
+                $headers .= "Content-type: text/html; charset=utf-8\r\n";
                 //direcciones que recibián copia
-                $headers .= "Cc: eric@altimea.com\r\n";
+                //$headers .= "Cc: developpeur@infra.fr\r\n";
                 //dirección del remitente
-                $headers .= "From:MotoExpert";
+                $headers .= "From:MotoExpert<webmaster@motoexpert.fr>";
 
                 mail($destinatario,$asunto,$cuerpo,$headers) ;
 

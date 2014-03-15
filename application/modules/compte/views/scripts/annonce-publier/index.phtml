@@ -58,12 +58,25 @@ jQuery.noConflict();
                                                     <?php if($this->caract['dpto']!=""){ echo $this->caract['dpto'];} ?> 
                                                 <br> 
                                                     <?php if($this->caract['cylindree']!=""){ echo $this->caract['cylindree']." cm3 -"; }?>   
-                                                    <?php if($this->caract['km']!=""){ echo $this->caract['km']." km - ";} ?>  
+                                                    <?php 
+                                                    if($this->caract['km']!=""){ 
+                                                        if($this->caract['km']=="sans"){ 
+                                                            echo "Pas de compteur kilométrique - ";
+                                                        }else{
+                                                            echo $this->caract['km']." km - ";
+                                                        }
+                                                    } 
+                                                    ?>  
                                                      <?php if($this->caract['annee']!=""){ echo "Année ".$this->caract['annee'];} ?>
 						</p>
-                                                <?php if($this->caract['prix']!=""){ ?>
-						<div class="price"><?= $this->caract['prix'] ?> €</div>
-                                                <?php } ?>
+                                                <?php
+                                                if($this->caract['prix']>0){
+                                                    echo $this->caract['prix']. "€" ;
+                                                    
+                                                }else{
+                                                    echo "<div class='price'>A débattre</div>";
+                                                }
+                                                  ?>
 					</div>
 
 				</div>
@@ -497,9 +510,15 @@ jQuery.noConflict();
 				<p>
 					<?= $this->form->descr_site?>
 				</p>
-                <p class="validatecheckox"><input name="" type="checkbox" class="validcheckox" value="">Pas de compteur kilométrique
+                                <p class="validatecheckox">
+                                    <?= $this->form->check_km?>
+                                    <!-- <input name="che_kil" id="che_kil" type="checkbox" class="validcheckox" value="">-->
+                                    Pas de compteur kilométrique
 				</p>
-                <p class="validatecheckox"><input name="" type="checkbox"  class="validcheckox" value="">ou à débattre
+                                <p class="validatecheckox">
+                                    <?= $this->form->check_prix?>
+                                    <!--<input name="che_precio" id="che_precio" type="checkbox"  class="validcheckox" value="">-->
+                                    ou à débattre
 				</p>
                 
                 

@@ -138,7 +138,7 @@ endforeach;
                                         <img src="<?=$ruta;?>" width="300" />
                                     </a>
 				</div>
-				<div class="result-price"><?=$item['prix']?> €</div>
+				<div class="result-price"><?=($item['prix'] > 0) ? $item['prix'].' €' : 'A débattre'?></div>
 				<div class="result-desc">
 					<div class="result-date">
                                             

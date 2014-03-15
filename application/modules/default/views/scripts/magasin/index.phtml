@@ -175,7 +175,7 @@
                                 <img src="<?=$ruta;?>" width="300" />
                             </a>
                         </div>
-                        <div class="result-price-w"><?= $anuncionsTienda['prix'];?> € </div>
+                        <div class="result-price-w"><?=($anuncionsTienda['prix'] > 0) ? $anuncionsTienda['prix'].' €' : 'A débattre' ;?></div>
                         <div class="result-desc">
                         <div class="result-date"><?php echo date('d/m/Y', $this->detailAnnonces['date'])?> </div>
                             <p><strong><?= $anuncionsTienda['titre'];?></strong><br />

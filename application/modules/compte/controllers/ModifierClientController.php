@@ -22,6 +22,7 @@ class Compte_ModifierClientController extends App_Controller_Action_Default
     	if ($this->_request->isPost()) {
     		$params = $this->_getAllParams();
     		$params['cid'] = $this->view->authData->cid;
+    		if(isset($params['pass'])) $params['pass'] = md5($params['pass']);
     		
     		$modelclient->saveClient($params);    		
     		

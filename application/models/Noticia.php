@@ -19,7 +19,7 @@ class App_Model_Noticia extends App_Db_Table_Abstract {
                 
                 if (isset($data['deparment'])and $data['deparment']!="") 
                    $query.= " and categoria.name =  '".$data['deparment']."'";
-                echo $query;
+                //echo $query;
                 try{
 			return $this->getAdapter()->fetchAll($query);
 	

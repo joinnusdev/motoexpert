@@ -1,73 +1,80 @@
+<?php
+$config = Zend_Registry::get('config');
+$ruta = $config->app->photoNews;
+?>
+
 <div id="content-978"> 
-        
-        
-       	  <div id="content-top">
-           	<div id="content-top"><a href="/franchise" class="service-prev">RETOUR</a></div>
+	<div id="content-top">
+		<div id="content-top">
+			<a href="/franchise" class="service-prev">RETOUR</a>
+		</div>
 
-            <div class="top-left"><span>Le Fan Club</span><p> </p></div>
-        	</div>
-                <?php
-                 $config = Zend_Registry::get('config');
-                 $ruta = $config->app->photoNews;
-                ?>
-           
-            <div id="services-978">
-            
-            <div class="fan-service"><img src="<?= $ruta.$this->fan[0]['value'];?>" width="623" height="400"></div></div>
-           <div id="services-978">
-           <div class="services-title-blue"><?= $this->fan[2]['value'];?></div>
-           
-           <div class="services-978">
-               <strong>
-                   <div class="fan-service">
-                       <img src="<?= $this->fan[4]['value'];?>" width="651" height="162">
-                   </div>
-                   <br>
-                   <?= $this->fan[6]['value'];?>
-            </strong>
-             
-             <center><div class="fan-service"><img src="<?= $this->fan[5]['value'];?>" width="577" height="229"></div></center>
-           
-           </div>
-          
-         <div id="services-978">
-           
-           
-           <div class="services-978"><strong><div class="fan-service">
-            <img src="<?= $this->fan[7]['value'];?>" width="651" height="162"></div></strong>
-             <?= $this->fan[9]['value'];?>
-             <center><div class="fan-service">
-                     <img src="<?= $this->fan[8]['value'];?>" width="555" height="316"></div></center>
-           </div>
-           
-
-          </div>
-          
-          
-          <div id="services-978">
-            <div class="services-978">
-                <div class="fan-service">
-                    <img src="<?= $this->fan[10]['value'];?>" width="651" height="114"></div><br>
-             <?= $this->fan[12]['value'];?>
-            </div>
-           
-
-          </div>
-          
-          <div id="services-978">
-            <div class="services-978">
-                <?=$this->fan[3]['value'];?>
-            </div>
-           
-
-          </div>
-          
-
-       	  <div id="content-top">
-           	<div id="content-top"><a href="/franchise" class="service-prev">RETOUR</a><p>&nbsp;</p> 
-           	</div>
-       	    </div>    
-          
-    </div>      
-        
+		<div class="top-left"><span>Le Fan Club</span><p> </p></div>
 	</div>
+           
+	<div id="services-978">
+		<div class="fan-service">
+			<img src="<?= $ruta.$this->fan[0]['value'];?>" border="0" />
+		</div>
+	</div>
+           
+	<div id="services-978">
+		<div class="services-title-blue"><?= $this->fan[2]['value'];?></div>
+		
+		<div class="services-978">
+			<div class="services-fan-arrow"><img src="http://www.motoexpert.fr/common/images_site/service/avantage_arrow.png" border="0" /></div>
+			<strong>
+				<div class="fan-service first">
+					<img src="<?= $this->fan[4]['value'];?>" border="0" />
+				</div>
+				<br />
+				<?= $this->fan[6]['value'];?>
+			</strong>
+			<center>
+				<div class="fan-service">
+					<img src="<?= $this->fan[5]['value'];?>" border="0" />
+				</div>
+			</center>
+		</div>
+	</div>
+	
+	<div id="services-978"> 		
+		<div class="services-978">
+			<div class="services-fan-arrow"><img src="http://www.motoexpert.fr/common/images_site/service/avantage_arrow.png" border="0" /></div>
+			<strong>
+				<div class="fan-service first">
+					<img src="<?= $this->fan[7]['value'];?>" border="0" />
+				</div>
+			</strong>
+			<?= $this->fan[9]['value'];?>
+			<center>
+				<div class="fan-service">
+					<img src="<?= $this->fan[8]['value'];?>" border="0" />
+				</div>
+			</center>
+		</div>
+	</div>
+	
+	<div id="services-978">
+		<div class="services-978">
+			<div class="services-fan-arrow"><img src="http://www.motoexpert.fr/common/images_site/service/avantage_arrow.png" border="0" /></div>
+			<div class="fan-service first">
+				<img src="<?= $this->fan[10]['value'];?>" border="0" />
+			</div>
+			<br />
+			<?= $this->fan[12]['value'];?>
+		</div>
+	</div>
+	
+	<div id="services-978">  
+		<div class="services-978 no-back">
+			<?=$this->fan[3]['value'];?>
+		</div>          
+
+		<div id="content-top">
+			<div id="content-top">
+				<a href="/franchise" class="service-prev">RETOUR</a><p>&nbsp;</p>
+			</div>
+		</div>
+	</div>
+</div>

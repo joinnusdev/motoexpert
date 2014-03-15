@@ -21,6 +21,10 @@ class Compte_AnnoncePublierController extends App_Controller_Action_Default
 		if ($this->_request->isPost()) {
 			$params = $this->_getAllParams();
 
+                        if($params[check_km]==1) $params['km']='sans';
+                        if($params[check_prix]==1) $params['prix']='-1';
+                        
+                        
 			$d = new App_Date_Calc();
 			$date = $d->dateToDays(date('d'), date('m'), date('Y'));
 

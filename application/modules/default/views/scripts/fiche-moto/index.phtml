@@ -73,6 +73,7 @@
                <a href="<?=$_SERVER['HTTP_REFERER']?>" class="previus">RETOUR A LA LISTE D'ANNONCES </a>
             <div class="align-right text-right">
             	<!-- <a href="#" class="previus border-right">PRECEDENTE</a><a href="" class="suivante">SUIVANTE</a>-->
+                <?php //echo $this->paginationControl($this->result, 'Sliding', '_pagdetailficha.phtml', array('prueba' => $this->prueba)); ?>
             </div>
 
           </div>
@@ -128,7 +129,7 @@
                 </div>
                     
                 <h2><?=$this->detailAnnonces['titre'];?></h2>
-                <div class="price"><?=$this->detailAnnonces['prix'];?> €</div>
+                <div class="price"><?=($this->detailAnnonces['prix'] > 0) ? $this->detailAnnonces['prix'].' €' : 'A débattre';?></div>
                 <div class="col2  align-left">
                 <?php
                 if($this->detailAnnonces['controle']==1):
@@ -142,7 +143,12 @@
                 </div>
                  <div class="col2  align-left">
                  	<p>Annonce 4902113260000</p>
-                    <p>Publiée le <?php echo date('d/m/Y', $this->detailAnnonces['date']);?></p>
+                    <p>Publiée le <?php 
+                    
+                    $d = new App_Date_Calc();
+                    echo  $d->daysToDate($this->detailAnnonces['date'], "%d/%m/%y");
+                    ?>
+                    </p>
                     <p><br/></p>
                     <p><strong>Marque</strong> : <?=$this->detailAnnonces['marque'];?></p>
                     <p><strong>Modèle </strong>: <?=$this->detailAnnonces['modele'];?></p>
