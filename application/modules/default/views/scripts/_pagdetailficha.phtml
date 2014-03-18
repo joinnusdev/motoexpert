@@ -2,14 +2,13 @@
 $ruta = "";
 $i=true;
 
-
 foreach ($this->prueba as $index => $value):
-if ($value != "0" and !is_null($value) and $index != "page" and $index=="cod_new") {
+if ($value != "0" and !is_null($value) and $index != "page" and $index=="id") {
 	if ($i) {
 		$ruta.= $index."=".$value;
 	}
 	else
-		$ruta.= "&".$index."=".$value;
+	$ruta.= "&".$index."=".$value;
 	$i= false;
 }
 
@@ -19,7 +18,7 @@ if (!empty($ruta)) $sim ="&"; else $sim ="";
 ?>
 
 <?php if (isset($this->previous)):?>
-<a href="<?php echo "/news/detail?".$ruta. $sim. "page=".$this->previous;?>" class="previus border-right" data="<?php echo $this->previous;?>">
+<a href="<?php echo "/fiche-moto?".$ruta. $sim. "page=".$this->previous;?>" class="previus border-right" data="<?php echo $this->previous;?>">
 	PRECEDENTE
 </a>		
 
@@ -31,7 +30,7 @@ if (!empty($ruta)) $sim ="&"; else $sim ="";
 <?php if (isset($this->next)):
 ?>
 <?php if (!empty($ruta)) $sim ="&"; else $sim ="";?>
-<a href="<?php echo "/news/detail?".$ruta. $sim."page=".$this->next;?>"
+<a href="<?php echo "/fiche-moto?".$ruta. $sim."page=".$this->next;?>"
 	class="suivante" data="<?php echo $this->next;?>">SUIVANTE</a>
 <?php else: ?>
 <!-- <a href="#" class="nnext disabled">SUIVANTE</a>-->

@@ -1,4 +1,5 @@
 <?php
+
 	    $datos = '';
 	    $nom = '';
 	    $prenom = '';
@@ -38,12 +39,32 @@
 } ?>
 	  }
 </script>
-<script src="https://maps.googleapis.com/maps/api/js?sensor=false&language=fr-FR"></script>
+
+
+<link href="<?=MEDIA_URL ?>css/flexslider.css" rel="stylesheet">
+
+<div id="content" class="paddin30"> 
+        	<div id="content-top">
+            
+                            <div class="top-left">MOTO EXPERT <br /><span>MOTOS D'OCCASION</span></div>
+        	</div>
+       	  <div id="navi-fiche">
+               <a href="/annonces" class="previus">RETOUR A LA LISTE D'ANNONCES </a>
+            <div class="align-right text-right">
+            	<!-- <a href="#" class="previus border-right">PRECEDENTE</a><a href="" class="suivante">SUIVANTE</a>-->
+                <?php echo $this->paginationControl($this->result, 'Sliding', '_pagdetailficha.phtml', array('prueba' => $this->prueba)); ?>
+            </div>
+
+          </div>
+          <!-- //*** DETAILS  //-->
+        <?php foreach ($this->result as $item): ?>
+          <script src="https://maps.googleapis.com/maps/api/js?sensor=false&language=fr-FR"></script>
     <script>
       function initialize() {
         var map_canvas = document.getElementById('map_canvas_mini');
         var map_options = {
-          center: new google.maps.LatLng(<?= $this->detailAnnonces['latitude'];?>, <?= $this->detailAnnonces['longitude'];?>),
+  
+          center: new google.maps.LatLng(<?php  echo $item['latitude'];?>, <?php echo $item['longitude'];?>),
           zoom: 13,
 		  			//navigationControl: false,
 			//draggable: false,
@@ -62,35 +83,19 @@
       }
       google.maps.event.addDomListener(window, 'load', initialize);
     </script>
-<link href="<?=MEDIA_URL ?>css/flexslider.css" rel="stylesheet">
-
-<div id="content" class="paddin30"> 
-        	<div id="content-top">
-            
-                            <div class="top-left">MOTO EXPERT <br /><span>MOTOS D'OCCASION</span></div>
-        	</div>
-       	  <div id="navi-fiche">
-               <a href="<?=$_SERVER['HTTP_REFERER']?>" class="previus">RETOUR A LA LISTE D'ANNONCES </a>
-            <div class="align-right text-right">
-            	<!-- <a href="#" class="previus border-right">PRECEDENTE</a><a href="" class="suivante">SUIVANTE</a>-->
-                <?php //echo $this->paginationControl($this->result, 'Sliding', '_pagdetailficha.phtml', array('prueba' => $this->prueba)); ?>
-            </div>
-
-          </div>
-          <!-- //*** DETAILS  //-->
           <div id="details">
           	<div class="col2 align-left">
             	<div class="gallery">
                    <DIV class="flexslider" id="imageitems">
                         <UL class="slides">
                           <?php
-                          $config = Zend_Registry::get('config');
-                          foreach ($this->photoAnnonces as $photo1) :
-                            $foto = str_replace(",",".",$photo1['nom_fichier']);  
-							  
-                            $ruta = $config->app->photoUrl. $this->detailAnnonces['departement'].'/'.$foto;
-							
-							
+                          
+                           $model = new App_Model_Announce();
+                           $resultPhoto = $model->photoDetailAnnonce($item['id']);
+                           $config = Zend_Registry::get('config');
+                           foreach ($resultPhoto as $photo1) :
+                            $foto = str_replace(",",".",$photo1['nom_fichier']);  							  
+                            $ruta = $config->app->photoUrl. $item['departement'].'/'.$foto;
                           ?>
                           <LI><IMG   alt="" src="<?=$ruta;?>"></LI>
                           <?php endforeach;?>
@@ -102,14 +107,12 @@
                         <UL class="slides">
                           <?php
                           $config = Zend_Registry::get('config');
-                          foreach ($this->photoAnnonces as $photo2) :
+                          foreach ($resultPhoto as $photo2) :
                             $foto = str_replace(",",".",$photo2['nom_fichier']);    
-                            $ruta = $config->app->photoUrl. $this->detailAnnonces['departement'].'/'.$foto;
+                            $ruta = $config->app->photoUrl. $item['departement'].'/'.$foto;
                           ?>
                           <LI><IMG alt="" src="<?=$ruta;?>"></LI>
                            <?php endforeach; ?>
-				                          
-                           
                            
                         </UL>
                    
@@ -128,15 +131,15 @@
                     </a>Partager-->
                 </div>
                     
-                <h2><?=$this->detailAnnonces['titre'];?></h2>
-                <div class="price"><?=($this->detailAnnonces['prix'] > 0) ? $this->detailAnnonces['prix'].' €' : 'A débattre';?></div>
+                <h2><?=$item['titre'];?></h2>
+                <div class="price"><?=($item['prix'] > 0) ? $item['prix'].' €' : 'A débattre';?></div>
                 <div class="col2  align-left">
                 <?php
-                if($this->detailAnnonces['controle']==1):
+                if($item['controle']==1):
                 ?>
                 <span class="visuel visu-gara">CONTRÛLE VISUEL</span> 
                 <?php endif;
-                if($this->detailAnnonces['isgarantie']==1):
+                if($item['isgarantie']==1):
                 ?>
                 <span class="garantie visu-gara">GARANTIE </span>
                 <?php endif;?>
@@ -146,25 +149,25 @@
                     <p>Publiée le <?php 
                     
                     $d = new App_Date_Calc();
-                    echo  $d->daysToDate($this->detailAnnonces['date'], "%d/%m/%y");
+                    echo  $d->daysToDate($item['date'], "%d/%m/%y");
                     ?>
                     </p>
                     <p><br/></p>
-                    <p><strong>Marque</strong> : <?=$this->detailAnnonces['marque'];?></p>
-                    <p><strong>Modèle </strong>: <?=$this->detailAnnonces['modele'];?></p>
-                    <p><strong>Catégorie</strong> : <?=$this->detailAnnonces['nom_cat'];?></p>
-                    <p><strong>Couleur</strong> : <?=$this->detailAnnonces['couleur'];?></p>
-                    <p><strong>Cylindrée</strong> : <?=$this->detailAnnonces['cylindree'];?> cm3</p>
-                    <p><strong>Km</strong> : <?=$this->detailAnnonces['km'];?></p>
-                    <p><strong>Année</strong> : <?=$this->detailAnnonces['annee'];?></p>
-                    <?php if($this->detailAnnonces['nom']!=""): ?>
-                    <p><strong>Magasin </strong>: <?=$this->detailAnnonces['nom'];?></p>
+                    <p><strong>Marque</strong> : <?=$item['marque'];?></p>
+                    <p><strong>Modèle </strong>: <?=$item['modele'];?></p>
+                    <p><strong>Catégorie</strong> : <?=$item['nom_cat'];?></p>
+                    <p><strong>Couleur</strong> : <?=$item['couleur'];?></p>
+                    <p><strong>Cylindrée</strong> : <?=$item['cylindree'];?> cm3</p>
+                    <p><strong>Km</strong> : <?=$item['km'];?></p>
+                    <p><strong>Année</strong> : <?=$item['annee'];?></p>
+                    <?php if($item['nom']!=""): ?>
+                    <p><strong>Magasin </strong>: <?=$item['nom'];?></p>
                     <?php endif;?>
-                    <p><strong>Département</strong> : <?=$this->detailAnnonces['departement'];?></p>
+                    <p><strong>Département</strong> : <?=$item['departement'];?></p>
                     <hr />
                     <p><strong>Descriptif</strong> :</p>
                    <p>
-                      <?=$this->detailAnnonces['descr_site'];?> 
+                      <?=$item['descr_site'];?> 
                    </p>
                     <p></p>
  
@@ -172,7 +175,7 @@
               </div>
                
                <div style="width:100%; height:10px; clear:both"></div>
-               <?php if($this->detailAnnonces['type_occaz']==1): ?>
+               <?php if($item['type_occaz']==1): ?>
                <div class="col2 align-left"> 
                 <div class="subtitle">
                     <div class="icontitle icon-contact">
@@ -181,33 +184,33 @@
                 </div>
               
               <div class="col2 align-left margin-top">
-                    <p><?php echo $this->detailAnnonces['nom'];?></p>
-                    <p>Port: <?=$this->detailAnnonces['tel'];?> </p>
+                    <p><?php echo $item['nom'];?></p>
+                    <p>Port: <?=$item['tel'];?> </p>
               </div>
             </div>
             <?php endif;?>
             <!-- SI ES TIENDA -->   
-            <?php if($this->detailAnnonces['type_occaz']==2): ?>
+            <?php if($item['type_occaz']==2): ?>
             <div class="col2 align-left"> 
                 <div class="subtitle">
                     <div class="icontitle icon-contact">
                          CONTACTEZ DIRECTEMENT LE MAGASIN
                     </div>
                 </div>
-              <div class="top-left">MOTO EXPERT <br /><span><?=$this->detailAnnonces['ville']?></span></div>
+              <div class="top-left">MOTO EXPERT <br /><span><?=$item['ville']?></span></div>
               <div class="col2 align-left margin-top">
               	<div class="col21">
                     <div class="col21"><div id="map_canvas_mini"></div><br /></div>
                 </div>
                 <div class="col22">
                 	<div class="subtitle2">
-                            <a href="<?= $this->detailAnnonces['liengmap'];?>" target="_blank">PLAN INTERACTIF</a> 
+                            <a href="<?= $item['liengmap'];?>" target="_blank">PLAN INTERACTIF</a> 
               		</div>
-                    <p><?=$this->detailAnnonces['adresse'];?></p>
-                	<p>Tél. : <?=$this->detailAnnonces['tel'];?></p>
-                    <p>Fax : <?=$this->detailAnnonces['fax'];?> </p>
+                    <p><?=$item['adresse'];?></p>
+                	<p>Tél. : <?=$item['tel'];?></p>
+                    <p>Fax : <?=$item['fax'];?> </p>
                     <h3>HORAIRES D'OUVERTURE</h3>
-                    <p><?=$this->detailAnnonces['horaires'];?></p>
+                    <p><?=$item['horaires'];?></p>
                 </div>
               
               </div>
@@ -379,6 +382,7 @@
               </div>  
             </div>
           </div>
+          <?php endforeach;?>
           <div id="navi-fiche">
           	  <a href="<?=$_SERVER['HTTP_REFERER']?>" class="previus">RETOUR A LA LISTE D'ANNONCES </a>
 
