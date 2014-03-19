@@ -61,7 +61,6 @@ class App_Model_Announce extends App_Db_Table_Abstract {
 			$query.= " order by a.date asc";
 		else {
 			$trier = explode("_", $trier);
-                        print_r($trier);
                         
 			if (($trier[0] == "date" || $trier[0] == "prix") and 
                             ($trier[1] == "asc" || $trier[1] == "desc"))
@@ -220,7 +219,7 @@ class App_Model_Announce extends App_Db_Table_Abstract {
                 if ($cod)
 			$query.= " and a.id <> '". $cod. "'";
                         $query.= " group by a.id
-                                   order by a.id desc";
+                                   order by a.id asc";
 		try{
 			return $this->getAdapter()->fetchAll($query);
 
@@ -252,7 +251,7 @@ class App_Model_Announce extends App_Db_Table_Abstract {
                 if ($cod)
 			$query.= " and a.id = '". $cod. "'";
                         $query.= " group by a.id
-                                   order by a.id desc";
+                                   order by a.id asc";
 		try{
 			return $this->getAdapter()->fetchAll($query);
 
