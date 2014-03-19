@@ -34,6 +34,8 @@ class Default_AnnoncesController extends App_Controller_Action_Default
     		    $data["page"] = $page;
     		    $data["trier"] = $trier;
     			$this->view->prueba = $data;
+    			$ss_data = new Zend_Session_Namespace('datos');
+    			$ss_data->search = $data; 
     			$paginator = Zend_Paginator::factory($result);
     			$paginator->setCurrentPageNumber($page)
     			->setItemCountPerPage(50);

@@ -197,7 +197,7 @@ class App_Model_Announce extends App_Db_Table_Abstract {
 	}
         
         /* ================================================================= */
-          public function detailFichaAnnounce_1($cod=null){
+    public function detailFichaAnnounce_1($cod=null, $datos=null){
 		$query = "
 		SELECT a.id,a.parution, a.rep_mail,a.rep_tel,a.rep_port ,a.id,a.ref, a.titre, a.date, a.date_crea, a.annee,a.cylindree,
 		a.couleur, a.km, a.id_cat,a.prix,a.departement,
@@ -216,10 +216,27 @@ class App_Model_Announce extends App_Db_Table_Abstract {
 		AND a.modere = '1'
 		AND a.ispayed = '1'
 		AND a.prov <> 'mebe'";
-                if ($cod)
-			$query.= " and a.id <> '". $cod. "'";
-                        $query.= " group by a.id
-                                   order by a.id asc";
+        
+		if ($cod)
+		    $query.= " and a.id <> '". $cod. "'";
+		
+	    if (isset($datos['deparment']) and $datos['deparment'] != 0 and !is_null($datos))
+			$query.= " AND a.departement = ".$datos['deparment'];
+
+		if (isset($datos['category']) and $datos['category'] != 0 and !is_null($datos))
+			$query.= " AND a.id_cat = ".$datos['category'];
+
+		if (isset($datos['magasin']) and $datos['magasin'] != 0 and !is_null($datos))
+			$query.= " AND a.id_me = ".$datos['magasin'];
+
+		if (isset($datos['marque']) and !empty($datos['marque'])) {
+			$query.= " AND a.marque = ". '"'.$datos['marque'].'"';
+		}
+		if (isset($datos['modele']) and $datos['modele'] != 0  and !is_null($datos))
+			$query.= " AND m.id_mot = ".$datos['modele'];
+		    
+		    
+		$query.= " group by a.id order by a.id asc";
 		try{
 			return $this->getAdapter()->fetchAll($query);
 

@@ -10,6 +10,10 @@ class Default_FicheMotoController extends App_Controller_Action_Default
     
     public function indexAction()
     {
+    	$ss_data = new Zend_Session_Namespace('datos');
+    	$search = $ss_data->search;
+    	
+    	
     	$form = new App_Form_SearchMotoDeta();
     	$this->view->form = $form;
         $id = $this->_getParam('id');
@@ -30,9 +34,13 @@ class Default_FicheMotoController extends App_Controller_Action_Default
         if ($this->_request->isGet()) {
     		if ($datos and !is_null($datos)) {    	
     			$result = $model->detailFichaAnnounce_2($codigo);
+    			
     			if ($codigo) {
-    				$result = $result + $model->detailFichaAnnounce_1($codigo);  
+    				$result2 = $model->detailFichaAnnounce_1($codigo, $search);  
     			}
+    			
+    			$result = array_merge($result, $result2);
+    			
     	
     			$this->view->prueba = $datos;
     			$paginator = Zend_Paginator::factory($result);
